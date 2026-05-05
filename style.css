@@ -15,7 +15,6 @@ body {
     padding: 0 20px;
     box-sizing: border-box;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
 }
 
 .logo {
@@ -110,7 +109,6 @@ body {
         gap: 8vh;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         transform: translatex(100%);
-        position: fixed;
         transition: all 0.3s ease;
         padding-top: 5vh;
     }
