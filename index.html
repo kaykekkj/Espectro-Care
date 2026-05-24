@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +13,7 @@
     <header>
     <nav class="navbar">
 
-        <img src="IMG/Logo.png" alt="Logo do site" class="logo" onclick="matar()">
-
+        <img src="IMG/Logo.png" alt="Logo do site" class="logo" >
         <div>
             <ul class="navlinks" id="navlinks">
                 <li><a href="">Início</a></li>
@@ -22,14 +21,14 @@
                 <li><a href="">Blog</a></li>
                 <li><a href="">Aprendizagem</a></li>
                 <li class="entrar-nav-mobile"><a href="">Entrar</a></li>
-                <li class="criar-nav-mobile"><a href="">Criar conta</a></li>
+                <li class="criar-nav-mobile"><a onclick="selecionar()">Criar conta</a></li>
             </ul>
         </div>
         
 
         <div class="conta">
             <a class="entrar" href="login.html">Entrar</a>
-            <button class="criar-conta" href="cadastro.html">Criar Conta</button>
+            <button onclick="selecionar()" class="criar-conta"> <a>Criar Conta</a></button>
         </div>
 
         <div class="mobile-menu" id="mobile-menu" onclick="AbrirMenu()">
@@ -39,6 +38,15 @@
         </div>
     </nav>
     </header>
+
+    <div class="selecionar" id="selecionar">
+        <div class="voltar" onclick="fechar()"><img src="IMG/_.png"></div>
+            <h1>Criar conta <br><span>Selecione seu perfil para começar</span></h1>
+            <div class="cards">
+                <a href=""><div><img src="IMG/image 5.png" alt=""><h1>Responsaveis</h1></div></a>
+                <a href=""><div><img src="IMG/image 7.png" alt=""><h1>Profissionais</h1></div></a>
+            </div>
+        </div>
 
     <section class="home">
         <img src="IMG/image 88.png" alt="">
@@ -65,5 +73,7 @@
         </div>
     </footer>
     <script src="JavaScript/mobilen-navbar.js"></script>
+    <script src="JavaScript/selecionar-perfil.js"></script>
+    <div class="overlay" id="overlay"></div>
 </body>
 </html>
