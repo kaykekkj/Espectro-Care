@@ -179,8 +179,7 @@ color: white;
 }
 
 .logo {
-    height: 85%;
-    display: block;
+    height: 55%;
 }
 
 .selecionar{
@@ -358,7 +357,7 @@ padding: 20px;
     }
 
     .logo{
-        height: 55%;
+        height: 40%;
     }
 
 .selecionar h1{
@@ -404,7 +403,6 @@ padding: 20px;
 
 .logo-voltar img{
     height: 100%;
-    max-height: 160px;
 }
 
 .logo-voltar{
