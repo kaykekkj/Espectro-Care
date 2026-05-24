@@ -290,6 +290,14 @@ padding: 20px;
     flex-direction: column;
 }
 
+.logo-voltar img{
+    height: 100%
+}
+
+.logo-voltar{
+    height: 85%;
+}
+
  
 
 /* ================================================== FIM DA PAGINA HOME */
@@ -351,7 +359,6 @@ padding: 20px;
 
     .logo{
         height: 55%;
-        margin-top: 4px;
     }
 
 .selecionar h1{
@@ -395,5 +402,12 @@ height: 20vw;
 padding: 20px;
 }
 
+.logo-voltar img{
+    height: 100%
+}
+
+.logo-voltar{
+    height: 55%;
+}
 
 }
