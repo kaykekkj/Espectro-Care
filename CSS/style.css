@@ -31,8 +31,6 @@ body {
 
     position: fixed;
     width: 100%;
-
-    z-index: 1000;
 }
 
 .navlinks {
@@ -302,7 +300,7 @@ body {
 }
 
 .cards a img{
-    height: 15vh;
+    height: 20vh;
     max-height: 200px;
     padding: 20px;
 }
@@ -542,7 +540,6 @@ body {
     }
 
     .cards a img{
-        height: 10vw;
         padding: 20px;
     }
 
