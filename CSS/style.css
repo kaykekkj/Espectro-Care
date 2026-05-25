@@ -540,6 +540,7 @@ body {
     }
 
     .cards a img{
+        height: 15vh;
         padding: 20px;
     }
 
