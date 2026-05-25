@@ -289,13 +289,10 @@ padding: 20px;
     flex-direction: column;
 }
 
-.logo-voltar img{
+.logo-voltar{
     height: 100%
 }
 
-.logo-voltar{
-    height: 85%;
-}
 
  
 
@@ -376,7 +373,7 @@ padding: 20px;
 .cards a{
     height: fit-content;
     width: 30%;
-    border-radius: 30px;
+    border-radius: 10px;
     background-color: rgb(255, 255, 255);
     text-decoration: none;
     box-shadow: 0px 0px 5px #ababab;
@@ -389,7 +386,7 @@ padding: 20px;
 .cards{
     display: flex;
     justify-content: center;
-
+    margin-top: 10vh;
 }
 
 .cards h1{
@@ -397,7 +394,7 @@ padding: 20px;
 }
 
 .cards a img{
-height: 20vw;
+height: 10vw;
 padding: 20px;
 }
 
