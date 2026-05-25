@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+
+        <img src="IMG/Logo.png" alt="Logo do site" class="logo" >
+        <div>
+            <ul class="navlinks" id="navlinks">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="">Profissionais</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="">Aprendizagem</a></li>
+                <li class="entrar-nav-mobile"><a href="login.html">Entrar</a></li>
+                <li class="criar-nav-mobile"><a onclick="selecionar()">Criar conta</a></li>
+            </ul>
+        </div>
+        
+
+        <div class="conta">
+            <a class="entrar" href="login.html">Entrar</a>
+            <button onclick="selecionar()" class="criar-conta"> <a>Criar Conta</a></button>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu" onclick="AbrirMenu()">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    </header>
+
+    <div class="selecionar" id="selecionar">
+        <div class="voltar" onclick="fechar()"><img src="IMG/_.png"></div>
+            <h1>Criar conta <br><span>Selecione seu perfil para começar</span></h1>
+            <div class="cards">
+                <a href=""><div><img src="IMG/image 5.jpg" alt=""><h1>Responsaveis</h1></div></a>
+                <a href=""><div><img src="IMG/image 7.png" alt=""><h1>Profissionais</h1></div></a>
+            </div>
+        </div>
+
+    <section class="home">
+        <div class="header-blog">
+            <h1 class="titulo">Blog <br><span>Artigos educativos sobre neurodivergência, inclusão e saúde mental.</span></h1>
+            <input type="search" class="search" placeholder="Pesquisar artigos...">
+        </div>
+        <div class="container-blogs">
+            <div class="blog">
+                <img src="IMG/image 79.png" alt="">
+                <h1>Como identificar o TEA na primeira infância</h1>
+                <p>O diagnóstico precoce é fundamental para o desenvolvimento. Conheça os principais marcos do desenvolvimento e os sinais sutis — como a ausência de contato visual ou a seletividade alimentar — que podem indicar a necessidade de uma avaliação profissional.</p>
+                <button><a href="">Ver mais</a></button>
+            </div>
+
+            
+        </div>
+
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="IMG/Logo.png" alt="Logo do site">
+        </div>        
+        <div class="footer-itens">
+            <h1>Plataforma</h1>
+            <a href="">Sobre nós</a>
+            <a href="">Objetivo do site</a>
+        </div>
+        <div class="footer-itens">
+            <h1>Suporte</h1>
+            <a href="">Ajuda </a>
+            <a href="">Contato</a>
+        </div>
+        <div class="footer-itens">
+            <h1>Legal</h1>
+            <a href="">Termos de uso</a>
+            <a href="">Política de privacidade</a>
+        </div>
+    </footer>
+    <script src="JavaScript/mobilen-navbar.js"></script>
+    <script src="JavaScript/selecionar-perfil.js"></script>
+    <div class="overlay" id="overlay"></div>
+</body>
+</html>
