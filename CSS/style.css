@@ -520,8 +520,9 @@ body {
     flex-wrap: wrap;
     gap: 30px;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 40px;
     padding: 20px;
+    justify-content: center;
 }
 
 .blog{
@@ -530,9 +531,9 @@ body {
     box-shadow: 0 0 10px #ABABAB;
     display: flex;
     flex-direction: column;
-    text-align: justify;
     margin: 30px;
     width: 40%;
+    justify-content: space-between;
 }
 
 .blog img{
@@ -546,13 +547,15 @@ body {
     font-size: 24px;
     padding: 10px;
     font-weight: bold;
-    padding: 0 10px 10px 10px;
+    padding: 0 20px 20px 20px;
 
 }
 
 .blog p{
     color: #444;
-    padding: 0 10px 10px 10px;
+    padding: 0 20px 20px 20px;
+    text-align: justify;
+
 }
 
 .blog button{
@@ -714,9 +717,10 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    max-width: 1200px;
-    margin: 40px auto;
+    margin: 40px;
     padding: 20px;
+    justify-content: center;
+    width: 100%;
 }
 
 .blog{
@@ -725,8 +729,15 @@ body {
     box-shadow: 0 0 10px #ABABAB;
     display: flex;
     flex-direction: column;
-    text-align: justify;
     margin: 30px;
     width: 90%;
+    text-align: center;
+}
+
+.blog h1{
+    font-size: 20px;
+    padding: 10px;
+    font-weight: bold;
+    padding: 0 20px 20px 20px;
 }
 }
