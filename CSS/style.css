@@ -730,7 +730,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 30px;
-    width: 90%;
+    width: 100%;
     text-align: center;
 }
 
