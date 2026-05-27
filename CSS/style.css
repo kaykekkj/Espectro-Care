@@ -215,7 +215,7 @@ body {
 
 .selecionar{
     height: fit-content;
-    width: 80vw;
+    width: 60vw;
 
     position: fixed;
 
@@ -740,4 +740,9 @@ body {
     font-weight: bold;
     padding: 0 20px 20px 20px;
 }
+
+.selecionar{
+    width: 85vw;
+}
+
 }
