@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+
+        <img src="IMG/Logo.png" alt="Logo do site" class="logo" >
+        <div>
+            <ul class="navlinks" id="navlinks">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="">Profissionais</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="">Aprendizagem</a></li>
+                <li class="entrar-nav-mobile"><a href="login.html">Entrar</a></li>
+                <li class="criar-nav-mobile"><a onclick="selecionar()">Criar conta</a></li>
+            </ul>
+        </div>
+        
+
+        <div class="conta">
+            <a class="entrar" href="login.html">Entrar</a>
+            <button onclick="selecionar()" class="criar-conta"> <a>Criar Conta</a></button>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu" onclick="AbrirMenu()">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    </header>
+
+    <div class="selecionar" id="selecionar">
+        <div class="voltar" onclick="fechar()"><img src="IMG/_.png">
+        </div>
+        <h1>Criar conta <br><span>Selecione seu perfil para começar</span></h1>
+        <div class="cards">
+            <a href=""><div><img src="IMG/image 5.jpg" alt=""><h1>Responsaveis</h1></div></a>
+            <a href=""><div><img src="IMG/image 7.png" alt=""><h1>Profissionais</h1></div></a>
+        </div>
+    </div>
+
+    <header class="topo-blog">
+        <div class="topo-blog-itens">
+            <input type="text" placeholder="Pesquise no artigo:">
+            <h1>Como identificar o TEA na primeira infância</h1>
+            <p>Sinais de autismo infantil podem ser identificados antes dos dois anos de idade e, em muitos casos, já podem ser percebidos em bebês ainda muito pequenos. Alterações no contato visual, na interação social, na comunicação e em determinados comportamentos podem surgir nos primeiros meses de vida. Entender esses sinais precocemente é fundamental para o desenvolvimento da criança. Para saber mais informações e conhecer os principais sinais, leia abaixo.</p>
+        </div>
+    </header>
+
+    <section class="conteudo-blog">
+        <p class="conteudo">
+            O Transtorno do Espectro Autista (TEA) é uma condição do neurodesenvolvimento que pode se manifestar ainda nos primeiros anos de vida, afetando principalmente a comunicação, a interação social e o comportamento da criança. Embora cada criança tenha seu próprio ritmo de desenvolvimento, alguns sinais podem surgir precocemente e merecem atenção dos pais, familiares e profissionais da saúde.
+            <br>
+            Na primeira infância, os sinais do TEA costumam aparecer de forma gradual. Muitos bebês apresentam pouca resposta ao contato social, evitam olhar nos olhos ou demonstram menor interesse em interações com outras pessoas. Em alguns casos, a criança parece não reagir quando é chamada pelo nome, prefere brincar sozinha ou demonstra dificuldade para expressar emoções e necessidades.
+            <br>
+            Outro ponto importante está relacionado ao desenvolvimento da linguagem. Algumas crianças com TEA podem apresentar atraso na fala, dificuldade para formar frases ou até mesmo ausência de comunicação verbal. Também é comum observar a repetição de palavras, sons ou movimentos, além de comportamentos repetitivos no dia a dia. Mudanças simples na rotina podem gerar irritação intensa, crises de choro ou desconforto emocional.
+            <br>
+            Durante a fase em que a criança começa a explorar o ambiente e interagir mais com o mundo ao redor, alguns comportamentos podem se tornar mais evidentes. Muitas crianças com TEA demonstram interesse intenso por objetos específicos, repetem brincadeiras da mesma forma ou apresentam sensibilidade exagerada a sons, luzes, texturas e cheiros. Em situações sociais, podem ter dificuldade para compartilhar interesses, brincar em grupo ou compreender expressões emocionais.
+            <br>
+            É importante destacar que nem toda dificuldade no desenvolvimento indica autismo. Algumas características podem fazer parte do processo natural de crescimento infantil. No entanto, quando os sinais são persistentes e interferem na comunicação, no comportamento e nas relações sociais, é fundamental buscar avaliação profissional.
+            <br>
+            A identificação precoce do TEA faz grande diferença no desenvolvimento da criança. Quanto mais cedo o diagnóstico acontece, maiores são as possibilidades de intervenção e acompanhamento adequado. Terapias e estímulos realizados nos primeiros anos de vida contribuem significativamente para o desenvolvimento da linguagem, da autonomia, da aprendizagem e das habilidades sociais.
+            <br>
+            O papel da família nesse processo é essencial. Os pais geralmente são os primeiros a perceber mudanças ou comportamentos diferentes no desenvolvimento infantil. Observar atentamente a criança, acolher suas necessidades e procurar orientação especializada são atitudes importantes para garantir suporte adequado desde cedo.
+            <br>
+            Com informação, acompanhamento e apoio, crianças com TEA podem desenvolver habilidades importantes, construir relações saudáveis e alcançar maior qualidade de vida ao longo do crescimento.
+        </p>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="IMG/Logo.png" alt="Logo do site">
+        </div>        
+        <div class="footer-itens">
+            <h1>Plataforma</h1>
+            <a href="">Sobre nós</a>
+            <a href="">Objetivo do site</a>
+        </div>
+        <div class="footer-itens">
+            <h1>Suporte</h1>
+            <a href="">Ajuda </a>
+            <a href="">Contato</a>
+        </div>
+        <div class="footer-itens">
+            <h1>Legal</h1>
+            <a href="">Termos de uso</a>
+            <a href="">Política de privacidade</a>
+        </div>
+    </footer>
+    <script src="JavaScript/mobilen-navbar.js"></script>
+    <script src="JavaScript/selecionar-perfil.js"></script>
+    <script src="JavaScript/search.js"></script>
+    <div class="overlay" id="overlay"></div>
+</body>
+</html>

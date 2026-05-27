@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+
+        <img src="IMG/Logo.png" alt="Logo do site" class="logo" >
+        <div>
+            <ul class="navlinks" id="navlinks">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="">Profissionais</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="">Aprendizagem</a></li>
+                <li class="entrar-nav-mobile"><a href="login.html">Entrar</a></li>
+                <li class="criar-nav-mobile"><a onclick="selecionar()">Criar conta</a></li>
+            </ul>
+        </div>
+        
+
+        <div class="conta">
+            <a class="entrar" href="login.html">Entrar</a>
+            <button onclick="selecionar()" class="criar-conta"> <a>Criar Conta</a></button>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu" onclick="AbrirMenu()">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    </header>
+
+    <div class="selecionar" id="selecionar">
+        <div class="voltar" onclick="fechar()"><img src="IMG/_.png">
+        </div>
+        <h1>Criar conta <br><span>Selecione seu perfil para começar</span></h1>
+        <div class="cards">
+            <a href=""><div><img src="IMG/image 5.jpg" alt=""><h1>Responsaveis</h1></div></a>
+            <a href=""><div><img src="IMG/image 7.png" alt=""><h1>Profissionais</h1></div></a>
+        </div>
+    </div>
+
+    <header class="topo-blog2">
+        <div class="topo-blog-itens">
+            <input type="text" placeholder="Pesquise no artigo:">
+            <h1>O papel do PEI no desenvolvimento do aluno autista</h1>
+            <p>O Plano Educacional Individualizado (PEI) é uma ferramenta fundamental no processo de inclusão do aluno com Transtorno do Espectro Autista (TEA), pois permite adaptar o ensino às necessidades específicas de cada estudante. Por meio dele, são definidos objetivos, estratégias e adaptações que respeitam o ritmo de aprendizagem e favorecem o desenvolvimento acadêmico, social e emocional da criança. Entender o papel do PEI é essencial para garantir uma educação mais inclusiva e eficaz. Para saber mais informações sobre como ele contribui no desenvolvimento do aluno autista, leia abaixo.</p>
+        </div>
+    </header>
+
+    <section class="conteudo-blog">
+        <p class="conteudo">
+            O Plano Educacional Individualizado (PEI) é uma ferramenta essencial no processo de inclusão escolar do aluno com Transtorno do Espectro Autista (TEA). Ele funciona como um documento de planejamento pedagógico personalizado, que considera as necessidades específicas de cada estudante, respeitando seu ritmo de aprendizagem, suas habilidades e suas dificuldades.
+            <br>
+            Na prática, o PEI tem como principal objetivo garantir que o aluno autista tenha acesso ao aprendizado de forma justa e adaptada, promovendo seu desenvolvimento acadêmico, social e emocional dentro do ambiente escolar. Em vez de seguir apenas o planejamento tradicional da turma, o PEI adapta conteúdos, estratégias e metas de acordo com o perfil individual do estudante.
+            <br>
+            Esse plano é construído de forma colaborativa, envolvendo professores, coordenação pedagógica, profissionais de apoio e, em muitos casos, a família e terapeutas que acompanham a criança. Essa troca de informações é fundamental para que o planejamento seja realista e eficiente, considerando tanto o contexto escolar quanto as necessidades do aluno fora da escola.
+            <br>
+            Um dos principais pontos do PEI é a definição de objetivos claros e alcançáveis. Para o aluno autista, isso pode incluir o desenvolvimento da comunicação, a ampliação da interação social, a melhoria da autonomia nas atividades diárias e o fortalecimento de habilidades acadêmicas. Esses objetivos não são fixos, eles são constantemente revisados e ajustados conforme o progresso da criança.
+            <br>
+            Além disso, o PEI também orienta as estratégias pedagógicas utilizadas em sala de aula. Isso pode envolver o uso de recursos visuais, adaptações na forma de ensinar, tempo estendido para realização de atividades, apoio individualizado e a criação de rotinas mais estruturadas. Tudo isso contribui para reduzir a ansiedade, melhorar a compreensão e favorecer a participação do aluno nas atividades escolares.
+            <br>
+            Outro aspecto importante do PEI é que ele valoriza as potencialidades do aluno, e não apenas suas dificuldades. O foco não está apenas em corrigir desafios, mas em desenvolver habilidades, promover autonomia e estimular a participação ativa no ambiente escolar. Isso contribui diretamente para a construção da autoestima e para o fortalecimento do vínculo com a aprendizagem.
+            <br>
+            Quando bem aplicado, o PEI se torna uma ponte entre o aluno autista e o processo de ensino, tornando a escola um espaço mais acessível, acolhedor e eficiente. Ele não apenas facilita o aprendizado, mas também promove inclusão de forma real, respeitando as diferenças e garantindo oportunidades de desenvolvimento para todos.
+        </p>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="IMG/Logo.png" alt="Logo do site">
+        </div>        
+        <div class="footer-itens">
+            <h1>Plataforma</h1>
+            <a href="">Sobre nós</a>
+            <a href="">Objetivo do site</a>
+        </div>
+        <div class="footer-itens">
+            <h1>Suporte</h1>
+            <a href="">Ajuda </a>
+            <a href="">Contato</a>
+        </div>
+        <div class="footer-itens">
+            <h1>Legal</h1>
+            <a href="">Termos de uso</a>
+            <a href="">Política de privacidade</a>
+        </div>
+    </footer>
+    <script src="JavaScript/mobilen-navbar.js"></script>
+    <script src="JavaScript/selecionar-perfil.js"></script>
+    <script src="JavaScript/search.js"></script>
+    <div class="overlay" id="overlay"></div>
+</body>
+</html>
