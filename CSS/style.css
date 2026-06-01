@@ -456,6 +456,109 @@ body {
     font-size: 20px;
     width: 50%;
 }
+
+/* Bloco de porque nos escolher */
+
+
+
+.conteiner-motivos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2%;
+    gap: 30px;
+}
+
+.motivos{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 50px 10%;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.box-motivos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    width: 300px;
+    box-shadow: 2px 2px 2px 2px #c2ccda;
+    border-radius: 25px;
+}
+
+.box-motivos h1{
+    font-size: 27px;
+}
+
+.box-motivos p{
+    width: 100%;
+    color: #777E87;
+}
+
+.logo-motivo img{
+    width: 80px;
+    height: auto;
+    padding-top: 10px;
+}
+
+
+
+/*======Cadastrar-se na home======*/
+
+
+
+.primeiro-passo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 7% 0 9%;
+    background-color: #ffffff;
+    gap: 30px;
+    margin-bottom: 20vh;
+}
+.primeiro-passo h1{
+    margin-bottom: 0;
+}
+.primeiro-passo h2{
+    color: #777E87;
+    width: 810px;
+    font-weight: 550;
+}
+.criar-conta2 {
+    background: linear-gradient(135deg, #188ca2, #5cba75);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    width: 300px;
+    height: 80px;
+}
+
+.criar-conta2 a{
+text-decoration: none;
+color: white;
+
+}
+
+.criar-conta2:hover {
+    background: linear-gradient(135deg, #5cba75, #188ca2);
+    transform: scale(1.1);
+}
+
+
  
 
 /* ================================================== FIM DA PAGINA HOME */
@@ -1068,4 +1171,48 @@ body {
     cursor: pointer;
 }
 
+ /* Bloco de motivos*/
+
+    
+    .titulo-motivo{
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .box-motivos{
+        padding: 10px 20px;
+    }
+    .box-motivos h1{
+        font-size: 26px;
+        width: 250px;
+    }
+    .box-motivos p{
+        width: 270px;
+    }
+    .logo-motivo img{
+       width: 60px;
+       height: 60px;
+    }
+
+
+
+    /* Bloco de Primeiro passo*/
+
+
+    .primeiro-passo{
+        font-size: 12px;
+        text-align: center;
+    }
+    .primeiro-passo h1{
+        width: 270px;
+    }
+    .primeiro-passo h2{
+        font-size: 15px;
+        width: 330px;
+    }
+    .criar-conta2 {
+    font-size: 18px;
+    width: 200px;
+    height: 50px;
+    }
 }
