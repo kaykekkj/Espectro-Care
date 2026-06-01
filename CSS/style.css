@@ -358,14 +358,12 @@ body {
 
 
 .funcionamento{
-    height: fit-content;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 7%;
-    margin-bottom: 35%;
     box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
     width: 100vw;
 
@@ -461,24 +459,25 @@ body {
 
 
 
+
 .conteiner-motivos{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
     margin-bottom: 2%;
     gap: 30px;
 }
 
 .motivos{
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    padding: 50px 10%;
     justify-content: center;
     align-items: stretch;
-    flex-wrap: wrap;
+    width: 100%;
+    padding: 50px 5%;
     gap: 50px;
+    flex-wrap: nowrap; /* mantém tudo na mesma linha */
 }
 
 .box-motivos{
@@ -487,25 +486,27 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 30px;
     width: 300px;
-    box-shadow: 2px 2px 2px 2px #c2ccda;
+    padding: 30px;
     border-radius: 25px;
+    box-shadow: 2px 2px 8px #c2ccda;
 }
 
 .box-motivos h1{
     font-size: 27px;
+    margin-bottom: 15px;
 }
 
 .box-motivos p{
     width: 100%;
     color: #777E87;
+    line-height: 1.5;
 }
 
 .logo-motivo img{
     width: 80px;
     height: auto;
-    padding-top: 10px;
+    margin-bottom: 15px;
 }
 
 
@@ -520,10 +521,9 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 7% 0 9%;
-    background-color: #ffffff;
     gap: 30px;
     margin-bottom: 20vh;
+    width: 100vw;
 }
 .primeiro-passo h1{
     margin-bottom: 0;
@@ -559,9 +559,7 @@ color: white;
 }
 
 
- 
 
-/* ================================================== FIM DA PAGINA HOME */
 /* ================================================== PAGINA LOGIN  */
 
 .conteiner-entrar{
@@ -1173,25 +1171,44 @@ color: white;
 
  /* Bloco de motivos*/
 
-    
+.conteiner-motivos{
+        width: 100%;
+        padding: 0 15px;
+    }
+
     .titulo-motivo{
         font-size: 30px;
         text-align: center;
+        padding: 0 10px;
+    }
+
+    .motivos{
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 20px 0;
     }
 
     .box-motivos{
-        padding: 10px 20px;
+        width: 100%;
+        max-width: 320px;
+        padding: 20px;
     }
+
     .box-motivos h1{
-        font-size: 26px;
-        width: 250px;
+        font-size: 22px;
+        width: 100%;
     }
+
     .box-motivos p{
-        width: 270px;
+        width: 100%;
+        font-size: 15px;
+        line-height: 1.5;
     }
+
     .logo-motivo img{
-       width: 60px;
-       height: 60px;
+        width: 60px;
+        height: auto;
     }
 
 
@@ -1215,4 +1232,6 @@ color: white;
     width: 200px;
     height: 50px;
     }
+
+    
 }
