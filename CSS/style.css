@@ -906,6 +906,10 @@ body {
         padding: 20px;
     }
 
+    .conteiner-entrar{
+        width: 85%;
+    }
+
     .conteiner-entrar h1{
         font-size: 20px;
     }
@@ -1057,4 +1061,11 @@ body {
 .inicio-site img{
     width: 90vw;
 }
+
+.voltar img{
+    height: 25px;
+    margin: 20px;
+    cursor: pointer;
+}
+
 }
