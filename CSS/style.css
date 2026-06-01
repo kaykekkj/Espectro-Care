@@ -212,6 +212,10 @@ body {
     height: 55%;
 }
 
+.inicio-site img{
+    width: 70vw;
+}
+
 /* ================= MODAL SELECIONAR ================= */
 
 .selecionar{
@@ -349,6 +353,110 @@ body {
     height: 100%;
 }
 
+/*Caixa de como funciona na Home*/
+
+
+
+.funcionamento{
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7%;
+    margin-bottom: 35%;
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
+    width: 100vw;
+
+}
+
+.funcionamento h1{
+    font-size: 45px;
+    margin: 0;
+    padding: 0;
+}
+.conteiner-funcoes{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;  
+    width: 100%;
+    justify-content: center;
+}
+.box-funcoes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-align: center;
+    border: #35a073;
+    border-radius: 15px;
+    margin-top: 10vh;
+}
+.box-funcoes h1{
+    width: 450px;
+    font-size: 28px;
+}
+.box-funcoes p{
+    font-size: 21px;
+    width: 430px;
+    color: #777E87;
+}
+.bolinha-nmr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #387CB7;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: white;
+}
+.logo-funcoes{
+    outline: 2px solid #387CB7;
+    border-radius: 12px;
+    width: 110px;
+    height: 100px;
+    padding-top: 10px;
+    background-color: #D4EBFF;
+}
+
+
+/* SEÇÃO MISSÃO*/
+
+.missao{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    gap: 30px;
+}
+
+.missao img{
+    height: 250px;
+}
+
+.container-missao{
+    height: fit-content;
+    width: 100%;
+    margin: 30px 0px;
+    display: flex; 
+    flex-direction: column;
+    width: 90%;
+}
+
+.container-missao h1{
+    font-family: poppins;
+    text-align: center;
+}
+
+.missao p{
+    font-size: 20px;
+    width: 50%;
+}
+ 
 
 /* ================================================== FIM DA PAGINA HOME */
 /* ================================================== PAGINA LOGIN  */
@@ -887,4 +995,66 @@ body {
     width: 100%;
 }
 
+.funcionamento{
+    height: auto;
+}
+.funcionamento h1{
+    font-size: 32px;
+}
+
+.conteiner-funcoes{
+    flex-direction: column;
+    height: auto;
+    gap: 40px;
+}
+
+.logo-funcoes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 80px;
+    padding-top: 5px;
+}
+.logo-funcoes img{
+    width: 70px;
+    height: 70px;
+}
+.box-funcoes h1{
+    font-size: 26px;
+    width: fit-content;
+    line-height: 1;
+    margin: 0;
+}
+.box-funcoes p{
+    font-size: 15px;
+    margin: 10px;
+    width: 70vw;
+}
+
+.missao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    gap: 30px;
+}
+
+.container-missao{
+    height: fit-content;
+    width: 100%;
+    margin: 30px 0px;
+    display: flex; 
+    flex-direction: column;
+    width: 90%;
+}
+
+.container-missao p{
+    width: 95%;
+}
+
+.inicio-site img{
+    width: 90vw;
+}
 }
