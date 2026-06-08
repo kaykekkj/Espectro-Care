@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body class="body-login">
+    <header>
+    <nav class="navbar">
+        <a class="logo" href="index.html"><img src="IMG/Logo.png" alt="Logo do site" class="logo-voltar" ></a>
+    </header>
+    <section class="home" >
+        <div class="conteiner-entrar">
+        <h1>Cadastro profissionais</h1>
+        <p>Nome completo</p>
+        <input type="text" id="nome" placeholder="Digite seu nome"> <!-- Input onde sai o valor nome -->
+        <p>Email</p>
+        <input type="email" id="email" placeholder="Digite seu E-mail"> <!-- Input onde sai o valor email -->
+        <p>Telefone</p>
+        <input type="tel" id="tel" placeholder="Digite seu telefone"> <!-- Input onde sai o valor telefone -->
+            <div class="senhas">
+                <div>
+                <p>Senha</p> 
+                    <input type="password" id="senha" placeholder="Digite sua senha"> <!-- Input onde sai o valor senha -->
+                    </div>
+                <div>
+                    <p>Senha</p> 
+                    <input type="password" id="senha" placeholder="Confirme sua senha"> <!-- Input onde confirma a senha -->
+                </div>
+            </div>
+
+            <p>Estado</p>
+        <div class="autocomplete">
+            <input 
+            type="text"
+            id="estado"
+            placeholder="Digite seu estado"
+            autocomplete="off"
+            >  <!-- Input onde sai o valor estado -->
+
+            <div id="sugestoes"></div>
+
+        </div>
+
+        <p>Principas formação</p>
+        <input type="text" id="formacao" placeholder="Ex: Psicólogos, Neuropsicólogos, Etc."> <!-- Input onde sai o valor formação -->
+        <p>Número de registro profissional</p>
+        <input type="text" id="registro" placeholder="CRP, CREFITO, CREFONO..."> <!-- Input onde sai o valor registro profissional -->
+        <p>CPF</p>
+        <input type="text" id="cpf" placeholder=" Digite seu CPF"> <!-- Input onde sai o valor cpf -->
+
+        <p>Ao criar sua conta, você concorda com nossos <a href="">Termos de uso</a> e <a href="">Politicas de privacidade</a></p>
+        <button class="botao-logar">Entrar</button>
+        </div>
+    </section>
+    <script src="JavaScript/autocomplete.js"></script>
+</body>
+</html>
