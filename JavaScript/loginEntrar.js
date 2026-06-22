@@ -19,24 +19,24 @@ document.querySelector(".botao-logar").addEventListener("click", async () => {
             }
         );
 
+        if (!response.ok) {
+
+            const mensagem = await response.text();
+            console.log(mensagem);
+
+            alert(mensagem);
+            return;
+        }
+
         const data = await response.json();
 
         console.log(data);
 
-        if (response.ok) {
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("email", data.email);
 
-            localStorage.setItem("token", data.token);
-            localStorage.setItem("email", data.email);
-
-            alert("Login realizado com sucesso!");
-
-            window.location.href = "index.html";
-
-        } else {
-
-            alert("Email ou senha inválidos.");
-
-        }
+        alert("Login realizado com sucesso!");
+        window.location.href = "index.html";
 
     } catch (erro) {
 
