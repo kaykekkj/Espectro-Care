@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
     <script>
-document.getElementById("btnCadastro").addEventListener("click", async () => {
+document.getElementById("btnCadastrarResp").addEventListener("click", async () => {
 
     const senha = document.getElementById("senha").value;
     const confirmarSenha = document.getElementById("confirmarSenha").value;
@@ -63,19 +63,19 @@ document.getElementById("btnCadastro").addEventListener("click", async () => {
         <div class="conteiner-entrar">
         <h1>Cadastro responsaveis</h1>
         <p>Nome completo</p>
-        <input type="text" id="nomeResp" placeholder="Digite seu nome"> <!-- Input onde sai o valor nome -->
+        <input type="text" id="nome" placeholder="Digite seu nome"> <!-- Input onde sai o valor nome -->
         <p>Email</p>
-        <input type="email" id="emailResp" placeholder="Digite seu E-mail"> <!-- Input onde sai o valor email -->
+        <input type="email" id="email" placeholder="Digite seu E-mail"> <!-- Input onde sai o valor email -->
         <p>Telefone</p>
-        <input type="tel" id="telResp" placeholder="Digite seu telefone"> <!-- Input onde sai o valor telefone -->
+        <input type="tel" id="tel" placeholder="Digite seu telefone"> <!-- Input onde sai o valor telefone -->
             <div class="senhas">
                 <div>
                 <p>Senha</p> 
-                    <input type="password" id="senhaResp" placeholder="Digite sua senha"> <!-- Input onde sai o valor senha -->
+                    <input type="password" id="senha" placeholder="Digite sua senha"> <!-- Input onde sai o valor senha -->
                     </div>
                 <div>
                     <p>Confirme sua senha</p> 
-                    <input type="password" id="confirmarSenhaResp" placeholder="Confirme sua senha"> <!-- Input onde confirma senha -->
+                    <input type="password" id="confirmarSenha" placeholder="Confirme sua senha"> <!-- Input onde confirma senha -->
                 </div>
             </div>
 

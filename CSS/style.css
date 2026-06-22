@@ -983,6 +983,34 @@ color: white;
     background-repeat: no-repeat;
 }
 
+.categorias{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.categorias h1{
+    font-family: poppins;
+    text-align: center;
+}
+
+.container-categorias{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.container-categorias div{
+    width: 8%;
+}
+
+.container-categorias div img{
+    height: 200px;
+}
+
+
+
 /* ================= RESPONSIVIDADE ================= */
 
 @media (max-width: 768px) {

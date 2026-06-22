@@ -1,4 +1,4 @@
-const cidades = [
+const estado = [
 "Acre",
 "Alagoas",
 "Amapá",
@@ -27,7 +27,7 @@ const cidades = [
 "Tocantins"
 ];
 
-const input = document.getElementById("cidade");
+const input = document.getElementById("estado");
 const sugestoes = document.getElementById("sugestoes");
 
 input.addEventListener("input", () => {
