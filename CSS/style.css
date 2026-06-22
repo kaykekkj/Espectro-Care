@@ -983,6 +983,85 @@ color: white;
     background-repeat: no-repeat;
 }
 
+.categorias {
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.categorias h1 {
+    font-size: clamp(20px, 3vw, 32px);
+    font-weight: 500;
+    margin-bottom: 40px;
+    color: #000;
+    text-align: center;
+    font-family: poppins;
+    font-weight: bold;
+}
+
+.container-categorias {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap; 
+    gap: clamp(5px, 2vw, 30px);
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.categoria{
+    width: clamp(100px, 8vw, 120px);
+    height: clamp(60px, 8vw, 95px);
+    flex-shrink: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(3px, 1vw, 10px);
+    cursor: pointer;
+    border-radius: 12px;
+    transition: 0.3s;
+    box-shadow: 0px 0px 5px #d6d6d6;
+}
+
+.container-categorias div img {
+    width: clamp(20px, 3vw, 38px);
+    height: clamp(20px, 3vw, 38px);
+    object-fit: contain;
+}
+
+.container-categorias div p {
+    font-size: clamp(8px, 1vw, 13px);
+    color: #000;
+    margin: 0;
+    line-height: 1.2;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.categoriaSelecionado{
+    width: clamp(100px, 8vw, 120px);
+    height: clamp(60px, 8vw, 95px);
+    flex-shrink: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(3px, 1vw, 10px);
+    cursor: pointer;
+    border-radius: 12px;
+    transition: 0.3s;
+    box-shadow: 0px 0px 5px #35a073;
+}
+
+.container-categorias div:hover{
+    scale: 1.1;  
+}
+
 /* ================= RESPONSIVIDADE ================= */
 
 @media (max-width: 768px) {
@@ -1295,5 +1374,16 @@ color: white;
     height: 50px;
     }
 
-    
+    .container-categorias {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .container-categorias div {
+        width: calc(25% - 20px);
+        max-width: 120px;
+        min-width: 80px;
+    }
+ 
 }
