@@ -1,4 +1,4 @@
-const cidades = [
+const s = [
 "Acre",
 "Alagoas",
 "Amapá",
@@ -27,7 +27,7 @@ const cidades = [
 "Tocantins"
 ];
 
-const input = document.getElementById("cidade");
+const input = document.getElementById("estado");
 const sugestoes = document.getElementById("sugestoes");
 
 input.addEventListener("input", () => {
@@ -40,7 +40,7 @@ input.addEventListener("input", () => {
     return;
   }
 
-  const resultados = cidades.filter(cidade =>
+  const resultados = estados.filter(estado =>
     cidade.toLowerCase().includes(texto)
   );
 
@@ -48,10 +48,10 @@ input.addEventListener("input", () => {
     const item = document.createElement("div");
 
     item.classList.add("sugestao");
-    item.textContent = cidade;
+    item.textContent = estado;
 
     item.addEventListener("click", () => {
-      input.value = cidade;
+      input.value = estado;
       sugestoes.style.display = "none";
     });
 
