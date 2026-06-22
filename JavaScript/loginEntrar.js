@@ -13,15 +13,15 @@ document.querySelector(".botao-logar").addEventListener("click", async () => {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    email: email,
-                    senha: senha
+                    email,
+                    senha
                 })
             }
-        ).then(response => response.json())
-            .then(data => console.log(data))
-            it.catch(error => console.error(error));
+        );
 
         const data = await response.json();
+
+        console.log(data);
 
         if (response.ok) {
 
