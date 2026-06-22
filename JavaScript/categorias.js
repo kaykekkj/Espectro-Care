@@ -1,18 +1,20 @@
 function categoriaSelecionada(ID) {
-    let categoriaSel = document.getElementById(ID);
+    const categoriaSel = document.getElementById(ID);
+    const todas = document.getElementById("todas");
 
     if (ID === "todas") {
-        document.querySelectorAll(".categoria")
-        .forEach(div => {
-            div.classList.remove("categoriaSelecionado");
-        });
+        if (todas.classList.contains("categoriaSelecionado")) {
+            todas.classList.remove("categoriaSelecionado");
+        } else {
+            document.querySelectorAll(".container-categorias div")
+                .forEach(div => div.classList.remove("categoriaSelecionado"));
 
-        categoriaSel.classList.toggle("categoriaSelecionado");
+            todas.classList.add("categoriaSelecionado");
+        }
         return;
     }
 
-    document.getElementById("todas")
-    .classList.remove("categoriaSelecionado");
+    todas.classList.remove("categoriaSelecionado");
 
     categoriaSel.classList.toggle("categoriaSelecionado");
 }
