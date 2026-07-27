@@ -1891,5 +1891,35 @@ body {
         font-weight: bold;
         padding: 0 20px 20px 20px;
     }
+
+    /* --- profissionais --- */
+
+    .container-cards {
+        padding: 20px 15px; /* Reduz as margens laterais no telemóvel */
+        gap: 20px;
+    }
+
+    .card-padrao {
+        max-width: 100%; /* Ocupa a largura ideal no ecrã pequeno */
+        border-radius: 12px;
+    }
+
+    .card-conteudo {
+        padding: 18px;
+    }
+
+    .card-titulo {
+        font-size: 18px;
+    }
+
+    .card-texto {
+        font-size: 13px;
+        margin-bottom: 18px;
+    }
+
+    .card-botao {
+        padding: 10px;
+        font-size: 15px;
+    }
 }
 
