@@ -1431,92 +1431,186 @@ body {
    10. Profissionais
    ============================================================== */
 
-   .container-cards {
+   .container-cards-profissionais {
     display: grid;
-    /* Cria colunas automáticas que não ficam menores que 280px */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    padding: 40px 5%;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas no desktop */
+    gap: 25px;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
-.card-padrao {
+.card-profissional {
     background-color: var(--bg-branco, #ffffff);
     border-radius: 16px;
-    overflow: hidden;
+    padding: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     border: 1px solid #eaeaea;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    justify-content: space-between;
+    transition: var(--transicao-padrao, all 0.3s ease);
 }
 
-/* Efeito ao passar o mouse no card */
-.card-padrao:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    border-color: var(--cor-verde-sombra, #35a073);
+.card-profissional:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-.card-imagem img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-}
-
-.card-conteudo {
-    padding: 24px;
+/* Topo do card (Avatar + Nome + Especialidade) */
+.card-prof-topo {
     display: flex;
-    flex-direction: column;
-    flex: 1; /* Faz o conteúdo esticar para o botão ficar sempre no final */
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
-/* Tag de categoria em cima do título */
-.card-tag {
+.avatar-iniciais {
+    width: 50px;
+    height: 50px;
     background-color: var(--cor-azul-fundo-icone, #D4EBFF);
     color: var(--cor-azul-icone, #387CB7);
-    font-size: 12px;
-    font-weight: bold;
-    padding: 4px 12px;
-    border-radius: 20px;
-    align-self: flex-start;
-    margin-bottom: 12px;
-}
-
-.card-titulo {
     font-family: var(--fonte-destaque, 'Poppins', sans-serif);
-    font-size: 20px;
-    color: var(--cor-texto-preto, #000);
-    margin-bottom: 12px;
-    line-height: 1.3;
-}
-
-.card-texto {
-    font-size: 14px;
-    color: var(--cor-texto-cinza-escuro, #777E87);
-    line-height: 1.5;
-    margin-bottom: 24px;
-    flex: 1;
-}
-
-/* Botão do card */
-.card-botao {
-    background: var(--gradiente-primario, linear-gradient(135deg, #188ca2, #5cba75));
-    color: white;
-    text-align: center;
-    padding: 12px;
-    border-radius: 8px;
     font-weight: bold;
-    text-decoration: none;
-    transition: background 0.3s ease, transform 0.3s ease;
-    margin-top: auto; /* Empurra o botão para o fundo do card */
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
 }
 
-.card-botao:hover {
-    background: var(--gradiente-secundario, linear-gradient(135deg, #5cba75, #188ca2));
-    transform: scale(1.02);
+.info-principal h3 {
+    font-family: var(--fonte-destaque, 'Poppins', sans-serif);
+    font-size: 18px;
+    color: var(--cor-texto-preto, #000);
+    margin: 0 0 2px 0;
+}
+
+.info-principal .especialidade {
+    font-size: 14px;
+    color: var(--cor-azul-icone, #387CB7);
+    margin: 0 0 4px 0;
+    font-weight: 500;
+}
+
+.info-principal .localizacao {
+    font-size: 12px;
+    color: var(--cor-texto-cinza-escuro, #777E87);
+    margin: 0;
+}
+
+/* Meio do card (Estrelas e Badges Online/Presencial) */
+.card-prof-meio {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 12px 0;
+}
+
+.avaliacao {
+    font-size: 13px;
+    color: var(--cor-texto-cinza-escuro, #777E87);
+}
+
+.avaliacao .estrela {
+    color: #ffc107;
+    font-size: 15px;
+}
+
+.avaliacao strong {
+    color: var(--cor-texto-preto, #000);
+}
+
+.qtd-avaliacoes {
+    font-size: 12px;
+    color: var(--cor-texto-cinza-claro, #ABABAB);
+}
+
+.modalidades {
+    display: flex;
+    gap: 8px;
+}
+
+.badge {
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.badge.online {
+    color: #28a745;
+    background-color: #e8f5e9;
+}
+
+.badge.presencial {
+    color: #17a2b8;
+    background-color: #e1f5fe;
+}
+
+/* Rodapé do card (Preço e Botões) */
+.card-prof-rodape {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.preco .label-preco {
+    display: block;
+    font-size: 11px;
+    color: var(--cor-texto-cinza-claro, #ABABAB);
+}
+
+.preco strong {
+    font-family: var(--fonte-destaque, 'Poppins', sans-serif);
+    font-size: 18px;
+    color: var(--cor-texto-preto, #000);
+}
+
+.botoes-acao {
+    display: flex;
+    gap: 8px;
+}
+
+/* Botão Conversar (Branco com borda/estilo subtil) */
+.btn-conversar {
+    background-color: transparent;
+    border: 1px solid var(--cor-texto-cinza-claro, #ABABAB);
+    color: var(--cor-texto-escuro, #333);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+.btn-conversar:hover {
+    border-color: var(--cor-azul-icone, #387CB7);
+    color: var(--cor-azul-icone, #387CB7);
+}
+
+/* Botão Contratar (Gradiente igual ao do projeto) */
+.btn-contratar {
+    background: var(--gradiente-primario);
+    border: none;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+.btn-contratar:hover {
+    background: var(--gradiente-secundario);
+    transform: scale(1.03);
 }
 
 /* ==============================================================
@@ -1920,6 +2014,20 @@ body {
     .card-botao {
         padding: 10px;
         font-size: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container-cards-profissionais {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container-cards-profissionais {
+        grid-template-columns: 1fr; /* 1 coluna empilhada em telemóveis */
+        padding: 0 10px;
     }
 }
 
