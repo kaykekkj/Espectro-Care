@@ -205,7 +205,7 @@ body {
 
     gap: 20px;
 
-    margin-top: 15vh;
+    margin-top: 15vh;    
 
 }
 
@@ -752,11 +752,11 @@ color: white;
 .secao-blog-wrapper {
   display: flex;
   gap: 30px;
-  max-width: 1200px;
   margin: 0 auto;
   font-family: poppins;
   color: #1b3644;
   padding: 20px;
+  max-width: 1200px;
 }
 
 .coluna-principal {
@@ -866,20 +866,6 @@ color: white;
 .avatar-mini { width: 30px; height: 30px; background: #ccc; border-radius: 50%; }
 .meta-lista { display: flex; align-items: center; gap: 15px; font-size: 11px; color: #888; }
 .icone-salvar { color: #16a34a; font-size: 16px; cursor: pointer; }
-
-/* =========================================
-   PAGINAÇÃO 
-========================================= */
-.paginacao {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  margin-top: 30px;
-  color: #555;
-}
-.paginacao .pagina, .paginacao .seta { cursor: pointer; font-size: 14px; }
-.paginacao .ativa { font-weight: bold; color: #1b3644; }
 
 /* =========================================
    SIDEBAR (Barra Lateral)
@@ -1195,12 +1181,12 @@ color: white;
 }
 
 .categorias {
-    width: 100%;
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 30px 0;
+    max-width: 1200px;
 }
 
 .categorias h1 {
