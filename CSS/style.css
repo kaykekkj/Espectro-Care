@@ -1583,6 +1583,7 @@ body {
   align-items: center;
   gap: 28px;
   margin-bottom: 25px;
+  
 }
 
 /* Anel Verde em volta da foto de perfil */
@@ -2170,9 +2171,8 @@ body {
         padding: 10px;
         font-size: 15px;
     }
-}
 
-/* Perfil profissional */
+    /* Perfil profissional */
 
 .profile-card {
   width: 90%;
@@ -2184,6 +2184,9 @@ body {
 .card-header {
   flex-direction: column;
 }
+}
+
+
 
 
 
