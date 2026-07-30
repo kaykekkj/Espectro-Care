@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+
+        <img src="IMG/Logo.png" alt="Logo do site" class="logo" >
+        <div>
+            <ul class="navlinks" id="navlinks">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="profissionais.html">Profissionais</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="aprendizagem.html">Aprendizagem</a></li>
+                <li class="entrar-nav-mobile"><a href="login.html">Entrar</a></li>
+                <li class="criar-nav-mobile"><a onclick="selecionar()">Criar conta</a></li>
+            </ul>
+        </div>
+        
+
+        <div class="conta">
+            <a class="entrar" href="login.html">Entrar</a>
+            <button onclick="selecionar()" class="criar-conta"> <a>Criar Conta</a></button>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu" onclick="AbrirMenu()">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    </header>
+
+    <div class="selecionar" id="selecionar">
+        <div class="voltar" onclick="fechar()"><img src="IMG/_.png"></div>
+            <h1>Criar conta <br><span>Selecione seu perfil para começar</span></h1>
+            <div class="cards">
+                <a href="cadastroresp.html"><div><img src="IMG/image 5.jpg" alt=""><h1>Responsaveis</h1></div></a>
+                <a href="cadastroprof.html"><div><img src="IMG/image 7.png" alt=""><h1>Profissionais</h1></div></a>
+            </div>
+        </div>
+
+    <section class="home">
+    
+    <div class="profile-card">
+  
+  <div class="card-header">
+    <div class="avatar-ring">
+      <img src="XXXXXX" alt="XXXXXX" class="avatar-img">
+    </div>
+    <div class="header-info">
+      <h2 class="info-name">XXXXXX</h2>
+      <p class="info-crp">CRP: XXXXXX</p>
+      <p class="info-price-label">Valor da consulta:</p>
+      <p class="info-price-val">R$XXXXXX</p>
+    </div>
+  </div>
+
+  <div class="tags-container">
+    <span class="tag-plain">XXXXXX</span>
+    <span class="tag-pill">XXXXXX</span>
+  </div>
+
+  <div class="card-body">
+    <p class="info-text"><strong>Abordagem:</strong> Lorem ipsum dolor sit amet. Aut quibusdam similique qui labore distinctio ea esse dolor et voluptas mollitia vel rerum dolores et dicta reprehenderit. At saepe facilis et voluptas libero nam nostrum laudantium sed omnis autem vel fugiat maiores. Et adipisci molestias At dolores nihil non ipsum quam!</p>
+    <p class="info-text"><strong>Público alvo:</strong> Lorem ipsum dolor sit amet. Aut quibusdam similique qui labore distinctio ea esse</p>
+    <p class="info-text"><strong>Sobre mim:</strong> Lorem ipsum dolor sit amet. Aut quibusdam similique qui labore distinctio ea esse dolor et voluptas mollitia vel rerum dolores et dicta reprehenderit. At saepe facilis et voluptas libero nam nostrum laudantium sed omnis autem vel fugiat maiores. Et adipisci molestias At dolores nihil non ipsum quam!</p>
+  </div>
+
+  <div class="card-footer">
+    <a href="XXXXXX" class="btn-hire">
+      <svg class="icon-svg" viewBox="0 0 24 24">
+        <path d="M12.012 2c-5.508 0-9.989 4.481-9.989 9.99 0 1.764.459 3.488 1.332 5.006l-1.415 5.171 5.292-1.388c1.464.798 3.115 1.221 4.78 1.221 5.508 0 9.989-4.481 9.989-9.99 0-5.509-4.481-9.99-9.989-9.99zm0 18.281c-1.503 0-2.975-.403-4.256-1.168l-.305-.182-3.161.829.843-3.082-.199-.317c-.841-1.338-1.286-2.893-1.286-4.481 0-4.568 3.717-8.285 8.285-8.285 4.568 0 8.285 3.717 8.285 8.285 0 4.568-3.717 8.285-8.285 8.285z"/>
+      </svg>
+      Contratar
+    </a>
+
+    <a href="XXXXXX" class="phone-contact">
+      <svg class="icon-svg" viewBox="0 0 24 24">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+      (00) 00000-0000
+    </a>
+  </div>
+
+</div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="IMG/Logo.png" alt="Logo do site">
+        </div>        
+        <div class="footer-itens">
+            <h1>Plataforma</h1>
+            <a href="">Sobre nós</a>
+            <a href="">Objetivo do site</a>
+        </div>
+        <div class="footer-itens">
+            <h1>Suporte</h1>
+            <a href="">Ajuda </a>
+            <a href="">Contato</a>
+        </div>
+        <div class="footer-itens">
+            <h1>Legal</h1>
+            <a href="">Termos de uso</a>
+            <a href="">Política de privacidade</a>
+        </div>
+    </footer>
+    <script src="JavaScript/mobilen-navbar.js"></script>
+    <script src="JavaScript/selecionar-perfil.js"></script>
+    <script src="JavaScript/search.js"></script>
+    <div class="overlay" id="overlay"></div>
+
+    <script src="JavaScript/perfilprofissionais.js"></script>
+</body>
+</html>
