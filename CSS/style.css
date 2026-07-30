@@ -170,30 +170,20 @@ body {
 .selecionar {
     height: fit-content;
     width: 60vw;
-
     position: fixed;
-
     top: 50%;
     left: 50%;
-
     transform: translate(-50%, -50%) translateY(200vh);
-
     border-radius: 20px;
-
     display: none;
     flex-direction: column;
-
     box-shadow: 0px 0px 20px #ababab;
-
     background-image: url(fundoselecionar.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     transition: transform 0.5s ease;
-
     z-index: 999;
-
     padding-bottom: 60px;
 }
 
@@ -224,23 +214,15 @@ body {
 
 .cards a {
     width: 30%;
-
     border-radius: 30px;
-
     text-decoration: none;
-
     display: flex;
     flex-direction: column;
-
     padding: 10px;
-
     align-items: center;
     justify-content: center;
-
     background-color: white;
-
     box-shadow: 0px 0px 10px #ABABAB;
-
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -274,17 +256,11 @@ body {
 .overlay {
     position: fixed;
     inset: 0;
-
     backdrop-filter: blur(8px);
-
     background: rgba(0, 0, 0, 0.2);
-
     z-index: 998;
-
     opacity: 0;
-
     transition: opacity 0.5s ease;
-
     pointer-events: none;
 }
 
@@ -304,48 +280,105 @@ body {
    4. HOME PAGE
    ============================================================== */
 
-.home {
-    min-height: 100vh;
+/*========= HERO =============*/
+.hero{
+    background-image: url('../IMG/Img_hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #04344E;
+    padding: 80px;
+    width: 100%;
+    margin-top: 15vh;
+}
+.hero h1{
+    width: 35%;
+    font-size: 50px;
+}
+.hero p{
+    width: 35%;
+    font-size: 20px;
+}
 
+/*========= PROFISSIONAIS NA HOME =============*/
+.profissionais-home{
+    width: 100%;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.texto-home{
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    gap: 20px;
-
-    margin-top: 15vh;
 }
-
-.logo {
-    height: 55%;
-}
-
-/* --- 4.1 Hero --- */
-
-.topo-home {
+.conteiner-prof-home{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
     width: 100%;
-    position: relative;
+    max-width: 1200px;
 }
 
-.topo-home img {
-    width: 100%;
+.cards-prof-home1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F0FFF6;
+    border-radius: 30px;
+    gap: 10px;
+    padding: 30px;
+    height: 35vh;
+    text-align: center;
+    cursor: pointer;
 }
+.cards-prof-home1 i{
+    font-size: 72px;
+    color: #14AE5C;
+}
+.cards-prof-home2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F2FAFF;
+    border-radius: 30px;
+    gap: 10px;
+    padding: 30px;
+    height: 35vh;
+    text-align: center;
+    cursor: pointer;
+}
+.cards-prof-home2 i{
+    font-size: 72px;
+    color: #06476B;
+}
+/*========= COMO FUNCIONA NA HOME =============*/
+
+
 /* ==============================================================
    5. FOOTER
    ============================================================== */
 
 .footer {
     background-color: rgb(255, 255, 255);
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     width: 100%;
-
     padding: 30px;
-
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    box-shadow: 0px 0px 4px #0000001a;
 }
 
 .footer-logo {
@@ -1651,137 +1684,7 @@ body {
         cursor: pointer;
     }
 
-    /* --- Funcionamento --- */
-
-    .funcionamento {
-        height: auto;
-    }
-
-    .funcionamento h1 {
-        font-size: 32px;
-    }
-
-    .conteiner-funcoes {
-        flex-direction: column;
-        height: auto;
-        gap: 40px;
-    }
-
-    .logo-funcoes {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 90px;
-        height: 80px;
-        padding-top: 5px;
-    }
-
-    .logo-funcoes img {
-        width: 70px;
-        height: 70px;
-    }
-
-    .box-funcoes h1 {
-        font-size: 26px;
-        width: fit-content;
-        line-height: 1;
-        margin: 0;
-    }
-
-    .box-funcoes p {
-        font-size: 15px;
-        margin: 10px;
-        width: 70vw;
-    }
-
-    /* --- Missão --- */
-
-    .missao {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: justify;
-        gap: 30px;
-    }
-
-    .container-missao {
-        height: fit-content;
-        width: 100%;
-        margin: 30px 0px;
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-    }
-
-    .container-missao p {
-        width: 95%;
-    }
-
-    /* --- Motivos --- */
-
-    .conteiner-motivos {
-        width: 100%;
-        padding: 0 15px;
-    }
-
-    .titulo-motivo {
-        font-size: 30px;
-        text-align: center;
-        padding: 0 10px;
-    }
-
-    .motivos {
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-        padding: 20px 0;
-    }
-
-    .box-motivos {
-        width: 100%;
-        max-width: 320px;
-        padding: 20px;
-    }
-
-    .box-motivos h1 {
-        font-size: 22px;
-        width: 100%;
-    }
-
-    .box-motivos p {
-        width: 100%;
-        font-size: 15px;
-        line-height: 1.5;
-    }
-
-    .logo-motivo img {
-        width: 60px;
-        height: auto;
-    }
-
-    /* --- CTA --- */
-
-    .primeiro-passo {
-        font-size: 12px;
-        text-align: center;
-    }
-
-    .primeiro-passo h1 {
-        width: 270px;
-    }
-
-    .primeiro-passo h2 {
-        font-size: 15px;
-        width: 330px;
-    }
-
-    .criar-conta2 {
-        font-size: 18px;
-        width: 200px;
-        height: 50px;
-    }
-
+    
     /* --- Footer --- */
 
     .footer {
