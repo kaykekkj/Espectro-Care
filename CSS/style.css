@@ -293,7 +293,6 @@ body {
     color: #04344E;
     padding: 80px;
     width: 100%;
-    margin-top: 15vh;
 }
 .hero h1{
     width: 35%;
@@ -305,6 +304,12 @@ body {
 }
 
 /*========= PROFISSIONAIS NA HOME =============*/
+.texto-home h1{
+    font-size: 44px;
+}
+.texto-home p{
+    font-size: 25px;
+}
 .profissionais-home{
     width: 100%;
     padding: 80px;
@@ -312,6 +317,12 @@ body {
     flex-direction: column;
     justify-items: center;
     align-items: center;
+}
+.profissionais-home a{
+    font-size: 24px;
+    text-decoration: none;
+    margin-top: 40px;
+    color: #06476B;
 }
 .texto-home{
     display: flex;
@@ -366,6 +377,44 @@ body {
 /*========= COMO FUNCIONA NA HOME =============*/
 
 
+
+/*========= POR QUE NOS ESCOLHER NA HOME =============*/
+
+.pq-escolha-home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 100px;
+}
+.conteiner-escolha{
+    width: 100%;
+    display: grid;
+    gap: 60px;
+    grid-template-columns: repeat(3, 1fr);
+}
+.card-escolhas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 10px 10px 5px #00000031;
+}
+.card-escolhas h1{
+    width: 300px;
+    color: #06486be0;
+}
+.card-escolhas p{
+    width: 300px;
+}
+.card-escolhas i{
+    font-size: 50px;
+    color: #06476B;
+    margin-top: 20px;
+}
 /* ==============================================================
    5. FOOTER
    ============================================================== */
