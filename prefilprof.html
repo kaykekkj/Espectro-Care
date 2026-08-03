@@ -47,52 +47,282 @@
             </div>
         </div>
 
-    <section class="home">
-    
+        <section class="home">
+
     <div class="profile-card">
+
+        <!-- Cabeçalho -->
+        <div class="card-header">
+
+            <div class="avatar-ring">
+                <img src="XXXXXX" alt="Foto do profissional" class="avatar-img">
+            </div>
+
+            <div class="header-info">
+                <h2 class="info-name">XXXXXX</h2>
+                <p class="info-crp">CRP: XXXXXX</p>
+                <p><strong>Sobre mim: </strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+
+        </div>
+
+        <div class="tags-container">
+            <span class="tag-plain">XXXXXX</span>
+            <span class="tag-pill">XXXXXX</span>
+        </div>
+
+        <div class="perfil-tabs">
+
+            <button class="tab active"
+                onclick="trocarPagina('informacoes', this)">
+                Informações Pessoais
+            </button>
+
+            <button class="tab"
+                onclick="trocarPagina('perfil', this)">
+                Perfil Público
+            </button>
+
+            <button class="tab"
+                onclick="trocarPagina('calendario', this)">
+                Calendário
+            </button>
+
+            <div class="indicator"></div>
+
+        </div>
+
+        <div class="content">
+
+            <div id="informacoes" class="page active-page">
+                <div class="profile-info-container">
   
-  <div class="card-header">
-    <div class="avatar-ring">
-      <img src="XXXXXX" alt="XXXXXX" class="avatar-img">
+                    <div class="info-card">
+                      <h3 class="card-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        Dados Pessoais
+                      </h3>
+                      <div class="info-grid">
+                        <div class="info-group">
+                          <label>Nome Completo</label>
+                          <p>Fernanda Silva Santos</p>
+                        </div>
+                        <div class="info-group">
+                          <label>CPF</label>
+                          <p>000.000.000-00</p>
+                        </div>
+                        <div class="info-group">
+                          <label>Data de Nascimento</label>
+                          <p>15/04/1988</p>
+                        </div>
+                        <div class="info-group">
+                          <label>Gênero</label>
+                          <p>Feminino</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="info-card">
+                      <h3 class="card-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Contato & Endereço
+                      </h3>
+                      <div class="info-grid">
+                        <div class="info-group">
+                          <label>E-mail</label>
+                          <p>fernanda.psico@email.com</p>
+                        </div>
+                        <div class="info-group">
+                          <label>Telefone / WhatsApp</label>
+                          <p>(11) 98765-4321</p>
+                        </div>
+                        <div class="info-group full-width">
+                          <label>Endereço de Atendimento Presencial</label>
+                          <p>Av. Paulista, 1000 - Sala 42, Bela Vista - São Paulo / SP</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="info-card">
+                      <h3 class="card-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        Contato de Emergência
+                      </h3>
+                      <div class="info-grid">
+                        <div class="info-group">
+                          <label>Nome do Contato</label>
+                          <p>Carlos Santos (Esposo)</p>
+                        </div>
+                        <div class="info-group">
+                          <label>Telefone de Emergência</label>
+                          <p>(11) 97654-3210</p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+            </div>
+
+            <div id="perfil" class="page">
+                <h2>Perfil Público</h2>
+                <p>Conteúdo da aba Perfil Público.</p>
+            </div>
+
+            <div id="calendario" class="page">
+              <div class="event-card">
+                <div class="date-box">
+                  <span class="date-day">22</span>
+                  <span class="date-month">Fev 2026</span>
+                </div>
+
+                <div class="content-box">
+                  <div class="badge-online">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.934a.5.5 0 0 0-.777-.416L16 11"/><rect width="14" height="12" x="2" y="6" rx="2"/></svg>
+                    Online
+                  </div>
+
+                  <h2 class="title">Roda de Conversa: Inclusão Escolar na Prática</h2>
+
+                  <p class="description">
+                    Workshop interativo sobre como promover a inclusão escolar de crianças neurodivergentes, com espaço para perguntas e troca de experiências entre pais e educadores.
+                  </p>
+
+                  <div class="info-row">
+                    <div class="info-item">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                      <span>Dra XXXXXXXXXXXX</span>
+                    </div>
+                    <div class="info-item">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span>19h00 - 21h00</span>
+                    </div>
+                    <div class="info-item">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                      <span>Ao vivo via Zoom</span>
+                    </div>
+                  </div>
+
+                  <div class="tags-row">
+                    <span class="tag">Inclusão</span>
+                    <span class="tag">Escola</span>
+                    <span class="tag">Interativo</span>
+                  </div>
+
+                  <div class="card-footer">
+                    Inscrição feita<br>
+                    18/02/2026
+                  </div>
+                </div>
+              </div>
+
+              <div class="event-card">
+                <div class="date-box">
+                  <span class="date-day">22</span>
+                  <span class="date-month">Fev 2026</span>
+                </div>
+
+                <div class="content-box">
+                  <div class="badge-online">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.934a.5.5 0 0 0-.777-.416L16 11"/><rect width="14" height="12" x="2" y="6" rx="2"/></svg>
+                    Online
+                  </div>
+
+                  <h2 class="title">Roda de Conversa: Inclusão Escolar na Prática</h2>
+
+                  <p class="description">
+                    Workshop interativo sobre como promover a inclusão escolar de crianças neurodivergentes, com espaço para perguntas e troca de experiências entre pais e educadores.
+                  </p>
+
+                  <div class="info-row">
+                    <div class="info-item">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                      <span>Dra XXXXXXXXXXXX</span>
+                    </div>
+                    <div class="info-item">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span>19h00 - 21h00</span>
+                    </div>
+                    <div class="info-item">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                      <span>Ao vivo via Zoom</span>
+                    </div>
+                  </div>
+
+                  <div class="tags-row">
+                    <span class="tag">Inclusão</span>
+                    <span class="tag">Escola</span>
+                    <span class="tag">Interativo</span>
+                  </div>
+
+                  <div class="card-footer">
+                    Inscrição feita<br>
+                    18/02/2026
+                  </div>
+                </div>
+              </div>
+
+              <div class="event-card">
+                <div class="date-box">
+                  <span class="date-day">22</span>
+                  <span class="date-month">Fev 2026</span>
+                </div>
+
+                <div class="content-box">
+                  <div class="badge-online">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.934a.5.5 0 0 0-.777-.416L16 11"/><rect width="14" height="12" x="2" y="6" rx="2"/></svg>
+                    Online
+                  </div>
+
+                  <h2 class="title">Roda de Conversa: Inclusão Escolar na Prática</h2>
+
+                  <p class="description">
+                    Workshop interativo sobre como promover a inclusão escolar de crianças neurodivergentes, com espaço para perguntas e troca de experiências entre pais e educadores.
+                  </p>
+
+                  <div class="info-row">
+                    <div class="info-item">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                      <span>Dra XXXXXXXXXXXX</span>
+                    </div>
+                    <div class="info-item">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span>19h00 - 21h00</span>
+                    </div>
+                    <div class="info-item">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                      <span>Ao vivo via Zoom</span>
+                    </div>
+                  </div>
+
+                  <div class="tags-row">
+                    <span class="tag">Inclusão</span>
+                    <span class="tag">Escola</span>
+                    <span class="tag">Interativo</span>
+                  </div>
+
+                  <div class="card-footer">
+                    Inscrição feita<br>
+                    18/02/2026
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+            </div>
+
+        </div>
+
+        
+            </div>
+
+        </div>
+
+        
+
     </div>
-    <div class="header-info">
-      <h2 class="info-name">XXXXXX</h2>
-      <p class="info-crp">CRP: XXXXXX</p>
-      <p class="info-price-label">Valor da consulta:</p>
-      <p class="info-price-val">R$XXXXXX</p>
-    </div>
-  </div>
 
-  <div class="tags-container">
-    <span class="tag-plain">XXXXXX</span>
-    <span class="tag-pill">XXXXXX</span>
-  </div>
-
-  <div class="card-body">
-    <p class="info-text"><strong>Abordagem:</strong> Lorem ipsum dolor sit amet. Aut quibusdam similique qui labore distinctio ea esse dolor et voluptas mollitia vel rerum dolores et dicta reprehenderit. At saepe facilis et voluptas libero nam nostrum laudantium sed omnis autem vel fugiat maiores. Et adipisci molestias At dolores nihil non ipsum quam!</p>
-    <p class="info-text"><strong>Público alvo:</strong> Lorem ipsum dolor sit amet. Aut quibusdam similique qui labore distinctio ea esse</p>
-    <p class="info-text"><strong>Sobre mim:</strong> Lorem ipsum dolor sit amet. Aut quibusdam similique qui labore distinctio ea esse dolor et voluptas mollitia vel rerum dolores et dicta reprehenderit. At saepe facilis et voluptas libero nam nostrum laudantium sed omnis autem vel fugiat maiores. Et adipisci molestias At dolores nihil non ipsum quam!</p>
-  </div>
-
-  <div class="card-footer">
-    <a href="XXXXXX" class="btn-hire">
-      <svg class="icon-svg" viewBox="0 0 24 24">
-        <path d="M12.012 2c-5.508 0-9.989 4.481-9.989 9.99 0 1.764.459 3.488 1.332 5.006l-1.415 5.171 5.292-1.388c1.464.798 3.115 1.221 4.78 1.221 5.508 0 9.989-4.481 9.989-9.99 0-5.509-4.481-9.99-9.989-9.99zm0 18.281c-1.503 0-2.975-.403-4.256-1.168l-.305-.182-3.161.829.843-3.082-.199-.317c-.841-1.338-1.286-2.893-1.286-4.481 0-4.568 3.717-8.285 8.285-8.285 4.568 0 8.285 3.717 8.285 8.285 0 4.568-3.717 8.285-8.285 8.285z"/>
-      </svg>
-      Contratar
-    </a>
-
-    <a href="XXXXXX" class="phone-contact">
-      <svg class="icon-svg" viewBox="0 0 24 24">
-        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-      </svg>
-      (00) 00000-0000
-    </a>
-  </div>
-
-</div>
-    </section>
-
+</section>
     <footer class="footer">
         <div class="footer-logo">
             <img src="IMG/Logo.png" alt="Logo do site">
@@ -119,5 +349,6 @@
     <div class="overlay" id="overlay"></div>
 
     <script src="JavaScript/perfilprofissionais.js"></script>
+    <script src="JavaScript/perfilprof.js"></script>
 </body>
 </html>
