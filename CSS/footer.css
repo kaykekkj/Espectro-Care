@@ -1,0 +1,57 @@
+@import url(responsividade.css);
+/* ==============================================================
+   5. FOOTER
+   ============================================================== */
+
+.footer {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 4px #0000001a;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo img {
+    display: block;
+    height: auto;
+    max-height: 60px;
+}
+
+.footer-itens {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    padding: 0;
+    margin: 0;
+
+    align-items: flex-start;
+}
+
+.footer-itens h1 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #000;
+}
+
+.footer-itens a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ABABAB;
+    transition: color 0.3s ease;
+}
+
+.footer-itens a:hover {
+    text-decoration: underline;
+    color: rgb(102, 200, 127);
+}

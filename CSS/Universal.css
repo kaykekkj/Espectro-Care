@@ -1,0 +1,253 @@
+/*O Universal é aonde está as principais estilizações de todo o trabalho
+sendo desde a navbar e as tags universais
+
+Na real to querendo descartar, porque apensa preciso sabe para que serve
+umas classes que foram utilizadas*/
+
+
+/*Navbar*/
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    background-color: #F8F8F8;
+    scroll-behavior: smooth;
+}
+h1{
+    margin: 0;
+}
+/* ==============================================================
+   2. NAVBAR
+   ============================================================== */
+.logo {
+    height: 55%;
+}
+.navbar {
+    background-color: rgb(255, 255, 255);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 15vh;
+    max-height: 200px;
+
+    padding: 0 20px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    position: fixed;
+    width: 100%;
+    z-index: 500;
+}
+
+.navlinks {
+    display: flex;
+    gap: 40px;
+
+    padding: 0;
+    margin: 0;
+}
+
+.navlinks li {
+    list-style: none;
+}
+
+.navlinks li a {
+    text-decoration: none;
+    color: #ABABAB;
+
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navlinks li a:hover {
+    color: rgb(102, 200, 127);
+    transform: scale(1.1);
+}
+
+.conta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.entrar {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+
+    font-size: 18px;
+    font-weight: bold;
+
+    transition: text-decoration 0.3s ease;
+}
+
+.entrar:hover {
+    text-decoration: underline;
+}
+
+.criar-conta {
+    background: linear-gradient(135deg, rgb(24, 140, 162), rgb(92, 186, 117));
+
+    color: white;
+    border: none;
+
+    padding: 10px 20px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+    border-radius: 5px;
+
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.criar-conta a {
+    text-decoration: none;
+    color: white;
+}
+
+.criar-conta:hover {
+    background: linear-gradient(135deg, rgb(92, 186, 117), rgb(24, 140, 162));
+    transform: scale(1.1);
+}
+
+/* --- Mobile Menu --- */
+
+.mobile-menu {
+    cursor: pointer;
+    display: none;
+    margin-right: 5vw;
+}
+
+.mobile-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    border-radius: 2px;
+}
+
+.entrar-nav-mobile,
+.criar-nav-mobile {
+    display: none;
+}
+
+/* ==============================================================
+   3. MODAL SELECIONAR PERFIL
+   ============================================================== */
+
+.selecionar {
+    height: fit-content;
+    width: 60vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(200vh);
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0px 0px 20px #ababab;
+    background-image: url(fundoselecionar.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.5s ease;
+    z-index: 999;
+    padding-bottom: 60px;
+}
+
+.selecionar h1 {
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: poppins;
+    font-size: 40px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.selecionar h1 span {
+    color: #ababab;
+    font-size: 25px;
+}
+
+/* --- Cards do Modal --- */
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.cards a {
+    width: 30%;
+    border-radius: 30px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0px 0px 10px #ABABAB;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards a:hover {
+    box-shadow: 0px 0px 10px #35a073;
+    transform: scale(1.05);
+}
+
+.cards h1 {
+    font-size: 24px;
+}
+
+.cards a img {
+    height: 20vh;
+    max-height: 200px;
+    padding: 20px;
+}
+
+.cards a div {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+}
+
+/* --- Overlay --- */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+/* --- Botão Voltar --- */
+
+.voltar img {
+    height: 25px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.logo-voltar {
+    height: 100%;
+}

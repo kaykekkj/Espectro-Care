@@ -1,0 +1,157 @@
+@import url(Universal.css);
+@import url(responsividade.css);
+@import url(footer.css);
+
+/*falar para o kayke arrumar a parte do login do css que a section está com a classe home*/
+
+
+
+p{
+    margin: 0;
+}
+
+.hero{
+    background-image: url('../IMG/Img_hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #04344E;
+    padding: 80px;
+    width: 100%;
+}
+.hero h1{
+    width: 35%;
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+.hero p{
+    width: 35%;
+    font-size: 20px;
+}
+
+/*========= PROFISSIONAIS NA HOME =============*/
+.texto-home h1{
+    font-size: 34px;
+}
+.texto-home p{
+    font-size: 20px;
+}
+.texto-home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.profissionais-home{
+    width: 100%;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.profissionais-home a{
+    font-size: 20px;
+    text-decoration: none;
+    margin-top: 40px;
+    color: #06476B;
+}
+
+.conteiner-prof-home{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    justify-items: center;
+    gap: 50px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+h2{
+    width: 250px;
+}
+.cards-prof-home1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F0FFF6;
+    border-radius: 30px;
+    gap: 10px;
+    padding: 30px;
+    height: 30vh;
+    width: 20vw;
+    text-align: center;
+    cursor: pointer;
+}
+.cards-prof-home1 i{
+    font-size: 74px;
+    color: #14AE5C;
+    margin-top: 10px;
+}
+
+.cards-prof-home2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F2FAFF;
+    border-radius: 30px;
+    gap: 10px;
+    padding: 30px;
+    height: 30vh;
+    width: 20vw;
+    text-align: center;
+    cursor: pointer;
+}
+.cards-prof-home2 i{
+    font-size: 74px;
+    color: #06476B;
+    margin-top: 10px;
+}
+/*========= COMO FUNCIONA NA HOME =============*/
+
+
+
+/*========= POR QUE NOS ESCOLHER NA HOME =============*/
+
+.pq-escolha-home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 100px;
+}
+.conteiner-escolha{
+    width: 100%;
+    display: grid;
+    gap: 60px;
+    grid-template-columns: repeat(3, 1fr);
+}
+.card-escolhas{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0px 10px 10px 5px #92929231;
+}
+.card-escolhas h1{
+    width: 300px;
+    color: #06486be0;
+}
+.card-escolhas p{
+    width: 300px;
+}
+.card-escolhas i{
+    font-size: 50px;
+    color: #06476B;
+}
