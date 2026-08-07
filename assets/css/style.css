@@ -38,7 +38,7 @@ html,
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Nunito", sans-serif;
     overflow-x: hidden;
     background-color: #F8F8F8;
     scroll-behavior: smooth;
@@ -195,7 +195,7 @@ background-image: url(../img/home/fundoselecionar.png);
 
     text-align: center;
 
-    font-family: poppins;
+    font-family: "Nunito", sans-serif;
     font-size: 40px;
 
     line-height: 1.2;
@@ -396,7 +396,7 @@ background-image: url(../img/home/fundoselecionar.png);
 
     text-align: center;
 
-    font-family: poppins;
+    font-family: "Nunito", sans-serif;
     font-size: 40px;
 
     line-height: 1.2;
@@ -525,7 +525,7 @@ background-image: url(../img/home/Rectangle\ 6.png);
 
     text-align: center;
 
-    font-family: poppins;
+    font-family: "Nunito", sans-serif;
     font-size: 30px;
 
     line-height: 1.2;
@@ -539,7 +539,7 @@ background-image: url(../img/home/Rectangle\ 6.png);
 
     text-align: start;
 
-    font-family: poppins;
+    font-family: "Nunito", sans-serif;
     font-size: 15px;
 
     line-height: 1.2;
@@ -581,7 +581,7 @@ background-image: url(../img/home/Rectangle\ 6.png);
 
     text-align: start;
 
-    font-family: poppins;
+    font-family: "Nunito", sans-serif;
 
     font-weight: bold;
 }
@@ -689,7 +689,7 @@ background-image: url(../img/home/Rectangle\ 6.png);
 
     text-align: center;
 
-    font-family: poppins;
+    font-family: "Nunito", sans-serif;
     font-size: 40px;
 
     line-height: 1.2;
@@ -702,7 +702,7 @@ background-image: url(../img/home/Rectangle\ 6.png);
 
 .search {
     height: 40px;
-    font-family: poppins;
+    font-family: "Nunito", sans-serif;
     font-size: 100%;
     border-radius: 5px;
     border: none;
@@ -718,7 +718,7 @@ background-image: url(../img/home/Rectangle\ 6.png);
 /* --- 7.2 Categorias --- */
 
 .categorias {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Nunito", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -732,7 +732,7 @@ background-image: url(../img/home/Rectangle\ 6.png);
     margin-bottom: 40px;
     color: #000;
     text-align: center;
-    font-family: poppins;
+    font-family: "Nunito", sans-serif;
     font-weight: bold;
 }
 
@@ -775,7 +775,7 @@ background-image: url(../img/home/Rectangle\ 6.png);
     margin: 0;
     line-height: 1.2;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
 .categoriaSelecionado {
@@ -803,7 +803,7 @@ background-image: url(../img/home/Rectangle\ 6.png);
     display: flex;
     gap: 30px;
     margin: 0 auto;
-    font-family: poppins;
+    font-family: "Nunito", sans-serif;
     color: #1b3644;
     padding: 20px;
     max-width: 1200px;
@@ -1356,7 +1356,7 @@ background-image: url(../img/home/Rectangle\ 6.png);
     max-height: 50px;
     background-color: var(--cor-azul-fundo-icone, #D4EBFF);
     color: var(--cor-azul-icone, #387CB7);
-    font-family: var(--fonte-destaque, 'Poppins', sans-serif);
+    font-family: var(--fonte-destaque, "Nunito", sans-serif);
     font-weight: bold;
     font-size: 16px;
     display: flex;
@@ -1368,7 +1368,7 @@ background-image: url(../img/home/Rectangle\ 6.png);
 }
 
 .info-principal h3 {
-    font-family: var(--fonte-destaque, 'Poppins', sans-serif);
+    font-family: var(--fonte-destaque, "Nunito", sans-serif);
     font-size: 18px;
     color: var(--cor-texto-preto, #000);
     margin: 0 0 2px 0;
@@ -1454,7 +1454,7 @@ background-image: url(../img/home/Rectangle\ 6.png);
 }
 
 .preco strong {
-    font-family: var(--fonte-destaque, 'Poppins', sans-serif);
+    font-family: var(--fonte-destaque, "Nunito", sans-serif);
     font-size: 18px;
     color: var(--cor-texto-preto, #000);
 }
@@ -1513,7 +1513,7 @@ background-image: url(../img/home/Rectangle\ 6.png);
   padding: 35px 40px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
   box-sizing: border-box;
-  font-family: POPPINS;
+  font-family: "Nunito", sans-serif;
   margin-bottom: 50px;
 }
 
