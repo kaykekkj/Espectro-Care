@@ -1,7 +1,7 @@
 @import url(Universal.css);
 @import url(responsividade.css);
 @import url(footer.css);
-
+@import url(style.css);
 /*falar para o kayke arrumar a parte do login do css que a section está com a classe home*/
 
 
@@ -11,7 +11,7 @@ p{
 }
 
 .hero{
-    background-image: url('../IMG/Img_hero.png');
+    background-image: url('../img/home/Img_hero.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

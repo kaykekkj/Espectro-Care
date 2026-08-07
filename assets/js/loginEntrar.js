@@ -36,7 +36,7 @@ document.querySelector(".botao-logar").addEventListener("click", async () => {
         localStorage.setItem("email", data.email);
 
         alert("Login realizado com sucesso!");
-        window.location.href = "index.html";
+        window.location.href = "../index.html";
 
     } catch (erro) {
 

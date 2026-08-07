@@ -4,34 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <!--https://fontawesome.com/icons?utm_source=chatgpt.com-->
 </head>
 <body>
-    <header>
+     <header>
     <nav class="navbar">
 
-        <img src="IMG/Logo.png" alt="Logo do site" class="logo" >
+        <img src="../assets/img/logos/Logo.png" alt="Logo do site" class="logo" >
         <div>
             <ul class="navlinks" id="navlinks">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="profissionais.html">Profissionais</a></li>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../pages/profissionais.html">Profissionais</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="aprendizagem.html">Aprendizagem</a></li>
-                <li class="entrar-nav-mobile"><a href="login.html">Entrar</a></li>
+                <li><a href="../pages/aprendizagem.html">Aprendizagem</a></li>
+                <li class="entrar-nav-mobile"><a href="../pages/login.html">Entrar</a></li>
                 <li class="criar-nav-mobile"><a onclick="selecionar()">Criar conta</a></li>
             </ul>
         </div>
         
 
         <div class="conta">
-            <a class="entrar" href="login.html">Entrar</a>
+            <a class="entrar" href="../pages/login.html">Entrar</a>
             <button onclick="selecionar()" class="criar-conta"> <a>Criar Conta</a></button>
         </div>
 
-        <div class="mobile-menu" id="mobile-menu" onclick="AbrirMenu()">
+        <div class="mobile-menu" id="mobile-menu">
             <div class="line1"></div>
             <div class="line2"></div>
             <div class="line3"></div>
@@ -39,12 +39,12 @@
     </nav>
     </header>
 
-    <div class="selecionar" id="selecionar">
-        <div class="voltar" onclick="fechar()"><img src="IMG/_.png"></div>
+<div class="selecionar" id="selecionar">
+        <div class="voltar" onclick="fechar()"><img src="../assets/img/icons/_.png"></div>
             <h1>Criar conta <br><span>Selecione seu perfil para começar</span></h1>
             <div class="cards">
-                <a href="cadastroresp.html"><div><img src="IMG/image 5.jpg" alt=""><h1>Responsaveis</h1></div></a>
-                <a href="cadastroprof.html"><div><img src="IMG/image 7.png" alt=""><h1>Profissionais</h1></div></a>
+                <a href="../pages/cadastro-responsavel.html"><div><img src="../assets/img/icons/image 5.jpg" alt=""><h1>Responsaveis</h1></div></a>
+                <a href="../pages/cadastro-profissional.html"><div><img src="../assets/img/icons/image 7.png" alt=""><h1>Profissionais</h1></div></a>
             </div>
         </div>
 
@@ -57,36 +57,36 @@
         <div class="categorias">
             <h1>Navegue por categoria</h1>
             <div class="container-categorias">
-                <div id="todas" onclick="categoriaSelecionada('todas')" class="categoria">
-                    <img src="IMG/todas.png">
+<div id="todas" onclick="categoriaSelecionada('todas')" class="categoria">
+                    <img src="../assets/img/blog/todas.png">
                     <p>Todas</p>
                 </div>
                 <div id="comunicacao" onclick="categoriaSelecionada('comunicacao')" class="categoria">
-                    <img src="IMG/comunicação.png">
+                    <img src="../assets/img/blog/comunicação.png">
                     <p>Comunicação</p>
                 </div>
                 <div id="comportamento" onclick="categoriaSelecionada('comportamento') " class="categoria">
-                    <img src="IMG/comportamento.png">
+                    <img src="../assets/img/blog/comportamento.png">
                     <p>Comportamento</p>
                 </div>
                 <div id="alimentacao" onclick="categoriaSelecionada('alimentacao')" class="categoria">
-                    <img src="IMG/alimentação.png">
+                    <img src="../assets/img/blog/alimentação.png">
                     <p>alimentação</p>
                 </div>
                 <div id="introducao" onclick="categoriaSelecionada('introducao')" class="categoria">
-                    <img src="IMG/introdução.png">
+                    <img src="../assets/img/blog/introdução.png">
                     <p>introdução escolar</p>
                 </div>
                 <div id="terapias" onclick="categoriaSelecionada('terapias')" class="categoria">
-                    <img src="IMG/terapias.png">
+                    <img src="../assets/img/blog/terapias.png">
                     <p>Terapias</p>
                 </div>
                 <div id="vida" onclick="categoriaSelecionada('vida')" class="categoria">
-                    <img src="IMG/vida.png">
+                    <img src="../assets/img/blog/vida.png">
                     <p>Vida em familia</p>
                 </div>
                 <div id="adolescencia" onclick="categoriaSelecionada('adolescencia')" class="categoria">
-                    <img src="IMG/adolecencia.png">
+                    <img src="../assets/img/blog/adolecencia.png">
                     <p>Adolescência</p>
                 </div>
             </div>
@@ -254,7 +254,7 @@
 
     <footer class="footer">
         <div class="footer-logo">
-            <img src="IMG/Logo.png" alt="Logo do site">
+            <img src="../assets/img/logos/Logo.png" alt="Logo do site">
         </div>        
         <div class="footer-itens">
             <h1>Plataforma</h1>
@@ -272,9 +272,9 @@
             <a href="">Política de privacidade</a>
         </div>
     </footer>
-    <script src="JavaScript/mobilen-navbar.js"></script>
-    <script src="JavaScript/selecionar-perfil.js"></script>
-    <script src="JavaScript/categorias.js"></script>
+<script src="../assets/js/mobilen-navbar.js"></script>
+    <script src="../assets/js/selecionar-perfil.js"></script>
+    <script src="../assets/js/categorias.js"></script>
     <div class="overlay" id="overlay"></div>
 </body>
 </html>

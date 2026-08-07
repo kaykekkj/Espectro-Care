@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <title>Profissionais</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 </head>
@@ -12,12 +12,12 @@
     <header>
     <nav class="navbar">
 
-        <img src="IMG/Logo.png" alt="Logo do site" class="logo" >
+        <img src="../assets/img/logos/Logo.png" alt="Logo do site" class="logo" >
         <div>
             <ul class="navlinks" id="navlinks">
-                <li><a href="index.html">Início</a></li>
+                <li><a href="../index.html">Início</a></li>
                 <li><a href="profissionais.html">Profissionais</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="../blog/blog.html">Blog</a></li>
                 <li><a href="aprendizagem.html">Aprendizagem</a></li>
                 <li class="entrar-nav-mobile"><a href="login.html">Entrar</a></li>
                 <li class="criar-nav-mobile"><a onclick="selecionar()">Criar conta</a></li>
@@ -30,7 +30,7 @@
             <button onclick="selecionar()" class="criar-conta"> <a>Criar Conta</a></button>
         </div>
 
-        <div class="mobile-menu" id="mobile-menu" onclick="AbrirMenu()">
+        <div class="mobile-menu" id="mobile-menu">
             <div class="line1"></div>
             <div class="line2"></div>
             <div class="line3"></div>
@@ -39,30 +39,37 @@
     </header>
 
     <div class="selecionar" id="selecionar">
-        <div class="voltar" onclick="fechar()"><img src="IMG/_.png">
+        <div class="voltar" onclick="fechar()"><img src="../assets/img/icons/_.png"></div>
+            <h1>Criar conta <br><span>Selecione seu perfil para começar</span></h1>
+            <div class="cards">
+                <a href="cadastro-responsavel.html"><div><img src="../assets/img/icons/image 5.jpg" alt=""><h1>Responsaveis</h1></div></a>
+                <a href="cadastro-profissional.html"><div><img src="../assets/img/icons/image 7.png" alt=""><h1>Profissionais</h1></div></a>
+            </div>
         </div>
-        <h1>Criar conta <br><span>Selecione seu perfil para começar</span></h1>
-        <div class="cards">
-            <a href=""><div><img src="IMG/image 5.jpg" alt=""><h1>Responsaveis</h1></div></a>
-            <a href=""><div><img src="IMG/image 7.png" alt=""><h1>Profissionais</h1></div></a>
-        </div>
-    </div>
-
-    <header class="topo-blog">
-        <div class="topo-blog-itens">
-            <input type="text" placeholder="Pesquise no artigo:">
-            <h1>Como identificar o TEA na primeira infância</h1>
-            <p>Sinais de autismo infantil podem ser identificados antes dos dois anos de idade e, em muitos casos, já podem ser percebidos em bebês ainda muito pequenos. Alterações no contato visual, na interação social, na comunicação e em determinados comportamentos podem surgir nos primeiros meses de vida. Entender esses sinais precocemente é fundamental para o desenvolvimento da criança. Para saber mais informações e conhecer os principais sinais, leia abaixo.</p>
-        </div>
-    </header>
 
     <section class="home">
+        <div class="header-blog">
+            <h1 class="titulo">Encontre o profissional ideal<br><span>Profissionais verificados e especializados em neurodivergência.</span></h1>
+            <input type="search" class="search" placeholder="Buscar por nome, Especialidade ou cidade..." id="searchInput">
+        </div>
+
+        <section class="home" style="margin-top: 15vh; padding: 40px 20px;">
+    
+    <div class="titulo" style="margin-bottom: 30px;">
+        Profissionais <span>Disponíveis</span>
+    </div>
+
+    <div class="container-cards-profissionais" id="containerProfissionais">
+        <!-- Os cards de profissionais são carregados dinamicamente
+             pelo arquivo assets/js/profissionais.js -->
+    </div>
+</section>
 
     </section>
 
     <footer class="footer">
         <div class="footer-logo">
-            <img src="IMG/Logo.png" alt="Logo do site">
+            <img src="../assets/img/logos/Logo.png" alt="Logo do site">
         </div>        
         <div class="footer-itens">
             <h1>Plataforma</h1>
@@ -80,9 +87,11 @@
             <a href="">Política de privacidade</a>
         </div>
     </footer>
-    <script src="JavaScript/mobilen-navbar.js"></script>
-    <script src="JavaScript/selecionar-perfil.js"></script>
-    <script src="JavaScript/search.js"></script>
+    <script src="../assets/js/mobilen-navbar.js"></script>
+    <script src="../assets/js/selecionar-perfil.js"></script>
+    <script src="../assets/js/profissionais-data.js"></script>
+    <script src="../assets/js/profissionais.js"></script>
+
     <div class="overlay" id="overlay"></div>
 </body>
 </html>

@@ -22,17 +22,25 @@
         transition: transform 0.3s ease;
     }
 
-    .mobile-menu {
-        display: block;
+    /* Estado aberto do menu mobile */
+    .navlinks.menu-aberto {
+        transform: translateX(0%);
     }
 
-    .conta {
-        display: none;
+    /* Usamos seletores mais específicos para garantir que essas regras
+       vençam as regras base (.mobile-menu { display:none }) que aparecem
+       em style.css/Universal.css carregadas depois na cascata. */
+    nav.navbar .mobile-menu {
+        display: block !important;
     }
 
-    .entrar-nav-mobile,
-    .criar-nav-mobile {
-        display: block;
+    nav.navbar .conta {
+        display: none !important;
+    }
+
+    nav.navbar .entrar-nav-mobile,
+    nav.navbar .criar-nav-mobile {
+        display: block !important;
     }
 
     /* --- Home --- */
@@ -89,8 +97,6 @@
     .footer {
         flex-direction: column;
         gap: 30px;
-
-        text-align: center;
     }
 
     .footer-itens {
@@ -273,10 +279,6 @@
   flex-direction: column;
 }
 }
-
-
-
-
 
 @media (max-width: 992px) {
     .container-cards-profissionais {
