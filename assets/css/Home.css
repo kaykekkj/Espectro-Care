@@ -235,7 +235,7 @@ h2{
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 30px;
+    gap: 25px;
     border-radius: 25px;
     padding: 40px;
     box-shadow: 5px 10px 10px 5px #92929231;
@@ -251,12 +251,13 @@ h2{
 .card-artigo-home{
     box-shadow: 0px 10px 10px 5px #92929231;
     border-radius: 20px;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 35px;
     flex-direction: column;
     height: 250px;
+    font-size: 14px;
 }
 .conheça-tea-home a{
     font-size: 20px;
@@ -362,4 +363,67 @@ h2{
 .texto-app-home button:hover {
     background: linear-gradient(130deg, rgb(92, 186, 117), rgb(24, 140, 162));
     transform: scale(1.02);
+    box-shadow: 0px 5px 10px 0px #14ae5c4d;
 }
+
+
+
+/*========== PROFISSIONAIS EM DESTAQUE NA HOME =============*/
+.profissionais-destaques-home{
+    width: 100%;
+    height: 90vh;
+    background-color: #f9fafc;
+}
+
+/*========== CRIAR CONTA NO FINAL DA HOME =============*/
+
+.criar-conta-home{
+    width: 100%;
+    height: 60vh;
+    padding: 80px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.criar-conta-home h1{
+    background: linear-gradient(135deg, #188ca2, #5cba75); 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text; 
+    color: transparent; 
+}
+.criar-conta-home p{
+    width: 700px;
+}
+.criar-conta-home i{
+    font-size: 45px;
+    background: linear-gradient(135deg, #188ca2, #5cba75); 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text; 
+    color: transparent; 
+}
+.criar-conta-home button{
+    width: 300px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #188ca2, #5cba75);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 20px;
+}
+.criar-conta-home button:hover{
+    transform: scale(1.03);
+     box-shadow: 0px 5px 10px 0px #14ae5c4d;
+}
+
