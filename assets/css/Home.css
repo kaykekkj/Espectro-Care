@@ -73,7 +73,6 @@ p{
     max-width: 1200px;
 }
 h2{
-    width: 250px;
     margin: 0;
 }
 .cards-prof-home1{
@@ -89,6 +88,7 @@ h2{
     width: 20vw;
     text-align: center;
     cursor: pointer;
+    transition: 1s;
 }
 .cards-prof-home1 i{
     font-size: 74px;
@@ -109,11 +109,18 @@ h2{
     width: 20vw;
     text-align: center;
     cursor: pointer;
+    transition: 1s;
 }
 .cards-prof-home2 i{
     font-size: 74px;
     color: #06476B;
     margin-top: 10px;
+}
+.cards-prof-home1:hover{
+    transform: scale(1.05);
+}
+.cards-prof-home2:hover{
+    transform: scale(1.03);
 }
 /*========= COMO FUNCIONA NA HOME =============*/
 .funcionamento-home{
@@ -123,7 +130,7 @@ h2{
     align-items: center;
     width: 100%;
     padding: 80px;
-    background-color: #ffffff;
+    background-color: #f9fafc;
 }
 .conteiner-funcionamento{
     display: grid;
@@ -177,11 +184,12 @@ h2{
 .conteiner-escolha{
     width: 100%;
     display: grid;
-    gap: 60px;
+    gap: 80px;
     grid-template-columns: repeat(3, 1fr);
 }
 .card-escolhas{
     display: flex;
+    background-color: #ffffff;
     gap: 20px;
     flex-direction: column;
     align-items: center;
@@ -189,9 +197,11 @@ h2{
     border-radius: 20px;
     padding: 40px;
     box-shadow: 0px 10px 10px 5px #92929231;
+    transition: 1s;
+    cursor: default;
 }
 .card-escolhas h1{
-    width: 300px;
+    width: 250px;
     color: #06486be0;
 }
 .card-escolhas p{
@@ -200,4 +210,156 @@ h2{
 .card-escolhas i{
     font-size: 50px;
     color: #06476B;
+}
+.card-escolhas:hover{
+    transform: scale(1.05);
+}
+
+
+/*========== CONHEÇA O TEA NA HOME =============*/
+
+.conheça-tea-home{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background-color: #f9fafc;
+}
+.conheça-tea-home img{
+    width: 250px;
+}
+.conteiner-conheça-tea{
+    background-color: #ffffff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 5px 10px 10px 5px #92929231;
+}
+.conteiner-tea-home{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+    padding: 20px;
+    gap: 50px;
+}
+.card-artigo-home{
+    box-shadow: 0px 10px 10px 5px #92929231;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
+    height: 250px;
+}
+.conheça-tea-home a{
+    font-size: 20px;
+    text-decoration: none;
+    margin-top: 40px;
+    color: #06476B;
+}
+
+/*========== APLICATIVO NA HOME =============*/
+.aplicativo-home{
+    background-image: url('../img/home/aplicativo-fundo (1).png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 80px;
+    width: 100%;
+}
+.texto-app-home{
+    width: 55%;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    padding: 40px;
+}
+.texto-app-home span{
+    color: #06476B;
+}
+.texto-app-home h1{
+    width: 500px;
+    font-size: 45px;
+}
+.texto-app-home p{
+    font-size: 18px;
+    width: 540px;
+}
+
+
+/*======== parte dos beneficios do aplicativo ======*/
+.beneficios-app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.beneficios-home{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+.card-beneficios-home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 200px;
+    gap: 10px;
+}
+.card-beneficios-home h2{
+    width: 0;
+}
+.card-beneficios-home h3{
+    margin: 0;
+    width: 150px;
+    font-size: 18px;
+}
+.card-beneficios-home p{
+    font-size: 14px;
+    width: 200px;
+}
+.icon-box-beneficios{
+    font-size: 30px;
+    background-color: #defae9;
+    color: #14AE5C;
+    width: 60px;
+    border-radius: 10px;
+    padding: 10px;
+}
+/*=======================================================*/
+
+
+.texto-app-home button{
+    width: 50%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgb(24, 140, 162), rgb(92, 186, 117));
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 1s;
+}
+.texto-app-home button:hover {
+    background: linear-gradient(130deg, rgb(92, 186, 117), rgb(24, 140, 162));
+    transform: scale(1.02);
 }
