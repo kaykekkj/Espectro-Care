@@ -1339,190 +1339,22 @@ background-image: url(../img/home/Rectangle\ 6.png);
    10. Profissionais
    ============================================================== */
 
-   .container-cards-profissionais {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas no desktop */
-    gap: 25px;
-    max-width: 2000px;
-    margin: 0 auto;
-    width: 70%;
-}
+/* Card profissionais */
 
-.card-profissional {
-    background-color: var(--bg-branco, #ffffff);
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid #eaeaea;
+.container-cards-profissionais{
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: var(--transicao-padrao, all 0.3s ease);
+
 }
 
-.card-profissional:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-/* Topo do card (Avatar + Nome + Especialidade) */
-.card-prof-topo {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.avatar-iniciais {
-    width: 50px;
-    height: 50px;
-    max-height: 50px;
-    background-color: var(--cor-azul-fundo-icone, #D4EBFF);
-    color: var(--cor-azul-icone, #387CB7);
-    font-family: var(--fonte-destaque, "Nunito", sans-serif);
-    font-weight: bold;
-    font-size: 16px;
-    display: flex;
+.card-profissional{
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 0 10px #ABABAB;
+    border-radius: 10px;
     align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    flex-shrink: 0;
-    object-fit: cover;
-}
 
-.info-principal h3 {
-    font-family: var(--fonte-destaque, "Nunito", sans-serif);
-    font-size: 18px;
-    color: var(--cor-texto-preto, #000);
-    margin: 0 0 2px 0;
 }
-
-.info-principal .especialidade {
-    font-size: 14px;
-    color: var(--cor-azul-icone, #387CB7);
-    margin: 0 0 4px 0;
-    font-weight: 500;
-}
-
-.info-principal .localizacao {
-    font-size: 12px;
-    color: var(--cor-texto-cinza-escuro, #777E87);
-    margin: 0;
-}
-
-/* Meio do card (Estrelas e Badges Online/Presencial) */
-.card-prof-meio {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-    border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
-    padding: 12px 0;
-}
-
-.avaliacao {
-    font-size: 13px;
-    color: var(--cor-texto-cinza-escuro, #777E87);
-}
-
-.avaliacao .estrela {
-    color: #ffc107;
-    font-size: 15px;
-}
-
-.avaliacao strong {
-    color: var(--cor-texto-preto, #000);
-}
-
-.qtd-avaliacoes {
-    font-size: 12px;
-    color: var(--cor-texto-cinza-claro, #ABABAB);
-}
-
-.modalidades {
-    display: flex;
-    gap: 8px;
-}
-
-.badge {
-    font-size: 11px;
-    font-weight: bold;
-    padding: 2px 8px;
-    border-radius: 4px;
-}
-
-.badge.online {
-    color: #28a745;
-    background-color: #e8f5e9;
-}
-
-.badge.presencial {
-    color: #17a2b8;
-    background-color: #e1f5fe;
-}
-
-/* Rodapé do card (Preço e Botões) */
-.card-prof-rodape {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.preco .label-preco {
-    display: block;
-    font-size: 11px;
-    color: var(--cor-texto-cinza-claro, #ABABAB);
-}
-
-.preco strong {
-    font-family: var(--fonte-destaque, "Nunito", sans-serif);
-    font-size: 18px;
-    color: var(--cor-texto-preto, #000);
-}
-
-.botoes-acao {
-    display: flex;
-    gap: 8px;
-}
-
-/* Botão Conversar (Branco com borda/estilo subtil) */
-.btn-conversar {
-    background-color: transparent;
-    border: 1px solid var(--cor-texto-cinza-claro, #ABABAB);
-    color: var(--cor-texto-escuro, #333);
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: var(--transicao-padrao);
-}
-
-.btn-conversar:hover {
-    border-color: var(--cor-azul-icone, #387CB7);
-    color: var(--cor-azul-icone, #387CB7);
-}
-
-/* Botão Contratar (Gradiente igual ao do projeto) */
-.btn-contratar {
-    background: var(--gradiente-primario);
-    border: none;
-    color: white;
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: var(--transicao-padrao);
-}
-
-.btn-contratar:hover {
-    background: var(--gradiente-secundario);
-    transform: scale(1.03);
-}
-
 /* ==============================================================
    12. PERFIL PROFISSIONAIS
    ============================================================== */
