@@ -46,3 +46,127 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+function abrirPerfil(numero) {
+
+    const card = document.getElementById(numero);
+
+    if (!card) return;
+
+    const nome = card.querySelector("h3")?.textContent || "";
+    const valor = card.querySelector(".preco strong")?.textContent.replace(/\D/g, "") || "";
+    const atividade = card.querySelector("#atividade")?.textContent || "";
+    const modelo = card.querySelector("#modelo")?.textContent || "";
+    const img = card.querySelector(".avatar-iniciais")?.src || "";
+
+    localStorage.setItem("perfil_nome", nome);
+    localStorage.setItem("perfil_valor", valor);
+    localStorage.setItem("perfil_atividade", atividade);
+    localStorage.setItem("perfil_modelo", modelo);
+    localStorage.setItem("perfil_img", img);
+
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+
+    // ==========================
+    // CARREGA AS INFORMAÇÕES
+    // ==========================
+
+    const nome = localStorage.getItem("perfil_nome");
+    const valor = localStorage.getItem("perfil_valor");
+    const atividade = localStorage.getItem("perfil_atividade");
+    const modelo = localStorage.getItem("perfil_modelo");
+    const img = localStorage.getItem("perfil_img");
+
+    if (document.querySelector(".info-name"))
+        document.querySelector(".info-name").textContent = nome || "XXXXXX";
+
+    if (document.querySelector(".info-price-val"))
+        document.querySelector(".info-price-val").textContent = valor ? `R$ ${valor}` : "R$ XXXXXX";
+
+    if (document.querySelector(".tag-plain"))
+        document.querySelector(".tag-plain").textContent = modelo || "XXXXXX";
+
+    if (document.querySelector(".tag-pill"))
+        document.querySelector(".tag-pill").textContent = atividade || "XXXXXX";
+
+    if (img && document.querySelector(".avatar-img"))
+        document.querySelector(".avatar-img").src = img;
+
+    // ==========================
+    // STATUS ONLINE/OFFLINE
+    // ==========================
+
+    const tag = document.querySelector(".tag-pill");
+    const avatar = document.querySelector(".avatar-ring");
+
+    if (tag && avatar) {
+
+        if (tag.textContent.trim() === "" || tag.textContent === "XXXXXX") {
+
+            tag.classList.remove("tag-pill");
+            tag.classList.add("tag-pill-offline");
+            tag.textContent = "Offline";
+
+            avatar.classList.remove("avatar-ring");
+            avatar.classList.add("avatar-ring-offline");
+
+        }
+
+    }
+
+    // ==========================
+    // ABAS
+    // ==========================
+
+    const tabs = document.querySelectorAll(".tab");
+    const paginas = document.querySelectorAll(".page");
+    const indicator = document.querySelector(".indicator");
+
+    function moverIndicador(tab){
+
+        if(!tab || !indicator) return;
+
+        indicator.style.width = tab.offsetWidth + "px";
+        indicator.style.left = tab.offsetLeft + "px";
+
+    }
+
+    moverIndicador(document.querySelector(".tab.active"));
+
+    window.trocarPagina = function(idPagina, botao){
+
+        paginas.forEach((pagina)=>{
+
+            pagina.classList.remove("active-page");
+
+        });
+
+        tabs.forEach((tab)=>{
+
+            tab.classList.remove("active");
+
+        });
+
+        const pagina = document.getElementById(idPagina);
+
+        if(pagina){
+
+            pagina.classList.add("active-page");
+
+        }
+
+        botao.classList.add("active");
+
+        moverIndicador(botao);
+
+    }
+
+    window.addEventListener("resize", ()=>{
+
+        moverIndicador(document.querySelector(".tab.active"));
+
+    });
+
+});
+

@@ -353,6 +353,7 @@ background-image: url(../img/home/fundoselecionar.png);
 
     margin-top: 17vh;
 
+
 }
 
 .logo {
@@ -405,6 +406,28 @@ background-image: url(../img/home/fundoselecionar.png);
 .selecionar h1 span{
     color: #ababab;
     font-size: 25px;
+}
+
+.navbar-aut{
+    background-color: rgb(255, 255, 255);
+
+    display: flex;
+    align-items: center;
+
+    height: 15vh;
+    max-height: 200px;
+
+    padding: 0 20px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    position: fixed;
+    width: 100%;
+    z-index: 500;
+}
+
+.navbar-aut a{
+    align-self: center;
 }
 
 /* ================= CARDS APRENDIZAGEM ================= */
@@ -1320,9 +1343,9 @@ background-image: url(../img/home/Rectangle\ 6.png);
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 colunas no desktop */
     gap: 25px;
-    max-width: 1200px;
+    max-width: 2000px;
     margin: 0 auto;
-    width: 100%;
+    width: 70%;
 }
 
 .card-profissional {
@@ -1707,5 +1730,310 @@ background-image: url(../img/home/Rectangle\ 6.png);
   width: 20px;
   height: 20px;
   fill: currentColor;
+}
+
+/* ==============================================================
+   13. RESPONSIVIDADE
+   ============================================================== */
+
+@media (max-width: 768px) {
+
+    /* --- Navbar Mobile --- */
+
+    .navlinks {
+        position: fixed;
+
+        top: 15vh;
+        right: 0;
+
+        width: 50vw;
+        height: 85vh;
+
+        background-color: rgb(255, 255, 255);
+
+        flex-direction: column;
+        align-items: center;
+
+        gap: 8vh;
+
+        padding-top: 5vh;
+
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .conta {
+        display: none;
+    }
+
+    .entrar-nav-mobile,
+    .criar-nav-mobile {
+        display: block;
+    }
+
+    /* --- Home --- */
+
+    .home img {
+        height: 200px;
+    }
+
+    .logo {
+        height: 40%;
+    }
+
+    /* --- Modal Selecionar --- */
+
+    .selecionar {
+        width: 85vw;
+    }
+
+    .selecionar h1 {
+        font-size: 30px;
+    }
+
+    .selecionar h1 span {
+        font-size: 20px;
+    }
+
+    .cards {
+        margin-top: 10vh;
+    }
+
+    .cards a {
+        width: 30%;
+        border-radius: 10px;
+    }
+
+    .cards h1 {
+        font-size: 3vw;
+    }
+
+    .cards a img {
+        height: 15vh;
+        padding: 20px;
+    }
+
+    .voltar img {
+        height: 25px;
+        margin: 20px;
+        cursor: pointer;
+    }
+
+    
+    /* --- Footer --- */
+
+    .footer {
+        flex-direction: column;
+        gap: 30px;
+
+        text-align: center;
+    }
+
+    .footer-itens {
+        align-items: center;
+    }
+
+    /* --- Formulários --- */
+
+    .conteiner-entrar {
+        width: 85%;
+    }
+
+    .conteiner-entrar h1 {
+        font-size: 20px;
+    }
+
+    .conteiner-entrar p {
+        font-size: 12px;
+    }
+
+    .conteiner-entrar input {
+        height: 35px;
+    }
+
+    .conteiner-entrar button {
+        width: 100%;
+        height: 40px;
+
+        font-size: 16px;
+    }
+
+    /* --- Blog Header --- */
+
+    .titulo {
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+
+        text-align: center;
+
+        font-family: poppins;
+        font-size: 30px;
+
+        line-height: 0.9;
+    }
+
+    .titulo span {
+        color: #ababab;
+        font-size: 15px;
+    }
+
+    /* --- Categorias --- */
+
+    .container-categorias {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .container-categorias div {
+        width: calc(25% - 20px);
+        max-width: 120px;
+        min-width: 80px;
+    }
+
+    /* --- Blog Seção Wrapper --- */
+
+    .secao-blog-wrapper {
+        flex-direction: column;
+    }
+
+    .card-conteudo {
+        flex-direction: column;
+    }
+
+    .card-imagem img {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-lista {
+        flex-direction: column;
+    }
+
+    .img-lista {
+        width: 100%;
+        height: auto;
+    }
+
+    /* --- Posts (Docs) --- */
+
+    .topo-blog h1 {
+        font-size: 30px;
+        margin: 20px 30px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .topo-blog p {
+        font-size: 16px;
+        margin: 20px 30px;
+        text-align: justify;
+        width: 100%;
+    }
+
+    .conteudo-blog p {
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: justify;
+        margin: 20px 30px;
+        width: 100%;
+    }
+
+    /* --- Aprendizagem (Grid) --- */
+
+    .container-blog {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin: 40px;
+        padding: 20px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .blog {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #ABABAB;
+        display: flex;
+        flex-direction: column;
+        margin: 30px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .blog h1 {
+        font-size: 20px;
+        padding: 10px;
+        font-weight: bold;
+        padding: 0 20px 20px 20px;
+    }
+
+    /* --- profissionais --- */
+
+    .container-cards {
+        padding: 20px 15px; /* Reduz as margens laterais no telemóvel */
+        gap: 20px;
+    }
+
+    .card-padrao {
+        max-width: 100%; /* Ocupa a largura ideal no ecrã pequeno */
+        border-radius: 12px;
+    }
+
+    .card-conteudo {
+        padding: 18px;
+    }
+
+    .card-titulo {
+        font-size: 18px;
+    }
+
+    .card-texto {
+        font-size: 13px;
+        margin-bottom: 18px;
+    }
+
+    .card-botao {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    /* Perfil profissional */
+
+.profile-card {
+  width: 90%;
+  min-width: 300px;
+
+}
+
+/* Cabeçalho: Imagem + Informações do Profissional */
+.card-header {
+  flex-direction: column;
+}
+}
+
+
+
+
+
+@media (max-width: 992px) {
+    .container-cards-profissionais {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container-cards-profissionais {
+        grid-template-columns: 1fr; /* 1 coluna empilhada em telemóveis */
+        padding: 0 10px;
+    }
 }
 
