@@ -1341,19 +1341,169 @@ background-image: url(../img/home/Rectangle\ 6.png);
 
 /* Card profissionais */
 
-.container-cards-profissionais{
-    width: 100%;
+.container-cards-profissionais {
     display: flex;
-
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
 }
 
-.card-profissional{
-    width: 80%;
-    background-color: white;
-    box-shadow: 0 0 10px #ABABAB;
-    border-radius: 10px;
-    align-items: center;
+/* Card Principal */
+.card-profissional {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+    max-width: 1000px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #333333;
+}
 
+/* Topo do Card */
+.topo-card-profissional {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.foto-perfil-profissional {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 110px;
+}
+
+.foto-perfil-profissional img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+.foto-perfil-profissional p {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+/* Informações Profissionais */
+.informações-profissionais {
+    flex: 1;
+}
+
+.informações-profissionais h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #1a1a1a;
+}
+
+.informações-profissionais > p {
+    color: #666666;
+    margin: 0 0 16px 0;
+    font-size: 0.95rem;
+}
+
+/* Tags */
+.tagg-perfil-profissional {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.tagg-perfil-profissional p {
+    background-color: #e9d5ff;
+    color: #581c87;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Abordagem */
+.informações-profissionais > p:last-child {
+    font-size: 0.9rem;
+    color: #4b5563;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Pé do Card */
+.pe-card-profissional {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+    padding-top: 16px;
+    gap: 20px;
+}
+
+.sobre-mim {
+    flex: 1;
+}
+
+.sobre-mim p {
+    font-size: 0.9rem;
+    color: #4b5563;
+    line-height: 1.5;
+    margin: 0 0 12px 0;
+}
+
+.sobre-mim button {
+    background: none;
+    border: none;
+    color: #1a1a1a;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sobre-mim button::after {
+    content: "→";
+    font-size: 1.1rem;
+}
+
+/* Área de Contato e Botão */
+.contato {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 200px;
+}
+
+.contato button {
+    background-color: #22c55e;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+}
+
+.contato button:hover {
+    background-color: #16a34a;
+}
+
+.contato p {
+    color: #22c55e;
+    font-size: 0.85rem;
+    margin: 8px 0 0 0;
+    font-weight: 500;
 }
 /* ==============================================================
    12. PERFIL PROFISSIONAIS
