@@ -278,6 +278,29 @@
 .card-header {
   flex-direction: column;
 }
+
+.container-cards-profissionais {
+        padding: 12px;
+    }
+
+    .card-profissional {
+        padding: 16px;
+    }
+
+    .pe-card-profissional {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .contato {
+        align-items: center;
+        width: 100%;
+    }
+
+    .contato button {
+        padding: 12px 20px; /* Maior área de toque para mobile */
+    }
 }
 
 @media (max-width: 992px) {
