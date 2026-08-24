@@ -1,0 +1,97 @@
+@import url(Universal.css);
+@import url(responsividade.css);
+@import url(footer.css);
+@import url(style.css);
+
+/* topo da página */
+.hero{
+    background-image: url('../img/home/Img_hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #04344E;
+    padding: 80px;
+    width: 100%;
+}
+.hero h1{
+    width: 35%;
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+.hero p{
+    width: 35%;
+    font-size: 20px;
+}
+
+/*nosso objetivo*/
+
+.objetivo-sobre-nos{ 
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 80px 20px;
+}
+
+.nosso-objetivo{
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+.nosso-objetivo h1{
+    color: #04344E;
+    font-weight: 800;
+    font-size: 40px;
+}
+
+.underline{
+    height: 5px;
+    width: 80px;
+    background-color: #47C777;
+    border-radius: 10px;
+}
+
+.nosso-objetivo p{
+    color: #000000;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+/* chaves */
+
+.container-chaves{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    width: 70%;
+}
+
+.container-chaves div{
+    width: 20vw;
+    text-align: center;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0px 40px;
+}
+
+.container-chaves div h2{
+    color: #14AE5C;    
+}
+
+.container-chaves div p{
+    color: #000000;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.container-chaves div i{
+    font-size: 70px;
+    color: #14AE5C;
+    background-color: #e4fcee;
+    border-radius: 50%;
+    padding: 25px;
+}
