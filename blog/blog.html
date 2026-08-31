@@ -51,206 +51,55 @@
         </div>
 
     <section class="home">
-        <div class="header-blog">
+        <section class="header-blog">
             <h1 class="titulo">Blog <br><span>Artigos educativos sobre neurodivergência, inclusão e saúde mental.</span></h1>
             <input type="search" class="search" placeholder="Pesquisar artigos..." id="searchInput">
-        </div>
+        </section>
+        <section class="navegacao">
+          <h2>Navegue por categoria</h2>
+          <div class="filtros">
 
-        <div class="categorias">
-            <h1>Navegue por categoria</h1>
-            <div class="container-categorias">
-<div id="todas" onclick="categoriaSelecionada('todas')" class="categoria">
-                    <img src="../assets/img/blog/todas.png">
-                    <p>Todas</p>
-                </div>
-                <div id="comunicacao" onclick="categoriaSelecionada('comunicacao')" class="categoria">
-                    <img src="../assets/img/blog/comunicação.png">
-                    <p>Comunicação</p>
-                </div>
-                <div id="comportamento" onclick="categoriaSelecionada('comportamento') " class="categoria">
-                    <img src="../assets/img/blog/comportamento.png">
-                    <p>Comportamento</p>
-                </div>
-                <div id="alimentacao" onclick="categoriaSelecionada('alimentacao')" class="categoria">
-                    <img src="../assets/img/blog/alimentação.png">
-                    <p>alimentação</p>
-                </div>
-                <div id="introducao" onclick="categoriaSelecionada('introducao')" class="categoria">
-                    <img src="../assets/img/blog/introdução.png">
-                    <p>introdução escolar</p>
-                </div>
-                <div id="terapias" onclick="categoriaSelecionada('terapias')" class="categoria">
-                    <img src="../assets/img/blog/terapias.png">
-                    <p>Terapias</p>
-                </div>
-                <div id="vida" onclick="categoriaSelecionada('vida')" class="categoria">
-                    <img src="../assets/img/blog/vida.png">
-                    <p>Vida em familia</p>
-                </div>
-                <div id="adolescencia" onclick="categoriaSelecionada('adolescencia')" class="categoria">
-                    <img src="../assets/img/blog/adolecencia.png">
-                    <p>Adolescência</p>
-                </div>
+            <div class="categoria">
+              <i class="fa-solid fa-border-all"></i>
+              <h3>Todas</h3>
             </div>
-        </div>
 
-        <div class="secao-blog-wrapper">
-  
-  <div class="coluna-principal">
-    
-    <h2 class="titulo-secao">Artigos em destaque</h2>
-    
-    <div class="card-destaque">
-      <div class="card-conteudo">
-        <div class="card-info">
-          <span class="badge">artigo em destaque</span>
-          <h3 class="titulo-destaque">Como lidar com a seletividade alimentar no TEA?</h3>
-          
-          <div class="autor-info">
-            <div class="avatar-placeholder"></div>
-            <div class="detalhes-autor">
-              <span class="nome">Dr. XXX</span>
-              <span class="profissao">Psicólogo<br>CRP: 000/00000</span>
+            <div class="categoria">
+              <i class="fa-solid fa-comment-dots"></i>
+              <h3>Comunicação</h3>
+            </div>
+
+            <div class="categoria">
+              <i class="fa-solid fa-brain"></i>
+              <h3>Comportamento</h3>
+            </div>
+
+            <div class="categoria">
+              <i class="fa-solid fa-apple-whole"></i>
+              <h3>Alimentação</h3>
+            </div>
+
+            <div class="categoria">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <h3>Introdução Escolar</h3>
+            </div>
+
+            <div class="categoria">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <h3>Terapias</h3>
+            </div>
+
+            <div class="categoria">
+              <i class="fa-solid fa-hands-holding-child"></i>
+              <h3>Vida em Família</h3>
+            </div>
+
+            <div class="categoria">
+              <i class="fa-solid fa-person"></i>
+              <h3>Adolescência</h3>
             </div>
           </div>
-          
-          <div class="meta-info">🕒 8min de leitura - Publicado em 12/05/2024</div>
-        </div>
-        
-        <div class="card-imagem">
-          <img src="https://images.unsplash.com/photo-1540479859555-17af45c78602?auto=format&fit=crop&w=600&q=80" alt="Criança comendo">
-        </div>
-      </div>
-      
-      <div class="card-acoes-destaque">
-        <button class="btn-acao"><span style="color: #e63946;">♡</span> 103</button>
-        <button class="btn-acao"><span style="color: #f4a261;">🔖</span> Salvar</button>
-        <button class="btn-acao"><span>🔗</span> Compartilhar</button>
-      </div>
-      <button class="btn-ler-destaque">Ler artigo</button>
-    </div>
-
-    <h2 class="titulo-secao" style="margin-top: 40px;">Todos os artigos</h2>
-    
-    <div class="lista-artigos">
-      <div class="card-lista">
-        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=300&q=80" alt="Crianças na escola" class="img-lista">
-        <div class="info-lista">
-          <span class="categoria-texto">INCLUSÃO ESCOLAR</span>
-          <h4>Inclusão escolar: direitos e estratégias que fazer a diferença</h4>
-          <p>Entenda os direitos da criança com TEA e como promover um ambiente mais acolhedor e inclusivo.</p>
-          <div class="rodape-lista">
-            <div class="autor-mini">
-              <div class="avatar-mini"></div>
-              <span>Dr. XXXX<br>Psicólogo</span>
-            </div>
-            <div class="meta-lista">
-              <span>🕒 8min de leitura - 12/05/2024</span>
-              <span class="icone-salvar">🔖</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-lista">
-        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=300&q=80" alt="Crianças na escola" class="img-lista">
-        <div class="info-lista">
-          <span class="categoria-texto">INCLUSÃO ESCOLAR</span>
-          <h4>Inclusão escolar: direitos e estratégias que fazer a diferença</h4>
-          <p>Entenda os direitos da criança com TEA e como promover um ambiente mais acolhedor e inclusivo.</p>
-          <div class="rodape-lista">
-            <div class="autor-mini">
-              <div class="avatar-mini"></div>
-              <span>Dr. XXXX<br>Psicólogo</span>
-            </div>
-            <div class="meta-lista">
-              <span>🕒 8min de leitura - 12/05/2024</span>
-              <span class="icone-salvar">🔖</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="card-lista">
-        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=300&q=80" alt="Crianças na escola" class="img-lista">
-        <div class="info-lista">
-          <span class="categoria-texto">INCLUSÃO ESCOLAR</span>
-          <h4>Inclusão escolar: direitos e estratégias que fazer a diferença</h4>
-          <p>Entenda os direitos da criança com TEA e como promover um ambiente mais acolhedor e inclusivo.</p>
-          <div class="rodape-lista">
-            <div class="autor-mini">
-              <div class="avatar-mini"></div>
-              <span>Dr. XXXX<br>Psicólogo</span>
-            </div>
-            <div class="meta-lista">
-              <span>🕒 8min de leitura - 12/05/2024</span>
-              <span class="icone-salvar">🔖</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="coluna-lateral">
-    
-    <div class="box-lateral verde-claro">
-      <h3>Sobre o Blog</h3>
-      <p>Nosso blog reúne conteúdos escritos por profissionais especializados em TEA para levar informação de qualidade e apoio a famílias e cuidadores</p>
-      <div class="icone-decorativo">🧩</div>
-    </div>
-
-    <div class="box-lateral verde-claro">
-      <h3>Receba novidades</h3>
-      <p>Cadastre-se e receba novos artigos e conteúdos exclusivos no seu e-mail.</p>
-      <div class="input-grupo">
-        <input type="email" placeholder="Seu melhor e-mail">
-        <button type="button">➔</button>
-      </div>
-    </div>
-
-    <div class="box-lateral verde-claro">
-      <h3>Artigos mais lidos</h3>
-      <ul class="lista-mais-lidos">
-        <li>
-          <span class="numero">1</span>
-          <div class="texto-lido">
-            <strong>Sinais de TEA: o que observar nos primeiros anos de vida</strong>
-            <span>12 min de leitura</span>
-          </div>
-        </li>
-        <li>
-          <span class="numero">2</span>
-          <div class="texto-lido">
-            <strong>Como contar sobre o diagnóstico para a família e amigos</strong>
-            <span>12 min de leitura</span>
-          </div>
-        </li>
-        <li>
-          <span class="numero">3</span>
-          <div class="texto-lido">
-            <strong>Atividades sensoriais para fazer em casa</strong>
-            <span>12 min de leitura</span>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="box-lateral verde-claro">
-      <h3>Tags populares</h3>
-      <div class="container-tags">
-        <span class="tag-pill">Comunicação</span>
-        <span class="tag-pill">Alimentação</span>
-        <span class="tag-pill">Inclusão Escolar</span>
-        <span class="tag-pill">Terapias</span>
-        <span class="tag-pill">Rotinas</span>
-        <span class="tag-pill">Adolescência</span>
-      </div>
-    </div>
-
-  </div>
-
-</div>
+        </section>
 
     </section>
 

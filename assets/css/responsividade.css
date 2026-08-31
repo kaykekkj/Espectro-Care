@@ -301,6 +301,8 @@
     .contato button {
         padding: 12px 20px; /* Maior área de toque para mobile */
     }
+
+    
 }
 
 @media (max-width: 992px) {
@@ -316,4 +318,6 @@
         padding: 0 10px;
     }
 }
+
+
 

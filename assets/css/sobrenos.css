@@ -3,95 +3,253 @@
 @import url(footer.css);
 @import url(style.css);
 
-/* topo da página */
-.hero{
+/* ==========================================
+   ESTILOS BASE (Desktop)
+   ========================================== */
+
+/* Topo da página */
+.hero {
     background-image: url('../img/home/Img_hero.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 110vh;
+    min-height: 80vh; /* Alterado de height para min-height para evitar vazamentos */
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: #04344E;
-    padding: 80px;
+    padding: 80px 10%;
     width: 100%;
-}
-.hero h1{
-    width: 35%;
-    font-size: 50px;
-    margin-bottom: 40px;
-}
-.hero p{
-    width: 35%;
-    font-size: 20px;
+    box-sizing: border-box;
 }
 
-/*nosso objetivo*/
+.hero h1 {
+    width: 50%; /* Aumentado para melhor leitura */
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
 
-.objetivo-sobre-nos{ 
-    height: 600px;
+.hero p {
+    width: 50%;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* Nosso objetivo */
+.objetivo-sobre-nos { 
     display: flex;
     flex-direction: row;
-    width: 100%;
-    margin: 80px 20px;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 120px 10%;
+    background-color: #FFFFFF;
+    gap: 40px;
 }
 
-.nosso-objetivo{
-    margin-left: 40px;
-    margin-top: 20px;
+.nosso-objetivo {
+    flex: 1;
 }
 
-.nosso-objetivo h1{
+.nosso-objetivo h1 {
     color: #04344E;
     font-weight: 800;
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 
-.underline{
+.nosso-objetivo p {
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+/* Chaves (Cards de pilares) */
+.container-chaves {
+    display: flex;
+    flex: 2;
+    gap: 20px;
+    flex-wrap: wrap; /* Permite quebrar linha se necessário */
+    justify-content: center;
+}
+
+.container-chaves div {
+    flex: 1 1 200px; /* Flexível para se adaptar */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-chaves div h2 {
+    color: #14AE5C; 
+    margin-top: 15px;   
+}
+
+.container-chaves div p {
+    color: #000000;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.container-chaves div i {
+    font-size: 2.5rem;
+    color: #14AE5C;
+    background-color: #e4fcee;
+    border-radius: 50%;
+    padding: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}
+
+/* Por que criamos o site */
+.porque-criamos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    padding: 60px 5%;
+}
+
+.porque-topo {
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+}
+
+.porque-topo h2 {
+    color: #04344E;
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.porque-topo p {
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 15px;
+}
+
+.porque-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 10px 5px #92929231;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.porque-cards div h2 {
+    color: #04344E;
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.porque-cards div p {
+    color: #000000;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 15px;
+}
+
+.underline {
     height: 5px;
     width: 80px;
     background-color: #47C777;
     border-radius: 10px;
+    margin: 10px auto 0 auto;
 }
 
-.nosso-objetivo p{
-    color: #000000;
-    font-weight: 600;
-    font-size: 25px;
+/* ==========================================
+   MEDIA QUERIES (RESPONSIVIDADE)
+   ========================================== */
+
+/* Tablets e notebooks pequenos (Até 1024px) */
+@media (max-width: 1024px) {
+    .hero h1, .hero p {
+        width: 70%;
+    }
+
+    .objetivo-sobre-nos {
+        flex-direction: column;
+        padding: 50px 8%;
+    }
+
+    .container-chaves {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .porque-cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+    }
 }
 
-/* chaves */
+/* Celulares grandes (Até 768px) */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 20px;
+        text-align: center;
+        align-items: center;
+    }
 
-.container-chaves{
-    display: flex;
-    gap: 10px;
-    flex-direction: row;
-    width: 70%;
+    .hero h1 {
+        width: 100%;
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .nosso-objetivo {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .container-chaves div {
+        margin: 10px 0;
+        flex: 1 1 100%; /* Cada item ocupa a largura inteira */
+    }
+
+    .porque-cards {
+        grid-template-columns: 1fr; /* 1 coluna em celulares */
+    }
+
+    .card {
+        min-width: unset; /* Remove largura mínima rígida */
+    }
 }
 
-.container-chaves div{
-    width: 20vw;
-    text-align: center;
-    flex-direction: column;
-    max-width: 300px;
-    margin: 0px 40px;
-}
+/* Celulares pequenos (Até 480px) */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
 
-.container-chaves div h2{
-    color: #14AE5C;    
-}
+    .nosso-objetivo h1, .porque-topo h2 {
+        font-size: 1.6rem;
+    }
 
-.container-chaves div p{
-    color: #000000;
-    font-weight: 600;
-    font-size: 22px;
-}
-
-.container-chaves div i{
-    font-size: 70px;
-    color: #14AE5C;
-    background-color: #e4fcee;
-    border-radius: 50%;
-    padding: 25px;
+    .container-chaves div i {
+        font-size: 2rem;
+        width: 40px;
+        height: 40px;
+    }
 }

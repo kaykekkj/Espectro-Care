@@ -1,34 +1,26 @@
 /* ================================================================
    NEUROHELP - STYLESHEET PRINCIPAL
    ================================================================
-   SUMÁRIO:
-   1.  RESET & BASE
-   2.  NAVBAR
-   3.  MODAL SELECIONAR PERFIL
-   4.  HOME PAGE
-       4.1 Hero
-       4.2 Missão
-       4.3 Funcionamento (Como começar)
-       4.4 Motivos (Por que nos escolher)
-       4.5 CTA (Primeiro passo)
-   5.  FOOTER
-   6.  FORMULÁRIOS (Login & Cadastro)
-   7.  BLOG PAGE
-       7.1 Header do Blog
-       7.2 Categorias
-       7.3 Card Destaque
-       7.4 Lista de Artigos
-       7.5 Sidebar
-   8.  PÁGINAS DE POST (DOCS)
-   9.  APRENDIZAGEM (Grid de Artigos)
-   10. RESPONSIVIDADE
+   
+   1. RESET & BASE
+   2. NAVBAR
+   3. MODAL SELECIONAR PERFIL
+   4. HOME
+   5. FOOTER
+   6. FORMULÁRIOS
+   7. BLOG
+   8. PÁGINAS DE POST
+   9. APRENDIZAGEM
+   10. PROFISSIONAIS
+   11. PERFIL PROFISSIONAL
    ================================================================ */
 
-/* ==============================================================
-   1. RESET & BASE
-   ============================================================== */
-@import url(responsividade.css);
 
+/* ================================================================
+   1. RESET & BASE
+   ================================================================ */
+
+@import url("responsividade.css");
 
 * {
     box-sizing: border-box;
@@ -44,24 +36,28 @@ body {
     scroll-behavior: smooth;
 }
 
-/* ==============================================================
+h1 {
+    margin: 0;
+}
+
+
+/* ================================================================
    2. NAVBAR
-   ============================================================== */
+   ================================================================ */
+
+.logo {
+    height: 55%;
+}
 
 .navbar {
     background-color: rgb(255, 255, 255);
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     height: 15vh;
     max-height: 200px;
-
     padding: 0 20px;
-
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
     position: fixed;
     width: 100%;
     z-index: 500;
@@ -70,7 +66,6 @@ body {
 .navlinks {
     display: flex;
     gap: 40px;
-
     padding: 0;
     margin: 0;
 }
@@ -82,10 +77,8 @@ body {
 .navlinks li a {
     text-decoration: none;
     color: #ABABAB;
-
     font-size: 18px;
     font-weight: bold;
-
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -103,10 +96,8 @@ body {
 .entrar {
     text-decoration: none;
     color: rgb(0, 0, 0);
-
     font-size: 18px;
     font-weight: bold;
-
     transition: text-decoration 0.3s ease;
 }
 
@@ -115,19 +106,18 @@ body {
 }
 
 .criar-conta {
-    background: linear-gradient(135deg, rgb(24, 140, 162), rgb(92, 186, 117));
-
+    background: linear-gradient(
+        135deg,
+        rgb(24, 140, 162),
+        rgb(92, 186, 117)
+    );
     color: white;
     border: none;
-
     padding: 10px 20px;
-
     font-size: 18px;
     font-weight: bold;
-
     cursor: pointer;
     border-radius: 5px;
-
     transition: transform 0.3s ease, background 0.3s ease;
 }
 
@@ -137,9 +127,14 @@ body {
 }
 
 .criar-conta:hover {
-    background: linear-gradient(135deg, rgb(92, 186, 117), rgb(24, 140, 162));
+    background: linear-gradient(
+        135deg,
+        rgb(92, 186, 117),
+        rgb(24, 140, 162)
+    );
     transform: scale(1.1);
 }
+
 
 /* --- Mobile Menu --- */
 
@@ -152,11 +147,8 @@ body {
 .mobile-menu div {
     width: 25px;
     height: 3px;
-
     background-color: #333;
-
     margin: 5px 0;
-
     border-radius: 2px;
 }
 
@@ -165,9 +157,10 @@ body {
     display: none;
 }
 
-/* ==============================================================
+
+/* ================================================================
    3. MODAL SELECIONAR PERFIL
-   ============================================================== */
+   ================================================================ */
 
 .selecionar {
     height: fit-content;
@@ -175,36 +168,43 @@ body {
     position: fixed;
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%) translateY(200vh);
+
     border-radius: 20px;
+
     display: none;
     flex-direction: column;
-    box-shadow: 0px 0px 20px #ababab;
-background-image: url(../img/home/fundoselecionar.png);
+
+    box-shadow: 0 0 20px #ABABAB;
+
+    background-image: url("../img/home/fundoselecionar.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
     transition: transform 0.5s ease;
+
     z-index: 999;
+
     padding-bottom: 60px;
 }
 
 .selecionar h1 {
     font-weight: bold;
     color: rgb(0, 0, 0);
-
     text-align: center;
-
     font-family: "Nunito", sans-serif;
     font-size: 40px;
-
     line-height: 1.2;
+    margin-bottom: 20px;
 }
 
 .selecionar h1 span {
-    color: #ababab;
+    color: #ABABAB;
     font-size: 25px;
 }
+
 
 /* --- Cards do Modal --- */
 
@@ -218,18 +218,26 @@ background-image: url(../img/home/fundoselecionar.png);
     width: 30%;
     border-radius: 30px;
     text-decoration: none;
+
     display: flex;
     flex-direction: column;
+
     padding: 10px;
+
     align-items: center;
     justify-content: center;
+
     background-color: white;
-    box-shadow: 0px 0px 10px #ABABAB;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    box-shadow: 0 0 10px #ABABAB;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .cards a:hover {
-    box-shadow: 0px 0px 10px #35a073;
+    box-shadow: 0 0 10px #35a073;
     transform: scale(1.05);
 }
 
@@ -253,18 +261,25 @@ background-image: url(../img/home/fundoselecionar.png);
     flex-direction: column;
 }
 
+
 /* --- Overlay --- */
 
 .overlay {
     position: fixed;
     inset: 0;
+
     backdrop-filter: blur(8px);
     background: rgba(0, 0, 0, 0.2);
+
     z-index: 998;
+
     opacity: 0;
+
     transition: opacity 0.5s ease;
+
     pointer-events: none;
 }
+
 
 /* --- Botão Voltar --- */
 
@@ -278,20 +293,46 @@ background-image: url(../img/home/fundoselecionar.png);
     height: 100%;
 }
 
- 
-/* ==============================================================
+
+/* ================================================================
+   4. HOME
+   ================================================================ */
+
+.home {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 17vh;
+}
+
+.inicio-site img {
+    width: 70vw;
+}
+
+
+/* ================================================================
    5. FOOTER
-   ============================================================== */
+   ================================================================ */
 
 .footer {
     background-color: rgb(255, 255, 255);
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     width: 100%;
+
     padding: 30px;
+
     margin-top: 50px;
-    box-shadow: 0px 0px 4px #0000001a;
+
+    box-shadow: 0 0 4px #0000001a;
 }
 
 .footer-logo {
@@ -309,6 +350,7 @@ background-image: url(../img/home/fundoselecionar.png);
 .footer-itens {
     display: flex;
     flex-direction: column;
+
     gap: 15px;
 
     padding: 0;
@@ -340,75 +382,27 @@ background-image: url(../img/home/fundoselecionar.png);
 }
 
 
-/* ================= HOME ================= */
-
-.home {
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 20px;
-
-    margin-top: 17vh;
+/* ================================================================
+   6. FORMULÁRIOS
+   ================================================================ */
 
 
-}
-
-.logo {
-    height: 55%;
-}
-
-.inicio-site img{
-    width: 70vw;
-}
-
-/* ================= SELECIONAR LOGIN ================= */
-
-.selecionar{
-    height: fit-content;
-    width: 60vw;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) translateY(200vh);
-    border-radius: 20px;
-    display: none;
-    flex-direction: column;
-    box-shadow: 0px 0px 20px #ababab;
-}
-/* ==============================================================
-   6. FORMULÁRIOS (Login & Cadastro)
-   ============================================================== */
-
+/* --- Fundo da página de login --- */
 
 .body-login {
-    background-image: url(../img/home/fundoselecionar.png);
+    background-image: url("../img/home/fundoselecionar.png");
+
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
     min-height: 100dvh;
 }
 
-.selecionar h1{
-    font-weight: bold;
-    color: rgb(0, 0, 0);
 
-    text-align: center;
+/* --- Navbar de autenticação --- */
 
-    font-family: "Nunito", sans-serif;
-    font-size: 40px;
-
-    line-height: 1.2;
-}
-
-.selecionar h1 span{
-    color: #ababab;
-    font-size: 25px;
-}
-
-.navbar-aut{
+.navbar-aut {
     background-color: rgb(255, 255, 255);
 
     display: flex;
@@ -422,108 +416,22 @@ background-image: url(../img/home/fundoselecionar.png);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
     position: fixed;
+
     width: 100%;
+
     z-index: 500;
 }
 
-.navbar-aut a{
+.navbar-aut a {
     align-self: center;
 }
 
-/* ================= CARDS APRENDIZAGEM ================= */
 
-.cards{
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.cards a{
-    width: 30%;
-
-    border-radius: 30px;
-
-    text-decoration: none;
-
-    display: flex;
-    flex-direction: column;
-
-    padding: 10px;
-
-    align-items: center;
-    justify-content: center;
-
-    background-color: white;
-
-    box-shadow: 0px 0px 10px #ABABAB;
-
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cards a:hover{
-    box-shadow: 0px 0px 10px #35a073;
-    transform: scale(1.05);
-}
-
-.cards h1{
-    font-size: 24px;
-}
-
-.cards a img{
-    height: 20vh;
-    max-height: 200px;
-    padding: 20px;
-}
-
-.cards a div{
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-direction: column;
-}
-
-/* ================= OVERLAY ================= */
-
-.overlay{
-    position: fixed;
-    inset: 0;
-
-    backdrop-filter: blur(8px);
-
-    background: rgba(0,0,0,0.2);
-
-    z-index: 998;
-
-    opacity: 0;
-
-    transition: opacity 0.5s ease;
-
-    pointer-events: none;
-}
-
-/* ================= VOLTAR ================= */
-
-.voltar img{
-    height: 25px;
-    margin: 20px;
-    cursor: pointer;
-}
-
-.logo-voltar{
-    height: 100%;
-}
-
-
-
-/* ================================================== PAGINA LOGIN  */
-
+/* --- Container de login/cadastro --- */
 
 .conteiner-entrar {
-
     margin: 10vh 0;
+
     width: 50vw;
     max-width: 1000px;
 
@@ -532,9 +440,9 @@ background-image: url(../img/home/fundoselecionar.png);
     display: flex;
     flex-direction: column;
 
-    box-shadow: 0px 0px 20px #ababab;
+    box-shadow: 0 0 20px #ABABAB;
 
-background-image: url(../img/home/Rectangle\ 6.png);
+    background-image: url("../img/home/Rectangle 6.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -544,11 +452,13 @@ background-image: url(../img/home/Rectangle\ 6.png);
 
 .conteiner-entrar h1 {
     font-weight: bold;
+
     color: rgb(248, 248, 248);
 
     text-align: center;
 
     font-family: "Nunito", sans-serif;
+
     font-size: 30px;
 
     line-height: 1.2;
@@ -563,6 +473,7 @@ background-image: url(../img/home/Rectangle\ 6.png);
     text-align: start;
 
     font-family: "Nunito", sans-serif;
+
     font-size: 15px;
 
     line-height: 1.2;
@@ -581,22 +492,24 @@ background-image: url(../img/home/Rectangle\ 6.png);
     height: 40px;
 
     border-radius: 5px;
+
     border: none;
 
     padding: 0 10px;
 
     margin-bottom: 20px;
 
-    box-shadow: 0px 0px 5px #ABABAB;
+    box-shadow: 0 0 5px #ABABAB;
 
-    color: #4c4c4c;
+    color: #4C4C4C;
 
     font-weight: bolder;
 }
 
 .conteiner-entrar input:focus {
     outline: none;
-    box-shadow: 0px 0px 5px #35a073;
+
+    box-shadow: 0 0 5px #35a073;
 }
 
 .conteiner-entrar input::placeholder {
@@ -611,6 +524,7 @@ background-image: url(../img/home/Rectangle\ 6.png);
 
 .conteiner-entrar button {
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -622,11 +536,16 @@ background-image: url(../img/home/Rectangle\ 6.png);
     margin-top: 40px;
     margin-bottom: 2%;
 
-    background: linear-gradient(135deg, rgb(24, 140, 162), rgb(92, 186, 117));
+    background: linear-gradient(
+        135deg,
+        rgb(24, 140, 162),
+        rgb(92, 186, 117)
+    );
 
     color: white;
 
     border: none;
+
     border-radius: 5px;
 
     font-size: 18px;
@@ -634,11 +553,18 @@ background-image: url(../img/home/Rectangle\ 6.png);
 
     cursor: pointer;
 
-    transition: transform 0.3s ease, background 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
 }
 
 .conteiner-entrar button:hover {
-    background: linear-gradient(135deg, rgb(92, 186, 117), rgb(24, 140, 162));
+    background: linear-gradient(
+        135deg,
+        rgb(92, 186, 117),
+        rgb(24, 140, 162)
+    );
+
     transform: scale(1.05);
 }
 
@@ -646,7 +572,8 @@ background-image: url(../img/home/Rectangle\ 6.png);
     cursor: pointer;
 }
 
-/* --- Inputs dupla (senhas lado a lado) --- */
+
+/* --- Inputs duplos --- */
 
 .senhas {
     display: flex;
@@ -657,7 +584,8 @@ background-image: url(../img/home/Rectangle\ 6.png);
     width: 45%;
 }
 
-/* --- Autocomplete (Estado/Cidade) --- */
+
+/* --- Autocomplete --- */
 
 .autocomplete {
     position: relative;
@@ -670,32 +598,43 @@ background-image: url(../img/home/Rectangle\ 6.png);
 
 #sugestoes {
     position: absolute;
+
     background: white;
+
     max-height: 200px;
+
     overflow-y: auto;
+
     display: none;
+
     border-radius: 5px;
+
     z-index: 1000;
 }
 
 .sugestao {
     padding: 10px;
+
     cursor: pointer;
+
     border-radius: 5px;
 }
 
 .sugestao:hover {
-    background: #f0f0f0;
+    background: #F0F0F0;
 }
 
-/* ==============================================================
-   7. BLOG PAGE
-   ============================================================== */
 
-/* --- 7.1 Header do Blog --- */
+/* ================================================================
+   7. BLOG PAGE
+   ================================================================ */
+
+
+/* --- Header --- */
 
 .header-blog {
     display: flex;
+
     justify-content: center;
 
     flex-direction: column;
@@ -703,132 +642,111 @@ background-image: url(../img/home/Rectangle\ 6.png);
     gap: 20px;
 
     margin-top: 17vh;
+
     margin: 20px;
 }
 
 .titulo {
     font-weight: bold;
+
     color: rgb(0, 0, 0);
 
     text-align: center;
 
     font-family: "Nunito", sans-serif;
+
     font-size: 40px;
 
     line-height: 1.2;
 }
 
 .titulo span {
-    color: #ababab;
+    color: #ABABAB;
+
     font-size: 25px;
 }
 
 .search {
     height: 40px;
+
     font-family: "Nunito", sans-serif;
+
     font-size: 100%;
+
     border-radius: 5px;
+
     border: none;
-    box-shadow: 0px 0px 5px #ABABAB;
+
+    box-shadow: 0 0 5px #ABABAB;
+
     padding: 0 10px;
 }
 
 .search:focus {
     outline: none;
-    box-shadow: 0px 0px 5px #35a073;
+
+    box-shadow: 0 0 5px #35a073;
 }
+/* ================================================================
+   7.1 Blog navegação
+   ================================================================ */
 
-/* --- 7.2 Categorias --- */
-
-.categorias {
-    font-family: "Nunito", sans-serif;
+.navegacao{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 30px 0;
-    max-width: 1200px;
 }
 
-.categorias h1 {
-    font-size: clamp(20px, 3vw, 32px);
-    font-weight: 500;
-    margin-bottom: 40px;
-    color: #000;
+.navegacao h2{
+    color: #04344E;
+    font-weight: 800;
+    font-size: 2.5rem;
     text-align: center;
-    font-family: "Nunito", sans-serif;
-    font-weight: bold;
 }
 
-.container-categorias {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: nowrap;
-    box-sizing: border-box;
-    padding: 0px 50px;
-    gap: clamp(10px, 1vw, 30px);
+.navegacao p{
+    color: #000000;
+    font-weight: 800;
+    font-size: 2rem;
+    text-align: center; 
 }
 
-.categoria {
-    width: clamp(110px, 9vw, 120px);
-    height: clamp(60px, 8vw, 95px);
-    flex-shrink: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    border-radius: 12px;
-    transition: 0.3s;
-    box-shadow: 0px 0px 5px #d6d6d6;
-    padding-bottom: 10px;
-    gap: clamp(3px, 1vw, 10px);
-}
-
-.container-categorias div img {
-    width: clamp(20px, 3vw, 38px);
-    height: clamp(20px, 3vw, 38px);
-    object-fit: contain;
-}
-
-.container-categorias div p {
-    font-size: clamp(8px, 1vw, 13px);
-    color: #000;
-    margin: 0;
-    line-height: 1.2;
+.filtros{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
     text-align: center;
-    font-family: "Nunito", sans-serif;
+    
 }
 
-.categoriaSelecionado {
-    width: clamp(110px, 9vw, 120px);
-    height: clamp(60px, 8vw, 95px);
-    flex-shrink: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: clamp(3px, 1vw, 10px);
-    cursor: pointer;
-    border-radius: 12px;
-    transition: 0.3s;
-    box-shadow: 0px 0px 5px #35a073;
+.categoria{
+    box-shadow: 0px 10px 10px 5px #92929231;
+    margin: 10px;
+    border-radius: 15px;
+    padding: 10px;
+    width: 10vw;
 }
 
-.container-categorias div:hover {
-    scale: 1.1;
+.categoria i{
+    font-size: 1.5rem;
+
 }
 
-/* --- 7.3 Card Destaque --- */
+/* ================================================================
+   7.3 CARD DESTAQUE
+   ================================================================ */
 
 .secao-blog-wrapper {
     display: flex;
+
     gap: 30px;
+
     margin: 0 auto;
+
     font-family: "Nunito", sans-serif;
-    color: #1b3644;
+
+    color: #1B3644;
+
     padding: 20px;
+
     max-width: 1200px;
 }
 
@@ -838,323 +756,474 @@ background-image: url(../img/home/Rectangle\ 6.png);
 
 .coluna-lateral {
     flex: 1;
+
     display: flex;
+
     flex-direction: column;
+
     gap: 24px;
 }
 
 .titulo-secao {
     font-size: 20px;
-    color: #1b3644;
+
+    color: #1B3644;
+
     margin-bottom: 20px;
 }
 
 .card-destaque {
-    background: #fff;
+    background: #FFF;
+
     border-radius: 16px;
+
     padding: 24px;
-    border: 1px solid #eaeaea;
+
+    border: 1px solid #EAEAEA;
+
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
 }
 
 .card-conteudo {
     display: flex;
+
     gap: 20px;
+
     margin-bottom: 20px;
 }
 
 .card-info {
     flex: 1;
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
 }
 
 .badge {
-    background: #eef9f2;
+    background: #EEF9F2;
+
     color: #166534;
+
     padding: 4px 12px;
+
     border-radius: 20px;
+
     font-size: 12px;
+
     font-weight: bold;
+
     width: fit-content;
+
     margin-bottom: 12px;
 }
 
 .titulo-destaque {
     font-size: 22px;
+
     margin: 0 0 16px 0;
-    color: #1b3644;
+
+    color: #1B3644;
+
     line-height: 1.3;
 }
 
 .autor-info {
     display: flex;
+
     align-items: center;
+
     gap: 10px;
+
     margin-bottom: 12px;
 }
 
 .avatar-placeholder {
     width: 40px;
+
     height: 40px;
-    background: #ccc;
+
+    background: #CCC;
+
     border-radius: 50%;
 }
 
 .detalhes-autor {
     font-size: 12px;
+
     line-height: 1.4;
+
     color: #666;
 }
 
 .detalhes-autor .nome {
     font-weight: bold;
-    color: #1b3644;
+
+    color: #1B3644;
+
     display: block;
 }
 
 .meta-info {
     font-size: 12px;
+
     color: #888;
 }
 
 .card-imagem img {
     width: 300px;
+
     height: 200px;
+
     object-fit: cover;
+
     border-radius: 12px;
 }
 
 .card-acoes-destaque {
     display: flex;
+
     gap: 10px;
+
     margin-bottom: 16px;
 }
 
 .btn-acao {
     flex: 1;
+
     padding: 10px;
-    background: #f8f9fa;
+
+    background: #F8F9FA;
+
     border: none;
+
     border-radius: 8px;
+
     cursor: pointer;
+
     font-weight: bold;
-    color: #1b3644;
+
+    color: #1B3644;
 }
 
 .btn-ler-destaque {
     width: 100%;
+
     padding: 16px;
-    background: #0c4a6e;
-    color: #fff;
+
+    background: #0C4A6E;
+
+    color: #FFF;
+
     border: none;
+
     border-radius: 8px;
+
     font-size: 16px;
+
     font-weight: bold;
+
     cursor: pointer;
 }
 
-/* --- 7.4 Lista de Artigos --- */
+
+/* ================================================================
+   7.4 LISTA DE ARTIGOS
+   ================================================================ */
 
 .lista-artigos {
     display: flex;
+
     flex-direction: column;
+
     gap: 16px;
 }
 
 .card-lista {
     display: flex;
-    background: #fff;
+
+    background: #FFF;
+
     border-radius: 12px;
-    border: 1px solid #eaeaea;
+
+    border: 1px solid #EAEAEA;
+
     padding: 12px;
+
     gap: 16px;
 }
 
 .img-lista {
     width: 220px;
+
     height: 140px;
+
     object-fit: cover;
+
     border-radius: 8px;
 }
 
 .info-lista {
     flex: 1;
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: space-between;
 }
 
 .categoria-texto {
-    color: #16a34a;
+    color: #16A34A;
+
     font-size: 11px;
+
     font-weight: bold;
+
     letter-spacing: 0.5px;
 }
 
 .info-lista h4 {
     margin: 6px 0;
+
     font-size: 16px;
-    color: #1b3644;
+
+    color: #1B3644;
 }
 
 .info-lista p {
     font-size: 13px;
+
     color: #555;
+
     margin: 0 0 10px 0;
+
     line-height: 1.4;
 }
 
 .rodape-lista {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 }
 
 .autor-mini {
     display: flex;
+
     align-items: center;
+
     gap: 8px;
+
     font-size: 11px;
+
     color: #666;
 }
 
 .avatar-mini {
     width: 30px;
+
     height: 30px;
-    background: #ccc;
+
+    background: #CCC;
+
     border-radius: 50%;
 }
 
 .meta-lista {
     display: flex;
+
     align-items: center;
+
     gap: 15px;
+
     font-size: 11px;
+
     color: #888;
 }
 
 .icone-salvar {
-    color: #16a34a;
+    color: #16A34A;
+
     font-size: 16px;
+
     cursor: pointer;
 }
 
-/* --- 7.5 Sidebar --- */
+
+/* ================================================================
+   7.5 SIDEBAR
+   ================================================================ */
 
 .box-lateral {
-    background: #f0fdf4;
+    background: #F0FDF4;
+
     border-radius: 16px;
+
     padding: 24px;
 }
 
 .box-lateral h3 {
     font-size: 16px;
-    color: #1b3644;
+
+    color: #1B3644;
+
     margin-top: 0;
+
     margin-bottom: 12px;
 }
 
 .box-lateral p {
     font-size: 13px;
+
     color: #444;
+
     line-height: 1.5;
+
     margin-bottom: 16px;
 }
 
 .icone-decorativo {
     font-size: 30px;
+
     text-align: right;
-    color: #16a34a;
+
+    color: #16A34A;
 }
 
 .input-grupo {
     display: flex;
-    background: #fff;
+
+    background: #FFF;
+
     border-radius: 8px;
+
     padding: 4px;
-    border: 1px solid #dcfce7;
+
+    border: 1px solid #DCFCE7;
 }
 
 .input-grupo input {
     flex: 1;
+
     border: none;
+
     padding: 8px 12px;
+
     outline: none;
+
     font-size: 13px;
 }
 
 .input-grupo button {
-    background: #22c55e;
-    color: #fff;
+    background: #22C55E;
+
+    color: #FFF;
+
     border: none;
+
     border-radius: 6px;
+
     padding: 0 16px;
+
     cursor: pointer;
+
     font-size: 16px;
 }
 
 .lista-mais-lidos {
     list-style: none;
+
     padding: 0;
+
     margin: 0;
+
     display: flex;
+
     flex-direction: column;
+
     gap: 16px;
 }
 
 .lista-mais-lidos li {
     display: flex;
+
     gap: 12px;
+
     align-items: flex-start;
 }
 
 .numero {
-    background: #22c55e;
-    color: #fff;
+    background: #22C55E;
+
+    color: #FFF;
+
     width: 24px;
+
     height: 24px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     border-radius: 50%;
+
     font-size: 12px;
+
     font-weight: bold;
+
     flex-shrink: 0;
 }
 
 .texto-lido strong {
     display: block;
+
     font-size: 13px;
-    color: #1b3644;
+
+    color: #1B3644;
+
     margin-bottom: 4px;
 }
 
 .texto-lido span {
     font-size: 11px;
+
     color: #888;
 }
 
 .container-tags {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 8px;
 }
 
 .tag-pill {
-    background: #fff;
-    border: 1px solid #dcfce7;
+    background: #FFF;
+
+    border: 1px solid #DCFCE7;
+
     color: #444;
+
     font-size: 12px;
+
     padding: 6px 12px;
+
     border-radius: 20px;
+
     cursor: pointer;
 }
 
-/* ==============================================================
-   8. PÁGINAS DE POST (DOCS)
-   ============================================================== */
+
+/* ================================================================
+   8. PÁGINAS DE POST
+   ================================================================ */
 
 .topo-blog,
 .topo-blog2,
@@ -1162,286 +1231,395 @@ background-image: url(../img/home/Rectangle\ 6.png);
 .topo-blog4,
 .topo-blog5 {
     margin-top: 15vh;
+
     height: fit-content;
+
     background-position: center;
+
     background-size: cover;
+
     background-repeat: no-repeat;
 }
 
 .topo-blog {
-    background-image: url(../img/blog/image\ 66.png);
+    background-image: url("../img/blog/image 66.png");
 }
 
 .topo-blog2 {
-    background-image: url(../img/blog/image\ 79.png);
+    background-image: url("../img/blog/image 79.png");
 }
 
 .topo-blog3 {
-    background-image: url(../img/blog/image\ 80.png);
+    background-image: url("../img/blog/image 80.png");
 }
 
 .topo-blog4 {
-    background-image: url(../img/blog/image\ 81.png);
+    background-image: url("../img/blog/image 81.png");
 }
 
 .topo-blog5 {
-    background-image: url(../img/blog/image\ 78.png);
+    background-image: url("../img/blog/image 78.png");
 }
 
 .topo-blog-itens {
     background-color: rgba(0, 0, 0, 0.6);
+
     padding: 20px;
+
     margin: auto;
+
     height: fit-content;
+
     backdrop-filter: blur(5px);
+
     display: flex;
+
     align-items: center;
+
     flex-direction: column;
+
     justify-content: space-between;
 }
 
 .topo-blog-itens h1 {
     color: white;
+
     font-size: 45px;
-    margin-bottom: 20px;
-    text-align: center;
+
     margin: 20px 50px;
+
+    text-align: center;
 }
 
 .topo-blog-itens p {
-    color: #ddd;
+    color: #DDD;
+
     font-size: 19px;
+
     line-height: 1.5;
+
     text-align: justify;
+
     width: 70%;
 }
 
 .topo-blog-itens input {
     width: 60%;
+
     height: 40px;
 
     border-radius: 5px;
+
     border: none;
 
     padding: 0 20px;
 
     margin-top: 20px;
 
-    box-shadow: 0px 0px 5px #ABABAB;
+    box-shadow: 0 0 5px #ABABAB;
 }
 
 .topo-blog-itens input:focus {
     outline: none;
-    box-shadow: 0px 0px 5px #35a073;
+
+    box-shadow: 0 0 5px #35a073;
 }
 
 .topo-blog-itens input::placeholder {
     color: #999;
-    font-size: 16px;
-}
 
-.topo-blog-itens input label {
-    color: #999;
     font-size: 16px;
 }
 
 .conteudo {
     margin: 20px 40px;
+
     padding: 20px;
+
     border-radius: 10px;
+
     text-align: justify;
 }
 
 .conteudo-blog {
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
-    margin: 40px 0px;
+
+    margin: 40px 0;
 }
 
-/* ==============================================================
-   9. APRENDIZAGEM (Grid de Artigos)
-   ============================================================== */
+
+/* ================================================================
+   9. APRENDIZAGEM
+   ================================================================ */
 
 .container-blog {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 30px;
+
     max-width: 1200px;
+
     margin: 40px;
+
     padding: 20px;
+
     justify-content: center;
 }
 
 .blog {
-    background: #fff;
+    background: #FFF;
+
     border-radius: 10px;
+
     box-shadow: 0 0 10px #ABABAB;
+
     display: flex;
+
     flex-direction: column;
+
     margin: 30px;
+
     width: 40%;
+
     justify-content: space-between;
 }
 
 .blog img {
     width: 100%;
+
     height: 200px;
+
     object-fit: cover;
+
     border-radius: 10px 10px 0 0;
 }
 
 .blog h1 {
     font-size: 24px;
-    padding: 10px;
+
     font-weight: bold;
+
     padding: 0 20px 20px 20px;
 }
 
 .blog p {
     color: #444;
+
     padding: 0 20px 20px 20px;
+
     text-align: justify;
 }
 
 .blog button {
-    background: linear-gradient(135deg, rgb(24, 140, 162), rgb(92, 186, 117));
+    background: linear-gradient(
+        135deg,
+        rgb(24, 140, 162),
+        rgb(92, 186, 117)
+    );
 
     color: white;
+
     border: none;
 
     padding: 10px 20px;
 
     font-size: 18px;
+
     font-weight: bold;
 
     cursor: pointer;
+
     border-radius: 5px;
 
-    transition: transform 0.3s ease, background 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
 
     margin: 10px;
+
     align-self: center;
+
     margin-bottom: 20px;
 }
 
 .blog button a {
     text-decoration: none;
+
     color: white;
 }
 
 .blog button:hover {
-    background: linear-gradient(135deg, rgb(92, 186, 117), rgb(24, 140, 162));
+    background: linear-gradient(
+        135deg,
+        rgb(92, 186, 117),
+        rgb(24, 140, 162)
+    );
+
     transform: scale(1.05);
 }
 
-/* ==============================================================
-   10. Profissionais
-   ============================================================== */
 
-/* Card profissionais */
+/* ================================================================
+   10. PROFISSIONAIS
+   ================================================================ */
 
 .container-cards-profissionais {
     display: flex;
+
     justify-content: center;
+
     padding: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
+
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    background-color: #F8F9FA;
 }
 
-/* Card Principal */
 .card-profissional {
-    background-color: #ffffff;
+    background-color: #FFF;
+
     border-radius: 16px;
+
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
     padding: 24px;
+
     max-width: 1000px;
+
     width: 100%;
-    box-sizing: border-box;
-    color: #333333;
+
+    color: #333;
 }
 
-/* Topo do Card */
 .topo-card-profissional {
     display: flex;
+
     gap: 24px;
+
     align-items: flex-start;
 }
 
 .foto-perfil-profissional {
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     min-width: 110px;
 }
 
 .foto-perfil-profissional img {
     width: 110px;
+
     height: 110px;
+
     border-radius: 50%;
+
     object-fit: cover;
+
     margin-bottom: 12px;
 }
 
 .foto-perfil-profissional p {
     font-size: 1.25rem;
+
     font-weight: 700;
-    color: #1a1a1a;
+
+    color: #1A1A1A;
+
     margin: 0;
 }
 
-/* Informações Profissionais */
+
+/* --- Informações profissionais --- */
+
 .informações-profissionais {
     flex: 1;
 }
 
 .informações-profissionais h1 {
     font-size: 1.5rem;
+
     font-weight: 600;
+
     margin: 0 0 4px 0;
-    color: #1a1a1a;
+
+    color: #1A1A1A;
 }
 
 .informações-profissionais > p {
-    color: #666666;
+    color: #666;
+
     margin: 0 0 16px 0;
+
     font-size: 0.95rem;
 }
 
-/* Tags */
+
+/* --- Tags --- */
+
 .tagg-perfil-profissional {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 8px;
+
     margin-bottom: 16px;
 }
 
 .tagg-perfil-profissional p {
-    background-color: #e9d5ff;
-    color: #581c87;
+    background-color: #E9D5FF;
+
+    color: #581C87;
+
     padding: 6px 14px;
+
     border-radius: 20px;
+
     font-size: 0.85rem;
+
     margin: 0;
+
     font-weight: 500;
 }
 
-/* Abordagem */
+
+/* --- Abordagem --- */
+
 .informações-profissionais > p:last-child {
     font-size: 0.9rem;
-    color: #4b5563;
+
+    color: #4B5563;
+
     display: flex;
+
     align-items: center;
+
     gap: 16px;
 }
 
-/* Pé do Card */
+
+/* --- Rodapé do card --- */
+
 .pe-card-profissional {
     display: flex;
+
     justify-content: space-between;
+
     align-items: flex-end;
+
     margin-top: 20px;
+
     padding-top: 16px;
+
     gap: 20px;
 }
 
@@ -1451,571 +1629,399 @@ background-image: url(../img/home/Rectangle\ 6.png);
 
 .sobre-mim p {
     font-size: 0.9rem;
-    color: #4b5563;
+
+    color: #4B5563;
+
     line-height: 1.5;
+
     margin: 0 0 12px 0;
 }
 
 .sobre-mim button {
     background: none;
+
     border: none;
-    color: #1a1a1a;
+
+    color: #1A1A1A;
+
     font-weight: 600;
+
     cursor: pointer;
+
     padding: 0;
+
     font-size: 0.9rem;
+
     display: flex;
+
     align-items: center;
+
     gap: 6px;
 }
 
 .sobre-mim button::after {
     content: "→";
+
     font-size: 1.1rem;
 }
 
-/* Área de Contato e Botão */
+
+/* --- Área de contato --- */
+
 .contato {
     display: flex;
+
     flex-direction: column;
+
     align-items: flex-end;
+
     min-width: 200px;
 }
 
 .contato button {
-    background-color: #22c55e;
-    color: #ffffff;
+    background-color: #22C55E;
+
+    color: #FFF;
+
     border: none;
+
     border-radius: 8px;
+
     padding: 10px 20px;
+
     font-weight: 600;
+
     font-size: 0.95rem;
+
     cursor: pointer;
+
     transition: background-color 0.2s;
+
     width: 100%;
 }
 
 .contato button:hover {
-    background-color: #16a34a;
+    background-color: #16A34A;
 }
 
 .contato p {
-    color: #22c55e;
+    color: #22C55E;
+
     font-size: 0.85rem;
+
     margin: 8px 0 0 0;
+
     font-weight: 500;
 }
-/* ==============================================================
-   12. PERFIL PROFISSIONAIS
-   ============================================================== */
+
+
+/* ================================================================
+   11. PERFIL PROFISSIONAL
+   ================================================================ */
 
 .profile-card {
-  background-color: #ffffff;
-  width: 70%;
-  min-width: 400px;
-  max-width: 1000px;
-  border-radius: 32px;
-  padding: 35px 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-  box-sizing: border-box;
-  font-family: "Nunito", sans-serif;
-  margin-bottom: 50px;
+    background-color: #FFF;
+
+    width: 70%;
+
+    min-width: 400px;
+
+    max-width: 1000px;
+
+    border-radius: 32px;
+
+    padding: 35px 40px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+
+    font-family: "Nunito", sans-serif;
+
+    margin-bottom: 50px;
 }
 
-/* Cabeçalho: Imagem + Informações do Profissional */
+
+/* --- Cabeçalho --- */
+
 .card-header {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  margin-bottom: 25px;
-  
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+    margin-bottom: 25px;
 }
 
-/* Anel Verde em volta da foto de perfil */
-.avatar-ring {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background-color: #38ca79;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  padding: 10px;
-  box-sizing: border-box;
-  margin: 20px;
-  margin-right: 5%;
-}
+
+/* --- Avatar online --- */
 
 .avatar-ring {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background-color: #38ca79;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  padding: 10px;
-  box-sizing: border-box;
-  margin: 20px;
-  margin-right: 5%;
+    width: 150px;
+
+    height: 150px;
+
+    border-radius: 50%;
+
+    background-color: #38CA79;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    padding: 10px;
+
+    margin: 20px;
+
+    margin-right: 5%;
 }
+
+
+/* --- Avatar offline --- */
 
 .avatar-ring-offline {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background-color: #b0b0b0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  padding: 10px;
-  box-sizing: border-box;
-  margin: 20px;
-  margin-right: 5%;
-  opacity: 0.7;
+    width: 150px;
+
+    height: 150px;
+
+    border-radius: 50%;
+
+    background-color: #B0B0B0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    padding: 10px;
+
+    margin: 20px;
+
+    margin-right: 5%;
+
+    opacity: 0.7;
 }
+
+
+/* --- Imagem do avatar --- */
 
 .profile-card .avatar-img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  background-color: #e0e0e0;
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    background-color: #E0E0E0;
 }
 
+
+/* --- Informações --- */
+
 .profile-card .header-info {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
 }
 
 .profile-card .info-name {
-  font-size: 22px;
-  font-weight: 700;
-  color: #000000;
-  margin: 0;
+    font-size: 22px;
+
+    font-weight: 700;
+
+    color: #000;
+
+    margin: 0;
 }
 
 .profile-card .info-crp {
-  font-size: 16px;
-  font-weight: 700;
-  color: #000000;
-  margin: 0 0 12px 0;
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: #000;
+
+    margin: 0 0 12px 0;
 }
 
 .profile-card .info-price-label {
-  font-size: 16px;
-  color: #222222;
-  font-weight: 400;
-  margin: 0;
+    font-size: 16px;
+
+    color: #222;
+
+    font-weight: 400;
+
+    margin: 0;
 }
 
 .profile-card .info-price-val {
-  font-size: 18px;
-  font-weight: 600;
-  color: #38ca79;
-  margin: 0;
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: #38CA79;
+
+    margin: 0;
 }
 
-/* Linha de Tags / Especialidades */
+
+/* --- Tags / Especialidades --- */
+
 .profile-card .tags-container {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  margin-bottom: 25px;
-  flex-wrap: wrap;
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-bottom: 25px;
+
+    flex-wrap: wrap;
 }
 
 .profile-card .tag-plain {
-  font-size: 13px;
-  font-weight: 700;
-  color: #000000;
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #000;
 }
 
 .profile-card .tag-pill {
-  background-color: #0fb860;
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 6px 18px;
-  border-radius: 20px;
+    background-color: #0FB860;
+
+    color: #FFF;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    padding: 6px 18px;
+
+    border-radius: 20px;
 }
 
 .profile-card .tag-pill-offline {
-  background-color: #c0c0c0;
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 6px 18px;
-  border-radius: 20px;
+    background-color: #C0C0C0;
+
+    color: #FFF;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    padding: 6px 18px;
+
+    border-radius: 20px;
 }
 
-/* Seção de Textos Informativos */
+
+/* --- Corpo --- */
+
 .profile-card .card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  color: #000000;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 35px;
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    color: #000;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin-bottom: 35px;
 }
 
 .profile-card .info-text {
-  margin: 0;
+    margin: 0;
 }
 
 .profile-card .info-text strong {
-  font-weight: 700;
+    font-weight: 700;
 }
 
-/* Rodapé com Botão e Telefone */
+
+/* --- Rodapé --- */
+
 .profile-card .card-footer {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  flex-wrap: wrap;
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
 }
+
+
+/* --- Botão contratar --- */
 
 .profile-card .btn-hire {
-  background-color: #4cd07d;
-  color: #ffffff;
-  padding: 12px 28px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: background-color 0.2s ease;
+    background-color: #4CD07D;
+
+    color: #FFF;
+
+    padding: 12px 28px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    font-size: 15px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    transition: background-color 0.2s ease;
 }
 
 .profile-card .btn-hire:hover {
-  background-color: #3eb86f;
+    background-color: #3EB86F;
 }
+
+
+/* --- Telefone --- */
 
 .profile-card .phone-contact {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #38ca79;
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: none;
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #38CA79;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    text-decoration: none;
 }
+
+
+/* --- Ícone --- */
 
 .profile-card .icon-svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
+    width: 20px;
+
+    height: 20px;
+
+    fill: currentColor;
 }
-
-/* ==============================================================
-   13. RESPONSIVIDADE
-   ============================================================== */
-
-@media (max-width: 768px) {
-
-    /* --- Navbar Mobile --- */
-
-    .navlinks {
-        position: fixed;
-
-        top: 15vh;
-        right: 0;
-
-        width: 50vw;
-        height: 85vh;
-
-        background-color: rgb(255, 255, 255);
-
-        flex-direction: column;
-        align-items: center;
-
-        gap: 8vh;
-
-        padding-top: 5vh;
-
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-    }
-
-    .mobile-menu {
-        display: block;
-    }
-
-    .conta {
-        display: none;
-    }
-
-    .entrar-nav-mobile,
-    .criar-nav-mobile {
-        display: block;
-    }
-
-    /* --- Home --- */
-
-    .home img {
-        height: 200px;
-    }
-
-    .logo {
-        height: 40%;
-    }
-
-    /* --- Modal Selecionar --- */
-
-    .selecionar {
-        width: 85vw;
-    }
-
-    .selecionar h1 {
-        font-size: 30px;
-    }
-
-    .selecionar h1 span {
-        font-size: 20px;
-    }
-
-    .cards {
-        margin-top: 10vh;
-    }
-
-    .cards a {
-        width: 30%;
-        border-radius: 10px;
-    }
-
-    .cards h1 {
-        font-size: 3vw;
-    }
-
-    .cards a img {
-        height: 15vh;
-        padding: 20px;
-    }
-
-    .voltar img {
-        height: 25px;
-        margin: 20px;
-        cursor: pointer;
-    }
-
-    
-    /* --- Footer --- */
-
-    .footer {
-        flex-direction: column;
-        gap: 30px;
-
-        text-align: center;
-    }
-
-    .footer-itens {
-        align-items: center;
-    }
-
-    /* --- Formulários --- */
-
-    .conteiner-entrar {
-        width: 85%;
-    }
-
-    .conteiner-entrar h1 {
-        font-size: 20px;
-    }
-
-    .conteiner-entrar p {
-        font-size: 12px;
-    }
-
-    .conteiner-entrar input {
-        height: 35px;
-    }
-
-    .conteiner-entrar button {
-        width: 100%;
-        height: 40px;
-
-        font-size: 16px;
-    }
-
-    /* --- Blog Header --- */
-
-    .titulo {
-        font-weight: bold;
-        color: rgb(0, 0, 0);
-
-        text-align: center;
-
-        font-family: poppins;
-        font-size: 30px;
-
-        line-height: 0.9;
-    }
-
-    .titulo span {
-        color: #ababab;
-        font-size: 15px;
-    }
-
-    /* --- Categorias --- */
-
-    .container-categorias {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .container-categorias div {
-        width: calc(25% - 20px);
-        max-width: 120px;
-        min-width: 80px;
-    }
-
-    /* --- Blog Seção Wrapper --- */
-
-    .secao-blog-wrapper {
-        flex-direction: column;
-    }
-
-    .card-conteudo {
-        flex-direction: column;
-    }
-
-    .card-imagem img {
-        width: 100%;
-        height: auto;
-    }
-
-    .card-lista {
-        flex-direction: column;
-    }
-
-    .img-lista {
-        width: 100%;
-        height: auto;
-    }
-
-    /* --- Posts (Docs) --- */
-
-    .topo-blog h1 {
-        font-size: 30px;
-        margin: 20px 30px;
-        text-align: center;
-        width: 100%;
-    }
-
-    .topo-blog p {
-        font-size: 16px;
-        margin: 20px 30px;
-        text-align: justify;
-        width: 100%;
-    }
-
-    .conteudo-blog p {
-        font-size: 16px;
-        line-height: 1.5;
-        text-align: justify;
-        margin: 20px 30px;
-        width: 100%;
-    }
-
-    /* --- Aprendizagem (Grid) --- */
-
-    .container-blog {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        margin: 40px;
-        padding: 20px;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .blog {
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px #ABABAB;
-        display: flex;
-        flex-direction: column;
-        margin: 30px;
-        width: 100%;
-        text-align: center;
-    }
-
-    .blog h1 {
-        font-size: 20px;
-        padding: 10px;
-        font-weight: bold;
-        padding: 0 20px 20px 20px;
-    }
-
-    /* --- profissionais --- */
-
-    .container-cards {
-        padding: 20px 15px; /* Reduz as margens laterais no telemóvel */
-        gap: 20px;
-    }
-
-    .card-padrao {
-        max-width: 100%; /* Ocupa a largura ideal no ecrã pequeno */
-        border-radius: 12px;
-    }
-
-    .card-conteudo {
-        padding: 18px;
-    }
-
-    .card-titulo {
-        font-size: 18px;
-    }
-
-    .card-texto {
-        font-size: 13px;
-        margin-bottom: 18px;
-    }
-
-    .card-botao {
-        padding: 10px;
-        font-size: 15px;
-    }
-
-    /* Perfil profissional */
-
-.profile-card {
-  width: 90%;
-  min-width: 300px;
-
-}
-
-/* Cabeçalho: Imagem + Informações do Profissional */
-.card-header {
-  flex-direction: column;
-}
-}
-
-
-
-
-
-@media (max-width: 992px) {
-    .container-cards-profissionais {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
-        padding: 0 15px;
-    }
-}
-
-@media (max-width: 600px) {
-    .container-cards-profissionais {
-        grid-template-columns: 1fr; /* 1 coluna empilhada em telemóveis */
-        padding: 0 10px;
-    }
-}
-
