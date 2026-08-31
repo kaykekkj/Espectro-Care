@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - NeuroHelp</title>
+    <!-- Vincula o arquivo CSS externo -->
+    <link rel="stylesheet" href="perfilteste.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Perfil do Profissional</h2>
+    
+    <div id="msg" class="mensagem"></div>
+
+    <form id="formPerfil">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail (Apenas Leitura):</label>
+            <input type="email" id="email" disabled>
+        </div>
+
+        <div class="form-group">
+            <label for="bio">Biografia / Sobre:</label>
+            <textarea id="bio"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone">
+        </div>
+
+        <div class="form-group">
+            <label for="estado">Estado (UF):</label>
+            <input type="text" id="estado" maxlength="2">
+        </div>
+
+        <div class="form-group">
+            <label for="numRegistro">Número de Registro:</label>
+            <input type="text" id="numRegistro">
+        </div>
+
+        <button type="submit">Salvar Alterações</button>
+    </form>
+</div>
+
+<!-- Vincula o arquivo JS externo -->
+<script src="carregarPerfil.js"></script>
+</body>
+</html>
