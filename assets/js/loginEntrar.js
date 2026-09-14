@@ -6,7 +6,7 @@ document.querySelector(".botao-logar").addEventListener("click", async () => {
     try {
 
         const response = await fetch(
-            "https://neuro-help-psi.vercel.app/pages/login.html",
+            "https://neuro-help-psi.vercel.app/pages/login",
             {
                 method: "POST",
                 headers: {
