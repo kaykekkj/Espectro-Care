@@ -5,9 +5,8 @@ document.querySelector(".botao-logar").addEventListener("click", async () => {
 
     try {
 
-        // ALTERADO: Apontando para o servidor da API no Render
         const response = await fetch(
-            "https://espectrocare.onrender.com/login", // Ajuste a rota final (/login) de acordo com o seu backend
+            "https://espectrocare.onrender.com/auth/login",
             {
                 method: "POST",
                 headers: {
