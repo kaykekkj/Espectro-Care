@@ -84,7 +84,7 @@
         try {
 
             const resposta = await fetch(
-                "https://neuro-help-psi.vercel.app/pages/cadastro-profissional.html",
+                "https://espectrocare.onrender.com/cadastro/profissional",
                 {
                     method: "POST",
                     headers: {
@@ -95,11 +95,11 @@
             );
 
             if (resposta.ok) {
-                alert("Cadastro realizado com sucesso!");
-            } else {
-                const erro = await resposta.text();
-                alert(erro);
-            }
+                    alert("Cadastro realizado com sucesso!");
+                } else {
+                    const erro = await resposta.text();
+                    alert(erro || `Erro no cadastro. Código HTTP: ${resposta.status}`);
+                }
 
         } catch (e) {
             console.error(e);

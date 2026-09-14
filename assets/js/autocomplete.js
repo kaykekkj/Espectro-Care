@@ -41,30 +41,30 @@ input.addEventListener("input", () => {
   }
 
   const resultados = estados.filter(estado =>
-    cidade.toLowerCase().includes(texto)
-  );
+      estado.toLowerCase().includes(texto)
+    );
 
-  resultados.forEach(cidade => {
-    const item = document.createElement("div");
+  resultados.forEach(estado => {
+      const item = document.createElement("div");
 
-    item.classList.add("sugestao");
-    item.textContent = estado;
+      item.classList.add("sugestao");
+      item.textContent = estado;
 
-    item.addEventListener("click", () => {
-      input.value = estado;
-      sugestoes.style.display = "none";
+      item.addEventListener("click", () => {
+        input.value = estado;
+        sugestoes.style.display = "none";
+      });
+
+      sugestoes.appendChild(item);
     });
 
-    sugestoes.appendChild(item);
-  });
-
-  sugestoes.style.display =
-    resultados.length > 0 ? "block" : "none";
+  sugestoes.style.display = resultados.length > 0 ? "block" : "none";
 });
 
 const cpf = document.getElementById("cpf");
 
-cpf.addEventListener("input", (e) => {
+if (cpf) {
+  cpf.addEventListener("input", (e) => {
     let valor = e.target.value;
 
     // remove tudo que não for número
@@ -76,4 +76,5 @@ cpf.addEventListener("input", (e) => {
     valor = valor.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
 
     e.target.value = valor;
-});
+  });
+}
