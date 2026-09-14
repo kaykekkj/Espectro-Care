@@ -5,8 +5,9 @@ document.querySelector(".botao-logar").addEventListener("click", async () => {
 
     try {
 
+        // ALTERADO: Apontando para o servidor da API no Render
         const response = await fetch(
-            "https://neuro-help-psi.vercel.app/pages/login",
+            "https://espectrocare.onrender.com/login", // Ajuste a rota final (/login) de acordo com o seu backend
             {
                 method: "POST",
                 headers: {
@@ -20,11 +21,11 @@ document.querySelector(".botao-logar").addEventListener("click", async () => {
         );
 
         if (!response.ok) {
-
             const mensagem = await response.text();
             console.log(mensagem);
 
-            alert(mensagem);
+            // Exibe o erro retornado pela API ou uma mensagem padrão se o retorno for vazio
+            alert(mensagem || `Erro ao realizar login. Status: ${response.status}`);
             return;
         }
 
