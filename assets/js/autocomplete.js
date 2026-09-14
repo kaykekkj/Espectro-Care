@@ -1,4 +1,4 @@
-const s = [
+const estados = [
 "Acre",
 "Alagoas",
 "Amapá",
