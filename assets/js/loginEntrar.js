@@ -32,12 +32,9 @@ document.querySelector(".botao-logar").addEventListener("click", async () => {
 
         console.log(data);
 
-        // Salva os dados no localStorage
         localStorage.setItem("token", data.token);
         localStorage.setItem("email", data.email);
         
-        // Exemplo: se o backend retornar 'tipoPerfil' ou 'tipo' ou 'role'
-        // Salvar o tipo de perfil também é uma boa prática:
         if (data.tipo) {
             localStorage.setItem("tipoPerfil", data.tipo);
         }
@@ -45,13 +42,11 @@ document.querySelector(".botao-logar").addEventListener("click", async () => {
         alert("Login realizado com sucesso!");
 
         
-        // Ajuste o nome da propriedade 'data.tipo' conforme o que o seu Backend retorna (ex: data.tipoPerfil, data.role, data.tipo)
-        const tipoUsuario = data.tipo || data.tipoPerfil || data.role;
-
+        
         if (tipoUsuario === "RESPONSAVEL" || tipoUsuario === "responsavel") {
-            window.location.href = "perfil-responsavel.html"; // Coloque o caminho correto da página de responsável
+            window.location.href = "userResponsavel.html"; 
         } else if (tipoUsuario === "PROFISSIONAL" || tipoUsuario === "profissional") {
-            window.location.href = "perfil-profissional.html"; // Coloque o caminho correto da página de profissional
+            window.location.href = "userProfissionalhtml";
         } else {
             window.location.href = "../index.html";
         }
