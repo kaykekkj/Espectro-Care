@@ -1,6 +1,5 @@
 const API_URL = 'https://neurohelp-backend.onrender.com/api/perfil';
 
-// Executa ao carregar o DOM
 document.addEventListener('DOMContentLoaded', () => {
     carregarPerfil();
 });
@@ -33,20 +32,17 @@ async function carregarPerfil() {
 
         const dados = await response.json();
 
-        // Preenche os campos do formulário
         document.getElementById('nome').value = dados.nome || '';
         document.getElementById('email').value = dados.email || '';
         document.getElementById('bio').value = dados.bio || '';
         document.getElementById('telefone').value = dados.telefone || '';
         document.getElementById('estado').value = dados.estado || '';
-        document.getElementById('numRegistro').value = dados.numRegistro || '';
 
     } catch (error) {
         exibirMensagem(error.message, true);
     }
 }
 
-// Atualiza os Dados do Perfil (PUT)
 document.getElementById('formPerfil').addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -57,7 +53,6 @@ document.getElementById('formPerfil').addEventListener('submit', async (e) => {
         bio: document.getElementById('bio').value,
         telefone: document.getElementById('telefone').value,
         estado: document.getElementById('estado').value,
-        numRegistro: document.getElementById('numRegistro').value
     };
 
     try {
@@ -81,7 +76,6 @@ document.getElementById('formPerfil').addEventListener('submit', async (e) => {
     }
 });
 
-// Exibe mensagens de feedback na tela
 function exibirMensagem(texto, isErro) {
     const msgDiv = document.getElementById('msg');
     msgDiv.textContent = texto;
