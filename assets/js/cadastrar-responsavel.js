@@ -1,5 +1,6 @@
 console.log(document.getElementById("btnCadastrarResp"));
         document.getElementById("btnCadastrarResp").addEventListener("click", async () => {
+            e.preventDefault();
 
     const senha = document.getElementById("senha").value;
     const confirmarSenha = document.getElementById("confirmarSenha").value;
