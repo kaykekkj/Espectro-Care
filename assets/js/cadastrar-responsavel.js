@@ -1,6 +1,7 @@
 console.log(document.getElementById("btnCadastrarResp"));
-        document.getElementById("btnCadastrarResp").addEventListener("click", async () => {
-            e.preventDefault();
+
+document.getElementById("btnCadastrarResp").addEventListener("click", async (e) => {
+    e.preventDefault();
 
     const senha = document.getElementById("senha").value;
     const confirmarSenha = document.getElementById("confirmarSenha").value;
@@ -20,7 +21,6 @@ console.log(document.getElementById("btnCadastrarResp"));
     };
 
     try {
-
         const resposta = await fetch(
             "https://espectrocare.onrender.com/cadastro/responsavel",
             {
@@ -33,15 +33,14 @@ console.log(document.getElementById("btnCadastrarResp"));
         );
 
         if (resposta.ok) {
-                    alert("Cadastro realizado com sucesso!");
-                } else {
-                    const erro = await resposta.text();
-                    alert(erro || `Erro no cadastro. Código HTTP: ${resposta.status}`);
-                }
+            alert("Cadastro realizado com sucesso!");
+        } else {
+            const erro = await resposta.text();
+            alert(erro || `Erro no cadastro. Código HTTP: ${resposta.status}`);
+        }
 
     } catch (e) {
         console.error(e);
         alert("Erro ao conectar com o servidor.");
     }
-
 });
