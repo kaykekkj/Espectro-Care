@@ -1572,67 +1572,256 @@
    9. APRENDIZAGEM
    ================================================================ */
 
-.container-blog {
-    display: flex;
+/* --- Página --- */
 
-    flex-wrap: wrap;
-
-    gap: 30px;
-
-    max-width: 1200px;
-
-    margin: 40px;
-
-    padding: 20px;
-
-    justify-content: center;
-}
-
-.blog {
-    background: #FFF;
-
-    border-radius: 10px;
-
-    box-shadow: 0 0 10px #ABABAB;
-
-    display: flex;
-
-    flex-direction: column;
-
-    margin: 30px;
-
-    width: 40%;
-
-    justify-content: space-between;
-}
-
-.blog img {
+.pagina-aprendizagem {
     width: 100%;
 
-    height: 200px;
+    min-height: calc(100vh - 15vh);
+
+    padding-top: 15vh;
+    padding-bottom: 60px;
+
+    background-color: #f8fbfb;
+
+    box-sizing: border-box;
+}
+
+
+/* ================================================================
+   CABEÇALHO DA PÁGINA DE APRENDIZAGEM
+   ================================================================ */
+
+.pagina-aprendizagem .header-blog {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 55px 0 35px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+    text-align: center;
+}
+
+.pagina-aprendizagem .titulo {
+    margin: 0;
+    color: #183b43;
+    font-family: "Nunito", sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.pagina-aprendizagem .titulo span {
+    display: block;
+    margin-top: 8px;
+
+    color: #6f858a;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Campo de pesquisa */
+.pagina-aprendizagem .search {
+    width: 420px;
+    max-width: 100%;
+    height: 50px;
+
+    padding: 0 18px;
+
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+
+    color: #183b43;
+    background-color: #ffffff;
+
+    border: 1px solid #d9e5e7;
+    border-radius: 12px;
+
+    outline: none;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+
+    transition: 0.2s ease;
+}
+
+.pagina-aprendizagem .search:focus {
+    border-color: #36a6a0;
+    box-shadow: 0 0 0 3px rgba(54, 166, 160, 0.12);
+}
+
+
+/* ================================================================
+   PESQUISA
+   ================================================================ */
+
+.pagina-aprendizagem .search {
+    width: 300px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    padding: 0 18px;
+
+    box-sizing: border-box;
+
+    background-color: white;
+
+    border: 1px solid #dce7e8;
+    border-radius: 10px;
+
+    color: #183b43;
+
+    font-family: "Nunito", sans-serif;
+    font-size: 15px;
+
+    outline: none;
+
+    box-shadow: 0 4px 15px rgba(24, 59, 67, 0.06);
+
+    transition: 0.25s ease;
+}
+
+.pagina-aprendizagem .search::placeholder {
+    color: #9aa8aa;
+}
+
+.pagina-aprendizagem .search:focus {
+    border-color: #188ca2;
+
+    box-shadow:
+        0 0 0 3px rgba(24, 140, 162, 0.10);
+}
+
+
+/* ================================================================
+   CONTAINER DOS ARTIGOS
+   ================================================================ */
+
+.pagina-aprendizagem .container-blog {
+    width: 90%;
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    padding: 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 28px;
+
+    box-sizing: border-box;
+}
+
+
+/* ================================================================
+   CARDS
+   ================================================================ */
+
+.pagina-aprendizagem .blog {
+    width: 100%;
+
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e3eeee;
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px rgba(24, 59, 67, 0.07);
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.pagina-aprendizagem .blog:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 28px rgba(24, 59, 67, 0.12);
+}
+
+
+/* --- Imagem --- */
+
+.pagina-aprendizagem .blog img {
+    width: 100%;
+    height: 210px;
+
+    display: block;
 
     object-fit: cover;
 
-    border-radius: 10px 10px 0 0;
+    border-radius: 0;
 }
 
-.blog h1 {
-    font-size: 24px;
 
-    font-weight: bold;
+/* --- Título do artigo --- */
 
-    padding: 0 20px 20px 20px;
+.pagina-aprendizagem .blog h1 {
+    margin: 0;
+
+    padding: 22px 24px 10px;
+
+    color: #183b43;
+
+    font-family: "Nunito", sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+
+    line-height: 1.3;
+
+    text-align: left;
 }
 
-.blog p {
-    color: #444;
 
-    padding: 0 20px 20px 20px;
+/* --- Texto --- */
 
-    text-align: justify;
+.pagina-aprendizagem .blog p {
+    margin: 0;
+
+    padding: 0 24px;
+
+    color: #66787b;
+
+    font-family: "Nunito", sans-serif;
+    font-size: 14.5px;
+    font-weight: 500;
+
+    line-height: 1.65;
+
+    text-align: left;
+
+    flex-grow: 1;
 }
 
-.blog button {
+
+/* --- Botão --- */
+
+.pagina-aprendizagem .blog button {
+    align-self: flex-start;
+
+    margin: 20px 24px 24px;
+
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 8px;
+
     background: linear-gradient(
         135deg,
         rgb(24, 140, 162),
@@ -1641,44 +1830,104 @@
 
     color: white;
 
-    border: none;
-
-    padding: 10px 20px;
-
-    font-size: 18px;
-
-    font-weight: bold;
+    font-family: "Nunito", sans-serif;
+    font-size: 14px;
+    font-weight: 800;
 
     cursor: pointer;
 
-    border-radius: 5px;
-
     transition:
-        transform 0.3s ease,
-        background 0.3s ease;
-
-    margin: 10px;
-
-    align-self: center;
-
-    margin-bottom: 20px;
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
-.blog button a {
-    text-decoration: none;
+.pagina-aprendizagem .blog button:hover {
+    transform: translateY(-2px);
 
-    color: white;
+    box-shadow:
+        0 6px 15px rgba(24, 140, 162, 0.20);
 }
 
-.blog button:hover {
-    background: linear-gradient(
-        135deg,
-        rgb(92, 186, 117),
-        rgb(24, 140, 162)
-    );
 
-    transform: scale(1.05);
+/* ================================================================
+   RESPONSIVIDADE
+   ================================================================ */
+
+@media (max-width: 900px) {
+
+    .pagina-aprendizagem .header-blog {
+        width: 90%;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding-top: 45px;
+    }
+
+    .pagina-aprendizagem .titulo {
+        font-size: 36px;
+    }
+
+    .pagina-aprendizagem .search {
+        width: 100%;
+    }
+
+    .pagina-aprendizagem .container-blog {
+        width: 90%;
+
+        grid-template-columns: 1fr;
+    }
 }
+
+
+@media (max-width: 600px) {
+
+    .pagina-aprendizagem {
+        padding-top: 15vh;
+    }
+
+    .pagina-aprendizagem .header-blog {
+        width: 92%;
+
+        padding-top: 30px;
+        padding-bottom: 25px;
+    }
+
+    .pagina-aprendizagem .titulo {
+        font-size: 32px;
+    }
+
+    .pagina-aprendizagem .titulo span {
+        font-size: 14px;
+    }
+
+    .pagina-aprendizagem .container-blog {
+        width: 92%;
+
+        gap: 20px;
+    }
+
+    .pagina-aprendizagem .blog img {
+        height: 190px;
+    }
+
+    .pagina-aprendizagem .blog h1 {
+        padding: 19px 20px 9px;
+
+        font-size: 19px;
+    }
+
+    .pagina-aprendizagem .blog p {
+        padding: 0 20px;
+
+        font-size: 14px;
+    }
+
+    .pagina-aprendizagem .blog button {
+        margin: 18px 20px 20px;
+    }
+}
+
 
 
 /* ================================================================
