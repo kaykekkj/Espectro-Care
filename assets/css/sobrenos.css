@@ -215,6 +215,7 @@
     .hero h1,
     .hero p {
         width: 70%;
+        text-align: start;
     }
 
     .objetivo-sobre-nos {
@@ -260,6 +261,7 @@
         font-size: 0.98rem;
         font-weight: 500;
         line-height: 1.65;
+        text-align: start;
     }
 
     .objetivo-sobre-nos {
@@ -321,6 +323,7 @@
         max-width: 100%;
         font-size: 0.92rem;
         line-height: 1.6;
+        text-align: start;
     }
 
     .objetivo-sobre-nos {
