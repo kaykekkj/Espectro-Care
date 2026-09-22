@@ -1,35 +1,58 @@
-/* ==============================================================
-   13. RESPONSIVIDADE
-   ============================================================== */
+/* ================================================================
+   TABLETS — até 992px
+   ================================================================ */
+
+@media (max-width: 992px) {
+
+    /* --- Profissionais --- */
+
+    .container-cards-profissionais {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 0 15px;
+    }
+
+}
+
+
+/* ================================================================
+   TABLETS / CELULARES — até 768px
+   ================================================================ */
 
 @media (max-width: 768px) {
 
-    /* --- Navbar Mobile --- */
+    /* ============================================================
+       NAVBAR MOBILE
+       ============================================================ */
 
     .navlinks {
         position: fixed;
         top: 15vh;
         right: 0;
+
         width: 50vw;
         height: 85vh;
-        background-color: rgb(255, 255, 255);
+
+        background-color: #fff;
+
+        display: flex;
         flex-direction: column;
         align-items: center;
+
         gap: 8vh;
         padding-top: 5vh;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
         transform: translateX(100%);
         transition: transform 0.3s ease;
+
+        z-index: 999;
     }
 
-    /* Estado aberto do menu mobile */
     .navlinks.menu-aberto {
-        transform: translateX(0%);
+        transform: translateX(0);
     }
 
-    /* Usamos seletores mais específicos para garantir que essas regras
-       vençam as regras base (.mobile-menu { display:none }) que aparecem
-       em style.css/Universal.css carregadas depois na cascata. */
     nav.navbar .mobile-menu {
         display: block !important;
     }
@@ -43,20 +66,41 @@
         display: block !important;
     }
 
-    /* --- Home --- */
+
+    /* ============================================================
+       HOME
+       ============================================================ */
+
+    .home {
+        width: 100%;
+        min-height: auto;
+
+        padding: 35px 15px 50px;
+
+        box-sizing: border-box;
+    }
 
     .home img {
+        max-width: 100%;
         height: 200px;
+        object-fit: contain;
     }
 
     .logo {
+        max-width: 100%;
         height: 40%;
     }
 
-    /* --- Modal Selecionar --- */
+
+    /* ============================================================
+       MODAL — SELECIONAR PERFIL
+       ============================================================ */
 
     .selecionar {
         width: 85vw;
+        max-width: 600px;
+
+        box-sizing: border-box;
     }
 
     .selecionar h1 {
@@ -69,11 +113,20 @@
 
     .cards {
         margin-top: 10vh;
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
     }
 
     .cards a {
         width: 30%;
+        min-width: 100px;
+
         border-radius: 10px;
+
+        box-sizing: border-box;
     }
 
     .cards h1 {
@@ -81,32 +134,54 @@
     }
 
     .cards a img {
+        width: 100%;
         height: 15vh;
+
         padding: 20px;
+
+        object-fit: contain;
+        box-sizing: border-box;
     }
 
     .voltar img {
         height: 25px;
+        width: auto;
+
         margin: 20px;
+
         cursor: pointer;
     }
 
-    
-    /* --- Footer --- */
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
 
     .footer {
         flex-direction: column;
+        align-items: center;
         gap: 30px;
+
+        text-align: center;
     }
 
     .footer-itens {
         align-items: center;
+        text-align: center;
     }
 
-    /* --- Formulários --- */
+
+    /* ============================================================
+       FORMULÁRIOS
+       ============================================================ */
 
     .conteiner-entrar {
         width: 85%;
+        max-width: 600px;
+
+        box-sizing: border-box;
+
+        padding: 32px 28px 35px;
     }
 
     .conteiner-entrar h1 {
@@ -118,7 +193,10 @@
     }
 
     .conteiner-entrar input {
-        height: 35px;
+        width: 100%;
+        height: 40px;
+
+        box-sizing: border-box;
     }
 
     .conteiner-entrar button {
@@ -128,15 +206,33 @@
         font-size: 16px;
     }
 
-    /* --- Blog Header --- */
+    .senhas {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .senhas .campo {
+        width: 100%;
+    }
+
+
+    /* ============================================================
+       BLOG — TÍTULO
+       ============================================================ */
 
     .titulo {
+        width: 100%;
+
         font-weight: bold;
-        color: rgb(0, 0, 0);
+        color: #000;
+
         text-align: center;
         font-family: "Nunito", sans-serif;
+
         font-size: 30px;
         line-height: 0.9;
+
+        box-sizing: border-box;
     }
 
     .titulo span {
@@ -144,112 +240,205 @@
         font-size: 15px;
     }
 
-    /* --- Categorias --- */
+
+    /* ============================================================
+       BLOG — CATEGORIAS
+       ============================================================ */
 
     .container-categorias {
+        width: 100%;
+
+        display: flex;
         flex-wrap: wrap;
+
         justify-content: center;
+        align-items: center;
+
         gap: 20px;
+
+        box-sizing: border-box;
     }
 
     .container-categorias div {
         width: calc(25% - 20px);
+
         max-width: 120px;
         min-width: 80px;
+
+        box-sizing: border-box;
     }
 
-    /* --- Blog Seção Wrapper --- */
+
+    /* ============================================================
+       BLOG — SEÇÃO
+       ============================================================ */
 
     .secao-blog-wrapper {
+        width: 100%;
+
+        display: flex;
         flex-direction: column;
+
+        box-sizing: border-box;
     }
 
     .card-conteudo {
+        display: flex;
         flex-direction: column;
+
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .card-imagem {
+        width: 100%;
     }
 
     .card-imagem img {
         width: 100%;
         height: auto;
+
+        display: block;
     }
 
     .card-lista {
+        display: flex;
         flex-direction: column;
+
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .img-lista {
         width: 100%;
         height: auto;
+
+        display: block;
     }
 
-    /* --- Posts (Docs) --- */
+
+    /* ============================================================
+       BLOG — POSTS
+       ============================================================ */
+
+    .topo-blog {
+        width: 100%;
+        box-sizing: border-box;
+    }
 
     .topo-blog h1 {
+        width: auto;
+
         font-size: 30px;
+
         margin: 20px 30px;
+
         text-align: center;
-        width: 100%;
     }
 
     .topo-blog p {
+        width: auto;
+
         font-size: 16px;
+
         margin: 20px 30px;
+
         text-align: justify;
+    }
+
+    .conteudo-blog {
         width: 100%;
+        box-sizing: border-box;
     }
 
     .conteudo-blog p {
+        width: auto;
+
         font-size: 16px;
         line-height: 1.5;
+
         text-align: justify;
+
         margin: 20px 30px;
-        width: 100%;
     }
 
-    /* --- Aprendizagem (Grid) --- */
+
+    /* ============================================================
+       APRENDIZAGEM / BLOG CARDS
+       ============================================================ */
 
     .container-blog {
+        width: 100%;
+
         display: flex;
         flex-wrap: wrap;
-        gap: 30px;
-        margin: 40px;
+
+        gap: 20px;
+
+        margin: 40px 0;
         padding: 20px;
+
         justify-content: center;
-        width: 100%;
+
+        box-sizing: border-box;
     }
 
     .blog {
+        width: 100%;
+        max-width: 500px;
+
         background: #fff;
+
         border-radius: 10px;
-        box-shadow: 0 0 10px #ABABAB;
+
+        box-shadow: 0 0 10px #ababab;
+
         display: flex;
         flex-direction: column;
-        margin: 30px;
-        width: 100%;
+
+        margin: 0;
+
         text-align: center;
+
+        box-sizing: border-box;
     }
 
     .blog h1 {
         font-size: 20px;
-        padding: 10px;
+
+        padding: 0 20px 20px;
+
         font-weight: bold;
-        padding: 0 20px 20px 20px;
     }
 
-    /* --- profissionais --- */
+
+    /* ============================================================
+       PROFISSIONAIS
+       ============================================================ */
 
     .container-cards {
-        padding: 20px 15px; /* Reduz as margens laterais no telemóvel */
+        width: 100%;
+
+        padding: 20px 15px;
+
         gap: 20px;
+
+        box-sizing: border-box;
     }
 
     .card-padrao {
-        max-width: 100%; /* Ocupa a largura ideal no ecrã pequeno */
+        width: 100%;
+        max-width: 100%;
+
         border-radius: 12px;
+
+        box-sizing: border-box;
     }
 
     .card-conteudo {
         padding: 18px;
+
+        box-sizing: border-box;
     }
 
     .card-titulo {
@@ -258,66 +447,363 @@
 
     .card-texto {
         font-size: 13px;
+
         margin-bottom: 18px;
     }
 
     .card-botao {
         padding: 10px;
+
         font-size: 15px;
     }
 
-    /* Perfil profissional */
 
-.profile-card {
-  width: 90%;
-  min-width: 300px;
+    /* ============================================================
+       PERFIL PROFISSIONAL
+       ============================================================ */
 
-}
+    .profile-card {
+        width: 90%;
+        min-width: 0;
+        max-width: 600px;
 
-/* Cabeçalho: Imagem + Informações do Profissional */
-.card-header {
-  flex-direction: column;
-}
+        box-sizing: border-box;
+    }
 
-.container-cards-profissionais {
+    .card-header {
+        flex-direction: column;
+    }
+
+    .container-cards-profissionais {
+        width: 100%;
+
         padding: 12px;
+
+        box-sizing: border-box;
     }
 
     .card-profissional {
         padding: 16px;
+
+        box-sizing: border-box;
     }
 
     .pe-card-profissional {
         flex-direction: column;
         align-items: stretch;
+
         gap: 16px;
     }
 
     .contato {
-        align-items: center;
         width: 100%;
+
+        align-items: center;
     }
 
     .contato button {
-        padding: 12px 20px; /* Maior área de toque para mobile */
+        padding: 12px 20px;
+
+        max-width: 100%;
     }
 
-    
 }
 
-@media (max-width: 992px) {
-    .container-cards-profissionais {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
-        padding: 0 15px;
-    }
-}
+
+/* ================================================================
+   CELULARES — até 600px
+   ================================================================ */
 
 @media (max-width: 600px) {
+
+    /* --- Navbar --- */
+
+    .navbar-cadastro {
+        height: 70px;
+        padding: 0 18px;
+
+        box-sizing: border-box;
+    }
+
+    .logo-cadastro img {
+        width: 120px;
+        max-width: 100%;
+    }
+
+    .voltar-inicio {
+        width: 42px;
+        height: 42px;
+
+        padding: 0;
+
+        border-radius: 10px;
+    }
+
+    .voltar-inicio span {
+        display: none;
+    }
+
+
+    /* --- Home --- */
+
+    .home {
+        min-height: calc(100dvh - 70px);
+
+        padding: 25px 12px 40px;
+    }
+
+
+    /* --- Formulário --- */
+
+    .conteiner-entrar {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 28px 20px 32px;
+
+        border-radius: 16px;
+
+        box-sizing: border-box;
+    }
+
+    .conteiner-entrar h1 {
+        font-size: 25px;
+    }
+
+    .conteiner-entrar > header p {
+        font-size: 14px;
+    }
+
+    .conteiner-entrar legend {
+        font-size: 16px;
+    }
+
+    .conteiner-entrar input {
+        width: 100%;
+        height: 44px;
+
+        font-size: 14px;
+
+        box-sizing: border-box;
+    }
+
+    .conteiner-entrar button {
+        width: 100%;
+    }
+
+    .termos p {
+        font-size: 12px;
+    }
+
+
+    /* --- Profissionais --- */
+
     .container-cards-profissionais {
-        grid-template-columns: 1fr; /* 1 coluna empilhada em telemóveis */
+        grid-template-columns: 1fr;
+
         padding: 0 10px;
     }
+
+
+    /* --- Categorias --- */
+
+    .container-categorias {
+        gap: 15px;
+    }
+
+    .container-categorias div {
+        width: calc(50% - 15px);
+
+        min-width: 0;
+        max-width: 150px;
+    }
+
+
+    /* --- Cards de seleção --- */
+
+    .cards {
+        gap: 15px;
+    }
+
+    .cards a {
+        width: 40%;
+    }
+
+    .cards h1 {
+        font-size: 16px;
+    }
+
 }
 
 
+/* ================================================================
+   CELULARES PEQUENOS — até 480px
+   ================================================================ */
 
+@media (max-width: 480px) {
+
+    /* --- Navbar --- */
+
+    .navlinks {
+        width: 70vw;
+    }
+
+
+    /* --- Home --- */
+
+    .home {
+        padding: 20px 10px 35px;
+    }
+
+
+    /* --- Formulário --- */
+
+    .conteiner-entrar {
+        padding: 25px 18px 30px;
+    }
+
+    .senhas {
+        display: flex;
+        flex-direction: column;
+
+        gap: 0;
+    }
+
+    .senhas .campo {
+        width: 100%;
+    }
+
+
+    /* --- Blog --- */
+
+    .titulo {
+        font-size: 26px;
+    }
+
+    .titulo span {
+        font-size: 13px;
+    }
+
+    .topo-blog h1 {
+        font-size: 25px;
+
+        margin: 20px 15px;
+    }
+
+    .topo-blog p,
+    .conteudo-blog p {
+        font-size: 15px;
+
+        margin: 20px 15px;
+    }
+
+
+    /* --- Modal --- */
+
+    .selecionar {
+        width: 92vw;
+    }
+
+    .selecionar h1 {
+        font-size: 25px;
+    }
+
+    .selecionar h1 span {
+        font-size: 17px;
+    }
+
+    .cards a {
+        width: 42%;
+    }
+
+    .cards a img {
+        height: 100px;
+        padding: 15px;
+    }
+
+    .cards h1 {
+        font-size: 14px;
+    }
+
+
+    /* --- Blog cards --- */
+
+    .container-blog {
+        padding: 10px;
+        margin: 25px 0;
+    }
+
+    .blog h1 {
+        font-size: 18px;
+    }
+
+
+    /* --- Profissionais --- */
+
+    .container-cards {
+        padding: 15px 10px;
+    }
+
+    .card-conteudo {
+        padding: 15px;
+    }
+
+    .card-titulo {
+        font-size: 17px;
+    }
+
+    .card-texto {
+        font-size: 12px;
+    }
+
+    .card-botao {
+        width: 100%;
+    }
+
+    .profile-card {
+        width: 95%;
+    }
+
+}
+
+
+/* ================================================================
+   CELULARES MUITO PEQUENOS — até 360px
+   ================================================================ */
+
+@media (max-width: 360px) {
+
+    .navlinks {
+        width: 80vw;
+    }
+
+    .selecionar {
+        width: 94vw;
+    }
+
+    .cards {
+        gap: 10px;
+    }
+
+    .cards a {
+        width: 44%;
+    }
+
+    .cards a img {
+        height: 85px;
+        padding: 10px;
+    }
+
+    .cards h1 {
+        font-size: 13px;
+    }
+
+    .conteiner-entrar {
+        padding: 22px 15px 25px;
+    }
+
+    .conteiner-entrar h1 {
+        font-size: 22px;
+    }
+
+}

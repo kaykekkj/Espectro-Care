@@ -1,50 +1,291 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <meta
+        name="description"
+        content="Cadastre-se como responsável na EspectroCare."
+    >
+
+    <title>Cadastro de Responsável | EspectroCare</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        .autocomplete {
+            position: relative;
+        }
+
+        .lista-autocomplete {
+            position: absolute;
+            top: calc(100% - 10px);
+            left: 0;
+            width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+            background: #ffffff;
+            border: 1px solid #dce5e3;
+            border-radius: 9px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+            z-index: 1000;
+            display: none;
+        }
+
+        .item-autocomplete {
+            padding: 11px 14px;
+            color: #435051;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .item-autocomplete:hover {
+            background-color: #eef8f5;
+            color: #217c68;
+        }
+
+        #cidade:disabled {
+            background-color: #f1f4f4;
+            cursor: not-allowed;
+        }
+    </style>
 </head>
-<body class="body-cadastrarResponsavel">
-    <header>
-    <nav class="navbar">
-        <a class="logo" href="../index.html"><img src="../assets/img/logos/Logo.png" alt="Logo do site" class="logo-voltar" ></a>
-    </header>
-    <section class="home" >
-        <div class="conteiner-entrar">
-        <h1>Cadastro responsaveis</h1>
-        <p>Nome completo</p>
-        <input type="text" id="nome" placeholder="Digite seu nome"> <!-- Input onde sai o valor nome -->
-        <p>Email</p>
-        <input type="email" id="email" placeholder="Digite seu E-mail"> <!-- Input onde sai o valor email -->
-        <p>Telefone</p>
-        <input type="tel" id="tel" placeholder="Digite seu telefone"> <!-- Input onde sai o valor telefone -->
-            <div class="senhas">
-                <div>
-                <p>Senha</p> 
-                    <input type="password" id="senha" placeholder="Digite sua senha"> <!-- Input onde sai o valor senha -->
+
+<body class="body-login">
+
+<header class="header">
+    <nav class="navbar-cadastro">
+        <a href="../index.html" class="logo-cadastro">
+            <img
+                src="../assets/img/logos/Logo.png"
+                alt="EspectroCare"
+            >
+        </a>
+
+        <a href="../index.html" class="voltar-inicio">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="19"
+                height="19"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path d="M19 12H5"></path>
+                <path d="M12 19l-7-7 7-7"></path>
+            </svg>
+
+            <span>Voltar ao início</span>
+        </a>
+    </nav>
+</header>
+
+    <main class="home">
+
+        <section
+            class="conteiner-entrar"
+            aria-labelledby="titulo-cadastro"
+        >
+
+            <header>
+                <h1 id="titulo-cadastro">
+                    Cadastro de responsável
+                </h1>
+
+                <p>
+                    Preencha seus dados para criar sua conta.
+                </p>
+            </header>
+
+            <form id="formCadastroResponsavel">
+
+                <fieldset>
+                    <legend>Dados pessoais</legend>
+
+                    <div class="campo">
+                        <label for="nome">
+                            Nome completo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite seu nome completo"
+                            autocomplete="name"
+                            required
+                        >
                     </div>
-                <div>
-                    <p>Confirme sua senha</p> 
-                    <input type="password" id="confirmarSenha" placeholder="Confirme sua senha"> <!-- Input onde confirma senha -->
+
+                    <div class="campo">
+                        <label for="email">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Digite seu e-mail"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="tel">Telefone</label>
+
+                        <input
+                            type="tel"
+                            id="tel"
+                            name="telefone"
+                            placeholder="(11) 99999-9999"
+                            inputmode="numeric"
+                            maxlength="15"
+                            autocomplete="tel"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="cpf">
+                            CPF
+                        </label>
+
+                        <input
+                            type="text"
+                            id="cpf"
+                            name="cpf"
+                            placeholder="000.000.000-00"
+                            inputmode="numeric"
+                            maxlength="14"
+                            autocomplete="off"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo autocomplete">
+                        <label for="estado">
+                            Estado
+                        </label>
+
+                        <input
+                            type="text"
+                            id="estado"
+                            name="estado"
+                            placeholder="Digite o estado"
+                            autocomplete="off"
+                            required
+                        >
+
+                        <div
+                            id="sugestoesEstado"
+                            class="lista-autocomplete"
+                        ></div>
+                    </div>
+
+                    <div class="campo autocomplete">
+                        <label for="cidade">
+                            Cidade
+                        </label>
+
+                        <input
+                            type="text"
+                            id="cidade"
+                            name="cidade"
+                            placeholder="Selecione primeiro o estado"
+                            autocomplete="off"
+                            disabled
+                            required
+                        >
+
+                        <div
+                            id="sugestoesCidade"
+                            class="lista-autocomplete"
+                        ></div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Segurança da conta</legend>
+
+                    <div class="senhas">
+
+                        <div class="campo">
+                            <label for="senha">
+                                Senha
+                            </label>
+
+                            <input
+                                type="password"
+                                id="senha"
+                                name="senha"
+                                placeholder="Digite sua senha"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo">
+                            <label for="confirmarSenha">
+                                Confirme sua senha
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirmarSenha"
+                                name="confirmarSenha"
+                                placeholder="Digite sua senha novamente"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required
+                            >
+                        </div>
+
+                    </div>
+                </fieldset>
+
+                <div class="termos">
+                    <p>
+                        Ao criar sua conta, você concorda com nossos
+                        <a href="../termos.html">
+                            Termos de Uso
+                        </a>
+                        e
+                        <a href="../privacidade.html">
+                            Política de Privacidade
+                        </a>.
+                    </p>
                 </div>
-            </div>
 
-            <p>Estado</p>
-        <div class="autocomplete">
-            <input
-            type="text"
-            id="estado"
-            placeholder="Digite seu estado"
-            autocomplete="off"
-            > <!-- Input onde sai o valor estado -->
+                <button
+                    type="submit"
+                    class="botao-cadastrar"
+                    id="btnCadastrarResp"
+                >
+                    Cadastrar
+                </button>
 
-            <div id="sugestoes"></div>
+            </form>
+        </section>
+    </main>
 
+<<<<<<< HEAD
         </div>
         <p>CPF</p>
         <input type="text" id="cpf" placeholder=" Digite seu CPF"> <!-- Input onde sai o valor cpf -->
@@ -55,5 +296,384 @@
     </section>
     <script src="../assets/js/autocomplete.js"></script>
     <script src="../assets/js/cadastrar-responsavel.js"></script>
+=======
+    <script>
+        const formulario = document.getElementById("formCadastroResponsavel");
+        const cpfInput = document.getElementById("cpf");
+
+        const estadoInput = document.getElementById("estado");
+        const cidadeInput = document.getElementById("cidade");
+
+        const sugestoesEstado =
+            document.getElementById("sugestoesEstado");
+
+        const sugestoesCidade =
+            document.getElementById("sugestoesCidade");
+
+        const API =
+            "https://servicodados.ibge.gov.br/api/v1/localidades";
+
+        let estados = [];
+        let cidades = [];
+        let estadoSelecionado = null;
+
+
+        function normalizar(texto) {
+            return texto
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .toLowerCase();
+        }
+
+
+        function fecharSugestoes() {
+            sugestoesEstado.style.display = "none";
+            sugestoesCidade.style.display = "none";
+        }
+
+
+        function mostrarEstados() {
+            const busca = normalizar(estadoInput.value);
+
+            sugestoesEstado.innerHTML = "";
+
+            if (!busca) {
+                sugestoesEstado.style.display = "none";
+                return;
+            }
+
+            const resultados = estados.filter((estado) =>
+                normalizar(estado.nome).includes(busca)
+            );
+
+            resultados.slice(0, 8).forEach((estado) => {
+                const item = document.createElement("div");
+
+                item.className = "item-autocomplete";
+                item.textContent = estado.nome;
+
+                item.addEventListener("mousedown", (event) => {
+                    event.preventDefault();
+
+                    estadoSelecionado = estado;
+                    estadoInput.value = estado.nome;
+
+                    sugestoesEstado.style.display = "none";
+
+                    carregarCidades(estado.id);
+                });
+
+                sugestoesEstado.appendChild(item);
+            });
+
+            sugestoesEstado.style.display =
+                resultados.length ? "block" : "none";
+        }
+
+
+        function mostrarCidades() {
+            const busca = normalizar(cidadeInput.value);
+
+            sugestoesCidade.innerHTML = "";
+
+            if (!busca) {
+                sugestoesCidade.style.display = "none";
+                return;
+            }
+
+            const resultados = cidades.filter((cidade) =>
+                normalizar(cidade.nome).includes(busca)
+            );
+
+            resultados.slice(0, 8).forEach((cidade) => {
+                const item = document.createElement("div");
+
+                item.className = "item-autocomplete";
+                item.textContent = cidade.nome;
+
+                item.addEventListener("mousedown", (event) => {
+                    event.preventDefault();
+
+                    cidadeInput.value = cidade.nome;
+                    sugestoesCidade.style.display = "none";
+                });
+
+                sugestoesCidade.appendChild(item);
+            });
+
+            sugestoesCidade.style.display =
+                resultados.length ? "block" : "none";
+        }
+
+
+        async function carregarEstados() {
+            try {
+                const resposta = await fetch(`${API}/estados`);
+
+                if (!resposta.ok) {
+                    throw new Error("Erro ao carregar estados.");
+                }
+
+                estados = await resposta.json();
+
+                estados.sort((a, b) =>
+                    a.nome.localeCompare(b.nome)
+                );
+
+            } catch (erro) {
+                console.error(erro);
+
+                alert(
+                    "Não foi possível carregar os estados."
+                );
+            }
+        }
+
+
+        async function carregarCidades(idEstado) {
+            cidadeInput.disabled = true;
+            cidadeInput.value = "";
+            cidadeInput.placeholder = "Carregando cidades...";
+
+            cidades = [];
+
+            sugestoesCidade.innerHTML = "";
+            sugestoesCidade.style.display = "none";
+
+            try {
+                const resposta = await fetch(
+                    `${API}/estados/${idEstado}/municipios`
+                );
+
+                if (!resposta.ok) {
+                    throw new Error("Erro ao carregar cidades.");
+                }
+
+                cidades = await resposta.json();
+
+                cidades.sort((a, b) =>
+                    a.nome.localeCompare(b.nome)
+                );
+
+                cidadeInput.disabled = false;
+                cidadeInput.placeholder =
+                    "Digite sua cidade";
+
+            } catch (erro) {
+                console.error(erro);
+
+                cidadeInput.disabled = true;
+                cidadeInput.placeholder =
+                    "Não foi possível carregar as cidades.";
+
+                alert(
+                    "Não foi possível carregar as cidades."
+                );
+            }
+        }
+
+
+        estadoInput.addEventListener("input", () => {
+            estadoSelecionado = null;
+
+            cidadeInput.value = "";
+            cidadeInput.disabled = true;
+            cidadeInput.placeholder =
+                "Selecione primeiro o estado";
+
+            cidades = [];
+
+            mostrarEstados();
+        });
+
+
+        cidadeInput.addEventListener("input", () => {
+            mostrarCidades();
+        });
+
+
+        estadoInput.addEventListener("focus", () => {
+            mostrarEstados();
+        });
+
+
+        cidadeInput.addEventListener("focus", () => {
+            mostrarCidades();
+        });
+
+
+        document.addEventListener("click", (event) => {
+            if (!event.target.closest(".autocomplete")) {
+                fecharSugestoes();
+            }
+        });
+
+
+        cpfInput.addEventListener("input", function () {
+            let cpf = this.value
+                .replace(/\D/g, "")
+                .slice(0, 11);
+
+            if (cpf.length <= 3) {
+                this.value = cpf;
+            } else if (cpf.length <= 6) {
+                this.value = cpf.replace(
+                    /^(\d{3})(\d+)/,
+                    "$1.$2"
+                );
+            } else if (cpf.length <= 9) {
+                this.value = cpf.replace(
+                    /^(\d{3})(\d{3})(\d+)/,
+                    "$1.$2.$3"
+                );
+            } else {
+                this.value = cpf.replace(
+                    /^(\d{3})(\d{3})(\d{3})(\d{1,2})$/,
+                    "$1.$2.$3-$4"
+                );
+            }
+        });
+
+
+        formulario.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const senha =
+                document.getElementById("senha").value;
+
+            const confirmarSenha =
+                document.getElementById("confirmarSenha").value;
+
+            if (senha !== confirmarSenha) {
+                alert("As senhas não coincidem!");
+                return;
+            }
+
+            const cpf =
+                cpfInput.value.replace(/\D/g, "");
+
+            if (cpf.length !== 11) {
+                alert("Digite um CPF com 11 números.");
+                cpfInput.focus();
+                return;
+            }
+
+            if (!estadoSelecionado) {
+                alert("Selecione um estado válido.");
+                estadoInput.focus();
+                return;
+            }
+
+            const cidadeSelecionada = cidades.find(
+                (cidade) =>
+                    normalizar(cidade.nome) ===
+                    normalizar(cidadeInput.value.trim())
+            );
+
+            if (!cidadeSelecionada) {
+                alert("Selecione uma cidade válida.");
+                cidadeInput.focus();
+                return;
+            }
+
+            const usuario = {
+                nome:
+                    document
+                        .getElementById("nome")
+                        .value
+                        .trim(),
+
+                email:
+                    document
+                        .getElementById("email")
+                        .value
+                        .trim(),
+
+                telefone:
+                    document
+                        .getElementById("tel")
+                        .value
+                        .trim(),
+
+                senha,
+
+                estado: estadoSelecionado.nome,
+
+                cidade: cidadeSelecionada.nome,
+
+                cpf
+            };
+
+            try {
+                const resposta = await fetch(
+                    "http://localhost:8080/cadastro/responsavel",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(usuario)
+                    }
+                );
+
+                if (resposta.ok) {
+                    alert("Cadastro realizado com sucesso!");
+
+                    formulario.reset();
+
+                    cidadeInput.disabled = true;
+                    cidadeInput.placeholder =
+                        "Selecione primeiro o estado";
+
+                    estadoSelecionado = null;
+                    cidades = [];
+
+                    fecharSugestoes();
+
+                } else {
+                    const erro = await resposta.text();
+
+                    alert(
+                        erro ||
+                        `Erro no cadastro. Código HTTP: ${resposta.status}`
+                    );
+                }
+
+            } catch (erro) {
+                console.error(erro);
+
+                alert(
+                    "Não foi possível conectar ao servidor. " +
+                    "Verifique se o backend está funcionando."
+                );
+            }
+        });
+
+
+        carregarEstados();
+
+        const telefoneInput = document.getElementById("tel");
+
+            telefoneInput.addEventListener("input", function () {
+                let telefone = this.value.replace(/\D/g, "").slice(0, 11);
+
+                if (telefone.length <= 2) {
+                    this.value = telefone;
+                } else if (telefone.length <= 7) {
+                    this.value = telefone.replace(
+                        /^(\d{2})(\d+)/,
+                        "($1) $2"
+                    );
+                } else {
+                    this.value = telefone.replace(
+                        /^(\d{2})(\d{5})(\d{1,4})$/,
+                        "($1) $2-$3"
+                    );
+                }
+            });
+    </script>
+
+>>>>>>> 854fca5c273399314259762b778c49482509ec7b
 </body>
+
 </html>
