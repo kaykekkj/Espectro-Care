@@ -3,107 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre nós</title>
-    <link rel="stylesheet" href="../assets/css/sobrenos.css ">
+    <title>Sobre nós | NeuroHelp</title>
+
+    <link rel="stylesheet" href="../assets/css/sobrenos.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
-<body>
-    <header>
-    <nav class="navbar">
 
-        <img src="../assets/img/logos/Logo.png" alt="Logo do site" class="logo" >
-        <div>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo-link">
+                <img src="../assets/img/logos/Logo.png" alt="Logo da NeuroHelp" class="logo">
+            </a>
+
             <ul class="navlinks" id="navlinks">
                 <li><a href="../index.html">Início</a></li>
                 <li><a href="profissionais.html">Profissionais</a></li>
                 <li><a href="aprendizagem.html">Aprendizagem</a></li>
                 <li><a href="sobre-nos.html">Sobre nós</a></li>
                 <li class="entrar-nav-mobile"><a href="login.html">Entrar</a></li>
-                <li class="criar-nav-mobile"><a onclick="selecionar()">Criar conta</a></li>
+                <li class="criar-nav-mobile"><a href="#" onclick="selecionar(); return false;">Criar conta</a></li>
             </ul>
-        </div>
-        
 
-        <div class="conta">
-            <a class="entrar" href="login.html">Entrar</a>
-            <button onclick="selecionar()" class="criar-conta"> <a>Criar Conta</a></button>
-        </div>
+            <div class="conta">
+                <a class="entrar" href="login.html">Entrar</a>
+                <button type="button" onclick="selecionar()" class="criar-conta">Criar Conta</button>
+            </div>
 
-        <div class="mobile-menu" id="mobile-menu">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-    </nav>
+            <div class="mobile-menu" id="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
     </header>
 
+    <!-- Modal -->
     <div class="selecionar" id="selecionar">
-        <div class="voltar" onclick="fechar()"><img src="../assets/img/icons/_.png"></div>
-            <h1>Criar conta <br><span>Selecione seu perfil para começar</span></h1>
-            <div class="cards">
-                <a href="cadastro-responsavel.html"><div><img src="../assets/img/icons/image 5.jpg" alt=""><h1>Responsaveis</h1></div></a>
-                <a href="cadastro-profissional.html"><div><img src="../assets/img/icons/image 7.png" alt=""><h1>Profissionais</h1></div></a>
-            </div>
+        <div class="voltar" onclick="fechar()">
+            <img src="../assets/img/icons/_.png" alt="Voltar">
         </div>
 
+        <h1>Criar conta<br><span>Selecione seu perfil para começar</span></h1>
+
+        <div class="cards">
+            <a href="cadastro-responsavel.html">
+                <div>
+                    <img src="../assets/img/icons/image 5.jpg" alt="Responsável">
+                    <h1>Responsáveis</h1>
+                </div>
+            </a>
+
+            <a href="cadastro-profissional.html">
+                <div>
+                    <img src="../assets/img/icons/image 7.png" alt="Profissional">
+                    <h1>Profissionais</h1>
+                </div>
+            </a>
+        </div>
+    </div>
+
     <main>
-        <!-- Conteúdo da página "Sobre nós" será adicionado aqui -->
-        <section class="hero">
-            <h1>Sobre nós</h1>
-            <p>A NeuroHelp nasceu para transformar informação em conexão, cuidado em acolhimento e dúvida em orientação. <br><br> Somos uma plataforma que conecta profissionais da saúde mental a famílias de crianças com TEA, oferecendo acesso a informações confiáveis, acompanhamento especializado e uma rede de apoio que entende cada etapa dessa jornada.</p>
+        <!-- Hero -->
+        <section class="hero" style="margin-top: 5vh;">
+            <div class="hero-conteudo">
+                <span class="hero-tag">SOBRE A NEUROHELP</span>
+                <h1>Sobre nós</h1>
+                <div class="hero-linha"></div>
+
+                <p>A NeuroHelp nasceu para transformar informação em conexão, cuidado em acolhimento e dúvida em orientação.</p>
+                <p>Somos uma plataforma que conecta profissionais da saúde mental a famílias de crianças com TEA, oferecendo acesso a informações confiáveis, acompanhamento especializado e uma rede de apoio que entende cada etapa dessa jornada.</p>
+            </div>
         </section>
+
+        <!-- Objetivo -->
         <section class="objetivo-sobre-nos">
             <div class="nosso-objetivo">
+                <span class="secao-label">NOSSA MISSÃO</span>
                 <h1>Nosso objetivo</h1>
                 <div class="underline"></div>
-                <p>Facilitar o acesso ao tratamento e a informação de qualidade sobre TEA, promovendo conexão, acolhimento e suporte para famílias e profissionais.</p>
+                <p>Facilitar o acesso ao tratamento e a informações de qualidade sobre TEA, promovendo conexão, acolhimento e suporte para famílias e profissionais.</p>
             </div>
+
             <div class="container-chaves">
-                <div>
+                <div class="chave-card">
                     <i class="fa-solid fa-people-line"></i>
                     <h2>Conexão</h2>
-                    <p>Aproximamos famílias e profissionais para cuidar  juntos.</p>
+                    <p>Aproximamos famílias e profissionais para cuidar juntos.</p>
                 </div>
-                <div>
-                    <i class="fa-solid fa-heart-circle-check"></i>
 
+                <div class="chave-card">
+                    <i class="fa-solid fa-heart-circle-check"></i>
                     <h2>Confiança</h2>
-                    <p>Informações seguras a baseadas em evidências para decisões melhores.</p>
+                    <p>Informações seguras e baseadas em evidências para decisões melhores.</p>
                 </div>
-                <div>
+
+                <div class="chave-card">
                     <i class="fa-solid fa-hand-holding-heart"></i>
                     <h2>Acolhimento</h2>
                     <p>Um espaço de empatia, respeito e apoio em cada etapa.</p>
                 </div>
-                <div>
+
+                <div class="chave-card">
                     <i class="fa-solid fa-chart-line"></i>
                     <h2>Evolução</h2>
-                    <p>Incentivamos a desenvolvimento e a inclusão todos os dias.</p>
+                    <p>Incentivamos o desenvolvimento e a inclusão todos os dias.</p>
                 </div>
             </div>
-
         </section>
+
+        <!-- Por que criamos -->
         <section class="porque-criamos">
             <div class="porque-topo">
-                <h2>Por que criamos a Neurohelp?</h2>
+                <span class="secao-label">NOSSA HISTÓRIA</span>
+                <h2>Por que criamos a NeuroHelp?</h2>
                 <div class="underline"></div>
-                <p>Faclitar o acesso ao tratamento e a informação de qualidade sobre TEA, pramevendo comesão. acolhimento e suporte para familias e profissionais</p>
+                <p>Queremos facilitar o acesso a informações de qualidade sobre TEA, promovendo conexão, acolhimento e suporte para famílias e profissionais.</p>
             </div>
+
             <div class="porque-cards">
                 <div class="card">
+                    <div class="card-icone">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
                     <h2>O problema</h2>
                     <div class="underline"></div>
                     <p>Muitas famílias enfrentam dificuldades para encontrar informações confiáveis, profissionais especializados e uma rede de apoio adequada para pessoas com TEA.</p>
                 </div>
+
                 <div class="card">
-                    <h2> O que percebemos</h2>
+                    <div class="card-icone">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h2>O que percebemos</h2>
                     <div class="underline"></div>
                     <p>Informação desencontrada, falta de orientação e dificuldade de comunicação podem tornar a jornada da família ainda mais desafiadora.</p>
                 </div>
+
                 <div class="card">
+                    <div class="card-icone">
+                        <i class="fa-solid fa-hands-holding-circle"></i>
+                    </div>
                     <h2>Nossa resposta</h2>
                     <div class="underline"></div>
                     <p>Criamos a NeuroHelp para reunir informação, profissionais e comunidade em um único espaço, tornando essa jornada mais acessível, segura e acolhedora.</p>
@@ -112,30 +157,34 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-logo">
-            <img src="../assets/img/logos/Logo.png" alt="Logo do site">
-        </div>        
+            <img src="../assets/img/logos/Logo.png" alt="Logo da NeuroHelp">
+        </div>
+
         <div class="footer-itens">
             <h1>Plataforma</h1>
             <a href="sobre-nos.html">Sobre nós</a>
-            <a href="">Objetivo do site</a>
+            <a href="sobre-nos.html">Objetivo do site</a>
         </div>
+
         <div class="footer-itens">
             <h1>Suporte</h1>
-            <a href="">Ajuda </a>
-            <a href="">Contato</a>
+            <a href="#">Ajuda</a>
+            <a href="#">Contato</a>
         </div>
+
         <div class="footer-itens">
             <h1>Legal</h1>
-            <a href="">Termos de uso</a>
-            <a href="">Política de privacidade</a>
+            <a href="#">Termos de uso</a>
+            <a href="#">Política de privacidade</a>
         </div>
     </footer>
-    <script src="../assets/js/mobilen-navbar.js"></script>
-    <script src="../assets/js/selecionar-perfil.js"></script>
 
     <div class="overlay" id="overlay"></div>
+
+    <script src="../assets/js/mobilen-navbar.js"></script>
+    <script src="../assets/js/selecionar-perfil.js"></script>
 </body>
 </html>
-
