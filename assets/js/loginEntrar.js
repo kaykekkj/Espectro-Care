@@ -32,11 +32,27 @@ document.querySelector(".botao-logar").addEventListener("click", async () => {
 
         console.log(data);
 
+        // Salva os dados de autenticação no LocalStorage
         localStorage.setItem("token", data.token);
         localStorage.setItem("email", data.email);
+        
+        if (data.tipo) {
+            localStorage.setItem("tipoPerfil", data.tipo);
+        }
 
         alert("Login realizado com sucesso!");
-        window.location.href = "../index.html";
+
+        // Define a variável a partir do retorno da API (data.tipo)
+        const tipoUsuario = data.tipo;
+
+        // Redirecionamento correto dependendo do tipo de perfil
+        if (tipoUsuario === "RESPONSAVEL" || tipoUsuario === "responsavel") {
+            window.location.href = "userResponsavel.html"; 
+        } else if (tipoUsuario === "PROFISSIONAL" || tipoUsuario === "profissional") {
+            window.location.href = "userProfissional.html"; // Corrigido o .html aqui
+        } else {
+            window.location.href = "../index.html";
+        }
 
     } catch (erro) {
 
