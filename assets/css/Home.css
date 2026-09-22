@@ -120,7 +120,7 @@ h2{
     transform: scale(1.05);
 }
 .cards-prof-home2:hover{
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 /*========= COMO FUNCIONA NA HOME =============*/
 .funcionamento-home{
@@ -219,7 +219,7 @@ h2{
 /*========== CONHEÇA O TEA NA HOME =============*/
 
 .conheça-tea-home{
-    width: 100%;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -227,15 +227,19 @@ h2{
     background-color: #f9fafc;
 }
 .conheça-tea-home img{
-    width: 250px;
+    width: 100%;
+    transition: 1s;
+}
+.conheca-tea-home img:hover{
+    transform: scale(10.05);
 }
 .conteiner-conheça-tea{
     background-color: #ffffff;
-    width: 100%;
+    width: 100vw;
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 25px;
+    gap: 15px;
     border-radius: 25px;
     padding: 40px;
     box-shadow: 5px 10px 10px 5px #92929231;
@@ -246,6 +250,7 @@ h2{
     align-items: center;
     justify-items: center;
     padding: 20px;
+    width: 100%;
     gap: 50px;
 }
 .card-artigo-home{
@@ -262,13 +267,13 @@ h2{
 .conheça-tea-home a{
     font-size: 20px;
     text-decoration: none;
-    margin-top: 40px;
+    margin-top: 20px;
     color: #06476B;
 }
 
 /*========== APLICATIVO NA HOME =============*/
 .aplicativo-home{
-    background-image: url('../img/home/aplicativo-fundo (1).png');
+    background-image: url('../img/home/aplicativo-fundo (2).png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
