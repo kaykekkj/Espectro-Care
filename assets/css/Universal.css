@@ -16,7 +16,11 @@ html,
 body {
     font-family: "Nunito", sans-serif;
     overflow-x: hidden;
-    background-color: #F8F8F8;
+    background-color: linear-gradient(
+            180deg,
+            #f6fbfa 0%,
+            #ffffff 300px
+        );
     scroll-behavior: smooth;
 }
 h1{
@@ -25,9 +29,6 @@ h1{
 /* ==============================================================
    2. NAVBAR
    ============================================================== */
-.logo {
-    height: 55%;
-}
 .navbar {
     background-color: rgb(255, 255, 255);
 

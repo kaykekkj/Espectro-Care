@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profissionais</title>
-<link rel="stylesheet" href="../assets/css/style.css">
+    <title>Profissionais | NeuroHelp</title>
+
+    <link rel="stylesheet" href="../assets/css/sobrenos.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
     <header>
@@ -19,7 +21,7 @@
             <ul class="navlinks" id="navlinks">
                 <li><a href="../index.html">Início</a></li>
                 <li><a href="profissionais.html">Profissionais</a></li>
-<li><a href="aprendizagem.html">Aprendizagem</a></li>
+                <li><a href="aprendizagem.html">Aprendizagem</a></li>
                 <li><a href="sobre-nos.html">Sobre nós</a></li>
                 <li class="entrar-nav-mobile"><a href="login.html">Entrar</a></li>
                 <li class="criar-nav-mobile"><a onclick="selecionar()">Criar conta</a></li>
@@ -50,73 +52,243 @@
         </div>
 
     <section class="home">
-        <div class="header-blog">
-            <h1 class="titulo">Encontre o profissional ideal<br><span>Profissionais verificados e especializados em neurodivergência.</span></h1>
-            <input type="search" class="search" placeholder="Buscar por nome, Especialidade ou cidade..." id="searchInput">
+
+        <main class="pagina-profissionais">
+
+    <!-- =====================================================
+         CABEÇALHO
+         ===================================================== -->
+
+    <section class="profissionais-header">
+
+        <div class="profissionais-titulo">
+            <span class="profissionais-label">ENCONTRE AJUDA</span>
+
+            <h1>
+                Encontre o profissional ideal
+            </h1>
+
+            <p>
+                Profissionais verificados e especializados
+                em neurodivergência.
+            </p>
         </div>
 
-        <section class="home" style="margin-top: 15vh; padding: 40px 20px;">
-    
-    <div class="titulo" style="margin-bottom: 30px;">
-        Profissionais <span>Disponíveis</span>
-    </div>
-
-    <div class="container-cards-profissionais" id="containerProfissionais">
-        <div class="card-profissional">
-            <div class="topo-card-profissional">
-                <div class="foto-perfil-profissional">
-                    <img src="" alt="">
-                    <p>R$ 30</p>
-                </div>
-                <div class="informações-profissionais">
-                    <h1>Carlos Eduardo Da Silva Pereira</h1>
-                    <p>Psicólogo</p>
-                    <div class="tagg-perfil-profissional">
-                        <p>XXXXXXXX</p><p>XXXXXXXX</p><p>XXXXXXXX</p><p>XXXXXXXX</p><p>XXXXXXXX</p><p>XXXXXXXX</p><p>XXXXXXXX</p><p>XXXXXXXX</p>
-                    </div>
-                        <p>
-                            <span><strong>Abordagem:</strong> Gestalt Terapia</span> 
-                            <span>Adolescentes, Adultos, Idosos</span>
-                        </p>                </div>
-                </div>
-                <div class="pe-card-profissional"> 
-                    <div class="sobre-mim">
-                        <p><strong>Sobre mim:</strong><br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit ratione impedit quis dolor sit. Eum in, alias ipsa magnam doloribus dolore sunt impedit nulla? Temporibus quam accusantium laboriosam aliquam delectus.</p>
-                        <button>Ver perfil</button>
-                    </div>
-                    <div class="contato">
-                        <button>Quero me consultar</button>
-                        <p>Telefone: (xx) xxxxx-xxxx </p>
-                    </div>
-                </div>
+        <div class="profissionais-busca">
+            <input
+                type="search"
+                class="search-profissionais"
+                placeholder="Buscar por nome, especialidade ou cidade..."
+                id="searchInput"
+            >
         </div>
-        <!-- Os cards de profissionais são carregados dinamicamente
-             pelo arquivo assets/js/profissionais.js -->
-    </div>
-</section>
 
     </section>
 
-    <footer class="footer">
-        <div class="footer-logo">
-            <img src="../assets/img/logos/Logo.png" alt="Logo do site">
-        </div>        
-        <div class="footer-itens">
-            <h1>Plataforma</h1>
-            <a href="">Sobre nós</a>
-            <a href="">Objetivo do site</a>
+
+    <!-- =====================================================
+         LISTA DE PROFISSIONAIS
+         ===================================================== -->
+
+    <section class="lista-profissionais">
+
+        <div class="titulo-lista-profissionais">
+            <div>
+                <span>PROFISSIONAIS</span>
+                <h2>Disponíveis para atendimento</h2>
+            </div>
         </div>
-        <div class="footer-itens">
-            <h1>Suporte</h1>
-            <a href="">Ajuda </a>
-            <a href="">Contato</a>
+
+        <div
+            class="container-cards-profissionais"
+            id="containerProfissionais"
+        >
+
+            <!--
+                Os cards de profissionais são carregados
+                dinamicamente por profissionais.js
+            -->
+
+            <div class="card-profissional">
+
+                <div class="topo-card-profissional">
+
+                    <div class="foto-perfil-profissional">
+
+                        <div class="avatar-profissional">
+                            <img src="" alt="Foto do profissional">
+                        </div>
+
+                        <span class="preco-profissional">
+                            R$ 30
+                        </span>
+
+                    </div>
+
+
+                    <div class="informações-profissionais">
+
+                        <div class="nome-profissional">
+                            <h3>
+                                Carlos Eduardo Da Silva Pereira
+                            </h3>
+
+                            <span class="status-profissional">
+                                Disponível
+                            </span>
+                        </div>
+
+                        <p class="profissao-profissional">
+                            Psicólogo
+                        </p>
+
+
+                        <div class="tagg-perfil-profissional">
+
+                            <span>XXXXXXXX</span>
+                            <span>XXXXXXXX</span>
+                            <span>XXXXXXXX</span>
+                            <span>XXXXXXXX</span>
+
+                        </div>
+
+
+                        <div class="dados-profissional">
+
+                            <p>
+                                <strong>Abordagem:</strong>
+                                Gestalt Terapia
+                            </p>
+
+                            <p>
+                                Adolescentes, Adultos e Idosos
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RODAPÉ DO CARD -->
+
+                <div class="pe-card-profissional">
+
+                    <div class="sobre-mim">
+
+                        <p>
+                            <strong>Sobre mim</strong>
+                        </p>
+
+                        <p class="descricao-profissional">
+                            Lorem ipsum, dolor sit amet consectetur
+                            adipisicing elit. Suscipit ratione impedit
+                            quis dolor sit.
+                        </p>
+
+                        <button class="btn-ver-perfil">
+                            Ver perfil
+                            <span>→</span>
+                        </button>
+
+                    </div>
+
+
+                    <div class="contato">
+
+                        <button class="btn-consulta">
+                            Quero me consultar
+                        </button>
+
+                        <p class="telefone-profissional">
+                            Telefone: (xx) xxxxx-xxxx
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-        <div class="footer-itens">
-            <h1>Legal</h1>
-            <a href="">Termos de uso</a>
-            <a href="">Política de privacidade</a>
-        </div>
-    </footer>
+
+    </section>
+
+</main>
+
+    </section>
+
+    
+            <footer class="footer">
+
+            <div class="footer-content">
+
+                <div class="footer-brand">
+
+                    <img
+                        src="../assets/img/logos/Logo.png"
+                        alt="Logo EspectroCare"
+                    >
+
+                    <p>
+                        Conectando pessoas,<br>
+                        profissionais e informação<br>
+                        em um só lugar.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h2>Plataforma</h2>
+
+                    <a href="#">Sobre nós</a>
+                    <a href="#">Objetivo do site</a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h2>Suporte</h2>
+
+                    <a href="#">Ajuda</a>
+                    <a href="#">Contato</a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h2>Legal</h2>
+
+                    <a href="#">Termos de uso</a>
+                    <a href="#">Política de privacidade</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-line"></div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 EspectroCare
+                </p>
+
+                <span>
+                    Todos os direitos reservados.
+                </span>
+
+            </div>
+
+        </footer>
+
     <script src="../assets/js/mobilen-navbar.js"></script>
     <script src="../assets/js/selecionar-perfil.js"></script>
     <script src="../assets/js/profissionais-data.js"></script>

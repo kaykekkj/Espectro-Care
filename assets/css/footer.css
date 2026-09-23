@@ -1,57 +1,658 @@
-@import url(responsividade.css);
 /* ==============================================================
-   5. FOOTER
+   5. FOOTER — ESPECTROCARE
+   ============================================================== */
+
+
+/* ==============================================================
+   ESTRUTURA PRINCIPAL
    ============================================================== */
 
 .footer {
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
-    padding: 30px;
-    margin-top: 50px;
-    box-shadow: 0px 0px 4px #0000001a;
-}
 
-.footer-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    margin-top: 90px;
 
-.footer-logo img {
-    display: block;
-    height: auto;
-    max-height: 60px;
-}
+    position: relative;
 
-.footer-itens {
     display: flex;
     flex-direction: column;
-    gap: 15px;
 
-    padding: 0;
-    margin: 0;
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f7fcf8 100%
+        );
+
+    border-top:
+        1px solid #e7eee9;
+
+    box-sizing: border-box;
+}
+
+
+/* ==============================================================
+   DETALHE VERDE NO TOPO
+   ============================================================== */
+
+.footer::before {
+    content: "";
+
+    position: absolute;
+
+    top: -1px;
+    left: 50%;
+
+    width: 70px;
+    height: 3px;
+
+    transform: translateX(-50%);
+
+    background-color: #66c87f;
+
+    border-radius:
+        0 0 6px 6px;
+}
+
+
+/* ==============================================================
+   CONTEÚDO PRINCIPAL
+   ============================================================== */
+
+.footer-content {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 60px 0 50px;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 55px;
+
+    box-sizing: border-box;
+}
+
+
+/* ==============================================================
+   MARCA
+   ============================================================== */
+
+.footer-brand {
+    display: flex;
+
+    flex-direction: column;
 
     align-items: flex-start;
+
+    text-align: left;
 }
 
-.footer-itens h1 {
-    margin-bottom: 10px;
-    font-size: 22px;
-    color: #000;
+
+.footer-brand img {
+    width: 175px;
+    height: auto;
+
+    display: block;
+
+    margin-bottom: 18px;
+
+    transition:
+        transform 0.3s ease;
 }
 
-.footer-itens a {
+
+.footer-brand img:hover {
+    transform:
+        translateY(-2px);
+}
+
+
+.footer-brand p {
+    max-width: 290px;
+
+    margin: 0;
+
+    color: #7b857e;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+
+    text-align: left;
+}
+
+
+/* ==============================================================
+   COLUNAS
+   ============================================================== */
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 11px;
+
+    text-align: left;
+}
+
+
+/* ==============================================================
+   TÍTULOS DAS COLUNAS
+   ============================================================== */
+
+.footer-column h2 {
+    position: relative;
+
+    margin: 0 0 8px;
+
+    color: #26312a;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    text-align: left;
+}
+
+
+/* Linha verde abaixo do título */
+
+.footer-column h2::after {
+    content: "";
+
+    display: block;
+
+    width: 22px;
+    height: 2px;
+
+    margin-top: 7px;
+
+    background-color: #66c87f;
+
+    border-radius: 2px;
+
+    transition:
+        width 0.3s ease;
+}
+
+
+.footer-column:hover h2::after {
+    width: 35px;
+}
+
+
+/* ==============================================================
+   LINKS
+   ============================================================== */
+
+.footer-column a {
+    position: relative;
+
+    color: #7d8780;
+
+    font-size: 14px;
+    font-weight: 400;
+
     text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    color: #ABABAB;
-    transition: color 0.3s ease;
+
+    text-align: left;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.footer-itens a:hover {
-    text-decoration: underline;
-    color: rgb(102, 200, 127);
+
+.footer-column a:hover {
+    color: #55b96f;
+
+    transform:
+        translateX(5px);
+}
+
+
+/* ==============================================================
+   LINHA SEPARADORA
+   ============================================================== */
+
+.footer-line {
+    width: 90%;
+    max-width: 1200px;
+
+    height: 1px;
+
+    margin: 0 auto;
+
+    flex-shrink: 0;
+
+    background-color: #e1e9e4;
+}
+
+
+/* ==============================================================
+   PARTE INFERIOR
+   ============================================================== */
+
+.footer-bottom {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 21px 0 23px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* ==============================================================
+   TEXTOS INFERIORES
+   ============================================================== */
+
+.footer-bottom p,
+.footer-bottom span {
+    margin: 0;
+
+    color: #98a19b;
+
+    font-size: 12px;
+}
+
+
+.footer-bottom p {
+    font-weight: 600;
+}
+
+
+.footer-bottom span {
+    font-weight: 400;
+}
+
+
+/* ==============================================================
+   TABLET — ATÉ 768px
+   ============================================================== */
+
+@media (max-width: 768px) {
+
+    .footer {
+        margin-top: 65px;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+
+    /* ==========================================================
+       CONTEÚDO
+       ========================================================== */
+
+    .footer-content {
+        width: 88%;
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+        gap: 40px 35px;
+
+        padding: 48px 0 42px;
+
+        justify-items: center;
+
+        text-align: center;
+    }
+
+
+    /* ==========================================================
+       MARCA
+       ========================================================== */
+
+    .footer-brand {
+        width: 100%;
+
+        grid-column: 1 / -1;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+
+    .footer-brand img {
+        width: 160px;
+
+        margin-bottom: 16px;
+    }
+
+
+    .footer-brand p {
+        max-width: 420px;
+
+        text-align: center;
+    }
+
+
+    /* ==========================================================
+       COLUNAS
+       ========================================================== */
+
+    .footer-column {
+        width: 100%;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+
+    .footer-column h2 {
+        text-align: center;
+    }
+
+
+    .footer-column h2::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .footer-column a {
+        text-align: center;
+    }
+
+
+    /* ==========================================================
+       LINHA
+       ========================================================== */
+
+    .footer-line {
+        width: 88%;
+    }
+
+
+    /* ==========================================================
+       PARTE INFERIOR
+       ========================================================== */
+
+    .footer-bottom {
+        width: 88%;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 7px;
+
+        text-align: center;
+    }
+
+
+    .footer-bottom p,
+    .footer-bottom span {
+        text-align: center;
+    }
+
+}
+
+
+/* ==============================================================
+   CELULAR — ATÉ 480px
+   ============================================================== */
+
+@media (max-width: 480px) {
+
+    .footer {
+        width: 100%;
+
+        margin-top: 55px;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+
+    /* ==========================================================
+       DETALHE SUPERIOR
+       ========================================================== */
+
+    .footer::before {
+        width: 55px;
+
+        height: 3px;
+    }
+
+
+    /* ==========================================================
+       CONTEÚDO
+       ========================================================== */
+
+    .footer-content {
+        width: 86%;
+
+        margin: 0 auto;
+
+        padding: 42px 0 38px;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 32px;
+
+        justify-items: center;
+
+        text-align: center;
+    }
+
+
+    /* ==========================================================
+       MARCA
+       ========================================================== */
+
+    .footer-brand {
+        width: 100%;
+
+        grid-column: auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+
+    .footer-brand img {
+        width: 150px;
+
+        margin-bottom: 16px;
+    }
+
+
+    .footer-brand p {
+        width: 100%;
+
+        max-width: 100%;
+
+        margin: 0;
+
+        font-size: 13px;
+
+        line-height: 1.7;
+
+        text-align: center;
+    }
+
+
+    /* ==========================================================
+       COLUNAS
+       ========================================================== */
+
+    .footer-column {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+
+
+    .footer-column h2 {
+        margin: 0 0 7px;
+
+        font-size: 15px;
+
+        text-align: center;
+    }
+
+
+    .footer-column h2::after {
+        width: 22px;
+
+        margin-top: 7px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .footer-column a {
+        font-size: 13px;
+
+        text-align: center;
+    }
+
+
+    .footer-column a:hover {
+        transform: translateY(-1px);
+    }
+
+
+    /* ==========================================================
+       LINHA
+       ========================================================== */
+
+    .footer-line {
+        width: 86%;
+
+        margin: 0 auto;
+    }
+
+
+    /* ==========================================================
+       PARTE INFERIOR
+       ========================================================== */
+
+    .footer-bottom {
+        width: 86%;
+
+        margin: 0 auto;
+
+        padding: 17px 0 20px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 6px;
+
+        text-align: center;
+    }
+
+
+    .footer-bottom p,
+    .footer-bottom span {
+        margin: 0;
+
+        font-size: 11px;
+
+        text-align: center;
+    }
+
+}
+
+
+/* ==============================================================
+   CELULAR MUITO PEQUENO — ATÉ 360px
+   ============================================================== */
+
+@media (max-width: 360px) {
+
+    .footer-content {
+        width: 90%;
+
+        padding-top: 38px;
+    }
+
+
+    .footer-brand img {
+        width: 145px;
+    }
+
+
+    .footer-brand p {
+        font-size: 12px;
+    }
+
+
+    .footer-column h2 {
+        font-size: 14px;
+    }
+
+
+    .footer-column a {
+        font-size: 12px;
+    }
+
+
+    .footer-line {
+        width: 90%;
+    }
+
+
+    .footer-bottom {
+        width: 90%;
+    }
+
+
+    .footer-bottom p,
+    .footer-bottom span {
+        font-size: 10px;
+    }
+
 }
