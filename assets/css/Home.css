@@ -11,7 +11,8 @@ p{
 }
 
 .hero{
-    background-image: url('../img/home/Img_hero.png');
+    background-image:         linear-gradient(90deg, #ffffffa4 0%, #ffffffa9 45%, #ffffff26 100%),
+url('../img/home/Img_hero.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -56,12 +57,45 @@ p{
     align-items: center;
 }
 .profissionais-home a{
-    font-size: 20px;
+    display: inline-flex;
+
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 15px;
+
+    padding: 13px 22px;
+
+    border-radius: 50px;
+
+    background: #06476B;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 500;
+
     text-decoration: none;
-    margin-top: 40px;
-    color: #06476B;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+.profissionais-home > a i {
+    font-size: 13px;
+    transition: transform 0.3s ease;
 }
 
+.profissionais-home > a:hover {
+    background: #0a5d87;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px #06476b40;
+}
+
+.profissionais-home > a:hover i {
+    transform: translateX(5px);
+}
 .conteiner-prof-home{
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -118,9 +152,11 @@ h2{
 }
 .cards-prof-home1:hover{
     transform: scale(1.05);
+    box-shadow: 0 8px 20px #14ae5c40;
 }
 .cards-prof-home2:hover{
     transform: scale(1.05);
+    box-shadow: 0 8px 20px #06476b40;
 }
 /*========= COMO FUNCIONA NA HOME =============*/
 .funcionamento-home{
@@ -218,58 +254,212 @@ h2{
 
 /*========== CONHEÇA O TEA NA HOME =============*/
 
-.conheça-tea-home{
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px;
-    background-color: #f9fafc;
-}
-.conheça-tea-home img{
+
+.conheça-tea-home {
     width: 100%;
-    transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 5%;
+    background: #f5f8fa;
 }
-.conheca-tea-home img:hover{
-    transform: scale(10.05);
-}
-.conteiner-conheça-tea{
-    background-color: #ffffff;
-    width: 100vw;
+
+.conteiner-conheça-tea {
+    width: 100%;
+    max-width: 1400px;
+
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 15px;
-    border-radius: 25px;
-    padding: 40px;
-    box-shadow: 5px 10px 10px 5px #92929231;
+
+    gap: 12px;
+
+    padding: 50px;
+
+    background: #ffffff;
+    border-radius: 28px;
+
+    box-shadow: 0 15px 40px rgba(30, 70, 90, 0.08);
 }
-.conteiner-tea-home{
+
+
+/* ============================= */
+/*          TÍTULO               */
+/* ============================= */
+
+.conteiner-conheça-tea h1 {
+    margin: 0;
+
+    font-size: 38px;
+    font-weight: 700;
+
+    color: #06476B;
+
+    text-align: center;
+}
+
+.conteiner-conheça-tea > p {
+    margin: 0 0 25px;
+
+    font-size: 17px;
+    color: #667780;
+
+    text-align: center;
+}
+
+
+/* ============================= */
+/*          GRID                 */
+/* ============================= */
+
+.conteiner-tea-home {
+    width: 100%;
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    align-items: center;
-    justify-items: center;
-    padding: 20px;
-    width: 100%;
-    gap: 50px;
+
+    gap: 40px;
+
+    padding: 10px 0 20px;
 }
-.card-artigo-home{
-    box-shadow: 0px 10px 10px 5px #92929231;
-    border-radius: 20px;
-    padding: 10px;
+
+
+/* ============================= */
+/*           CARDS               */
+/* ============================= */
+
+.card-artigo-home {
+    position: relative;
+
+    overflow: hidden;
+
     display: flex;
-    align-items: center;
-    gap: 35px;
     flex-direction: column;
-    height: 250px;
-    font-size: 14px;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    border: 1px solid #e8eef1;
+
+    box-shadow: 0 8px 25px rgba(30, 70, 90, 0.08);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
 }
-.conheça-tea-home a{
-    font-size: 20px;
-    text-decoration: none;
-    margin-top: 20px;
+
+
+/* Hover do card */
+
+.card-artigo-home:hover {
+    transform: translateY(-8px);
+
+    border-color: #7EB6D5;
+
+    box-shadow: 0 18px 35px rgba(30, 70, 90, 0.15);
+}
+
+
+/* ============================= */
+/*            IMAGEM             */
+/* ============================= */
+
+.card-artigo-home img {
+    width: 100%;
+    height: 170px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+
+/* Zoom suave na imagem */
+
+.card-artigo-home:hover img {
+    transform: scale(1.06);
+}
+
+
+/* ============================= */
+/*            TÍTULO             */
+/* ============================= */
+
+.card-artigo-home h2 {
+    margin: 0;
+
+    padding: 20px;
+
+    font-size: 19px;
+    font-weight: 600;
+
     color: #06476B;
+
+    text-align: center;
+
+    transition: color 0.3s ease;
 }
+
+.card-artigo-home:hover h2 {
+    color: #3c9a70;
+}
+
+
+/* ============================= */
+/*        LINK / BOTÃO           */
+/* ============================= */
+
+.conteiner-conheça-tea > a {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 15px;
+
+    padding: 13px 22px;
+
+    border-radius: 50px;
+
+    background: #06476B;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.conteiner-conheça-tea > a i {
+    font-size: 13px;
+
+    transition: transform 0.3s ease;
+}
+
+.conteiner-conheça-tea > a:hover {
+    background: #0a5d87;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(6, 71, 107, 0.25);
+}
+
+.conteiner-conheça-tea > a:hover i {
+    transform: translateX(5px);
+}
+
 
 /*========== APLICATIVO NA HOME =============*/
 .aplicativo-home{
@@ -371,14 +561,6 @@ h2{
     box-shadow: 0px 5px 10px 0px #14ae5c4d;
 }
 
-
-
-/*========== PROFISSIONAIS EM DESTAQUE NA HOME =============*/
-.profissionais-destaques-home{
-    width: 100%;
-    height: 90vh;
-    background-color: #f9fafc;
-}
 
 /*========== CRIAR CONTA NO FINAL DA HOME =============*/
 
