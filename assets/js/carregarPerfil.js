@@ -1,4 +1,4 @@
-const API_URL = 'https://neurohelp-backend.onrender.com/api/perfil';
+const API_URL = 'https://espectrocare.onrender.com/api/perfil';
 
 // Executa ao carregar o DOM
 document.addEventListener('DOMContentLoaded', () => {
