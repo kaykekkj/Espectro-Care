@@ -52,8 +52,6 @@
 
     background-color: rgb(255, 255, 255);
 
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navlinks {
@@ -1943,9 +1941,6 @@
 
     display: grid;
 
-    grid-template-columns:
-        240px minmax(0, 1fr);
-
     gap: 55px;
 
     align-items: start;
@@ -2115,7 +2110,7 @@
 
 .didatica-conteudo {
     min-width: 0;
-    max-width: 730px;
+    max-width: fit-content;
 }
 
 .bloco-didatico {
@@ -2724,8 +2719,10 @@
 .lista-profissionais {
     width: 90%;
     max-width: 1150px;
-
     margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
 }
 
 .titulo-lista-profissionais {
@@ -2734,6 +2731,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    text-align: center;
 }
 
 .titulo-lista-profissionais span {
@@ -2814,7 +2812,7 @@
 
 .topo-card-profissional {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 
     gap: 25px;
 }
