@@ -1,0 +1,612 @@
+.pagina-profissionais {
+    width: 100%;
+    min-height: calc(100vh - 15vh);
+    padding-top: 15vh;
+    padding-bottom: 50px;
+    background: linear-gradient(180deg, #f7fbfa 0%, #ffffff 35%, #ffffff 100%);
+    font-family: "Nunito", sans-serif;
+    box-sizing: border-box;
+}
+
+.profissionais-header {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 65px 0 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profissionais-label {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #35a073;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.profissionais-titulo h1 {
+    margin: 0;
+    color: #174f58;
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(34px, 4vw, 46px);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.profissionais-titulo p {
+    max-width: 650px;
+    margin: 14px auto 0;
+    color: #718184;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.profissionais-busca {
+    width: min(650px, 100%);
+    margin-top: 30px;
+    position: relative;
+}
+
+.profissionais-busca::before {
+    content: "⌕";
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-53%);
+    color: #8fa1a3;
+    font-size: 23px;
+    pointer-events: none;
+}
+
+.search-profissionais {
+    width: 100%;
+    height: 54px;
+    padding: 0 20px 0 50px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid #dce7e6;
+    border-radius: 14px;
+    color: #174f58;
+    font-family: "Nunito", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    outline: none;
+    box-shadow: 0 7px 25px rgba(23, 79, 88, 0.07);
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.search-profissionais::placeholder {
+    color: #a2adae;
+    font-weight: 500;
+}
+
+.search-profissionais:hover {
+    border-color: #bfd6d1;
+}
+
+.search-profissionais:focus {
+    border-color: #35a073;
+    box-shadow:
+        0 0 0 4px rgba(53, 160, 115, 0.10),
+        0 8px 25px rgba(23, 79, 88, 0.08);
+    transform: translateY(-1px);
+}
+
+.lista-profissionais {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+
+.titulo-lista-profissionais {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.titulo-lista-profissionais span {
+    color: #35a073;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.titulo-lista-profissionais h2 {
+    margin: 5px 0 0;
+    color: #174f58;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.container-cards-profissionais {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+.card-profissional {
+    width: 100%;
+    padding: 28px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid #e5eeee;
+    border-radius: 20px;
+    color: #354548;
+    box-shadow: 0 8px 28px rgba(23, 79, 88, 0.06);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.card-profissional:hover {
+    transform: translateY(-3px);
+    border-color: #d5e6e1;
+    box-shadow: 0 15px 35px rgba(23, 79, 88, 0.10);
+}
+
+.topo-card-profissional {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.foto-perfil-profissional {
+    min-width: 125px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar-profissional {
+    width: 115px;
+    height: 115px;
+    padding: 4px;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #188ca2, #66c87f);
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(24, 140, 162, 0.15);
+}
+
+.avatar-profissional img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    background-color: #edf4f2;
+    border-radius: 50%;
+}
+
+.preco-profissional {
+    margin-top: 12px;
+    padding: 6px 15px;
+    color: #174f58;
+    background-color: #edf8f2;
+    border: 1px solid #d9eee2;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.informações-profissionais {
+    flex: 1;
+    min-width: 0;
+}
+
+.nome-profissional {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.informações-profissionais h3 {
+    margin: 0;
+    color: #173f47;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.status-profissional {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    color: #24734e;
+    background-color: #eef9f3;
+    border: 1px solid #d9eee2;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.status-profissional::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #35a073;
+}
+
+.profissao-profissional {
+    margin: 6px 0 17px;
+    color: #728183;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.tagg-perfil-profissional {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.tagg-perfil-profissional span,
+.tagg-perfil-profissional p {
+    margin: 0;
+    padding: 6px 12px;
+    color: #22656d;
+    background-color: #edf7f7;
+    border: 1px solid #d9eaea;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.dados-profissional {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 25px;
+}
+
+.dados-profissional p {
+    margin: 0;
+    color: #657578;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.dados-profissional strong {
+    color: #36585d;
+    font-weight: 800;
+}
+
+.pe-card-profissional {
+    margin-top: 26px;
+    padding-top: 22px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    border-top: 1px solid #edf1f0;
+}
+
+.sobre-mim {
+    flex: 1;
+    min-width: 0;
+}
+
+.sobre-mim > p:first-child {
+    margin: 0 0 5px;
+    color: #36585d;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.sobre-mim .descricao-profissional,
+.sobre-mim p:not(:first-child) {
+    max-width: 680px;
+    margin: 0;
+    color: #788688;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.btn-ver-perfil {
+    margin-top: 13px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: transparent;
+    border: none;
+    color: #188ca2;
+    font-family: "Nunito", sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.btn-ver-perfil span {
+    font-size: 17px;
+    transition: transform 0.2s ease;
+}
+
+.btn-ver-perfil:hover {
+    gap: 10px;
+    color: #35a073;
+}
+
+.btn-ver-perfil:hover span {
+    transform: translateX(2px);
+}
+
+.contato {
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.btn-consulta {
+    width: 100%;
+    min-height: 46px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #188ca2, #5cba75);
+    color: #ffffff;
+    font-family: "Nunito", sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 5px 14px rgba(38, 145, 128, 0.18);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.btn-consulta:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #5cba75, #188ca2);
+    box-shadow: 0 8px 18px rgba(38, 145, 128, 0.25);
+}
+
+.btn-consulta:active {
+    transform: translateY(0);
+}
+
+.telefone-profissional {
+    margin: 9px 0 0;
+    color: #35a073;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .pagina-profissionais {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .profissionais-header {
+        padding-top: 50px;
+    }
+
+    .profissionais-titulo h1 {
+        font-size: 38px;
+    }
+
+    .card-profissional {
+        padding: 23px;
+    }
+
+    .topo-card-profissional {
+        gap: 20px;
+    }
+
+    .avatar-profissional {
+        width: 100px;
+        height: 100px;
+    }
+
+    .foto-perfil-profissional {
+        min-width: 110px;
+    }
+
+    .informações-profissionais h3 {
+        font-size: 20px;
+    }
+
+    .pe-card-profissional {
+        gap: 20px;
+    }
+
+    .contato {
+        min-width: 190px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-profissional {
+        width: 100%;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    .pe-card-profissional {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .contato {
+        width: 100%;
+        min-width: 0;
+        align-items: center;
+    }
+
+    .contato button {
+        width: 100%;
+        max-width: 100%;
+        padding: 12px 20px;
+    }
+
+    .pagina-profissionais {
+        width: 100%;
+        padding-top: 15vh;
+        overflow-x: hidden;
+    }
+
+    .profissionais-header {
+        width: 90%;
+        padding: 35px 0;
+    }
+
+    .profissionais-titulo h1 {
+        font-size: 31px;
+    }
+
+    .profissionais-titulo p {
+        font-size: 14px;
+    }
+
+    .profissionais-busca {
+        width: 100%;
+        margin-top: 24px;
+    }
+
+    .search-profissionais {
+        width: 100%;
+        height: 50px;
+        font-size: 14px;
+    }
+
+    .lista-profissionais {
+        width: 90%;
+    }
+
+    .titulo-lista-profissionais {
+        margin-bottom: 20px;
+    }
+
+    .titulo-lista-profissionais h2 {
+        font-size: 21px;
+    }
+
+    .card-profissional {
+        width: 100%;
+        padding: 20px;
+        border-radius: 17px;
+    }
+
+    .topo-card-profissional {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .foto-perfil-profissional {
+        min-width: auto;
+    }
+
+    .avatar-profissional {
+        width: 105px;
+        height: 105px;
+    }
+
+    .nome-profissional {
+        justify-content: center;
+    }
+
+    .informações-profissionais {
+        width: 100%;
+    }
+
+    .informações-profissionais h3 {
+        font-size: 19px;
+    }
+
+    .profissao-profissional {
+        margin-bottom: 14px;
+    }
+
+    .tagg-perfil-profissional {
+        justify-content: center;
+    }
+
+    .dados-profissional {
+        justify-content: center;
+        gap: 7px 15px;
+    }
+
+    .pe-card-profissional {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+        margin-top: 22px;
+        padding-top: 20px;
+    }
+
+    .sobre-mim {
+        width: 100%;
+    }
+
+    .contato {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .btn-consulta {
+        width: 100%;
+        min-height: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profissionais-header {
+        width: 88%;
+        padding: 30px 0;
+    }
+
+    .profissionais-titulo h1 {
+        font-size: 28px;
+    }
+
+    .profissionais-titulo p {
+        font-size: 13px;
+    }
+
+    .lista-profissionais {
+        width: 88%;
+    }
+
+    .titulo-lista-profissionais h2 {
+        font-size: 20px;
+    }
+
+    .card-profissional {
+        padding: 18px;
+    }
+
+    .informações-profissionais h3 {
+        font-size: 18px;
+    }
+
+    .tagg-perfil-profissional span,
+    .tagg-perfil-profissional p {
+        font-size: 11px;
+    }
+}

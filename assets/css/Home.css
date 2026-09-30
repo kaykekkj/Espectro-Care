@@ -1,7 +1,3 @@
-@import url(Universal.css);
-@import url(responsividade.css);
-@import url(footer.css);
-@import url(style.css);
 /*falar para o kayke arrumar a parte do login do css que a section está com a classe home*/
 
 
@@ -613,5 +609,300 @@ h2{
 .criar-conta-home button:hover{
     transform: scale(1.03);
      box-shadow: 0px 5px 10px 0px #14ae5c4d;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        height: auto;
+        min-height: 72vh;
+        padding: 130px 8% 60px;
+    }
+
+    .hero h1 {
+        width: 70%;
+        font-size: 42px;
+    }
+
+    .hero p {
+        width: 70%;
+        font-size: 18px;
+    }
+
+    .profissionais-home,
+    .funcionamento-home {
+        padding: 60px 6%;
+    }
+
+    .conteiner-prof-home {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+        padding: 10px 0;
+    }
+
+    .cards-prof-home1,
+    .cards-prof-home2 {
+        width: 100%;
+        height: auto;
+        min-height: 190px;
+    }
+
+    .pq-escolha-home {
+        padding: 70px 6%;
+    }
+
+    .conteiner-escolha {
+        width: 100%;
+        padding: 0;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .card-escolhas p {
+        width: 100%;
+    }
+
+    .conteiner-tea-home {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .aplicativo-home {
+        height: auto;
+        min-height: 0;
+        padding: 60px 6%;
+    }
+
+    .texto-app-home {
+        width: 100%;
+        padding: 24px;
+    }
+
+    .texto-app-home h1,
+    .texto-app-home p {
+        width: 100%;
+    }
+
+    .beneficios-home {
+        width: 100%;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        padding: 12px 0;
+    }
+
+    .card-beneficios-home,
+    .card-beneficios-home h3,
+    .card-beneficios-home p {
+        width: 100%;
+    }
+
+    .criar-conta-home {
+        height: auto;
+        min-height: 0;
+        padding: 60px 24px;
+    }
+
+    .criar-conta-home p {
+        width: 100%;
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 65vh;
+        padding: 120px 24px 55px;
+    }
+
+    .hero h1,
+    .hero p {
+        width: 100%;
+    }
+
+    .hero h1 {
+        max-width: 620px;
+        margin-bottom: 24px;
+        font-size: 36px;
+    }
+
+    .hero p {
+        max-width: 620px;
+        font-size: 17px;
+    }
+
+    .texto-home h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .texto-home p {
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .profissionais-home,
+    .funcionamento-home,
+    .pq-escolha-home {
+        padding: 55px 24px;
+    }
+
+    .conteiner-funcionamento {
+        width: 100%;
+        max-width: 560px;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .card-como-funciona {
+        padding: 18px;
+        gap: 14px;
+    }
+
+    .conteiner-escolha {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .card-escolhas {
+        padding: 26px 22px;
+    }
+
+    .conteiner-conheça-tea {
+        padding: 32px 22px;
+        border-radius: 18px;
+    }
+
+    .conteiner-conheça-tea h1 {
+        font-size: 30px;
+    }
+
+    .conteiner-tea-home {
+        gap: 16px;
+    }
+
+    .card-artigo-home img {
+        height: 145px;
+    }
+
+    .texto-app-home {
+        padding: 0;
+    }
+
+    .texto-app-home h1 {
+        font-size: 34px;
+    }
+
+    .beneficios-app {
+        align-items: stretch;
+    }
+
+    .beneficios-home {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card-beneficios-home {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .card-beneficios-home h2 {
+        width: auto;
+    }
+
+    .criar-conta-home button {
+        width: min(300px, 100%);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 62vh;
+        padding: 110px 20px 45px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .profissionais-home,
+    .funcionamento-home,
+    .pq-escolha-home {
+        padding: 45px 18px;
+    }
+
+    .texto-home h1 {
+        font-size: 25px;
+    }
+
+    .conteiner-prof-home {
+        gap: 12px;
+    }
+
+    .cards-prof-home1,
+    .cards-prof-home2 {
+        min-height: 150px;
+        padding: 16px 10px;
+        gap: 12px;
+        border-radius: 18px;
+    }
+
+    .cards-prof-home1 i,
+    .cards-prof-home2 i {
+        font-size: 44px;
+    }
+
+    .cards-prof-home1 h2,
+    .cards-prof-home2 h2 {
+        font-size: 16px;
+    }
+
+    .conheça-tea-home {
+        padding: 25px 12px;
+    }
+
+    .conteiner-conheça-tea {
+        padding: 28px 16px;
+    }
+
+    .conteiner-conheça-tea h1 {
+        font-size: 27px;
+    }
+
+    .conteiner-conheça-tea > p {
+        font-size: 15px;
+    }
+
+    .conteiner-tea-home {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .card-artigo-home img {
+        height: 180px;
+    }
+
+    .aplicativo-home {
+        padding: 45px 20px;
+    }
+
+    .texto-app-home h1 {
+        font-size: 29px;
+    }
+
+    .texto-app-home p {
+        font-size: 16px;
+    }
+
+    .criar-conta-home {
+        padding: 45px 20px;
+    }
+
+    .criar-conta-home p {
+        font-size: 16px;
+    }
 }
 

@@ -1,0 +1,303 @@
+.pagina-aprendizagem {
+    width: 100%;
+    min-height: calc(100vh - 15vh);
+    padding-top: 15vh;
+    padding-bottom: 60px;
+    background-color: #f8fbfb;
+    box-sizing: border-box;
+}
+
+.pagina-aprendizagem .header-blog {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 55px 0 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    text-align: center;
+}
+
+.pagina-aprendizagem .titulo {
+    margin: 0;
+    color: #183b43;
+    font-family: "Nunito", sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.pagina-aprendizagem .titulo span {
+    display: block;
+    margin-top: 8px;
+    color: #6f858a;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.pagina-aprendizagem .search {
+    width: 100%;
+    height: 48px;
+    flex-shrink: 0;
+    padding: 0 18px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid #dce7e8;
+    border-radius: 10px;
+    color: #183b43;
+    font-family: "Nunito", sans-serif;
+    font-size: 15px;
+    outline: none;
+    box-shadow: 0 4px 15px rgba(24, 59, 67, 0.06);
+    transition: 0.25s ease;
+}
+
+.pagina-aprendizagem .search::placeholder {
+    color: #9aa8aa;
+}
+
+.pagina-aprendizagem .search:focus {
+    border-color: #188ca2;
+    box-shadow: 0 0 0 3px rgba(24, 140, 162, 0.10);
+}
+
+.pagina-aprendizagem .container-blog {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    box-sizing: border-box;
+}
+
+.pagina-aprendizagem .blog {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid #e3eeee;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(24, 59, 67, 0.07);
+    box-sizing: border-box;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pagina-aprendizagem .blog:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(24, 59, 67, 0.12);
+}
+
+.pagina-aprendizagem .blog img {
+    width: 100%;
+    height: 210px;
+    display: block;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.pagina-aprendizagem .blog h1 {
+    margin: 0;
+    padding: 22px 24px 10px;
+    color: #183b43;
+    font-family: "Nunito", sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.3;
+    text-align: left;
+}
+
+.pagina-aprendizagem .blog p {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0 24px;
+    color: #66787b;
+    font-family: "Nunito", sans-serif;
+    font-size: 14.5px;
+    font-weight: 500;
+    line-height: 1.65;
+    text-align: left;
+}
+
+.pagina-aprendizagem .blog button {
+    align-self: flex-start;
+    margin: 20px 24px 24px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgb(24, 140, 162), rgb(92, 186, 117));
+    color: white;
+    font-family: "Nunito", sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pagina-aprendizagem .blog button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(24, 140, 162, 0.20);
+}
+
+@media (max-width: 900px) {
+    .pagina-aprendizagem {
+        overflow-x: hidden;
+    }
+
+    .pagina-aprendizagem .header-blog {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 45px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .pagina-aprendizagem .titulo {
+        width: 100%;
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .pagina-aprendizagem .search,
+    .pagina-aprendizagem .blog {
+        width: 100%;
+    }
+
+    .pagina-aprendizagem .container-blog {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        box-sizing: border-box;
+    }
+
+    .pagina-aprendizagem .blog {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 768px) {
+    .pagina-aprendizagem {
+        padding-top: 15vh;
+        overflow-x: hidden;
+    }
+
+    .pagina-aprendizagem .header-blog {
+        width: 92%;
+        margin: 0 auto;
+        padding: 30px 0 25px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .pagina-aprendizagem .titulo {
+        width: 100%;
+        margin: 0;
+        font-size: 32px;
+        line-height: 1.1;
+        text-align: center;
+    }
+
+    .pagina-aprendizagem .titulo span {
+        display: block;
+        font-size: 14px;
+    }
+
+    .pagina-aprendizagem .search {
+        width: 100%;
+        height: 48px;
+    }
+
+    .pagina-aprendizagem .container-blog {
+        width: 92%;
+        margin: 0 auto;
+        padding: 0;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px;
+        box-sizing: border-box;
+    }
+
+    .pagina-aprendizagem .blog {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .pagina-aprendizagem .blog img {
+        width: 100%;
+        height: 190px;
+    }
+
+    .pagina-aprendizagem .blog h1 {
+        padding: 19px 20px 9px;
+        font-size: 19px;
+    }
+
+    .pagina-aprendizagem .blog p {
+        padding: 0 20px;
+        font-size: 14px;
+    }
+
+    .pagina-aprendizagem .blog button {
+        margin: 18px 20px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pagina-aprendizagem .header-blog {
+        width: 88%;
+    }
+
+    .pagina-aprendizagem .titulo {
+        font-size: 29px;
+    }
+
+    .pagina-aprendizagem .titulo span {
+        font-size: 13px;
+    }
+
+    .pagina-aprendizagem .container-blog {
+        width: 88%;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 18px;
+    }
+
+    .pagina-aprendizagem .blog {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .pagina-aprendizagem .blog img {
+        height: 180px;
+    }
+
+    .pagina-aprendizagem .blog h1 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 360px) {
+    .pagina-aprendizagem .container-blog {
+        width: 90%;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px;
+    }
+
+    .pagina-aprendizagem .blog {
+        width: 100%;
+    }
+}

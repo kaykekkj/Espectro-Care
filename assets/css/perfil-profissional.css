@@ -1,0 +1,191 @@
+.profile-card {
+    width: 70%;
+    min-width: 400px;
+    max-width: 1000px;
+    margin-bottom: 50px;
+    padding: 35px 40px;
+    background-color: #ffffff;
+    border-radius: 32px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    font-family: "Nunito", sans-serif;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 25px;
+}
+
+.avatar-ring,
+.avatar-ring-offline {
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+    margin-right: 5%;
+    padding: 10px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.avatar-ring {
+    background-color: #38ca79;
+}
+
+.avatar-ring-offline {
+    background-color: #b0b0b0;
+    opacity: 0.7;
+}
+
+.profile-card .avatar-img {
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+}
+
+.profile-card .header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.profile-card .info-name {
+    margin: 0;
+    color: #000000;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.profile-card .info-crp {
+    margin: 0 0 12px;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.profile-card .info-price-label {
+    margin: 0;
+    color: #222222;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.profile-card .info-price-val {
+    margin: 0;
+    color: #38ca79;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.profile-card .tags-container {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.profile-card .tag-plain {
+    color: #000000;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.profile-card .tag-pill,
+.profile-card .tag-pill-offline {
+    padding: 6px 18px;
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.profile-card .tag-pill {
+    background-color: #0fb860;
+}
+
+.profile-card .tag-pill-offline {
+    background-color: #c0c0c0;
+}
+
+.profile-card .card-body {
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    color: #000000;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.profile-card .info-text {
+    margin: 0;
+}
+
+.profile-card .info-text strong {
+    font-weight: 700;
+}
+
+.profile-card .card-footer {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.profile-card .btn-hire {
+    padding: 12px 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #4cd07d;
+    color: #ffffff;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.profile-card .btn-hire:hover {
+    background-color: #3eb86f;
+}
+
+.profile-card .phone-contact {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #38ca79;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.profile-card .icon-svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+@media (max-width: 768px) {
+    .profile-card {
+        width: 90%;
+        min-width: 0;
+        max-width: 600px;
+        box-sizing: border-box;
+    }
+
+    .card-header {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-card {
+        width: 95%;
+    }
+}
