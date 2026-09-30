@@ -214,13 +214,14 @@ h2{
     padding: 100px;
 }
 .conteiner-escolha{
-    width: 100vw;
-    padding: 0 80px;
+    width: 100%;
+    min-width: 0;
     display: grid;
     gap: 40px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .card-escolhas{
+    min-width: 0;
     display: flex;
     background-color: #ffffff;
     gap: 20px;
@@ -234,11 +235,11 @@ h2{
     cursor: default;
 }
 .card-escolhas h1{
-    width: 180px;
+    width: 100%;
     color: #06486be0;
 }
 .card-escolhas p{
-    width: 300px;
+    width: 100%;
 }
 .card-escolhas i{
     font-size: 50px;
@@ -611,6 +612,13 @@ h2{
      box-shadow: 0px 5px 10px 0px #14ae5c4d;
 }
 
+@media (max-width: 1100px) {
+    .conteiner-escolha {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+}
+
 @media (max-width: 900px) {
     .hero {
         height: auto;
@@ -648,17 +656,6 @@ h2{
 
     .pq-escolha-home {
         padding: 70px 6%;
-    }
-
-    .conteiner-escolha {
-        width: 100%;
-        padding: 0;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px;
-    }
-
-    .card-escolhas p {
-        width: 100%;
     }
 
     .conteiner-tea-home {
