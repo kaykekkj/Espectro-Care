@@ -49,6 +49,7 @@
     border-radius: 30px;
     background-color: #ffffff;
     text-decoration: none;
+    color: #000000;
     box-shadow: 0 0 10px #ababab;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

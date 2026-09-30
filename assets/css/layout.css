@@ -1,4 +1,5 @@
-.home {
+.home,
+.login-home {
     width: 100%;
     min-height: calc(100dvh - 80px);
     padding: 50px 20px 70px;
@@ -15,7 +16,8 @@
 }
 
 @media (max-width: 768px) {
-    .home {
+    .home,
+    .login-home {
         width: 100%;
         min-height: auto;
         padding: 35px 15px 50px;
@@ -24,7 +26,8 @@
 }
 
 @media (max-width: 600px) {
-    .home {
+    .home,
+    .login-home {
         min-height: calc(100dvh - 70px);
         padding: 25px 12px 40px;
         box-sizing: border-box;
