@@ -1,4 +1,6 @@
 .pagina-profissionais {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     min-height: calc(100vh - 15vh);
     padding-top: 15vh;

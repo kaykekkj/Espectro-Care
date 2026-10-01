@@ -93,7 +93,6 @@
 
         const criarMobile = document.querySelector(".criar-nav-mobile");
         if (criarMobile) {
-            criarMobile.innerHTML = '<button type="button" class="auth-mobile-logout">Sair</button>';
             criarMobile.style.display = "block";
             criarMobile.querySelector("button")?.addEventListener("click", () => {
                 window.EspectroCareAuth.clearSession();
