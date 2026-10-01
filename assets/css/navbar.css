@@ -8,176 +8,110 @@
 .navbar .logo {
     display: block;
     width: auto;
-    height: 72px;
+    height: 64px;
     max-width: 100%;
     object-fit: contain;
 }
 
 .navbar {
     width: 100%;
-    height: 15vh;
-    max-height: 200px;
-    padding: 0 20px;
+    height: 86px;
+    padding: 0 28px;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 500;
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(31, 79, 88, 0.08);
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.04);
 }
 
 .navlinks {
     display: flex;
-    gap: 40px;
+    align-items: center;
+    gap: clamp(20px, 3vw, 40px);
     padding: 0;
     margin: 0;
 }
 
-.navlinks li {
-    list-style: none;
-}
-
+.navlinks li { list-style: none; }
 .navlinks li a {
-    color: #ababab;
-    font-size: 18px;
-    font-weight: bold;
+    display: inline-block;
+    color: #777f80;
+    font-size: 16px;
+    font-weight: 800;
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
+.navlinks li a:hover,
+.navlinks li a[aria-current="page"] { color: #35a073; }
+.navlinks li a:focus-visible,
+.entrar:focus-visible,
+.criar-conta:focus-visible,
+.mobile-menu:focus-visible { outline: 3px solid rgba(53,160,115,0.25); outline-offset: 4px; }
 
-.navlinks li a:hover {
-    color: rgb(102, 200, 127);
-    transform: scale(1.1);
-}
-
-.conta {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.entrar {
-    color: rgb(0, 0, 0);
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: text-decoration 0.3s ease;
-}
-
-.entrar:hover {
-    text-decoration: underline;
-}
-
+.conta { display: flex; align-items: center; gap: 10px; }
+.entrar { color: #243536; font-size: 16px; font-weight: 800; text-decoration: none; }
+.entrar:hover { text-decoration: underline; }
 .criar-conta {
-    padding: 10px 20px;
+    padding: 10px 18px;
     border: none;
-    border-radius: 5px;
-    background: linear-gradient(135deg, rgb(24, 140, 162), rgb(92, 186, 117));
+    border-radius: 8px;
+    background: linear-gradient(135deg, #188ca2, #5cba75);
     color: white;
-    font-size: 18px;
-    font-weight: bold;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
     cursor: pointer;
-    transition: transform 0.3s ease, background 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+.criar-conta a { color: white; text-decoration: none; }
+.criar-conta:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(38,145,128,0.18); }
 
-.criar-conta a {
-    color: white;
-    text-decoration: none;
-}
+.mobile-menu { display: none; padding: 8px; cursor: pointer; border-radius: 8px; }
+.mobile-menu div { width: 25px; height: 3px; margin: 5px 0; background-color: #333; border-radius: 2px; }
+.entrar-nav-mobile, .criar-nav-mobile { display: none; }
 
-.criar-conta:hover {
-    background: linear-gradient(135deg, rgb(92, 186, 117), rgb(24, 140, 162));
-    transform: scale(1.1);
-}
-
-.mobile-menu {
-    display: none;
-    margin-right: 5vw;
-    cursor: pointer;
-}
-
-.mobile-menu div {
-    width: 25px;
-    height: 3px;
-    margin: 5px 0;
-    background-color: #333;
-    border-radius: 2px;
-}
-
-.entrar-nav-mobile,
-.criar-nav-mobile {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
+@media (max-width: 900px) {
+    .navbar { height: 76px; padding: 0 18px; }
+    .navbar .logo { height: 54px; }
     .navlinks {
         position: fixed;
-        top: 15vh;
+        top: 76px;
         right: 0;
-        width: 50vw;
-        height: 85vh;
+        width: min(72vw, 340px);
+        height: calc(100dvh - 76px);
         margin: 0;
-        padding: 5vh 0 0;
+        padding: 38px 20px;
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 8vh;
+        align-items: flex-start;
+        gap: 28px;
+        overflow-y: auto;
         background-color: #ffffff;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
+        box-shadow: -8px 12px 24px rgba(0,0,0,0.08);
+        transform: translateX(105%);
+        transition: transform 0.25s ease;
         z-index: 999;
     }
-
-    .navlinks.menu-aberto {
-        transform: translateX(0);
-    }
-
-    .navlinks li {
-        list-style: none;
-    }
-
-    .navlinks li a {
-        display: block;
-        font-size: 18px;
-    }
-
-    nav.navbar .mobile-menu {
-        display: block !important;
-    }
-
-    nav.navbar .conta {
-        display: none !important;
-    }
-
+    .navlinks.menu-aberto { transform: translateX(0); }
+    .navlinks li { width: 100%; }
+    .navlinks li a { width: 100%; font-size: 18px; }
+    nav.navbar .mobile-menu { display: block !important; }
+    nav.navbar .conta { display: none !important; }
     nav.navbar .entrar-nav-mobile,
-    nav.navbar .criar-nav-mobile {
-        display: block !important;
-    }
-
-    .navbar .logo {
-        height: 54px;
-    }
+    nav.navbar .criar-nav-mobile { display: block !important; }
 }
 
 @media (max-width: 360px) {
-    .navbar .logo {
-        height: 48px;
-    }
+    .navbar { padding: 0 12px; }
+    .navbar .logo { height: 48px; }
+    .navlinks { width: 82vw; }
 }
 
-@media (max-width: 480px) {
-    .navlinks {
-        width: 70vw;
-    }
-}
-
-@media (max-width: 360px) {
-    .navlinks {
-        width: 80vw;
-    }
-}
+.footer-link-disabled { opacity: .65; cursor: default; text-decoration: none !important; }

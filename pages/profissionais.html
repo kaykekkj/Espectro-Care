@@ -1,307 +1,89 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consulte profissionais cadastrados na EspectroCare.">
     <title>Profissionais | EspectroCare</title>
-
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/navbar.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="../assets/css/layout.css">
     <link rel="stylesheet" href="../assets/css/profissionais.css">
     <link rel="stylesheet" href="../assets/css/modal.css">
-
+    <link rel="stylesheet" href="../assets/css/integracao.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/img/logos/Logo (1).png" type="image/x-icon">
 </head>
 <body>
-    <header>
-    <nav class="navbar">
-
-        <a href="../index.html" class="logo-link">
-                <img src="../assets/img/logos/Logo.png" alt="Logo da EspectroCare" class="logo">
-        </a>
+<header>
+    <nav class="navbar" aria-label="Navegação principal">
+        <a href="../index.html" class="logo-link"><img src="../assets/img/logos/Logo.png" alt="Logo da EspectroCare" class="logo"></a>
         <div>
             <ul class="navlinks" id="navlinks">
                 <li><a href="../index.html">Início</a></li>
-                <li><a href="profissionais.html">Profissionais</a></li>
+                <li><a href="profissionais.html" aria-current="page">Profissionais</a></li>
                 <li><a href="aprendizagem.html">Aprendizagem</a></li>
                 <li><a href="sobre-nos.html">Sobre nós</a></li>
                 <li class="entrar-nav-mobile"><a href="login.html">Entrar</a></li>
-                <li class="criar-nav-mobile"><a onclick="selecionar()">Criar conta</a></li>
+                <li class="criar-nav-mobile"><button type="button" onclick="selecionar()">Criar conta</button></li>
             </ul>
         </div>
-        
-
         <div class="conta">
             <a class="entrar" href="login.html">Entrar</a>
-            <button onclick="selecionar()" class="criar-conta"> <a>Criar Conta</a></button>
+            <button type="button" onclick="selecionar()" class="criar-conta">Criar Conta</button>
         </div>
-
-        <div class="mobile-menu" id="mobile-menu">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
+        <div class="mobile-menu" id="mobile-menu"><div></div><div></div><div></div></div>
     </nav>
-    </header>
+</header>
 
-    <div class="selecionar" id="selecionar">
-        <div class="voltar" onclick="fechar()"><img src="../assets/img/icons/_.png"></div>
-            <h1>Criar conta <br><span>Selecione seu perfil para começar</span></h1>
-            <div class="cards">
-                <a href="cadastro-responsavel.html"><div><img src="../assets/img/icons/image 5.jpg" alt=""><h1>Responsaveis</h1></div></a>
-                <a href="cadastro-profissional.html"><div><img src="../assets/img/icons/image 7.png" alt=""><h1>Profissionais</h1></div></a>
-            </div>
-        </div>
+<div class="selecionar" id="selecionar">
+    <button type="button" class="voltar modal-close-button" onclick="fechar()" aria-label="Fechar">×</button>
+    <h1>Criar conta <br><span>Selecione seu perfil para começar</span></h1>
+    <div class="cards">
+        <a href="cadastro-responsavel.html"><div><img src="../assets/img/icons/image 5.jpg" alt=""><h2>Responsáveis</h2></div></a>
+        <a href="cadastro-profissional.html"><div><img src="../assets/img/icons/image 7.png" alt=""><h2>Profissionais</h2></div></a>
+    </div>
+</div>
 
-    <section class="home">
-
-        <main class="pagina-profissionais">
-
-    <!-- =====================================================
-         CABEÇALHO
-         ===================================================== -->
-
+<main class="home pagina-profissionais api-protected-page">
     <section class="profissionais-header">
-
         <div class="profissionais-titulo">
-            <span class="profissionais-label">ENCONTRE AJUDA</span>
-
-            <h1>
-                Encontre o profissional ideal
-            </h1>
-
-            <p>
-                Profissionais verificados e especializados
-                em neurodivergência.
-            </p>
+            <span class="profissionais-label">ENCONTRE APOIO</span>
+            <h1>Encontre profissionais cadastrados</h1>
+            <p>Consulte informações de apresentação disponibilizadas pelos profissionais da plataforma.</p>
         </div>
-
         <div class="profissionais-busca">
-            <input
-                type="search"
-                class="search-profissionais"
-                placeholder="Buscar por nome, especialidade ou cidade..."
-                id="searchInput"
-            >
+            <label class="sr-only" for="searchInput">Pesquisar profissionais</label>
+            <input type="search" class="search-profissionais" placeholder="Buscar por nome, formação ou cidade..." id="searchInput">
         </div>
-
     </section>
 
-
-    <!-- =====================================================
-         LISTA DE PROFISSIONAIS
-         ===================================================== -->
-
-    <section class="lista-profissionais">
-
+    <section class="lista-profissionais" aria-labelledby="tituloListaProfissionais">
         <div class="titulo-lista-profissionais">
-            <div>
-                <span>PROFISSIONAIS</span>
-                <h2>Disponíveis para atendimento</h2>
-            </div>
+            <div><span>PROFISSIONAIS</span><h2 id="tituloListaProfissionais">Disponíveis na plataforma</h2></div>
         </div>
-
-        <div
-            class="container-cards-profissionais"
-            id="containerProfissionais"
-        >
-
-            <!--
-                Os cards de profissionais são carregados
-                dinamicamente por profissionais.js
-            -->
-
-            <div class="card-profissional">
-
-                <div class="topo-card-profissional">
-
-                    <div class="foto-perfil-profissional">
-
-                        <div class="avatar-profissional">
-                            <img src="" alt="Foto do profissional">
-                        </div>
-
-                        <span class="preco-profissional">
-                            R$ 30
-                        </span>
-
-                    </div>
-
-
-                    <div class="informações-profissionais">
-
-                        <div class="nome-profissional">
-                            <h3>
-                                Carlos Eduardo Da Silva Pereira
-                            </h3>
-
-                            <span class="status-profissional">
-                                Disponível
-                            </span>
-                        </div>
-
-                        <p class="profissao-profissional">
-                            Psicólogo
-                        </p>
-
-
-                        <div class="tagg-perfil-profissional">
-
-                            <span>XXXXXXXX</span>
-                            <span>XXXXXXXX</span>
-                            <span>XXXXXXXX</span>
-                            <span>XXXXXXXX</span>
-
-                        </div>
-
-
-                        <div class="dados-profissional">
-
-                            <p>
-                                <strong>Abordagem:</strong>
-                                Gestalt Terapia
-                            </p>
-
-                            <p>
-                                Adolescentes, Adultos e Idosos
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- RODAPÉ DO CARD -->
-
-                <div class="pe-card-profissional">
-
-                    <div class="sobre-mim">
-
-                        <p>
-                            <strong>Sobre mim</strong>
-                        </p>
-
-                        <p class="descricao-profissional">
-                            Lorem ipsum, dolor sit amet consectetur
-                            adipisicing elit. Suscipit ratione impedit
-                            quis dolor sit.
-                        </p>
-
-                        <button class="btn-ver-perfil">
-                            Ver perfil
-                            <span>→</span>
-                        </button>
-
-                    </div>
-
-
-                    <div class="contato">
-
-                        <button class="btn-consulta">
-                            Quero me consultar
-                        </button>
-
-                        <p class="telefone-profissional">
-                            Telefone: (xx) xxxxx-xxxx
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
+        <p id="profissionaisStatus" class="api-state" role="status" aria-live="polite">Carregando profissionais...</p>
+        <div class="container-cards-profissionais" id="containerProfissionais"></div>
     </section>
-
 </main>
 
-    </section>
-
-    
-            <footer class="footer">
-
-            <div class="footer-content">
-
-                <div class="footer-brand">
-
-                    <img
-                        src="../assets/img/logos/Logo.png"
-                        alt="Logo EspectroCare"
-                    >
-
-                    <p>
-                        Conectando pessoas,<br>
-                        profissionais e informação<br>
-                        em um só lugar.
-                    </p>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h2>Plataforma</h2>
-
-                    <a href="#">Sobre nós</a>
-                    <a href="#">Objetivo do site</a>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h2>Suporte</h2>
-
-                    <a href="#">Ajuda</a>
-                    <a href="#">Contato</a>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h2>Legal</h2>
-
-                    <a href="#">Termos de uso</a>
-                    <a href="#">Política de privacidade</a>
-
-                </div>
-
-            </div>
-
-
-            <div class="footer-line"></div>
-
-
-            <div class="footer-bottom">
-
-                <p>
-                    © 2026 EspectroCare
-                </p>
-
-                <span>
-                    Todos os direitos reservados.
-                </span>
-
-            </div>
-
-        </footer>
-
-    <script src="../assets/js/mobilen-navbar.js"></script>
-    <script src="../assets/js/selecionar-perfil.js"></script>
-    <script src="../assets/js/profissionais-data.js"></script>
-    <script src="../assets/js/profissionais.js"></script> <!--Para que seria esse outro arquivo?-->
-
-    <div class="overlay" id="overlay"></div>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-brand"><img src="../assets/img/logos/Logo.png" alt="Logo EspectroCare"><p>Conectando pessoas,<br>profissionais e informação<br>em um só lugar.</p></div>
+        <div class="footer-column"><h2>Plataforma</h2><a href="sobre-nos.html">Sobre nós</a></div>
+    </div>
+    <div class="footer-line"></div>
+    <div class="footer-bottom"><p>© 2026 EspectroCare</p><span>Todos os direitos reservados.</span></div>
+</footer>
+<script src="../assets/js/api-config.js"></script>
+<script src="../assets/js/auth.js"></script>
+<script src="../assets/js/form-utils.js"></script>
+<script src="../assets/js/mobilen-navbar.js"></script>
+<script src="../assets/js/selecionar-perfil.js"></script>
+<script src="../assets/js/profissionais.js"></script>
+<div class="overlay" id="overlay"></div>
 </body>
 </html>

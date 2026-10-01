@@ -1,419 +1,113 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<meta
-    name="description"
-    content="Cadastre-se como profissional na EspectroCare."
->
-
-<title>Cadastro de Profissional | EspectroCare</title>
-
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
->
-
-<!-- CSS -->
-<link rel="stylesheet" href="../assets/css/base.css">
-<link rel="stylesheet" href="../assets/css/footer.css">
-<link rel="stylesheet" href="../assets/css/layout.css">
-<link rel="stylesheet" href="../assets/css/forms.css">
-<link rel="icon" href="../assets/img/logos/Logo (1).png" type="image/x-icon">
-
+    <meta name="description" content="Cadastre-se como profissional na EspectroCare.">
+    <title>Cadastro de Profissional | EspectroCare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/forms.css">
+    <link rel="stylesheet" href="../assets/css/integracao.css">
+    <link rel="icon" href="../assets/img/logos/Logo (1).png" type="image/x-icon">
 </head>
-
 <body class="body-login">
-
-<!-- ============================================================
-     HEADER
-     ============================================================ -->
-
 <header class="header">
-
-    <nav class="navbar-cadastro">
-
-        <a href="../index.html" class="logo-cadastro">
-            <img
-                src="../assets/img/logos/Logo.png"
-                alt="EspectroCare"
-            >
-        </a>
-
-        <a href="../index.html" class="voltar-inicio">
-
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="19"
-                height="19"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-            >
-                <path d="M19 12H5"></path>
-                <path d="M12 19l-7-7 7-7"></path>
-            </svg>
-
-            <span>Voltar ao início</span>
-
-        </a>
-
+    <nav class="navbar-cadastro" aria-label="Navegação do cadastro">
+        <a href="../index.html" class="logo-cadastro"><img src="../assets/img/logos/Logo.png" alt="EspectroCare"></a>
+        <a href="../index.html" class="voltar-inicio"><span aria-hidden="true">←</span><span>Voltar ao início</span></a>
     </nav>
-
 </header>
-
-
-<!-- ============================================================
-     CONTEÚDO PRINCIPAL
-     ============================================================ -->
-
 <main class="home">
-
-    <section
-        class="conteiner-entrar"
-        aria-labelledby="titulo-cadastro"
-    >
-
+    <section class="conteiner-entrar" aria-labelledby="titulo-cadastro">
         <header>
-
-            <h1 id="titulo-cadastro">
-                Cadastro de profissional
-            </h1>
-
-            <p>
-                Preencha seus dados para criar sua conta profissional.
-            </p>
-
+            <h1 id="titulo-cadastro">Cadastro de profissional</h1>
+            <p>Preencha seus dados para criar sua conta profissional.</p>
         </header>
 
-
-        <!-- ====================================================
-             FORMULÁRIO
-             ==================================================== -->
-
-        <form id="formCadastroProfissional">
-
-
-            <!-- ==================================================
-                 DADOS PESSOAIS
-                 ================================================== -->
-
+        <form id="formCadastroProfissional" novalidate>
             <fieldset>
-
                 <legend>Dados pessoais</legend>
-
-
-                <!-- Nome -->
-
                 <div class="campo">
-
-                    <label for="nomeProf">
-                        Nome completo
-                    </label>
-
-                    <input
-                        type="text"
-                        id="nomeProf"
-                        name="nome"
-                        placeholder="Digite seu nome completo"
-                        autocomplete="name"
-                        required
-                    >
-
+                    <label for="nomeProf">Nome completo</label>
+                    <input type="text" id="nomeProf" name="nome" autocomplete="name" maxlength="120" required>
                 </div>
-
-
-                <!-- E-mail -->
-
                 <div class="campo">
-
-                    <label for="emailProf">
-                        E-mail
-                    </label>
-
-                    <input
-                        type="email"
-                        id="emailProf"
-                        name="email"
-                        placeholder="Digite seu e-mail"
-                        autocomplete="email"
-                        required
-                    >
-
+                    <label for="emailProf">E-mail</label>
+                    <input type="email" id="emailProf" name="email" autocomplete="email" maxlength="254" required>
                 </div>
-
-
-                <!-- Telefone -->
-
                 <div class="campo">
-
-                    <label for="telProf">
-                        Telefone
-                    </label>
-
-                    <input
-                        type="tel"
-                        id="telProf"
-                        name="telefone"
-                        placeholder="(11) 99999-9999"
-                        inputmode="numeric"
-                        maxlength="15"
-                        autocomplete="tel"
-                        required
-                    >
-
+                    <label for="telProf">Telefone</label>
+                    <input type="tel" id="telProf" name="telefone" placeholder="(11) 99999-9999" inputmode="numeric" maxlength="15" autocomplete="tel" required>
+                    <small>Informe DDD + telefone fixo ou celular.</small>
                 </div>
-
-
-                <!-- CPF -->
-
                 <div class="campo">
-
-                    <label for="cpf">
-                        CPF
-                    </label>
-
-                    <input
-                        type="text"
-                        id="cpf"
-                        name="cpf"
-                        placeholder="000.000.000-00"
-                        inputmode="numeric"
-                        maxlength="14"
-                        autocomplete="off"
-                        required
-                    >
-
+                    <label for="cpf">CPF</label>
+                    <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" inputmode="numeric" maxlength="14" autocomplete="off" required>
                 </div>
-
-
-                <!-- ==================================================
-                     ESTADO
-                     ================================================== -->
-
                 <div class="campo autocomplete">
-
-                    <label for="estado">
-                        Estado
-                    </label>
-
-                    <input
-                        type="text"
-                        id="estado"
-                        name="estado"
-                        placeholder="Digite o estado"
-                        autocomplete="off"
-                        required
-                    >
-
-                    <div
-                        id="sugestoesEstado"
-                        class="lista-autocomplete"
-                    ></div>
-
+                    <label for="estado">Estado</label>
+                    <input type="text" id="estado" name="estado" placeholder="Digite e selecione o estado" autocomplete="off" required>
+                    <div id="sugestoesEstado" class="lista-autocomplete"></div>
                 </div>
-
-
-                <!-- ==================================================
-                     CIDADE
-                     ================================================== -->
-
                 <div class="campo autocomplete">
-
-                    <label for="cidade">
-                        Cidade
-                    </label>
-
-                    <input
-                        type="text"
-                        id="cidade"
-                        name="cidade"
-                        placeholder="Selecione primeiro o estado"
-                        autocomplete="off"
-                        disabled
-                        required
-                    >
-
-                    <div
-                        id="sugestoesCidade"
-                        class="lista-autocomplete"
-                    ></div>
-
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" name="cidade" placeholder="Selecione primeiro o estado" autocomplete="off" disabled required>
+                    <div id="sugestoesCidade" class="lista-autocomplete"></div>
                 </div>
-
             </fieldset>
 
-
-            <!-- ==================================================
-                 DADOS PROFISSIONAIS
-                 ================================================== -->
-
             <fieldset>
-
                 <legend>Dados profissionais</legend>
-
-
-                <!-- Formação -->
-
                 <div class="campo">
-
-                    <label for="formacao">
-                        Principal formação
-                    </label>
-
-                    <input
-                        type="text"
-                        id="formacao"
-                        name="formacao"
-                        placeholder="Ex.: Psicólogo, Neuropsicólogo..."
-                        required
-                    >
-
+                    <label for="formacao">Principal formação</label>
+                    <input type="text" id="formacao" name="formacao" placeholder="Ex.: Psicologia, Fonoaudiologia..." maxlength="160" required>
                 </div>
-
-
-                <!-- Registro -->
-
                 <div class="campo">
-
-                    <label for="registro">
-                        Número de registro profissional
-                    </label>
-
-                    <input
-                        type="text"
-                        id="registro"
-                        name="registro"
-                        placeholder="Ex.: CRP, CREFITO, CREFONO..."
-                        required
-                    >
-
+                    <label for="registro">Número de registro profissional</label>
+                    <input type="text" id="registro" name="registro" placeholder="Ex.: CRP 00/000000" maxlength="80" required>
                 </div>
-
             </fieldset>
-
-
-            <!-- ==================================================
-                 SEGURANÇA DA CONTA
-                 ================================================== -->
 
             <fieldset>
-
                 <legend>Segurança da conta</legend>
-
                 <div class="senhas">
-
-
-                    <!-- Senha -->
-
                     <div class="campo">
-
-                        <label for="senhaProf">
-                            Senha
-                        </label>
-
-                        <input
-                            type="password"
-                            id="senhaProf"
-                            name="senha"
-                            placeholder="Digite sua senha"
-                            autocomplete="new-password"
-                            minlength="8"
-                            required
-                        >
-
+                        <label for="senhaProf">Senha</label>
+                        <input type="password" id="senhaProf" name="senha" autocomplete="new-password" minlength="8" required>
                     </div>
-
-
-                    <!-- Confirmar senha -->
-
                     <div class="campo">
-
-                        <label for="confirmarSenhaProf">
-                            Confirme sua senha
-                        </label>
-
-                        <input
-                            type="password"
-                            id="confirmarSenhaProf"
-                            name="confirmarSenha"
-                            placeholder="Digite sua senha novamente"
-                            autocomplete="new-password"
-                            minlength="8"
-                            required
-                        >
-
+                        <label for="confirmarSenhaProf">Confirme sua senha</label>
+                        <input type="password" id="confirmarSenhaProf" name="confirmarSenha" autocomplete="new-password" minlength="8" required>
                     </div>
-
                 </div>
-
+                <button type="button" class="password-toggle" id="togglePasswordProf" aria-pressed="false">Mostrar senha</button>
+                <div class="password-help" id="passwordHelp" aria-live="polite">
+                    <p data-password-strength>Força da senha: Fraca</p>
+                    <ul>
+                        <li data-rule="length">Pelo menos 8 caracteres</li>
+                        <li data-rule="upper">Uma letra maiúscula</li>
+                        <li data-rule="lower">Uma letra minúscula</li>
+                        <li data-rule="number">Um número</li>
+                        <li data-rule="special">Um caractere especial</li>
+                    </ul>
+                    <p class="password-match" data-password-match></p>
+                </div>
             </fieldset>
 
-
-            <!-- ==================================================
-                 TERMOS
-                 ================================================== -->
-
-            <div class="termos">
-
-                <p>
-
-                    Ao criar sua conta, você concorda com nossos
-
-                    <a href="../termos.html">
-                        Termos de Uso
-                    </a>
-
-                    e
-
-                    <a href="../privacidade.html">
-                        Política de Privacidade
-                    </a>.
-
-                </p>
-
-            </div>
-
-
-            <!-- ==================================================
-                 BOTÃO
-                 ================================================== -->
-
-            <button
-                type="button"
-                class="botao-cadastrar"
-                id="btnCadastrarProf"
-            >
-                Cadastrar
-            </button>
-
+            <p class="form-note">Ao criar sua conta, você confirma que os dados informados são verdadeiros.</p>
+            <div id="formFeedback" class="form-feedback" role="status" aria-live="polite" hidden></div>
+            <button type="submit" class="botao-cadastrar" id="btnCadastrarProf">Cadastrar</button>
         </form>
-
     </section>
-
 </main>
-
-
-<!-- ============================================================
-     JAVASCRIPT
-     ============================================================ -->
-
+<script src="../assets/js/api-config.js"></script>
+<script src="../assets/js/form-utils.js"></script>
 <script src="../assets/js/autocomplete.js"></script>
 <script src="../assets/js/cadastrar-profissional.js"></script>
-
 </body>
-
 </html>
