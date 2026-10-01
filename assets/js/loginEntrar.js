@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (redirect) {
                 window.location.href = redirect;
             } else {
-                window.location.href = EspectroCareAuth.profilePage(currentUser.tipoPerfil);
+                window.location.href = EspectroCareAuth.accountAreaPage();
             }
         } catch (error) {
             EspectroCareAuth.clearSession();

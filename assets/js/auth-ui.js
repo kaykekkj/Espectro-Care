@@ -1,45 +1,93 @@
 (function () {
     let initialized = false;
 
-    function makeProfileHref(tipoPerfil) {
-        const page = window.EspectroCareAuth.profilePage(tipoPerfil);
-        return location.pathname.includes("/pages/") ? page : `pages/${page}`;
+    function isPagesPath() {
+        return location.pathname.includes("/pages/");
+    }
+
+    function makePageHref(page) {
+        return isPagesPath() ? page : `pages/${page}`;
+    }
+
+    function makeAreaHref() {
+        return makePageHref(window.EspectroCareAuth.accountAreaPage());
     }
 
     function makeHomeHref() {
-        return location.pathname.includes("/pages/") ? "../index.html" : "index.html";
+        return isPagesPath() ? "../index.html" : "index.html";
+    }
+
+    function initials(name) {
+        return String(name || "U").trim().split(/\s+/).slice(0, 2)
+            .map(part => part[0]?.toUpperCase() || "").join("");
+    }
+
+    function firstName(name) {
+        return String(name || "Usuário").trim().split(/\s+/)[0] || "Usuário";
+    }
+
+    function profileLabel(tipoPerfil) {
+        return tipoPerfil === "PROFISSIONAL" ? "Profissional" : "Responsável";
+    }
+
+    function applyVisibility(loggedIn) {
+        document.querySelectorAll("[data-auth-only]").forEach(el => el.hidden = !loggedIn);
+        document.querySelectorAll("[data-guest-only]").forEach(el => el.hidden = loggedIn);
     }
 
     function renderLoggedOut() {
-        document.querySelectorAll("[data-auth-only]").forEach(el => el.hidden = true);
-        document.querySelectorAll("[data-guest-only]").forEach(el => el.hidden = false);
+        applyVisibility(false);
     }
 
     function renderLoggedIn(user) {
+        applyVisibility(true);
+
+        document.querySelectorAll("[data-user-name]").forEach(el => {
+            el.textContent = user.nome || "Usuário";
+        });
+        document.querySelectorAll("[data-auth-area-link]").forEach(el => {
+            el.href = makeAreaHref();
+        });
+
         const conta = document.querySelector(".conta");
         if (conta) {
             conta.innerHTML = "";
 
-            const perfil = document.createElement("a");
-            perfil.className = "entrar auth-profile-link";
-            perfil.href = makeProfileHref(user.tipoPerfil);
-            perfil.textContent = "Meu Perfil";
+            const area = document.createElement("a");
+            area.className = "auth-user-control";
+            area.href = makeAreaHref();
+            area.setAttribute("aria-label", "Abrir minha área");
+
+            const avatar = document.createElement("span");
+            avatar.className = "auth-user-avatar";
+            avatar.textContent = initials(user.nome);
+            avatar.setAttribute("aria-hidden", "true");
+
+            const identity = document.createElement("span");
+            identity.className = "auth-user-identity";
+            const name = document.createElement("strong");
+            name.textContent = firstName(user.nome);
+            const role = document.createElement("small");
+            role.textContent = profileLabel(user.tipoPerfil);
+            identity.append(name, role);
+            area.append(avatar, identity);
 
             const sair = document.createElement("button");
             sair.type = "button";
-            sair.className = "criar-conta auth-logout-button";
+            sair.className = "auth-logout-icon";
             sair.textContent = "Sair";
+            sair.setAttribute("aria-label", "Sair da conta");
             sair.addEventListener("click", () => {
                 window.EspectroCareAuth.clearSession();
                 window.location.href = makeHomeHref();
             });
 
-            conta.append(perfil, sair);
+            conta.append(area, sair);
         }
 
         const entrarMobile = document.querySelector(".entrar-nav-mobile");
         if (entrarMobile) {
-            entrarMobile.innerHTML = `<a href="${makeProfileHref(user.tipoPerfil)}">Meu Perfil</a>`;
+            entrarMobile.innerHTML = `<a href="${makeAreaHref()}">Minha área</a>`;
             entrarMobile.style.display = "block";
         }
 
@@ -52,10 +100,6 @@
                 window.location.href = makeHomeHref();
             });
         }
-
-        document.querySelectorAll("[data-user-name]").forEach(el => {
-            el.textContent = user.nome || "Usuário";
-        });
     }
 
     async function init() {
@@ -72,7 +116,8 @@
             if (user) renderLoggedIn(user);
             else renderLoggedOut();
         } catch (error) {
-            console.warn("Não foi possível atualizar a navbar autenticada.");
+            renderLoggedOut();
+            console.warn("Não foi possível atualizar a interface autenticada.");
         }
     }
 

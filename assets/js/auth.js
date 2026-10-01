@@ -3,6 +3,8 @@
     const EMAIL_KEY = "email";
     const PROFILE_KEY = "tipoPerfil";
 
+    let currentUserPromise = null;
+
     function apiBaseUrl() {
         if (!window.EspectroCareConfig?.API_BASE_URL) {
             throw new Error("Configuração da API não carregada.");
@@ -15,7 +17,10 @@
     }
 
     function setSession({ token, email, tipoPerfil }) {
-        if (token) localStorage.setItem(TOKEN_KEY, token);
+        if (token) {
+            localStorage.setItem(TOKEN_KEY, token);
+            currentUserPromise = null;
+        }
         if (email) localStorage.setItem(EMAIL_KEY, email);
         if (tipoPerfil) localStorage.setItem(PROFILE_KEY, tipoPerfil);
     }
@@ -25,12 +30,17 @@
         localStorage.removeItem(EMAIL_KEY);
         localStorage.removeItem(PROFILE_KEY);
         localStorage.removeItem("token_jwt");
+        currentUserPromise = null;
     }
 
     function profilePage(tipoPerfil) {
         if (tipoPerfil === "PROFISSIONAL") return "userProfissional.html";
         if (tipoPerfil === "RESPONSAVEL") return "userResponsavel.html";
         return "login.html";
+    }
+
+    function accountAreaPage() {
+        return "area-usuario.html";
     }
 
     function loginUrl() {
@@ -50,24 +60,35 @@
         return fetch(`${apiBaseUrl()}${path}`, { ...options, headers });
     }
 
-    async function getCurrentUser() {
+    function getCurrentUser() {
         const token = getToken();
-        if (!token) return null;
+        if (!token) return Promise.resolve(null);
 
-        const response = await authorizedFetch("/api/auth/me");
+        if (currentUserPromise) return currentUserPromise;
 
-        if (response.status === 401) {
-            clearSession();
-            return null;
-        }
+        currentUserPromise = (async () => {
+            const response = await authorizedFetch("/api/auth/me");
 
-        if (!response.ok) {
-            throw new Error("Não foi possível validar sua sessão.");
-        }
+            if (response.status === 401) {
+                clearSession();
+                return null;
+            }
 
-        const user = await response.json();
-        setSession({ tipoPerfil: user.tipoPerfil, email: user.email });
-        return user;
+            if (!response.ok) {
+                throw new Error("Não foi possível validar sua sessão.");
+            }
+
+            const user = await response.json();
+            if (user.tipoPerfil) localStorage.setItem(PROFILE_KEY, user.tipoPerfil);
+            if (user.email) localStorage.setItem(EMAIL_KEY, user.email);
+            return user;
+        })();
+
+        currentUserPromise.catch(() => {
+            currentUserPromise = null;
+        });
+
+        return currentUserPromise;
     }
 
     async function requireAuth() {
@@ -99,6 +120,7 @@
         setSession,
         clearSession,
         profilePage,
+        accountAreaPage,
         authorizedFetch,
         getCurrentUser,
         requireAuth,

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Área do usuário da EspectroCare.">
+    <title>Minha Área | EspectroCare</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/integracao.css">
+    <link rel="stylesheet" href="../assets/css/area-usuario.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/img/logos/Logo (1).png" type="image/x-icon">
+</head>
+<body data-auth-required="true">
+<header>
+    <nav class="navbar" aria-label="Navegação principal">
+        <a href="../index.html" class="logo-link"><img src="../assets/img/logos/Logo.png" alt="Logo da EspectroCare" class="logo"></a>
+        <div><ul class="navlinks" id="navlinks">
+            <li><a href="../index.html">Início</a></li><li><a href="profissionais.html">Profissionais</a></li>
+            <li><a href="aprendizagem.html">Aprendizagem</a></li><li><a href="sobre-nos.html">Sobre nós</a></li>
+            <li class="entrar-nav-mobile"><a href="area-usuario.html">Minha área</a></li><li class="criar-nav-mobile"><button type="button">Sair</button></li>
+        </ul></div>
+        <div class="conta"></div>
+        <div class="mobile-menu" id="mobile-menu"><div></div><div></div><div></div></div>
+    </nav>
+</header>
+<main class="area-usuario-page">
+    <div class="area-usuario-container">
+        <header class="area-usuario-header"><p class="area-usuario-eyebrow">MINHA CONTA</p><h1>Minha área</h1><p>Consulte seus dados e acesse rapidamente os recursos da EspectroCare.</p></header>
+        <p id="areaUsuarioStatus" class="api-state" role="status" aria-live="polite">Carregando sua área...</p>
+        <div id="areaUsuarioConteudo" class="area-usuario-grid" hidden>
+            <section class="area-usuario-card" aria-labelledby="areaUsuarioNome">
+                <div class="area-usuario-identity"><div class="area-usuario-avatar" id="areaUsuarioAvatar" aria-hidden="true">U</div><div><h2 id="areaUsuarioNome">Usuário</h2><p id="areaUsuarioTipo">Conta EspectroCare</p></div></div>
+                <div class="area-usuario-info">
+                    <div class="area-usuario-info-item"><span>E-mail</span><strong id="areaUsuarioEmail">—</strong></div>
+                    <div class="area-usuario-info-item"><span>Telefone</span><strong id="areaUsuarioTelefone">—</strong></div>
+                    <div class="area-usuario-info-item"><span>Localização</span><strong id="areaUsuarioLocalizacao">—</strong></div>
+                    <div id="areaUsuarioProfissional" hidden>
+                        <div class="area-usuario-info-item"><span>Formação</span><strong id="areaUsuarioFormacao">—</strong></div>
+                        <div class="area-usuario-info-item" style="margin-top:14px"><span>Registro profissional</span><strong id="areaUsuarioRegistro">—</strong></div>
+                    </div>
+                </div>
+            </section>
+            <aside class="area-usuario-card area-usuario-actions" aria-label="Ações da conta">
+                <h2>Acessos rápidos</h2>
+                <a id="editarPerfilLink" class="area-action-link primary" href="#"><span>Visualizar e editar perfil</span><span aria-hidden="true">→</span></a>
+                <a class="area-action-link" href="profissionais.html"><span>Profissionais</span><span aria-hidden="true">→</span></a>
+                <a class="area-action-link" href="aprendizagem.html"><span>Aprendizagem</span><span aria-hidden="true">→</span></a>
+                <button type="button" class="area-action-button" onclick="EspectroCareAuth.logout()">Sair da conta</button>
+            </aside>
+        </div>
+    </div>
+</main>
+<footer class="footer"><div class="footer-content"><div class="footer-brand"><img src="../assets/img/logos/Logo.png" alt="Logo EspectroCare"><p>Conectando pessoas,<br>profissionais e informação<br>em um só lugar.</p></div><div class="footer-column"><h2>Plataforma</h2><a href="sobre-nos.html">Sobre nós</a></div></div><div class="footer-line"></div><div class="footer-bottom"><p>© 2026 EspectroCare</p><span>Todos os direitos reservados.</span></div></footer>
+<script src="../assets/js/api-config.js"></script><script src="../assets/js/auth.js"></script><script src="../assets/js/form-utils.js"></script><script src="../assets/js/mobilen-navbar.js"></script><script src="../assets/js/area-usuario.js"></script>
+</body></html>
