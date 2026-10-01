@@ -43,13 +43,14 @@ url('../img/home/Img_hero.png');
     align-items: center;
     gap: 15px;
     margin-bottom: 30px;
+    text-align: center;
 }
-.profissionais-home{
+.profissionais-home {
     width: 100%;
-    padding: 80px;
+    padding: 80px 40px;
+
     display: flex;
     flex-direction: column;
-    justify-items: center;
     align-items: center;
 }
 .profissionais-home a{
@@ -92,54 +93,66 @@ url('../img/home/Img_hero.png');
 .profissionais-home > a:hover i {
     transform: translateX(5px);
 }
-.conteiner-prof-home{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    align-items: center;
-    justify-items: center;
-    gap: 50px;
-    padding: 20px;
+.conteiner-prof-home {
     width: 100%;
     max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+
+    justify-items: center;
+    align-items: center;
 }
+
 h2{
     margin: 0;
 }
 .cards-prof-home1{
+    width: 100%;
+    max-width: 360px;
+    min-height: 260px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #F0FFF6;
+
     border-radius: 30px;
     gap: 20px;
     padding: 30px;
-    height: 30vh;
-    width: 20vw;
+
     text-align: center;
     cursor: pointer;
-    transition: 1s;
+    transition: 0.3s;
+    background-color: #e8fdf2;
 }
+.cards-prof-home2 {
+    width: 100%;
+    max-width: 360px;
+    min-height: 260px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 30px;
+    gap: 20px;
+    padding: 30px;
+
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #e0f4ff;
+}
+
 .cards-prof-home1 i{
     font-size: 74px;
     color: #14AE5C;
     margin-top: 10px;
-}
-
-.cards-prof-home2{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #F2FAFF;
-    border-radius: 30px;
-    gap: 20px;
-    padding: 30px;
-    height: 30vh;
-    width: 20vw;
-    text-align: center;
-    cursor: pointer;
-    transition: 1s;
 }
 .cards-prof-home2 i{
     font-size: 74px;

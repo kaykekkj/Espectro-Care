@@ -1,278 +1,430 @@
+/* =========================================
+   MODAL - SELEÇÃO DE PERFIL
+========================================= */
+
 .selecionar {
-    width: 60vw;
-    height: fit-content;
-    padding-bottom: 60px;
+    width: min(900px, 90vw);
+    min-height: 520px;
+    padding: 55px 45px 50px;
+
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) translateY(200vh);
+
+    transform: translate(-50%, -50%) translateY(120vh);
+
     display: none;
     flex-direction: column;
+
+    box-sizing: border-box;
+
     z-index: 999;
-    border-radius: 20px;
-    background-image: url("../img/home/fundoselecionar.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: 0 0 20px #ababab;
-    transition: transform 0.5s ease;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 248, 249, 0.96) 0%,
+            rgba(255, 248, 249, 0.96) 58%,
+            rgba(142, 218, 195, 0.95) 58%,
+            rgba(142, 218, 195, 0.95) 100%
+        );
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.20);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.3s ease;
 }
 
-.selecionar > h2 {
-    margin-bottom: 20px;
-    color: #000000;
+
+/* =========================================
+   BOTÃO FECHAR
+========================================= */
+
+.modal-close-button {
+    position: absolute;
+
+    top: 16px;
+    left: 16px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #111;
+
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.modal-close-button span {
+    display: block;
+
+    transform: translateY(-2px);
+}
+
+.modal-close-button:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+    transform: rotate(90deg);
+}
+
+.modal-close-button:active {
+    transform: rotate(90deg) scale(0.9);
+}
+
+.modal-close-button:focus-visible {
+    outline: 3px solid rgba(53, 160, 115, 0.4);
+    outline-offset: 2px;
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.selecionar > h1 {
+    width: 100%;
+
+    margin: 0 0 42px;
+    padding: 0;
+
+    color: #080808;
+
     font-family: "Nunito", sans-serif;
-    font-size: 40px;
-    font-weight: bold;
-    line-height: 1.2;
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 800;
+
+    line-height: 1.1;
+
     text-align: center;
 }
 
-.selecionar > h2 span {
-    color: #ababab;
-    font-size: 25px;
+.selecionar > h1 span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #111;
+
+    font-size: clamp(20px, 2.5vw, 30px);
+    font-weight: 700;
+
+    line-height: 1.2;
 }
+
+
+/* =========================================
+   CARDS
+========================================= */
 
 .selecionar .cards {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.selecionar .cards a {
-    width: 30%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-    background-color: #ffffff;
-    text-decoration: none;
-    color: #000000;
-    box-shadow: 0 0 10px #ababab;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.selecionar .cards a:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px #35a073;
-}
-
-.selecionar .cards h3 {
-    font-size: 24px;
-}
-
-.selecionar .cards a img {
-    height: 20vh;
-    max-height: 200px;
-    padding: 20px;
-}
-
-.selecionar .cards a div {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+
+    margin: auto 0 0;
 }
 
-.selecionar .voltar img {
-    height: 25px;
-    margin: 20px;
-    cursor: pointer;
+
+/* =========================================
+   CARD INDIVIDUAL
+========================================= */
+
+.selecionar .perfil-card {
+    min-height: 270px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    border-radius: 26px;
+
+    background: #fff;
+
+    color: #000;
+    text-decoration: none;
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.10);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
+
+.selecionar .perfil-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 14px 30px rgba(53, 160, 115, 0.25);
+}
+
+.selecionar .perfil-card:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+
+/* =========================================
+   ÍCONES
+========================================= */
+
+.selecionar .perfil-card img {
+    width: 135px;
+    height: 135px;
+
+    padding: 10px;
+
+    display: block;
+
+    box-sizing: border-box;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+}
+
+
+/* =========================================
+   TEXTO DOS CARDS
+========================================= */
+
+.selecionar .perfil-card h2 {
+    margin: 18px 0 0;
+
+    color: #111;
+
+    font-family: "Nunito", sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
 
 .overlay {
     position: fixed;
     inset: 0;
+
     z-index: 998;
+
     opacity: 0;
+
     pointer-events: none;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(8px);
-    transition: opacity 0.5s ease;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    transition:
+        opacity 0.4s ease;
 }
 
+
+/* =========================================
+   TABLET
+========================================= */
+
 @media (max-width: 768px) {
+
     .selecionar {
-        width: 85vw;
+        width: 88vw;
         max-width: 600px;
-        max-height: 90vh;
-        padding-bottom: 32px;
-        box-sizing: border-box;
-        overflow-y: auto;
-        overflow-x: hidden;
-        border-radius: 22px;
+
+        min-height: auto;
+
+        padding: 55px 28px 35px;
+
+        border-radius: 24px;
     }
 
-    .selecionar .voltar {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        box-sizing: border-box;
+    .selecionar > h1 {
+        margin-bottom: 30px;
+
+        font-size: 32px;
     }
 
-    .selecionar .voltar img {
-        width: auto;
-        height: 25px;
-        margin: 18px 20px;
-    }
+    .selecionar > h1 span {
+        margin-top: 8px;
 
-    .selecionar > h2 {
-        width: 100%;
-        margin: 8px 0 0;
-        padding: 0 20px;
-        box-sizing: border-box;
-        font-size: 30px;
-        font-weight: 800;
-        line-height: 1.15;
-    }
-
-    .selecionar > h2 span {
-        display: block;
-        margin-top: 10px;
-        font-size: 18px;
-        font-weight: 700;
-        line-height: 1.3;
+        font-size: 20px;
     }
 
     .selecionar .cards {
-        width: 100%;
-        margin: 42px 0 0;
-        padding: 0 22px;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 18px;
-        box-sizing: border-box;
     }
 
-    .selecionar .cards a {
-        width: 100%;
-        min-width: 0;
-        min-height: 215px;
-        padding: 12px 8px 16px;
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-        overflow: hidden;
-        border-radius: 24px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    .selecionar .perfil-card {
+        min-height: 220px;
+
+        padding: 18px;
+
+        border-radius: 22px;
     }
 
-    .selecionar .cards a:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 18px rgba(53, 160, 115, 0.20);
+    .selecionar .perfil-card img {
+        width: 105px;
+        height: 105px;
     }
 
-    .selecionar .cards a div {
-        min-width: 0;
-        text-align: center;
-        box-sizing: border-box;
-    }
+    .selecionar .perfil-card h2 {
+        margin-top: 12px;
 
-    .selecionar .cards a img {
-        width: 100%;
-        max-width: 110px;
-        height: 100px;
-        padding: 8px;
-        display: block;
-        object-fit: contain;
-        box-sizing: border-box;
-    }
-
-    .selecionar .cards h3 {
-        width: 100%;
-        margin: 10px 0 0;
-        padding: 0;
-        box-sizing: border-box;
-        color: #173f47;
-        font-size: 16px;
-        font-weight: 800;
-        line-height: 1.2;
-        text-align: center;
-        white-space: normal;
-        overflow-wrap: normal;
-        word-break: normal;
+        font-size: 20px;
     }
 }
 
+
+/* =========================================
+   CELULAR
+========================================= */
+
 @media (max-width: 600px) {
+
     .selecionar {
         width: 92vw;
-        max-width: none;
-        max-height: 88vh;
-        padding-bottom: 30px;
-        border-radius: 20px;
+
+        padding: 52px 20px 28px;
+
+        border-radius: 22px;
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(255, 248, 249, 0.97) 0%,
+                rgba(255, 248, 249, 0.97) 60%,
+                rgba(142, 218, 195, 0.96) 60%,
+                rgba(142, 218, 195, 0.96) 100%
+            );
     }
 
-    .selecionar > h2 {
-        margin: 8px 15px 0;
-        font-size: 26px;
-        line-height: 1.2;
+    .modal-close-button {
+        top: 12px;
+        left: 12px;
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 28px;
     }
 
-    .selecionar > h2 span {
-        margin-top: 8px;
+    .selecionar > h1 {
+        margin-bottom: 28px;
+
+        font-size: 27px;
+    }
+
+    .selecionar > h1 span {
+        margin-top: 7px;
+
         font-size: 17px;
         line-height: 1.3;
     }
 
-    .selecionar .voltar img {
-        height: 23px;
-        margin: 17px;
+    .selecionar .cards {
+        gap: 14px;
+    }
+
+    .selecionar .perfil-card {
+        min-height: 190px;
+
+        padding: 12px 8px;
+
+        border-radius: 20px;
+    }
+
+    .selecionar .perfil-card img {
+        width: 85px;
+        height: 85px;
+
+        padding: 5px;
+    }
+
+    .selecionar .perfil-card h2 {
+        margin-top: 10px;
+
+        font-size: 16px;
     }
 }
 
-@media (max-width: 480px) {
-    .selecionar > h2 {
-        font-size: 25px;
-    }
 
-    .selecionar .cards a {
-        min-height: 200px;
-        padding: 10px 7px 14px;
-        border-radius: 21px;
-    }
+/* =========================================
+   CELULARES PEQUENOS
+========================================= */
 
-    .selecionar .cards a img {
-        max-width: 95px;
-        height: 90px;
-        padding: 6px;
-    }
+@media (max-width: 380px) {
 
-    .selecionar .cards h3 {
-        margin-top: 9px;
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 360px) {
     .selecionar {
         width: 94vw;
+
+        padding: 50px 14px 24px;
     }
 
-    .selecionar > h2 {
+    .selecionar > h1 {
         font-size: 24px;
     }
 
-    .selecionar > h2 span {
-        font-size: 16px;
+    .selecionar > h1 span {
+        font-size: 15px;
     }
 
-    .selecionar .cards a {
-        min-height: 185px;
-        padding: 9px 5px 12px;
-        border-radius: 19px;
+    .selecionar .cards {
+        gap: 10px;
     }
 
-    .selecionar .cards a img {
-        max-width: 85px;
-        height: 80px;
+    .selecionar .perfil-card {
+        min-height: 175px;
+
+        padding: 10px 5px;
+
+        border-radius: 18px;
     }
 
-    .selecionar .cards h3 {
+    .selecionar .perfil-card img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .selecionar .perfil-card h2 {
         font-size: 14px;
     }
 }

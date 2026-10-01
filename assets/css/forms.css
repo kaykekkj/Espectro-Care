@@ -55,42 +55,81 @@
 .logo-cadastro:hover img {
     transform: scale(1.03);
 }
-
 .voltar-inicio {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: 9px;
-    padding: 10px 17px;
+
+    padding: 10px 16px;
+
     color: #174f58;
-    background: #f4f9f7;
+    background: #ffffff;
+
     border: 1px solid #dce9e5;
-    border-radius: 10px;
+    border-radius: 12px;
+
     font-family: "Nunito", sans-serif;
     font-size: 14px;
     font-weight: 700;
+
     text-decoration: none;
+
+    box-shadow: 0 3px 10px rgba(23, 79, 88, 0.06);
+
     transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
-.voltar-inicio svg {
-    transition: transform 0.2s ease;
+.voltar-inicio i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 8px;
+
+    color: #188ca2;
+    background: #eef8f6;
+
+    font-size: 13px;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
 }
 
 .voltar-inicio:hover {
-    color: white;
-    border-color: transparent;
-    background: linear-gradient(135deg, #188ca2, #5cba75);
-    transform: translateY(-1px);
-    box-shadow: 0 5px 12px rgba(38, 145, 128, 0.18);
+    color: #174f58;
+    background: #f5fbf9;
+
+    border-color: #bcded5;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 7px 18px rgba(23, 79, 88, 0.10);
 }
 
-.voltar-inicio:hover svg {
+.voltar-inicio:hover i {
+    color: #ffffff;
+    background: linear-gradient(135deg, #188ca2, #5cba75);
+
     transform: translateX(-3px);
+}
+
+.voltar-inicio:active {
+    transform: translateY(0);
+}
+
+.voltar-inicio:focus-visible {
+    outline: 3px solid rgba(24, 140, 162, 0.2);
+    outline-offset: 3px;
 }
 
 .conteiner-entrar {
@@ -273,6 +312,7 @@
     font-weight: 700;
     text-decoration: none;
     transition: color 0.2s ease;
+    cursor: pointer;
 }
 
 .conteiner-entrar a:hover {
@@ -320,55 +360,174 @@
 .criar-conta-login {
     cursor: pointer;
 }
+/* =========================================
+   RESPONSIVIDADE - LOGIN
+   ========================================= */
 
 @media (max-width: 768px) {
-    .conteiner-entrar {
-        width: 85%;
-        max-width: 600px;
-        padding: 32px 28px 35px;
-        box-sizing: border-box;
-    }
 
-    .conteiner-entrar h1 {
-        font-size: 20px;
-    }
+    /* ---------- NAVBAR ---------- */
 
-    .conteiner-entrar p {
-        font-size: 12px;
-    }
-
-    .conteiner-entrar input {
-        height: 40px;
-    }
-
-    .conteiner-entrar button {
-        width: 100%;
-        height: 40px;
-        font-size: 16px;
-    }
-
-    .senhas {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-}
-
-@media (max-width: 600px) {
     .navbar-cadastro {
         height: 70px;
-        padding: 0 18px;
+        padding: 0 24px;
         box-sizing: border-box;
     }
 
     .logo-cadastro img {
+        width: 125px;
+        height: auto;
+    }
+
+    .voltar-inicio {
+        padding: 8px 12px;
+        gap: 7px;
+        font-size: 13px;
+        border-radius: 10px;
+    }
+
+    .voltar-inicio i {
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+        border-radius: 7px;
+    }
+
+
+    /* ---------- ÁREA PRINCIPAL ---------- */
+
+    .body-login .login-home,
+    .body-login .home {
+        min-height: calc(100dvh - 70px);
+
+        padding: 35px 20px 50px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+
+    /* ---------- CARD ---------- */
+
+    .conteiner-entrar {
+        width: 100%;
+        max-width: 600px;
+
+        padding: 32px 28px 35px;
+
+        box-sizing: border-box;
+
+        border-radius: 18px;
+    }
+
+
+    /* ---------- TÍTULO ---------- */
+
+    .conteiner-entrar h1 {
+        font-size: 27px;
+        line-height: 1.2;
+    }
+
+    .conteiner-entrar > header {
+        margin-bottom: 28px;
+    }
+
+    .conteiner-entrar > header p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+
+    /* ---------- CAMPOS ---------- */
+
+    .conteiner-entrar fieldset {
+        margin-bottom: 24px;
+    }
+
+    .conteiner-entrar legend {
+        font-size: 17px;
+        margin-bottom: 17px;
+    }
+
+    .campo {
+        margin-bottom: 16px;
+    }
+
+    .campo label {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    .conteiner-entrar input {
+        width: 100%;
+        height: 44px;
+
+        padding: 0 13px;
+
+        font-size: 14px;
+    }
+
+
+    /* ---------- SENHAS ---------- */
+
+    .senhas {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+
+    /* ---------- TERMOS ---------- */
+
+    .termos {
+        margin-top: 8px;
+    }
+
+    .termos p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+
+    /* ---------- BOTÃO ---------- */
+
+    .conteiner-entrar button {
+        width: 100%;
+        height: 44px;
+
+        margin-top: 24px;
+
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================
+   CELULARES
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar-cadastro {
+        height: 68px;
+        padding: 0 18px;
+    }
+
+    .logo-cadastro img {
         width: 120px;
-        max-width: 100%;
     }
 
     .voltar-inicio {
         width: 42px;
         height: 42px;
+
         padding: 0;
+
+        justify-content: center;
+
         border-radius: 10px;
     }
 
@@ -376,12 +535,56 @@
         display: none;
     }
 
+    .voltar-inicio i {
+        width: 28px;
+        height: 28px;
+
+        background: transparent;
+
+        color: #188ca2;
+
+        font-size: 15px;
+    }
+
+    .voltar-inicio:hover {
+        transform: none;
+    }
+
+    .voltar-inicio:hover i {
+        background: transparent;
+        color: #188ca2;
+        transform: translateX(-3px);
+    }
+
+
+    /* ---------- ÁREA PRINCIPAL ---------- */
+
+    .body-login .login-home,
+    .body-login .home {
+        min-height: calc(100dvh - 68px);
+
+        padding: 25px 14px 40px;
+
+        align-items: flex-start;
+    }
+
+
+    /* ---------- CARD ---------- */
+
     .conteiner-entrar {
         width: 100%;
         max-width: 100%;
+
         padding: 28px 20px 32px;
+
         border-radius: 16px;
-        box-sizing: border-box;
+    }
+
+
+    /* ---------- TÍTULO ---------- */
+
+    .conteiner-entrar > header {
+        margin-bottom: 25px;
     }
 
     .conteiner-entrar h1 {
@@ -389,8 +592,12 @@
     }
 
     .conteiner-entrar > header p {
-        font-size: 14px;
+        font-size: 13px;
+        line-height: 1.5;
     }
+
+
+    /* ---------- CAMPOS ---------- */
 
     .conteiner-entrar legend {
         font-size: 16px;
@@ -401,29 +608,185 @@
         font-size: 14px;
     }
 
-    .termos p {
-        font-size: 12px;
+
+    /* ---------- BOTÃO ---------- */
+
+    .conteiner-entrar button {
+        height: 44px;
+        font-size: 15px;
+    }
+
+
+    /* ---------- TEXTO DE CADASTRO ---------- */
+
+    .conteiner-entrar form > p {
+        font-size: 13px;
+        line-height: 1.5;
+        text-align: center;
     }
 }
 
+
+/* =========================================
+   CELULARES PEQUENOS
+   ========================================= */
+
 @media (max-width: 480px) {
+
+    .navbar-cadastro {
+        padding: 0 15px;
+    }
+
+    .logo-cadastro img {
+        width: 110px;
+    }
+
+
+    /* ---------- ÁREA PRINCIPAL ---------- */
+
+    .body-login .login-home,
+    .body-login .home {
+        padding: 20px 12px 35px;
+    }
+
+
+    /* ---------- CARD ---------- */
+
     .conteiner-entrar {
         padding: 25px 18px 30px;
+        border-radius: 15px;
     }
+
+
+    /* ---------- TÍTULO ---------- */
+
+    .conteiner-entrar h1 {
+        font-size: 23px;
+    }
+
+    .conteiner-entrar > header p {
+        font-size: 13px;
+    }
+
+
+    /* ---------- CAMPOS ---------- */
+
+    .campo label {
+        font-size: 13px;
+    }
+
+    .conteiner-entrar input {
+        height: 43px;
+        font-size: 14px;
+    }
+
+
+    /* ---------- SENHAS ---------- */
 
     .senhas {
         display: flex;
         flex-direction: column;
         gap: 0;
     }
-}
 
-@media (max-width: 360px) {
-    .conteiner-entrar {
-        padding: 22px 15px 25px;
+
+    /* ---------- BOTÃO ---------- */
+
+    .conteiner-entrar button {
+        width: 100%;
+        height: 44px;
     }
 
+
+    /* ---------- TERMOS ---------- */
+
+    .termos p {
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================
+   CELULARES MUITO PEQUENOS
+   ========================================= */
+
+@media (max-width: 360px) {
+
+    .navbar-cadastro {
+        height: 64px;
+        padding: 0 12px;
+    }
+
+    .logo-cadastro img {
+        width: 100px;
+    }
+
+    .voltar-inicio {
+        width: 38px;
+        height: 38px;
+    }
+
+    .voltar-inicio i {
+        width: 25px;
+        height: 25px;
+        font-size: 13px;
+    }
+
+
+    /* ---------- ÁREA PRINCIPAL ---------- */
+
+    .body-login .login-home,
+    .body-login .home {
+        min-height: calc(100dvh - 64px);
+        padding: 18px 10px 30px;
+    }
+
+
+    /* ---------- CARD ---------- */
+
+    .conteiner-entrar {
+        padding: 22px 15px 25px;
+        border-radius: 14px;
+    }
+
+
+    /* ---------- TÍTULO ---------- */
+
     .conteiner-entrar h1 {
-        font-size: 22px;
+        font-size: 21px;
+    }
+
+    .conteiner-entrar > header {
+        margin-bottom: 22px;
+    }
+
+    .conteiner-entrar > header p {
+        font-size: 12px;
+    }
+
+
+    /* ---------- CAMPOS ---------- */
+
+    .conteiner-entrar input {
+        height: 42px;
+        padding: 0 12px;
+        font-size: 13px;
+    }
+
+    .campo {
+        margin-bottom: 14px;
+    }
+
+    .campo label {
+        font-size: 12px;
+    }
+
+
+    /* ---------- BOTÃO ---------- */
+
+    .conteiner-entrar button {
+        height: 42px;
+        margin-top: 20px;
+        font-size: 14px;
     }
 }
