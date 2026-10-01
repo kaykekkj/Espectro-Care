@@ -46,6 +46,9 @@
         try {
             if (!window.EspectroCareConfig) await loadSibling("api-config.js");
             if (!window.EspectroCareAuth) await loadSibling("auth.js");
+            if (document.body?.dataset.authRequired === "true") {
+                await loadSibling("auth-guard.js");
+            }
             if (!window.EspectroCareAuthUI) await loadSibling("auth-ui.js");
             window.EspectroCareAuthUI?.init();
         } catch (error) {

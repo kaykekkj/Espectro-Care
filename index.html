@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/modal.css">
     <link rel="stylesheet" href="assets/css/Home.css">
+    <link rel="stylesheet" href="assets/css/home-auth.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
@@ -195,13 +196,21 @@
         </section>
 
         <section class="criar-conta-home">
-            <div class="texto-home">
-                <h1>Pronto para dar o primeiro passo?</h1>
-                <p>Cadastre-se gratuitamente no botão abaixo e comece a encontrar os profissionais ideais para sua família!</p>
+            <div class="home-cta-content" data-guest-only>
+                <div class="texto-home">
+                    <h1>Pronto para dar o primeiro passo?</h1>
+                    <p>Cadastre-se gratuitamente no botão abaixo e comece a encontrar os profissionais ideais para sua família!</p>
+                </div>
+                <button type="button" onclick="selecionar()" class="criar-conta">Criar Conta</button>
             </div>
-            
-             <button type="button" onclick="selecionar()" class="criar-conta">Criar Conta</button>
-            
+
+            <div class="home-cta-content" data-auth-only hidden>
+                <div class="texto-home">
+                    <h1>Que bom ter você por aqui, <span data-user-name>usuário</span>!</h1>
+                    <p>Acesse sua área para consultar seu perfil e continuar usando os recursos da EspectroCare.</p>
+                </div>
+                <a class="home-area-button" data-auth-area-link href="pages/area-usuario.html">Acessar minha área</a>
+            </div>
         </section>
 
     </main>
