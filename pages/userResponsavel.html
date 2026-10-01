@@ -3,55 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Perfil - EspectroCare</title>
-    <!-- Vincula o arquivo CSS externo -->
+    <title>Meu Perfil | EspectroCare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/perfilteste.css">
+    <link rel="stylesheet" href="../assets/css/integracao.css">
     <link rel="icon" href="../assets/img/logos/Logo (1).png" type="image/x-icon">
-
 </head>
-<body>
-
-<div class="container">
-    <h2>Perfil do Responsável</h2>
-    
-    <div id="msg" class="mensagem"></div>
-
-    <form id="formPerfilResp">
-        <div class="form-group">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" required>
-        </div>
-
-        <div class="form-group">
-            <label for="email">E-mail (Apenas Leitura):</label>
-            <input type="email" id="email" disabled>
-        </div>
-
-        <div class="form-group">
-            <label for="bio">Biografia / Sobre:</label>
-            <textarea id="bio"></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="telefone">Telefone:</label>
-            <input type="text" id="telefone">
-        </div>
-
-        <div class="form-group">
-            <label for="estado">Estado (UF):</label>
-            <input type="text" id="estado" maxlength="2">
-        </div>
-
-        <div class="form-group">
-            <label for="numRegistro">Número de Registro:</label>
-            <input type="text" id="numRegistro">
-        </div>
-
-        <button type="submit">Salvar Alterações</button>
-    </form>
-</div>
-
-<!-- Vincula o arquivo JS externo -->
-<script src="carregarPerfilResponsavel.js"></script>
+<body class="profile-settings-page">
+<main class="profile-settings-container">
+    <div class="profile-settings-topbar">
+        <a href="../index.html" class="profile-back-link">← Voltar ao início</a>
+        <button type="button" class="profile-logout" id="logoutProfile">Sair</button>
+    </div>
+    <section class="profile-settings-card" aria-labelledby="perfilTitulo">
+        <header>
+            <p class="profile-eyebrow">CONFIGURAÇÕES</p>
+            <h1 id="perfilTitulo">Perfil do responsável</h1>
+            <p>Atualize seus dados básicos da EspectroCare.</p>
+        </header>
+        <div id="msg" class="form-feedback" role="status" aria-live="polite" hidden></div>
+        <form id="formPerfilResp" novalidate>
+            <div class="profile-grid">
+                <div class="form-group full-width">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" maxlength="120" required>
+                </div>
+                <div class="form-group full-width">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" disabled>
+                    <small>O e-mail não pode ser alterado por esta tela.</small>
+                </div>
+                <div class="form-group full-width">
+                    <label for="cpf">CPF</label>
+                    <input type="text" id="cpf" disabled>
+                    <small>O CPF não é editável nesta tela.</small>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" inputmode="numeric" maxlength="15" placeholder="(11) 99999-9999">
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <input type="text" id="estado" maxlength="80">
+                </div>
+                <div class="form-group full-width">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" maxlength="120">
+                </div>
+            </div>
+            <button type="submit" class="profile-save-button">Salvar alterações</button>
+        </form>
+    </section>
+</main>
+<script src="../assets/js/api-config.js"></script>
+<script src="../assets/js/auth.js"></script>
+<script src="../assets/js/form-utils.js"></script>
+<script src="../assets/js/carregarPerfilResponsavel.js"></script>
+<script>
+    document.getElementById('logoutProfile').addEventListener('click', () => EspectroCareAuth.logout());
+</script>
 </body>
 </html>

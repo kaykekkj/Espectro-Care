@@ -1,27 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil Profissional</title>
-<link rel="stylesheet" href="../assets/css/base.css">
-<link rel="stylesheet" href="../assets/css/navbar.css">
-<link rel="stylesheet" href="../assets/css/footer.css">
-<link rel="stylesheet" href="../assets/css/layout.css">
-<link rel="stylesheet" href="../assets/css/modal.css">
-<link rel="stylesheet" href="../assets/css/perfil-profissional.css">
+    <title>Perfil Profissional | EspectroCare</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/modal.css">
+    <link rel="stylesheet" href="../assets/css/perfil-profissional.css">
+    <link rel="stylesheet" href="../assets/css/integracao.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/img/logos/Logo (1).png" type="image/x-icon">
 </head>
 <body>
-    <header>
-    <nav class="navbar">
-
-        <a href="../index.html" class="logo-link">
-                <img src="../assets/img/logos/Logo.png" alt="Logo da EspectroCare" class="logo">
-        </a>
+<header>
+    <nav class="navbar" aria-label="Navegação principal">
+        <a href="../index.html" class="logo-link"><img src="../assets/img/logos/Logo.png" alt="Logo da EspectroCare" class="logo"></a>
         <div>
             <ul class="navlinks" id="navlinks">
                 <li><a href="../index.html">Início</a></li>
@@ -29,115 +27,45 @@
                 <li><a href="aprendizagem.html">Aprendizagem</a></li>
                 <li><a href="sobre-nos.html">Sobre nós</a></li>
                 <li class="entrar-nav-mobile"><a href="login.html">Entrar</a></li>
-                <li class="criar-nav-mobile"><a onclick="selecionar()">Criar conta</a></li>
+                <li class="criar-nav-mobile"><button type="button" onclick="selecionar()">Criar conta</button></li>
             </ul>
         </div>
-        
-
         <div class="conta">
             <a class="entrar" href="login.html">Entrar</a>
-            <button onclick="selecionar()" class="criar-conta"> <a>Criar Conta</a></button>
+            <button type="button" onclick="selecionar()" class="criar-conta">Criar Conta</button>
         </div>
-
-        <div class="mobile-menu" id="mobile-menu">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
+        <div class="mobile-menu" id="mobile-menu"><div></div><div></div><div></div></div>
     </nav>
-    </header>
+</header>
 
-    <div class="selecionar" id="selecionar">
-        <div class="voltar" onclick="fechar()"><img src="../assets/img/icons/_.png"></div>
-            <h1>Criar conta <br><span>Selecione seu perfil para começar</span></h1>
-            <div class="cards">
-                <a href="cadastro-responsavel.html"><div><img src="../assets/img/icons/image 5.jpg" alt=""><h1>Responsaveis</h1></div></a>
-                <a href="cadastro-profissional.html"><div><img src="../assets/img/icons/image 7.png" alt=""><h1>Profissionais</h1></div></a>
-            </div>
-        </div>
-
-    <section class="home">
-    
-    <div class="profile-card" id="profileCard">
-        <!-- O perfil é carregado dinamicamente pelo arquivo
-             assets/js/perfil-profissionais.js -->
+<div class="selecionar" id="selecionar">
+    <button type="button" class="voltar modal-close-button" onclick="fechar()" aria-label="Fechar">×</button>
+    <h1>Criar conta <br><span>Selecione seu perfil para começar</span></h1>
+    <div class="cards">
+        <a href="cadastro-responsavel.html"><div><img src="../assets/img/icons/image 5.jpg" alt=""><h2>Responsáveis</h2></div></a>
+        <a href="cadastro-profissional.html"><div><img src="../assets/img/icons/image 7.png" alt=""><h2>Profissionais</h2></div></a>
     </div>
-    </section>
+</div>
 
-    
-            <footer class="footer">
+<main class="home api-profile-page">
+    <p id="perfilProfissionalStatus" class="api-state" role="status" aria-live="polite">Carregando perfil...</p>
+    <article class="profile-card" id="profileCard"></article>
+</main>
 
-            <div class="footer-content">
-
-                <div class="footer-brand">
-
-                    <img
-                        src="../assets/img/logos/Logo.png"
-                        alt="Logo EspectroCare"
-                    >
-
-                    <p>
-                        Conectando pessoas,<br>
-                        profissionais e informação<br>
-                        em um só lugar.
-                    </p>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h2>Plataforma</h2>
-
-                    <a href="#">Sobre nós</a>
-                    <a href="#">Objetivo do site</a>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h2>Suporte</h2>
-
-                    <a href="#">Ajuda</a>
-                    <a href="#">Contato</a>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h2>Legal</h2>
-
-                    <a href="#">Termos de uso</a>
-                    <a href="#">Política de privacidade</a>
-
-                </div>
-
-            </div>
-
-
-            <div class="footer-line"></div>
-
-
-            <div class="footer-bottom">
-
-                <p>
-                    © 2026 EspectroCare
-                </p>
-
-                <span>
-                    Todos os direitos reservados.
-                </span>
-
-            </div>
-
-        </footer>
-
-    <script src="../assets/js/mobilen-navbar.js"></script>
-    <script src="../assets/js/selecionar-perfil.js"></script>
-    <script src="../assets/js/profissionais-data.js"></script>
-    <script src="../assets/js/perfil-profissionais.js"></script>
-    <div class="overlay" id="overlay"></div>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-brand"><img src="../assets/img/logos/Logo.png" alt="Logo EspectroCare"><p>Conectando pessoas,<br>profissionais e informação<br>em um só lugar.</p></div>
+        <div class="footer-column"><h2>Plataforma</h2><a href="sobre-nos.html">Sobre nós</a></div>
+    </div>
+    <div class="footer-line"></div>
+    <div class="footer-bottom"><p>© 2026 EspectroCare</p><span>Todos os direitos reservados.</span></div>
+</footer>
+<script src="../assets/js/api-config.js"></script>
+<script src="../assets/js/auth.js"></script>
+<script src="../assets/js/form-utils.js"></script>
+<script src="../assets/js/mobilen-navbar.js"></script>
+<script src="../assets/js/selecionar-perfil.js"></script>
+<script src="../assets/js/perfil-profissionais.js"></script>
+<div class="overlay" id="overlay"></div>
 </body>
 </html>

@@ -1,73 +1,63 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrar</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="description" content="Entre na sua conta EspectroCare.">
+    <title>Entrar | EspectroCare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="../assets/css/layout.css">
     <link rel="stylesheet" href="../assets/css/forms.css">
     <link rel="stylesheet" href="../assets/css/modal.css">
+    <link rel="stylesheet" href="../assets/css/integracao.css">
     <link rel="icon" href="../assets/img/logos/Logo (1).png" type="image/x-icon">
 </head>
 <body class="body-login">
-
-    <header class="header" style="margin-bottom: 10vh;">
-        <nav class="navbar-cadastro">
-            <a href="../index.html" class="logo-cadastro">
-                <img
-                    src="../assets/img/logos/Logo.png"
-                    alt="EspectroCare"
-                >
-            </a>
-
-            <a href="../index.html" class="voltar-inicio">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="19"
-                    height="19"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <path d="M19 12H5"></path>
-                    <path d="M12 19l-7-7 7-7"></path>
-                </svg>
-
-                <span>Voltar ao início</span>
-            </a>
-        </nav>
-    </header>
-
-    <section class="login-home">
-        <div class="conteiner-entrar">
-        <h1 style="margin-bottom: 30px;">Bem vindo de volta</h1>
-        <label for="email">Email</label>
-        <input type="email" class="email" id="email" style="margin-bottom: 30px;" placeholder="Digite seu email" required>
-        <label for="senha" style="margin-top: 30px;">Senha</label>
-        <input type="password" class="senha" id="senha" placeholder="Digite sua senha" required>
-        <p style="margin-top: 30px;"><a href="">Esqueci minha senha</a> ou <a class="criar-conta-login" onclick="selecionar()">Não tem uma conta</a> </p>
-        <button id="btnLogar" class="botao-logar">Entrar</button>
-        </div>
-    </section>
-
-    <div class="selecionar" id="selecionar">
-        <div class="voltar" onclick="fechar()"><img src="../assets/img/icons/_.png"></div>
-            <h1>Criar conta <br><span>Selecione seu perfil para começar</span></h1>
-            <div class="cards">
-                <a href="cadastro-responsavel.html"><div><img src="../assets/img/icons/image 5.jpg" alt=""><h1>Responsaveis</h1></div></a>
-                <a href="cadastro-profissional.html"><div><img src="../assets/img/icons/image 7.png" alt=""><h1>Profissionais</h1></div></a>
+<header class="header">
+    <nav class="navbar-cadastro">
+        <a href="../index.html" class="logo-cadastro"><img src="../assets/img/logos/Logo.png" alt="EspectroCare"></a>
+        <a href="../index.html" class="voltar-inicio"><span aria-hidden="true">←</span><span>Voltar ao início</span></a>
+    </nav>
+</header>
+<main class="login-home login-main">
+    <section class="conteiner-entrar login-card" aria-labelledby="loginTitle">
+        <header>
+            <h1 id="loginTitle">Bem-vindo de volta</h1>
+            <p>Entre para acessar seu perfil e as áreas protegidas da plataforma.</p>
+        </header>
+        <form id="formLogin" novalidate>
+            <div class="campo">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" class="email" autocomplete="email" required>
             </div>
-        </div>
-    <div class="overlay" id="overlay"></div>
-    <script src="../assets/js/selecionar-perfil.js"></script>
-    <script src="../assets/js/loginEntrar.js"></script>
+            <div class="campo">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" class="senha" autocomplete="current-password" required>
+            </div>
+            <button type="button" class="criar-conta-login account-picker-button" onclick="selecionar()" aria-controls="selecionar">Não tem uma conta? Criar conta</button>
+            <div id="loginFeedback" class="form-feedback" role="status" aria-live="polite" hidden></div>
+            <button id="btnLogar" class="botao-logar" type="submit">Entrar</button>
+        </form>
+    </section>
+</main>
+
+<div class="selecionar" id="selecionar" role="dialog" aria-modal="true" aria-labelledby="modalContaTitulo">
+    <button type="button" class="voltar modal-close-button" onclick="fechar()" aria-label="Fechar seleção de perfil">×</button>
+    <h1 id="modalContaTitulo">Criar conta <br><span>Selecione seu perfil para começar</span></h1>
+    <div class="cards">
+        <a href="cadastro-responsavel.html"><div><img src="../assets/img/icons/image 5.jpg" alt=""><h2>Responsáveis</h2></div></a>
+        <a href="cadastro-profissional.html"><div><img src="../assets/img/icons/image 7.png" alt=""><h2>Profissionais</h2></div></a>
+    </div>
+</div>
+<div class="overlay" id="overlay"></div>
+<script src="../assets/js/api-config.js"></script>
+<script src="../assets/js/auth.js"></script>
+<script src="../assets/js/form-utils.js"></script>
+<script src="../assets/js/selecionar-perfil.js"></script>
+<script src="../assets/js/loginEntrar.js"></script>
 </body>
 </html>

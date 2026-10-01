@@ -1,176 +1,75 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conteúdos educativos da EspectroCare.">
     <title>Aprendizagem | EspectroCare</title>
-
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/navbar.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="../assets/css/modal.css">
     <link rel="stylesheet" href="../assets/css/aprendizagem.css">
-
+    <link rel="stylesheet" href="../assets/css/integracao.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/img/logos/Logo (1).png" type="image/x-icon">
 </head>
 <body>
-    <header>
-    <nav class="navbar">
-
-        <a href="../index.html" class="logo-link">
-                <img src="../assets/img/logos/Logo.png" alt="Logo da EspectroCare" class="logo">
-        </a>
+<header>
+    <nav class="navbar" aria-label="Navegação principal">
+        <a href="../index.html" class="logo-link"><img src="../assets/img/logos/Logo.png" alt="Logo da EspectroCare" class="logo"></a>
         <div>
             <ul class="navlinks" id="navlinks">
                 <li><a href="../index.html">Início</a></li>
                 <li><a href="profissionais.html">Profissionais</a></li>
-                <li><a href="aprendizagem.html">Aprendizagem</a></li>
+                <li><a href="aprendizagem.html" aria-current="page">Aprendizagem</a></li>
                 <li><a href="sobre-nos.html">Sobre nós</a></li>
                 <li class="entrar-nav-mobile"><a href="login.html">Entrar</a></li>
-                <li class="criar-nav-mobile"><a onclick="selecionar()">Criar conta</a></li>
+                <li class="criar-nav-mobile"><button type="button" onclick="selecionar()">Criar conta</button></li>
             </ul>
         </div>
-        
-
         <div class="conta">
             <a class="entrar" href="login.html">Entrar</a>
-            <button onclick="selecionar()" class="criar-conta"> <a>Criar Conta</a></button>
+            <button type="button" onclick="selecionar()" class="criar-conta">Criar Conta</button>
         </div>
-
-        <div class="mobile-menu" id="mobile-menu">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
+        <div class="mobile-menu" id="mobile-menu"><div></div><div></div><div></div></div>
     </nav>
-    </header>
+</header>
 
-    <div class="selecionar" id="selecionar">
-        <div class="voltar" onclick="fechar()"><img src="../assets/img/icons/_.png"></div>
-            <h1>Criar conta <br><span>Selecione seu perfil para começar</span></h1>
-            <div class="cards">
-                <a href="cadastro-responsavel.html"><div><img src="../assets/img/icons/image 5.jpg" alt=""><h1>Responsaveis</h1></div></a>
-                <a href="cadastro-profissional.html"><div><img src="../assets/img/icons/image 7.png" alt=""><h1>Profissionais</h1></div></a>
-            </div>
-        </div>
+<div class="selecionar" id="selecionar">
+    <button type="button" class="voltar modal-close-button" onclick="fechar()" aria-label="Fechar">×</button>
+    <h1>Criar conta <br><span>Selecione seu perfil para começar</span></h1>
+    <div class="cards">
+        <a href="cadastro-responsavel.html"><div><img src="../assets/img/icons/image 5.jpg" alt=""><h2>Responsáveis</h2></div></a>
+        <a href="cadastro-profissional.html"><div><img src="../assets/img/icons/image 7.png" alt=""><h2>Profissionais</h2></div></a>
+    </div>
+</div>
 
-<section class="pagina-aprendizagem">
-            <div class="header-blog">
-            <h1 class="titulo">Aprendizagem <br><span>Artigos educativos sobre neurodivergência, inclusão e saúde mental.</span></h1>
-            <input type="search" class="search" placeholder="Pesquisar artigos..." id="searchInput">
-        </div>
-        <div class="container-blog">
-            <div class="blog">
-                <img src="../assets/img/blog/image 66.png" alt="">
-                <h1>Como identificar o TEA na primeira infância</h1>
-                <p>O diagnóstico precoce é fundamental para o desenvolvimento. Conheça os principais marcos do desenvolvimento e os sinais sutis — como a ausência de contato visual ou a seletividade alimentar — que podem indicar a necessidade de uma avaliação profissional.</p>
-                <a href="aprendizagemdoc1.html"> <button>Ver mais</button></a>
-            </div>
-            <div class="blog">
-                <img src="../assets/img/blog/image 79.png" alt="">
-                <h1>O papel do PEI no desenvolvimento do aluno autista</h1>
-                <p>O Plano de Ensino Individualizado (PEI) é um direito e uma ferramenta poderosa que orienta o processo de aprendizagem de forma personalizada. Ele permite a colaboração entre família e escola para definir metas pedagógicas realistas, respeitando o ritmo, as necessidades e as potencialidades de cada estudante.</p>
-                <a href="aprendizagemdoc1.html"> <button>Ver mais</button></a>
-            </div>
-            <div class="blog">
-                <img src="../assets/img/blog/image 80.png" alt="">
-                <h1>Crise ou "Birra"? Entendendo as desregulações sensoriais</h1>
-                <p>Muitas vezes confundidas com mau comportamento, as crises no autismo geralmente têm raízes em sobrecargas sensoriais ou emocionais. Aprenda a diferenciar esses momentos e descubra estratégias de regulação para ajudar seu filho a se acalmar.</p>
-                <a href="aprendizagemdoc1.html"> <button>Ver mais</button></a>
-            </div>
-            <div class="blog">
-                <img src="../assets/img/blog/image 81.png" alt="">
-                <h1>Estimulando a Comunicação: Além da fala verbal</h1>
-                <p>A comunicação no espectro vai muito além das palavras. Métodos como a Comunicação Alternativa e Ampliada (CAA) mostram que gestos, imagens e expressões também são formas válidas e importantes de comunicação, ajudando na autonomia e na interação no dia a dia.</p>
-                <a href="aprendizagemdoc1.html"> <button>Ver mais</button></a>
-            </div>
-            <div class="blog">
-                <img src="../assets/img/blog/image 78.png" alt="">
-                <h1>Autismo Feminino: Por que o diagnóstico é mais difícil em meninas?</h1>
-                <p>O fenômeno do masking (camuflagem social) faz com que muitas meninas e mulheres autistas passem despercebidas por anos. Discutimos as nuances do perfil feminino no espectro e a importância de um olhar clínico atento a essas particularidades.</p>
-                <a href="aprendizagemdoc1.html"> <button>Ver mais</button></a>
-            </div>
-        </div>
-
-
+<main class="pagina-aprendizagem api-protected-page">
+    <section class="header-blog">
+        <h1 class="titulo">Aprendizagem <br><span>Artigos educativos publicados pela equipe da EspectroCare.</span></h1>
+        <label class="sr-only" for="searchInput">Pesquisar artigos</label>
+        <input type="search" class="search" placeholder="Pesquisar por título ou categoria..." id="searchInput">
     </section>
+    <p id="aprendizagemStatus" class="api-state" role="status" aria-live="polite">Carregando conteúdos...</p>
+    <section class="container-blog" id="containerAprendizagem" aria-label="Artigos publicados"></section>
+</main>
 
-            <footer class="footer">
-
-            <div class="footer-content">
-
-                <div class="footer-brand">
-
-                    <img
-                        src="../assets/img/logos/Logo.png"
-                        alt="Logo EspectroCare"
-                    >
-
-                    <p>
-                        Conectando pessoas,<br>
-                        profissionais e informação<br>
-                        em um só lugar.
-                    </p>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h2>Plataforma</h2>
-
-                    <a href="#">Sobre nós</a>
-                    <a href="#">Objetivo do site</a>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h2>Suporte</h2>
-
-                    <a href="#">Ajuda</a>
-                    <a href="#">Contato</a>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h2>Legal</h2>
-
-                    <a href="#">Termos de uso</a>
-                    <a href="#">Política de privacidade</a>
-
-                </div>
-
-            </div>
-
-
-            <div class="footer-line"></div>
-
-
-            <div class="footer-bottom">
-
-                <p>
-                    © 2026 EspectroCare
-                </p>
-
-                <span>
-                    Todos os direitos reservados.
-                </span>
-
-            </div>
-
-        </footer>
-
-    <script src="../assets/js/mobilen-navbar.js"></script>
-    <script src="../assets/js/selecionar-perfil.js"></script>
-    <script src="../assets/js/search.js"></script>
-    <div class="overlay" id="overlay"></div>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-brand"><img src="../assets/img/logos/Logo.png" alt="Logo EspectroCare"><p>Conectando pessoas,<br>profissionais e informação<br>em um só lugar.</p></div>
+        <div class="footer-column"><h2>Plataforma</h2><a href="sobre-nos.html">Sobre nós</a></div>
+    </div>
+    <div class="footer-line"></div>
+    <div class="footer-bottom"><p>© 2026 EspectroCare</p><span>Todos os direitos reservados.</span></div>
+</footer>
+<script src="../assets/js/api-config.js"></script>
+<script src="../assets/js/auth.js"></script>
+<script src="../assets/js/mobilen-navbar.js"></script>
+<script src="../assets/js/selecionar-perfil.js"></script>
+<script src="../assets/js/aprendizagem.js"></script>
+<div class="overlay" id="overlay"></div>
 </body>
 </html>

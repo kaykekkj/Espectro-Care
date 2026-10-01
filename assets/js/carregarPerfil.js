@@ -1,90 +1,108 @@
-const API_URL = 'https://espectrocare.onrender.com/api/perfil';
+document.addEventListener("DOMContentLoaded", async () => {
+    const form = document.getElementById("formPerfilProf");
+    const feedback = document.getElementById("msg");
+    if (!form) return;
 
-// Executa ao carregar o DOM
-document.addEventListener('DOMContentLoaded', () => {
-    carregarPerfil();
-});
+    const fields = {
+        nome: document.getElementById("nome"),
+        email: document.getElementById("email"),
+        bio: document.getElementById("bio"),
+        telefone: document.getElementById("telefone"),
+        estado: document.getElementById("estado"),
+        cidade: document.getElementById("cidade"),
+        formacao: document.getElementById("formacao"),
+        numRegistro: document.getElementById("numRegistro")
+    };
 
-async function carregarPerfil() {
-    const token = localStorage.getItem('token_jwt');
+    EspectroCareForms.bindMaskedInput(fields.telefone, EspectroCareForms.formatPhone, 11);
 
-    if (!token) {
-        exibirMensagem('Nenhum token encontrado! Faça login primeiro.', true);
-        return;
+    function show(message, type) {
+        EspectroCareForms.setFeedback(feedback, message, type);
+    }
+
+    async function handleAuthError(response) {
+        if (response.status === 401) {
+            EspectroCareAuth.clearSession();
+            window.location.replace("login.html");
+            return true;
+        }
+        if (response.status === 403) {
+            show("Este perfil não corresponde ao tipo de usuário autenticado.", "error");
+            return true;
+        }
+        return false;
     }
 
     try {
-        const response = await fetch(API_URL, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
-            }
-        });
-
-        if (response.status === 401 || response.status === 403) {
-            exibirMensagem('Sessão expirada ou não autorizada.', true);
+        const currentUser = await EspectroCareAuth.requireAuth();
+        if (!currentUser) return;
+        if (currentUser.tipoPerfil !== "PROFISSIONAL") {
+            show("Este perfil é exclusivo para profissionais.", "error");
+            window.setTimeout(() => { window.location.href = "userResponsavel.html"; }, 1000);
             return;
         }
 
-        if (!response.ok) {
-            throw new Error('Erro ao carregar dados do perfil.');
+        const response = await EspectroCareAuth.authorizedFetch("/api/perfil");
+        if (await handleAuthError(response)) return;
+        if (!response.ok) throw new Error();
+
+        const data = await response.json();
+        fields.nome.value = data.nome || "";
+        fields.email.value = data.email || "";
+        fields.bio.value = data.bio || "";
+        fields.telefone.value = EspectroCareForms.formatPhone(data.telefone || "");
+        fields.estado.value = data.estado || "";
+        fields.cidade.value = data.cidade || "";
+        fields.formacao.value = data.formacao || "";
+        fields.numRegistro.value = data.numRegistro || "";
+    } catch (error) {
+        show("Não foi possível carregar seu perfil. Tente novamente.", "error");
+    }
+
+    form.addEventListener("submit", async event => {
+        event.preventDefault();
+        show("", "info");
+
+        const phone = fields.telefone.value ? EspectroCareForms.digits(fields.telefone.value, 11) : "";
+        if (phone && phone.length !== 10 && phone.length !== 11) {
+            fields.telefone.setCustomValidity("Informe um telefone com 10 ou 11 dígitos.");
+        } else {
+            fields.telefone.setCustomValidity("");
         }
 
-        const dados = await response.json();
-
-        // Preenche os campos do formulário
-        document.getElementById('nome').value = dados.nome || '';
-        document.getElementById('email').value = dados.email || '';
-        document.getElementById('bio').value = dados.bio || '';
-        document.getElementById('telefone').value = dados.telefone || '';
-        document.getElementById('estado').value = dados.estado || '';
-        document.getElementById('numRegistro').value = dados.numRegistro || '';
-
-    } catch (error) {
-        exibirMensagem(error.message, true);
-    }
-}
-
-// Atualiza os Dados do Perfil (PUT)
-document.getElementById('formPerfil').addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const token = localStorage.getItem('token_jwt');
-
-    const dadosAtualizados = {
-        nome: document.getElementById('nome').value,
-        bio: document.getElementById('bio').value,
-        telefone: document.getElementById('telefone').value,
-        estado: document.getElementById('estado').value,
-        numRegistro: document.getElementById('numRegistro').value
-    };
-
-    try {
-        const response = await fetch(API_URL, {
-            method: 'PUT',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(dadosAtualizados)
-        });
-
-        if (!response.ok) {
-            throw new Error('Erro ao atualizar perfil.');
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
         }
 
-        exibirMensagem('Perfil atualizado com sucesso!', false);
+        const button = form.querySelector('button[type="submit"]');
+        button.disabled = true;
+        button.textContent = "Salvando...";
 
-    } catch (error) {
-        exibirMensagem(error.message, true);
-    }
+        try {
+            const response = await EspectroCareAuth.authorizedFetch("/api/perfil", {
+                method: "PUT",
+                body: JSON.stringify({
+                    nome: fields.nome.value.trim(),
+                    bio: fields.bio.value.trim(),
+                    telefone: phone,
+                    estado: fields.estado.value.trim(),
+                    cidade: fields.cidade.value.trim(),
+                    formacao: fields.formacao.value.trim(),
+                    numRegistro: fields.numRegistro.value.trim()
+                })
+            });
+
+            if (await handleAuthError(response)) return;
+            if (!response.ok) throw new Error();
+            const updated = await response.json();
+            fields.telefone.value = EspectroCareForms.formatPhone(updated.telefone || "");
+            show("Perfil atualizado com sucesso.", "success");
+        } catch (error) {
+            show("Não foi possível atualizar seu perfil.", "error");
+        } finally {
+            button.disabled = false;
+            button.textContent = "Salvar alterações";
+        }
+    });
 });
-
-// Exibe mensagens de feedback na tela
-function exibirMensagem(texto, isErro) {
-    const msgDiv = document.getElementById('msg');
-    msgDiv.textContent = texto;
-    msgDiv.className = `mensagem ${isErro ? 'erro' : 'sucesso'}`;
-    msgDiv.style.display = 'block';
-}
