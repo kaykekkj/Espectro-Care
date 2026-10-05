@@ -41,9 +41,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                     ${categories.length ? `<div class="api-learning-tags">${categories.map(category => `<span>${escapeHtml(category)}</span>`).join("")}</div>` : ""}
                     <h2>${escapeHtml(article.titulo || "Conteúdo")}</h2>
                     ${article.dataCriacao ? `<p class="api-learning-date">Publicado em ${escapeHtml(formatDate(article.dataCriacao))}</p>` : ""}
-                    <a class="api-learning-link" href="aprendizagemdoc1.html?id=${encodeURIComponent(article.id)}">Ler artigo <span aria-hidden="true">→</span></a>
+                    <a class="api-learning-link" data-auth-action href="aprendizagemdoc1.html?id=${encodeURIComponent(article.id)}">Saiba mais <span aria-hidden="true">→</span></a>
                 </div>
             `;
+            EspectroCareActionGate.prepare(card);
             container.appendChild(card);
         });
     }
@@ -51,16 +52,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
         status.textContent = "Carregando conteúdos...";
         status.hidden = false;
-        const response = await EspectroCareAuth.authorizedFetch("/api/aprendizagem");
-        if (response.status === 401) {
-            status.textContent = "Faça login para carregar os conteúdos. A página continua disponível para consulta da interface.";
-            status.hidden = false;
-            return;
-        }
-        if (response.status === 403) {
-            status.textContent = "Sua conta não possui acesso a esta área.";
-            return;
-        }
+        const response = await fetch(`${EspectroCareConfig.API_BASE_URL}/api/aprendizagem`);
         if (!response.ok) throw new Error();
 
         artigos = await response.json();
