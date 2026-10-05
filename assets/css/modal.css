@@ -107,7 +107,7 @@
    TÍTULO
 ========================================= */
 
-.selecionar > h1 {
+.selecionar > h2 {
     width: 100%;
 
     margin: 0 0 42px;
@@ -124,7 +124,7 @@
     text-align: center;
 }
 
-.selecionar > h1 span {
+.selecionar > h2 span {
     display: block;
 
     margin-top: 8px;
@@ -277,13 +277,13 @@
         border-radius: 24px;
     }
 
-    .selecionar > h1 {
+    .selecionar > h2 {
         margin-bottom: 30px;
 
         font-size: 32px;
     }
 
-    .selecionar > h1 span {
+    .selecionar > h2 span {
         margin-top: 8px;
 
         font-size: 20px;
@@ -347,13 +347,13 @@
         font-size: 28px;
     }
 
-    .selecionar > h1 {
+    .selecionar > h2 {
         margin-bottom: 28px;
 
         font-size: 27px;
     }
 
-    .selecionar > h1 span {
+    .selecionar > h2 span {
         margin-top: 7px;
 
         font-size: 17px;

@@ -88,18 +88,11 @@
         const entrarMobile = document.querySelector(".entrar-nav-mobile");
         if (entrarMobile) {
             entrarMobile.innerHTML = `<a href="${makeAreaHref()}">Minha área</a>`;
-            entrarMobile.style.display = "block";
+            entrarMobile.hidden = false;
         }
 
         const criarMobile = document.querySelector(".criar-nav-mobile");
-        if (criarMobile) {
-            criarMobile.innerHTML = '<button type="button" class="auth-mobile-logout">Sair</button>';
-            criarMobile.style.display = "block";
-            criarMobile.querySelector("button")?.addEventListener("click", () => {
-                window.EspectroCareAuth.clearSession();
-                window.location.href = makeHomeHref();
-            });
-        }
+        if (criarMobile) criarMobile.hidden = true;
     }
 
     async function init() {

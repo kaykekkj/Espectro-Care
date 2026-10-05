@@ -51,13 +51,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
         status.textContent = "Carregando conteúdos...";
         status.hidden = false;
-        const user = await EspectroCareAuth.requireAuth();
-        if (!user) return;
-
         const response = await EspectroCareAuth.authorizedFetch("/api/aprendizagem");
         if (response.status === 401) {
-            EspectroCareAuth.clearSession();
-            window.location.replace("login.html");
+            status.textContent = "Faça login para carregar os conteúdos. A página continua disponível para consulta da interface.";
+            status.hidden = false;
             return;
         }
         if (response.status === 403) {
