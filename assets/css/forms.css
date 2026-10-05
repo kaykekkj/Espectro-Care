@@ -192,14 +192,42 @@
     margin-bottom: 18px;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
-.campo label {
-    margin-bottom: 7px;
-    color: #3b4748;
-    font-size: 14px;
-    font-weight: 700;
+.campo {
+    width: 100%;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
+
+.campo input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 45px 12px 12px;
+}
+
+#aberto {
+    color: gray;
+    position: absolute;
+    right: 15px;
+    top: 65%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#fechado{
+    color: gray;
+    position: absolute;
+    right: 15px;
+    top: 65%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none; 
+}
+
 
 .conteiner-entrar input {
     width: 100%;
@@ -360,6 +388,34 @@
 .criar-conta-login {
     cursor: pointer;
 }
+
+.campo-senha {
+    position: relative;
+    width: 100%;
+}
+
+.campo-senha input {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 45px;
+}
+
+.campo-senha i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    color: gray;
+    cursor: pointer;
+    
+    transition: color 0.2s;
+}
+
+.campo-senha i:hover {
+    color: #333;
+}
+
 /* =========================================
    RESPONSIVIDADE - LOGIN
    ========================================= */
