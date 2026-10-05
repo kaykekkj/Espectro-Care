@@ -280,21 +280,62 @@
                 </button>
 
             </div>
+            
+            <section class="contato">
+                <h2>Entre em contato</h2>
 
-        </section>
+                <h1>
+                    Alguma dúvida ou sugestão para a
+                    <span>Espectro Care</span>?
+                </h1>
 
-        <section class="contato">
-            <h2>Entre em contato</h2>
-            <h1>Alguma dúvida ou sujestão para a <span>Espectro Care</span>?</h1>
+                <form
+                    id="formContato"
+                    action="https://formsubmit.co/ajax/espectrocare@gmail.com"
+                    method="POST"
+                >
+                    <input
+                        type="text"
+                        name="name"
+                        required
+                        placeholder="Digite seu nome"
+                    >
 
-            <form action="https://formsubmit.co/espectrocare@gmail.com" method="POST">
-                <input type="text" name="name" required placeholder="Digite seu nome">
-                <input type="email" name="email" required placeholder="Digite seu E-mail">
-                <input type="Mensagem" name="Mensagem" required placeholder="Digite aqui sua mensagem" class="mensagem" >
-                <input type="hidden" name="_captcha" value="false">
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+                    <input
+                        type="email"
+                        name="email"
+                        required
+                        placeholder="Digite seu E-mail"
+                    >
+
+                    <textarea
+                        name="Mensagem"
+                        required
+                        placeholder="Digite aqui sua mensagem"
+                        class="mensagem"
+                    ></textarea>
+
+                    <input
+                        type="hidden"
+                        name="_captcha"
+                        value="false"
+                    >
+
+                    <button type="submit">Enviar</button>
+                </form>
+
+                <div class="mensagem-sucesso" id="mensagemSucesso">
+                    <div class="icone-sucesso">✓</div>
+
+                    <h2>Mensagem enviada!</h2>
+
+                    <p>
+                        Recebemos sua mensagem com sucesso.
+                        Obrigado por entrar em contato com a Espectro Care!
+                    </p>
+                </div>
+
+            </section>
     </main>
 
     <!-- Footer -->

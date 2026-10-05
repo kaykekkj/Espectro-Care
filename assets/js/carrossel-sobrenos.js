@@ -47,3 +47,33 @@ const cardsEquipe = document.getElementById("cardsEquipe");
     window.addEventListener("resize", atualizarCarrossel);
 
     atualizarCarrossel();
+
+    const form = document.getElementById("formContato");
+const mensagemSucesso = document.getElementById("mensagemSucesso");
+
+form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const dados = new FormData(form);
+
+    try {
+        const resposta = await fetch(form.action, {
+            method: "POST",
+            body: dados,
+            headers: {
+                "Accept": "application/json"
+            }
+        });
+
+        if (resposta.ok) {
+            form.style.display = "none";
+            mensagemSucesso.style.display = "flex";
+        } else {
+            alert("Não foi possível enviar sua mensagem.");
+        }
+
+    } catch (erro) {
+        console.error(erro);
+        alert("Ocorreu um erro ao enviar sua mensagem.");
+    }
+});
