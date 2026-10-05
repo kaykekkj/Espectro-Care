@@ -39,14 +39,35 @@
     </nav>
 </header>
 
-<div class="selecionar" id="selecionar">
-    <button type="button" class="voltar modal-close-button" onclick="fechar()" aria-label="Fechar">×</button>
-    <h2>Criar conta <br><span>Selecione seu perfil para começar</span></h2>
-    <div class="cards">
-        <a href="cadastro-responsavel.html"><div><img src="../assets/img/icons/image 5.jpg" alt=""><h2>Responsáveis</h2></div></a>
-        <a href="cadastro-profissional.html"><div><img src="../assets/img/icons/image 7.png" alt=""><h2>Profissionais</h2></div></a>
+    <div class="selecionar" id="selecionar" role="dialog" aria-modal="true" aria-labelledby="modalContaTitulo">
+
+        <button 
+            type="button" 
+            class="modal-close-button" 
+            onclick="fechar()" 
+            aria-label="Fechar seleção de perfil">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+        <h2 id="modalContaTitulo">
+            Criar conta
+            <span>Selecione seu perfil para começar</span>
+        </h2>
+
+        <div class="cards">
+
+            <a href="cadastro-responsavel.html" class="perfil-card">
+                <img src="../assets/img/icons/image 5.jpg" alt="">
+                <h2>Responsáveis</h2>
+            </a>
+
+            <a href="cadastro-profissional.html" class="perfil-card">
+                <img src="../assets/img/icons/image 7.png" alt="">
+                <h2>Profissionais</h2>
+            </a>
+
+        </div>
     </div>
-</div>
 
 <main class="home pagina-profissionais api-protected-page">
     <section class="profissionais-header">
