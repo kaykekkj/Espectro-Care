@@ -41,7 +41,9 @@
             </div>
             <div class="campo">
                 <label for="senha">Senha</label>
-                <input type="password" id="senha" class="senha" autocomplete="current-password" required>
+                <input type="password" id="senha" class="senha" autocomplete="current-password" required >
+                <i class="fa-solid fa-eye" id="aberto"></i>
+                <i class="fa-solid fa-eye-slash" id="fechado"></i>
             </div>
             <p>Não possui uma conta? <a onclick="selecionar()">Criar conta</a></p>
             <div id="loginFeedback" class="form-feedback" role="status" aria-live="polite" hidden></div>
@@ -86,5 +88,6 @@
 <script src="../assets/js/form-utils.js"></script>
 <script src="../assets/js/selecionar-perfil.js"></script>
 <script src="../assets/js/loginEntrar.js"></script>
+<script src="../assets/js/vizualizarsenha.js"></script>
 </body>
 </html>

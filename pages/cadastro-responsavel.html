@@ -72,28 +72,27 @@
 
             <fieldset>
                 <legend>Segurança da conta</legend>
-                <div class="senhas">
-                    <div class="campo">
-                        <label for="senha">Senha</label>
-                        <input type="password" id="senha" name="senha" autocomplete="new-password" minlength="8" required>
+                    <div class="senhas">
+                        <div class="campo">
+                            <label for="senha">Senha</label>
+
+                            <div class="campo-senha">
+                                <input type="password" id="senha" name="senha" autocomplete="new-password" minlength="8" required>
+
+                                <i class="fa-solid fa-eye" id="olhoSenha" aria-label="Mostrar senha"></i>
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="confirmarSenha">Confirme sua senha</label>
+
+                            <div class="campo-senha">
+                                <input type="password" id="confirmarSenha" name="confirmarSenha" autocomplete="new-password" minlength="8" required>
+
+                                <i class="fa-solid fa-eye" id="olhoConfirmarSenha" aria-label="Mostrar confirmação da senha"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="campo">
-                        <label for="confirmarSenha">Confirme sua senha</label>
-                        <input type="password" id="confirmarSenha" name="confirmarSenha" autocomplete="new-password" minlength="8" required>
-                    </div>
-                </div>
-                <button type="button" class="password-toggle" id="togglePasswordResp" aria-pressed="false">Mostrar senha</button>
-                <div class="password-help" id="passwordHelp" aria-live="polite">
-                    <p data-password-strength>Força da senha: Fraca</p>
-                    <ul>
-                        <li data-rule="length">Pelo menos 8 caracteres</li>
-                        <li data-rule="upper">Uma letra maiúscula</li>
-                        <li data-rule="lower">Uma letra minúscula</li>
-                        <li data-rule="number">Um número</li>
-                        <li data-rule="special">Um caractere especial</li>
-                    </ul>
-                    <p class="password-match" data-password-match></p>
-                </div>
             </fieldset>
 
             <p class="form-note">Ao criar sua conta, você confirma que os dados informados são verdadeiros.</p>
