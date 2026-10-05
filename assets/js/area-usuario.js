@@ -2,10 +2,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const status = document.getElementById("areaUsuarioStatus");
     const content = document.getElementById("areaUsuarioConteudo");
 
-    function initials(name) {
-        return String(name || "U").trim().split(/\s+/).slice(0,2)
-            .map(part => part[0]?.toUpperCase() || "").join("");
-    }
     function setText(id, value, fallback = "Não informado") {
         const element = document.getElementById(id);
         if (element) element.textContent = value || fallback;
@@ -27,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (!response.ok) throw new Error();
         const profile = await response.json();
 
-        document.getElementById("areaUsuarioAvatar").textContent = initials(user.nome);
+        EspectroCarePhoto.bind(document.getElementById("areaUsuarioAvatar"), user);
         setText("areaUsuarioNome", user.nome, "Usuário");
         setText("areaUsuarioEmail", user.email);
         setText("areaUsuarioTipo", user.tipoPerfil === "PROFISSIONAL" ? "Profissional" : "Responsável");

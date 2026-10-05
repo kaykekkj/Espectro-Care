@@ -7,7 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function safeRedirect() {
         const redirect = new URLSearchParams(location.search).get("redirect");
         if (!redirect || !redirect.startsWith("/") || redirect.startsWith("//")) return null;
-        return redirect;
+        try {
+            const target = new URL(redirect, location.origin);
+            if (target.origin !== location.origin) return null;
+            return `${target.pathname}${target.search}${target.hash}`;
+        } catch { return null; }
     }
 
     form.addEventListener("submit", async event => {

@@ -46,22 +46,28 @@ document.addEventListener("DOMContentLoaded", async () => {
             const details = [profissional.formacao, profissional.numRegistro, location].filter(Boolean);
 
             article.innerHTML = `
-                <div class="api-professional-header">
-                    <div class="api-professional-avatar" aria-hidden="true">${initials(profissional.nome)}</div>
+                <a class="api-professional-header api-professional-entry" data-auth-action href="perfil-profissional.html?id=${encodeURIComponent(profissional.id)}" aria-label="Ver perfil profissional">
+                    <div class="api-professional-avatar" aria-hidden="true">${escapeHtml(initials(profissional.nome))}</div>
                     <div>
                         <h3>${escapeHtml(profissional.nome || "Profissional")}</h3>
                         ${profissional.formacao ? `<p class="profissao-profissional">${escapeHtml(profissional.formacao)}</p>` : ""}
                     </div>
-                </div>
+                </a>
                 <div class="api-professional-body">
                     ${details.length ? `<ul class="api-professional-meta">${details.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : ""}
                     <p class="descricao-profissional">${escapeHtml(profissional.bio || "Perfil profissional cadastrado na EspectroCare.")}</p>
                 </div>
                 <div class="api-professional-actions">
-                    <a class="btn-ver-perfil" href="perfil-profissional.html?id=${encodeURIComponent(profissional.id)}">Ver perfil <span aria-hidden="true">→</span></a>
+                    <a class="btn-ver-perfil" data-auth-action href="perfil-profissional.html?id=${encodeURIComponent(profissional.id)}">Ver perfil <span aria-hidden="true">→</span></a>
                     ${phone ? `<a class="api-phone-link" href="tel:${String(profissional.telefone).replace(/\D/g, "")}">${escapeHtml(phone)}</a>` : ""}
                 </div>
             `;
+            article.addEventListener("click", event => {
+                if (!event.target.closest("a, button, input")) {
+                    article.querySelector(".btn-ver-perfil").click();
+                }
+            });
+            EspectroCareActionGate.prepare(article);
             container.appendChild(article);
         });
     }
@@ -75,16 +81,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
         status.textContent = "Carregando profissionais...";
         status.hidden = false;
-        const response = await EspectroCareAuth.authorizedFetch("/api/profissionais");
-        if (response.status === 401) {
-            status.textContent = "Faça login para carregar os profissionais. A página continua disponível para consulta da interface.";
-            status.hidden = false;
-            return;
-        }
-        if (response.status === 403) {
-            status.textContent = "Sua conta não possui acesso a esta área.";
-            return;
-        }
+        const response = await fetch(`${EspectroCareConfig.API_BASE_URL}/api/profissionais`);
         if (!response.ok) throw new Error();
 
         profissionais = await response.json();

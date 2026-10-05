@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (!response.ok) throw new Error();
 
         const data = await response.json();
+        EspectroCarePhoto.bind(document.getElementById("fotoPerfilAvatar"), currentUser);
         fields.nome.value = data.nome || "";
         fields.email.value = data.email || "";
         fields.bio.value = data.bio || "";
