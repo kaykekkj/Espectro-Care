@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer"><title>Cadastro administrativo | EspectroCare</title><link rel="stylesheet" href="../assets/css/base.css"><link rel="stylesheet" href="../assets/css/admin.css"></head>
+<body><main class="admin-shell admin-narrow"><a href="../index.html"><img class="admin-logo" src="../assets/img/logos/Logo.png" alt="EspectroCare"></a>
+<section class="admin-panel"><h1>Cadastro de administrador</h1><p>Este cadastro exige um convite válido associado ao seu e-mail.</p>
+<p id="adminStatus" role="status" aria-live="polite">Validando convite...</p>
+<form id="cadastroAdmin" hidden>
+<label for="nome">Nome</label><input id="nome" name="nome" required maxlength="120" autocomplete="name">
+<label for="email">E-mail</label><input id="email" name="email" type="email" required maxlength="254" autocomplete="email" readonly>
+<label for="senha">Senha</label><input id="senha" name="senha" type="password" required minlength="8" maxlength="72" autocomplete="new-password" aria-describedby="senhaAjuda">
+<p id="senhaAjuda">Use ao menos 8 caracteres, com maiúscula, minúscula, número e símbolo. Máximo de 72 bytes.</p>
+<button type="submit">Cadastrar administrador</button></form><a href="login.html">Entrar</a></section></main>
+<script src="../assets/js/api-config.js"></script><script src="../assets/js/form-utils.js"></script><script src="../assets/js/cadastro-admin.js"></script></body></html>

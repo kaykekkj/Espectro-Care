@@ -2,10 +2,11 @@ let aberto = document.querySelector('#aberto')
 let fechado = document.querySelector('#fechado')
 let inputsenha = document.querySelector('#senha')
 
-aberto.addEventListener('click', mostrarSenha)
-fechado.addEventListener('click', mostrarSenha)
+aberto?.addEventListener('click', mostrarSenha)
+fechado?.addEventListener('click', mostrarSenha)
 
 function mostrarSenha() {
+    if (!inputsenha || !aberto || !fechado) return;
     if (inputsenha.type === 'password') {
         inputsenha.type = 'text'
         aberto.style.display = 'block'
@@ -24,7 +25,8 @@ const confirmarSenhaProf = document.querySelector('#confirmarSenhaProf');
 const olhoConfirmarSenha = document.querySelector('#olhoConfirmarSenha');
 
 
-olhoSenha.addEventListener('click', () => {
+olhoSenha?.addEventListener('click', () => {
+    if (!senhaProf) return;
     if (senhaProf.type === 'password') {
         senhaProf.type = 'text';
 
@@ -39,7 +41,8 @@ olhoSenha.addEventListener('click', () => {
 });
 
 
-olhoConfirmarSenha.addEventListener('click', () => {
+olhoConfirmarSenha?.addEventListener('click', () => {
+    if (!confirmarSenhaProf) return;
     if (confirmarSenhaProf.type === 'password') {
         confirmarSenhaProf.type = 'text';
 

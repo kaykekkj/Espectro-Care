@@ -1,0 +1,26 @@
+[hidden] { display: none !important; }
+.admin-shell { max-width: 1000px; margin: 36px auto; padding: 24px; color: #174f58; font-family: Nunito, Arial, sans-serif; box-sizing: border-box; line-height: 1.55; }
+.admin-narrow { max-width: 560px; }
+.admin-logo { width: 170px; margin-bottom: 24px; }
+.admin-panel { background: #f4faf7; padding: 28px; border: 1px solid #cce4db; border-radius: 20px; }
+.admin-shell h1 { font-size: clamp(24px, 4vw, 34px); margin: 20px 0 12px; line-height: 1.2; }
+.admin-shell p { margin: 10px 0; }
+.admin-panel h2 { margin: 18px 0 10px; }
+.admin-shell label, .admin-editor label { display: block; margin: 16px 0 6px; font-weight: 700; }
+.admin-shell input, .admin-editor input, .admin-editor textarea { width: 100%; box-sizing: border-box; padding: 12px; border-radius: 10px; border: 1px solid #688084; font: inherit; background: white; min-width: 0; }
+.admin-shell p, .admin-row { overflow-wrap: anywhere; }
+.admin-shell button, .admin-actions button, .admin-toolbar button, .admin-editor button { background: #176c61; color: white; border: 0; border-radius: 10px; padding: 12px 18px; font: inherit; font-weight: 700; cursor: pointer; margin: 8px 0; }
+.admin-shell a, .admin-toolbar a { color: #176c61; }
+.admin-shell button:disabled, .admin-editor button:disabled { opacity: .6; cursor: wait; }
+.admin-shell :focus-visible, .admin-toolbar :focus-visible, .admin-editor :focus-visible, .admin-actions :focus-visible { outline: 3px solid #188ca2; outline-offset: 4px; }
+.admin-top, .admin-toolbar, .admin-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; }
+.admin-toolbar, #adminAprendizagemStatus { width: 90%; max-width: 1150px; margin: 18px auto; }
+.admin-actions { margin-top: 14px; justify-content: flex-start; }
+.admin-actions .admin-delete { background: #a83030; }
+.pagina-aprendizagem .admin-actions button { margin: 0; }
+.pagina-aprendizagem .admin-actions .admin-delete { background: #a83030; }
+.admin-row { border-top: 1px solid #cce4db; padding: 16px 0; }
+.admin-editor { margin: auto; border: 1px solid #cce4db; border-radius: 18px; max-width: 700px; width: calc(100% - 48px); max-height: 85vh; overflow: auto; padding: 24px; color: #174f58; font-family: Nunito, Arial, sans-serif; line-height: 1.55; }
+.admin-editor::backdrop { background: #073b5c99; }
+.admin-editor textarea { min-height: 240px; resize: vertical; }
+@media (max-width: 520px) { .admin-shell { padding: 16px; margin: 16px auto; } .admin-panel { padding: 18px; } .admin-top { align-items: flex-start; } }

@@ -6,10 +6,14 @@
 
     function render(element, photo, name) {
         element.replaceChildren();
-        if (typeof photo === "string" && /^data:image\/(jpeg|png);base64,[A-Za-z0-9+/=]+$/.test(photo)) {
+        if (typeof photo === "string" && (/^data:image\/(jpeg|png);base64,[A-Za-z0-9+/=]+$/.test(photo)
+                || /^\/api\/profissionais\/\d+\/foto$/.test(photo))) {
             const img = document.createElement("img");
-            img.src = photo;
-            img.alt = "Sua foto de perfil";
+            img.src = photo.startsWith("/") ? `${EspectroCareConfig.API_BASE_URL}${photo}` : photo;
+            img.alt = `Foto de ${name || "perfil"}`;
+            img.addEventListener("error", () => {
+                if (img.parentNode === element) element.textContent = initials(name);
+            }, { once: true });
             element.appendChild(img);
         } else element.textContent = initials(name);
     }
@@ -94,7 +98,9 @@
                         ? "A imagem não foi aceita. Escolha outra foto."
                         : "Não foi possível salvar sua foto. Tente novamente.");
                 }
-                render(button, (await response.json()).fotoPerfil, user.nome);
+                const savedPhoto = (await response.json()).fotoPerfil;
+                render(button, savedPhoto, user.nome);
+                window.dispatchEvent(new CustomEvent("espectrocare:foto-atualizada", { detail: { fotoPerfil: savedPhoto } }));
                 show("Foto de perfil atualizada com sucesso.", "success");
             } catch (error) {
                 show(error.message || "Não foi possível salvar sua foto. Tente novamente.", "error");

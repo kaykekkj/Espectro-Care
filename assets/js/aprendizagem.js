@@ -44,10 +44,18 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <a class="api-learning-link" data-auth-action href="aprendizagemdoc1.html?id=${encodeURIComponent(article.id)}">Saiba mais <span aria-hidden="true">→</span></a>
                 </div>
             `;
+            EspectroCareLearningAdmin?.controls(card, article);
             EspectroCareActionGate.prepare(card);
             container.appendChild(card);
         });
     }
+
+    await EspectroCareLearningAdmin?.init(async () => {
+        const response = await fetch(`${EspectroCareConfig.API_BASE_URL}/api/aprendizagem`, { cache: "no-store" });
+        if (!response.ok) throw new Error("Não foi possível atualizar a listagem.");
+        artigos = await response.json();
+        render(artigos);
+    });
 
     try {
         status.textContent = "Carregando conteúdos...";

@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (redirect) {
                 window.location.href = redirect;
             } else {
-                window.location.href = EspectroCareAuth.accountAreaPage();
+                window.location.href = currentUser.tipoPerfil === "ADMIN" ? "admin.html" : EspectroCareAuth.accountAreaPage();
             }
         } catch (error) {
             EspectroCareAuth.clearSession();
