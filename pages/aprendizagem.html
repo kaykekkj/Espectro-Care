@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../assets/css/modal.css">
     <link rel="stylesheet" href="../assets/css/aprendizagem.css">
     <link rel="stylesheet" href="../assets/css/integracao.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -75,7 +76,21 @@
         <input type="search" class="search" placeholder="Pesquisar por título ou categoria..." id="searchInput">
     </section>
     <p id="aprendizagemStatus" class="api-state" role="status" aria-live="polite">Carregando conteúdos...</p>
+    <div id="adminAprendizagem" class="admin-toolbar" hidden>
+        <button type="button" id="novaPostagem">Criar postagem</button><a href="admin.html">Gerenciar convites</a>
+    </div>
+    <p id="adminAprendizagemStatus" role="status" aria-live="polite" hidden></p>
     <section class="container-blog" id="containerAprendizagem" aria-label="Artigos publicados"></section>
+    <dialog id="editorPostagem" class="admin-editor" aria-labelledby="editorTitulo">
+        <h2 id="editorTitulo">Criar postagem</h2>
+        <form id="formPostagem">
+            <label for="postagemTitulo">Título</label><input id="postagemTitulo" required maxlength="255">
+            <label for="postagemConteudo">Conteúdo</label><textarea id="postagemConteudo" required maxlength="100000" aria-describedby="postagemAjuda"></textarea>
+            <p id="postagemAjuda">Texto ou HTML simples: parágrafos, títulos, listas, negrito e itálico. Outros elementos são removidos ao salvar. Os anexos e categorias existentes são preservados.</p>
+            <p id="editorStatus" role="status" aria-live="polite"></p>
+            <button type="submit">Salvar postagem</button><button type="button" id="cancelarPostagem">Cancelar</button>
+        </form>
+    </dialog>
 </main>
 
 <footer class="footer">
@@ -93,6 +108,8 @@
 <script src="../assets/js/action-gate.js"></script>
 <script src="../assets/js/mobilen-navbar.js"></script>
 <script src="../assets/js/selecionar-perfil.js"></script>
+<script src="../assets/js/admin-api.js"></script>
+<script src="../assets/js/aprendizagem-admin.js"></script>
 <script src="../assets/js/aprendizagem.js"></script>
 <div class="overlay" id="overlay"></div>
 </body>

@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <a class="api-back-link" href="profissionais.html">Voltar para profissionais</a>
             </div>
         `;
+        EspectroCarePhoto.render(profileCard.querySelector(".api-professional-avatar"), profissional.fotoPerfilUrl, profissional.nome);
         status.hidden = true;
     } catch (error) {
         status.textContent = "Não foi possível carregar este perfil. Tente novamente.";

@@ -34,6 +34,7 @@
     }
 
     function profilePage(tipoPerfil) {
+        if (tipoPerfil === "ADMIN") return "admin.html";
         if (tipoPerfil === "PROFISSIONAL") return "userProfissional.html";
         if (tipoPerfil === "RESPONSAVEL") return "userResponsavel.html";
         return "login.html";

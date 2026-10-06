@@ -42,8 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             article.className = "card-profissional api-professional-card";
 
             const location = [profissional.cidade, profissional.estado].filter(Boolean).join(" - ");
-            const phone = formatPhone(profissional.telefone);
-            const details = [profissional.formacao, profissional.numRegistro, location].filter(Boolean);
+            const details = [profissional.formacao, location].filter(Boolean);
 
             article.innerHTML = `
                 <a class="api-professional-header api-professional-entry" data-auth-action href="perfil-profissional.html?id=${encodeURIComponent(profissional.id)}" aria-label="Ver perfil profissional">
@@ -59,9 +58,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                 </div>
                 <div class="api-professional-actions">
                     <a class="btn-ver-perfil" data-auth-action href="perfil-profissional.html?id=${encodeURIComponent(profissional.id)}">Ver perfil <span aria-hidden="true">→</span></a>
-                    ${phone ? `<a class="api-phone-link" href="tel:${String(profissional.telefone).replace(/\D/g, "")}">${escapeHtml(phone)}</a>` : ""}
                 </div>
             `;
+            EspectroCarePhoto.render(article.querySelector(".api-professional-avatar"), profissional.fotoPerfilUrl, profissional.nome);
             article.addEventListener("click", event => {
                 if (!event.target.closest("a, button, input")) {
                     article.querySelector(".btn-ver-perfil").click();
@@ -81,7 +80,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
         status.textContent = "Carregando profissionais...";
         status.hidden = false;
-        const response = await fetch(`${EspectroCareConfig.API_BASE_URL}/api/profissionais`);
+        const response = await fetch(`${EspectroCareConfig.API_BASE_URL}/api/profissionais`, { cache: "no-store" });
         if (!response.ok) throw new Error();
 
         profissionais = await response.json();

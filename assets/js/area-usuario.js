@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             ? await window.EspectroCareAuthGuard
             : await EspectroCareAuth.requireAuth();
         if (!user) return;
+        if (user.tipoPerfil === "ADMIN") { window.location.replace("admin.html"); return; }
 
         const profilePath = user.tipoPerfil === "PROFISSIONAL" ? "/api/perfil" : "/api/perfil-responsavel";
         const response = await EspectroCareAuth.authorizedFetch(profilePath);

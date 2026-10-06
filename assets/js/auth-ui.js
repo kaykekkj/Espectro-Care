@@ -27,7 +27,7 @@
     }
 
     function profileLabel(tipoPerfil) {
-        return tipoPerfil === "PROFISSIONAL" ? "Profissional" : "Responsável";
+        return tipoPerfil === "ADMIN" ? "Administrador" : tipoPerfil === "PROFISSIONAL" ? "Profissional" : "Responsável";
     }
 
     function applyVisibility(loggedIn) {
@@ -55,7 +55,7 @@
 
             const area = document.createElement("a");
             area.className = "auth-user-control";
-            area.href = makeAreaHref();
+            area.href = user.tipoPerfil === "ADMIN" ? makePageHref("admin.html") : makeAreaHref();
             area.setAttribute("aria-label", "Abrir minha área");
 
             const avatar = document.createElement("span");
@@ -83,11 +83,22 @@
             });
 
             conta.append(area, sair);
+            const updateAvatar = photo => window.EspectroCarePhoto?.render(avatar, photo, user.nome);
+            let photoChanged = false;
+            window.addEventListener("espectrocare:foto-atualizada", event => {
+                photoChanged = true; updateAvatar(event.detail.fotoPerfil);
+            });
+            if (user.tipoPerfil !== "ADMIN") {
+                EspectroCareAuth.authorizedFetch("/api/conta/foto", { cache: "no-store" })
+                    .then(response => response.ok ? response.json() : null)
+                    .then(data => { if (!photoChanged) updateAvatar(data?.fotoPerfil); })
+                    .catch(() => { if (!photoChanged) updateAvatar(null); });
+            }
         }
 
         const entrarMobile = document.querySelector(".entrar-nav-mobile");
         if (entrarMobile) {
-            entrarMobile.innerHTML = `<a href="${makeAreaHref()}">Minha área</a>`;
+            entrarMobile.innerHTML = `<a href="${user.tipoPerfil === "ADMIN" ? makePageHref("admin.html") : makeAreaHref()}">Minha área</a>`;
             entrarMobile.hidden = false;
         }
 

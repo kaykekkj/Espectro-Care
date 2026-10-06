@@ -323,6 +323,18 @@
     line-height: 1.65;
 }
 
+.btn-ver-perfil,
+.btn-ver-perfil:hover,
+.btn-ver-perfil:focus,
+.btn-ver-perfil:active {
+    text-decoration: none;
+}
+
+.btn-ver-perfil:focus-visible {
+    outline: 3px solid #226b64;
+    outline-offset: 4px;
+}
+
 .btn-ver-perfil {
     margin-top: 13px;
     padding: 0;

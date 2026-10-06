@@ -49,6 +49,7 @@
             if (document.body?.dataset.authRequired === "true") {
                 await loadSibling("auth-guard.js");
             }
+            if (!window.EspectroCarePhoto) await loadSibling("foto-perfil.js");
             if (!window.EspectroCareAuthUI) await loadSibling("auth-ui.js");
             window.EspectroCareAuthUI?.init();
         } catch (error) {
