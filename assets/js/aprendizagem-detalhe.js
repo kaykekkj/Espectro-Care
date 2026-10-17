@@ -60,7 +60,49 @@ document.addEventListener("DOMContentLoaded", async () => {
         const date = formatDate(article.dataCriacao);
         meta.textContent = [categories, date ? `Publicado em ${date}` : ""].filter(Boolean).join(" — ");
         content.innerHTML = sanitizeHtml(article.conteudoHtml);
+        const image = document.getElementById("artigoImagem");
+        if (article.imagemUrl) {
+            image.src = EspectroCareConfig.API_BASE_URL + article.imagemUrl;
+            image.alt = `Imagem de capa: ${article.titulo}`; image.hidden = false;
+            image.addEventListener("error", () => { image.hidden = true; }, { once: true });
+        }
+        if (article.resumo) {
+            document.getElementById("artigoResumo").textContent = article.resumo;
+            document.getElementById("artigoResumoSecao").hidden = false;
+        }
+        const refs = document.getElementById("artigoReferencias");
+        for (const link of (article.referencias || "").split(/\r?\n/)) {
+            try {
+                const url = new URL(link.trim());
+                if (!["http:", "https:"].includes(url.protocol) || url.username || url.password) continue;
+                const li = document.createElement("li"), a = document.createElement("a");
+                a.href = url.href; a.textContent = link.trim(); a.target = "_blank"; a.rel = "noopener noreferrer";
+                li.append(a); refs.append(li);
+            } catch { /* Conteúdos legados inválidos não viram links. */ }
+        }
+        document.getElementById("artigoReferenciasSecao").hidden = !refs.children.length;
         status.hidden = true;
+        // A indisponibilidade das recomendações não impede a leitura do artigo.
+        try {
+            const listResponse = await fetch(EspectroCareConfig.API_BASE_URL + "/api/aprendizagem");
+            if (!listResponse.ok) return;
+            const list = await listResponse.json();
+            const related = list.filter(item => String(item.id) !== String(id)).map((item, index) => ({ item, index,
+                score: (item.categorias || []).filter(cat => (article.categorias || []).includes(cat)).length
+            })).sort((a, b) => b.score - a.score || a.index - b.index).slice(0, 3);
+            const container = document.getElementById("recomendacoesLista");
+            related.forEach(({ item }) => {
+                const a = document.createElement("a"); a.className = "recomendacao-card";
+                a.href = `aprendizagemdoc1.html?id=${encodeURIComponent(item.id)}`;
+                if (item.imagemUrl) {
+                    const img = document.createElement("img"); img.src = EspectroCareConfig.API_BASE_URL + item.imagemUrl;
+                    img.alt = ""; img.loading = "lazy"; img.addEventListener("error", () => img.remove(), { once: true }); a.append(img);
+                }
+                const h = document.createElement("h3"); h.textContent = item.titulo; a.append(h);
+                container.append(a);
+            });
+            document.getElementById("artigoRecomendacoes").hidden = !related.length;
+        } catch { /* Recomendações opcionais. */ }
     } catch (error) {
         status.textContent = "Não foi possível carregar o artigo. Tente novamente.";
         status.hidden = false;

@@ -77,8 +77,27 @@ async function responsive(page, route, name) {
 
         await admin.goto(site + '/pages/aprendizagem.html'); await admin.locator('#novaPostagem').waitFor({ state: 'visible' });
         await admin.locator('#novaPostagem').click(); await admin.locator('#postagemTitulo').fill(`Artigo E2E ${suffix}`);
-        await admin.locator('#postagemConteudo').fill('<p>Conteúdo persistente de teste</p>'); await admin.locator('#formPostagem [type=submit]').click();
+        await admin.locator('#postagemConteudo').fill('<p>Conteúdo persistente de teste</p>');
+        await admin.locator('#postagemResumo').fill('Resumo persistente de teste');
+        await admin.locator('#postagemReferencias').fill('https://example.org/fonte');
+        await admin.locator('#postagemImagem').setInputFiles(path.join(__dirname, 'foto-teste.png'));
+        await admin.locator('#formPostagem [type=submit]').click();
         const card = admin.locator('.api-learning-card').filter({ hasText: `Artigo E2E ${suffix}` }); await card.waitFor();
+        const recommendation = await request('/api/aprendizagem', 'POST', {
+            titulo: `Recomendação E2E ${suffix}`, conteudoHtml: '<p>Outra postagem educativa</p>',
+            resumo: 'Resumo de outra postagem', referencias: 'https://example.org/outra-fonte',
+            imagemData: 'data:image/png;base64,' + fs.readFileSync(path.join(__dirname, 'foto-teste.png')).toString('base64')
+        }, adminToken);
+        assert.equal(recommendation.status, 201);
+        await card.locator('.api-learning-link').click();
+        await admin.locator('#artigoResumoSecao').waitFor({state: 'visible'});
+        assert.equal(await admin.locator('#artigoResumo').textContent(), 'Resumo persistente de teste');
+        assert.equal(await admin.locator('#artigoReferencias a').first().getAttribute('href'), 'https://example.org/fonte');
+        await admin.locator(`#recomendacoesLista a[href$="id=${recommendation.data.id}"]`).waitFor();
+        assert(await admin.locator('#artigoImagem').evaluate(el => el.complete && el.naturalWidth > 0));
+        await responsive(admin, new URL(admin.url()).pathname + new URL(admin.url()).search, 'artigo');
+        check('Imagem, resumo, referências e recomendações carregados da API real');
+        await admin.goto(site + '/pages/aprendizagem.html');
         await card.getByRole('button', { name: 'Editar', exact: false }).click(); await admin.locator('#postagemTitulo').fill(`Artigo editado ${suffix}`);
         await admin.locator('#formPostagem [type=submit]').click();
         const edited = admin.locator('.api-learning-card').filter({ hasText: `Artigo editado ${suffix}` }); await edited.waitFor();
@@ -101,6 +120,9 @@ async function responsive(page, route, name) {
             await page.goto(site + '/index.html'); await page.locator('.auth-user-avatar img').waitFor();
             assert.equal((await request('/api/aprendizagem', 'POST', { titulo: 'Proibido', conteudoHtml: '<p>x</p>' }, user.token)).status, 403);
             await page.goto(site + '/pages/aprendizagem.html'); assert.equal(await page.locator('#adminAprendizagem').isVisible(), false);
+            await page.goto(site + `/pages/aprendizagemdoc1.html?id=${recommendation.data.id}`);
+            await page.locator('#artigoReferencias a').waitFor();
+            assert.equal(await page.locator('#artigoReferencias a').getAttribute('href'), 'https://example.org/outra-fonte');
             const newLogin = (await request('/auth/login', 'POST', { email, senha: password })).data;
             assert((await request('/api/conta/foto', 'GET', undefined, newLogin.token)).data.fotoPerfil.startsWith('data:image/jpeg'));
             check(`Foto de ${role} persistente, ícone atualizado, novo login e acesso administrativo negado`);
@@ -125,6 +147,7 @@ async function responsive(page, route, name) {
                 await responsive(page, `/pages/perfil-profissional.html?id=${me.id}`, 'perfil-profissional');
             }
         }
+        assert.equal((await request(`/api/aprendizagem/${recommendation.data.id}`, 'DELETE', undefined, adminToken)).status, 204);
         await responsive(admin, '/pages/admin.html', 'convites'); await responsive(admin, '/pages/aprendizagem.html', 'aprendizagem');
         await admin.goto(site + '/pages/cadastro-admin.html#token=invalido');
         await admin.getByText('Convite inválido', { exact: false }).waitFor(); assert.equal(await admin.locator('#cadastroAdmin').isVisible(), false);

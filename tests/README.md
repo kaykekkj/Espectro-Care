@@ -11,3 +11,9 @@ Use somente banco/API **locais e exclusivos de teste**. O teste recusa URLs de p
 O teste verifica cadastro pelo convite, remoção do token do histórico, login, geração/revogação, CRUD de postagens com confirmação, fotos de ambos os perfis, persistência após recarga/novo login, apresentação dos números, foco e ausência de sublinhado, controles por perfil e largura de 375/1280 px. Gera capturas e `relatorio.json`, sem registrar senhas ou tokens. O arquivo privado não deve ser incluído em ZIP, commit ou logs. Cenários de expiração, reutilização e concorrência são cobertos pelos testes do backend.
 
 Para repetir em uma base realmente limpa, crie **outro banco de teste**; não limpe tabelas reais. O teste usa IDs para identificar os novos registros, permitindo execução repetida nessa base local.
+
+## Responsividade sem API real
+
+Sirva a raiz do site em `http://127.0.0.1:5517`, instale as dependências acima e execute `node responsividade.cjs` na pasta `tests`. Opcionalmente configure `TEST_SITE_URL`, `TEST_BROWSER_PATH` e `TEST_OUTPUT_DIR`. O teste simula somente a API e bloqueia recursos externos para evitar dependência de CDN. Verifica as 15 páginas em cinco larguras, menu móvel, volta completa do carrossel nos dois sentidos, criação pelo formulário administrativo, ausência de controles nos outros perfis, imagem/resumo/referências/recomendações. Gera capturas e relatório em `resultados-responsividade/` (ignorado pelo Git).
+
+O E2E com API real agora também envia os novos campos obrigatórios e confere imagem, resumo, links e recomendações. Em ambos os testes, capas de uma cor são arquivos artificiais de teste, não imagens destinadas à produção.
