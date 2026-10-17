@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/img/logos/Logo (1).png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/ajustes-responsivos.css">
 </head>
 <body>
 <header>
@@ -87,6 +88,12 @@
             <label for="postagemTitulo">Título</label><input id="postagemTitulo" required maxlength="255">
             <label for="postagemConteudo">Conteúdo</label><textarea id="postagemConteudo" required maxlength="100000" aria-describedby="postagemAjuda"></textarea>
             <p id="postagemAjuda">Texto ou HTML simples: parágrafos, títulos, listas, negrito e itálico. Outros elementos são removidos ao salvar. Os anexos e categorias existentes são preservados.</p>
+            <label for="postagemImagem">Imagem de capa</label><input id="postagemImagem" type="file" accept="image/jpeg,image/png" aria-describedby="imagemAjuda">
+            <p id="imagemAjuda">JPG ou PNG, até 2 MB, 4096 pixels por lado e 12 megapixels. Na edição, deixe vazio para manter a imagem.</p>
+            <img id="postagemPreview" class="postagem-preview" alt="Prévia da imagem de capa" hidden>
+            <label for="postagemResumo">Resumo</label><textarea id="postagemResumo" required maxlength="2000" rows="4"></textarea>
+            <label for="postagemReferencias">Referências</label><textarea id="postagemReferencias" required maxlength="20000" rows="4" aria-describedby="referenciasAjuda" placeholder="https://exemplo.org/artigo"></textarea>
+            <p id="referenciasAjuda">De 1 a 20 links completos (http:// ou https://), um por linha. Os leitores poderão abri-los ao final da postagem.</p>
             <p id="editorStatus" role="status" aria-live="polite"></p>
             <button type="submit">Salvar postagem</button><button type="button" id="cancelarPostagem">Cancelar</button>
         </form>

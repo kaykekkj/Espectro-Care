@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/img/logos/Logo (1).png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/ajustes-responsivos.css">
 </head>
 <body data-auth-required="true">
 <header>
@@ -44,7 +45,15 @@
     </section>
     <p id="artigoStatus" class="api-state" role="status" aria-live="polite">Carregando artigo...</p>
     <section class="didatica-layout api-article-layout">
-        <article class="didatica-conteudo api-article-content" id="artigoConteudo"></article>
+        <article class="didatica-conteudo api-article-content">
+            <img id="artigoImagem" class="postagem-capa" alt="" hidden>
+            <div id="artigoConteudo"></div>
+            <section id="artigoResumoSecao" class="postagem-resumo" hidden><h2>Resumo da postagem</h2><p id="artigoResumo"></p></section>
+            <section id="artigoReferenciasSecao" class="postagem-referencias" hidden><h2>Referências</h2><ul id="artigoReferencias"></ul></section>
+        </article>
+        <section id="artigoRecomendacoes" class="postagem-recomendacoes" hidden aria-labelledby="recomendacoesTitulo">
+            <h2 id="recomendacoesTitulo">Outras postagens para você</h2><div id="recomendacoesLista" class="recomendacoes-lista"></div>
+        </section>
     </section>
 </main>
 

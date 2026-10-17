@@ -2,6 +2,29 @@
     let admin = false;
     let reload;
     let editingId = null;
+    let previewUrl;
+    const imageInput = document.getElementById("postagemImagem");
+    const preview = document.getElementById("postagemPreview");
+    function clearPreview() {
+        if (previewUrl) URL.revokeObjectURL(previewUrl);
+        previewUrl = null; preview.removeAttribute("src"); preview.hidden = true;
+    }
+    function readImage(file) {
+        if (!file || !["image/jpeg", "image/png"].includes(file.type) || file.size > 2 * 1024 * 1024)
+            return Promise.reject(new Error("Envie JPG ou PNG de até 2 MB."));
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onerror = () => reject(new Error("Não foi possível ler a imagem."));
+            reader.onload = () => resolve(reader.result); reader.readAsDataURL(file);
+        });
+    }
+    imageInput.addEventListener("change", () => {
+        clearPreview();
+        if (imageInput.files[0]) {
+            previewUrl = URL.createObjectURL(imageInput.files[0]); preview.src = previewUrl; preview.hidden = false;
+        }
+    });
+    document.getElementById("editorPostagem").addEventListener("close", clearPreview);
     const request = (...args) => EspectroCareAdminAPI.request(...args);
     function status(message) {
         const element = document.getElementById("adminAprendizagemStatus");
@@ -9,6 +32,7 @@
     }
     async function open(id = null) {
         editingId = id;
+        clearPreview(); imageInput.required = !id;
         const form = document.getElementById("formPostagem"); form.reset();
         document.getElementById("editorStatus").textContent = "";
         document.getElementById("editorTitulo").textContent = id ? "Editar postagem" : "Criar postagem";
@@ -17,6 +41,10 @@
                 const article = await request(`/api/aprendizagem/${id}`);
                 document.getElementById("postagemTitulo").value = article.titulo;
                 document.getElementById("postagemConteudo").value = article.conteudoHtml;
+                document.getElementById("postagemResumo").value = article.resumo || "";
+                document.getElementById("postagemReferencias").value = article.referencias || "";
+                imageInput.required = !article.imagemUrl;
+                if (article.imagemUrl) { preview.src = EspectroCareConfig.API_BASE_URL + article.imagemUrl; preview.hidden = false; }
             }
             document.getElementById("editorPostagem").showModal();
         } catch (error) { status(error.message); }
@@ -37,7 +65,10 @@
                 await request(editingId ? `/api/aprendizagem/${editingId}` : "/api/aprendizagem", {
                     method: editingId ? "PUT" : "POST", body: JSON.stringify({
                         titulo: document.getElementById("postagemTitulo").value.trim(),
-                        conteudoHtml: document.getElementById("postagemConteudo").value
+                        conteudoHtml: document.getElementById("postagemConteudo").value,
+                        resumo: document.getElementById("postagemResumo").value.trim(),
+                        referencias: document.getElementById("postagemReferencias").value.trim(),
+                        imagemData: imageInput.files[0] ? await readImage(imageInput.files[0]) : null
                     })
                 });
                 dialog.close(); status("Postagem salva com sucesso."); await reload();

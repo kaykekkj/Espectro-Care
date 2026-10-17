@@ -44,6 +44,11 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <a class="api-learning-link" data-auth-action href="aprendizagemdoc1.html?id=${encodeURIComponent(article.id)}">Saiba mais <span aria-hidden="true">→</span></a>
                 </div>
             `;
+            if (article.imagemUrl) {
+                const image = document.createElement("img"); image.src = EspectroCareConfig.API_BASE_URL + article.imagemUrl;
+                image.alt = `Imagem de capa: ${article.titulo}`; image.loading = "lazy"; image.className = "postagem-card-imagem";
+                image.addEventListener("error", () => image.remove(), { once: true }); card.prepend(image);
+            }
             EspectroCareLearningAdmin?.controls(card, article);
             EspectroCareActionGate.prepare(card);
             container.appendChild(card);
