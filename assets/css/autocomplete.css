@@ -1,0 +1,128 @@
+
+/* ===== AUTOCOMPLETE - ESTADO E CIDADE ===== */
+
+.lista-autocomplete {
+    position: relative;
+    width: 100%;
+    max-height: 220px;
+    overflow-y: auto;
+    margin-top: 6px;
+    background-color: #ffffff;
+    border: 1px solid #dce5ee;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(35, 65, 95, 0.12);
+    z-index: 1000;
+    scrollbar-width: thin;
+    scrollbar-color: #b8c9d9 #f4f7fa;
+}
+
+/* Barra de rolagem para Chrome, Edge e Safari */
+.lista-autocomplete::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lista-autocomplete::-webkit-scrollbar-track {
+    background: #f4f7fa;
+    border-radius: 10px;
+}
+
+.lista-autocomplete::-webkit-scrollbar-thumb {
+    background-color: #b8c9d9;
+    border-radius: 10px;
+}
+
+.lista-autocomplete::-webkit-scrollbar-thumb:hover {
+    background-color: #8da9c2;
+}
+
+/* Opções sugeridas
+   Compatível com elementos comuns usados no JavaScript */
+.lista-autocomplete > div,
+.lista-autocomplete > li,
+.lista-autocomplete > button {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-bottom: 1px solid #edf1f5;
+    background-color: #ffffff;
+    color: #34495e;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Remove a borda do último item */
+.lista-autocomplete > div:last-child,
+.lista-autocomplete > li:last-child,
+.lista-autocomplete > button:last-child {
+    border-bottom: none;
+}
+
+/* Efeito ao passar o mouse */
+.lista-autocomplete > div:hover,
+.lista-autocomplete > li:hover,
+.lista-autocomplete > button:hover {
+    background-color: #edf7ff;
+    color: #2878b9;
+}
+
+/* Opção selecionada ou destacada pelo teclado */
+.lista-autocomplete > .ativo,
+.lista-autocomplete > .selecionado,
+.lista-autocomplete > [aria-selected="true"] {
+    background-color: #e4f2ff;
+    color: #216da5;
+}
+
+/* Acessibilidade: foco pelo teclado */
+.lista-autocomplete > div:focus-visible,
+.lista-autocomplete > li:focus-visible,
+.lista-autocomplete > button:focus-visible {
+    outline: 2px solid #4a9fe3;
+    outline-offset: -2px;
+    background-color: #edf7ff;
+}
+
+/* Estado vazio, caso o JavaScript exiba uma mensagem */
+.lista-autocomplete:empty {
+    display: none;
+}
+
+/* Campos relacionados ao autocomplete */
+#estado,
+#cidade {
+    width: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#estado:focus,
+#cidade:focus {
+    border-color: #4a9fe3;
+    box-shadow: 0 0 0 3px rgba(74, 159, 227, 0.15);
+    outline: none;
+}
+
+#cidade:disabled {
+    background-color: #f1f4f7;
+    color: #8b98a5;
+    cursor: not-allowed;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 480px) {
+    .lista-autocomplete {
+        max-height: 180px;
+        border-radius: 10px;
+    }
+
+    .lista-autocomplete > div,
+    .lista-autocomplete > li,
+    .lista-autocomplete > button {
+        padding: 11px 13px;
+        font-size: 13px;
+    }
+}
