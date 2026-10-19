@@ -44,6 +44,10 @@
     border-radius: 10px;
 }
 
+.profile-grid .full-width {
+    grid-column: 1 / -1;
+}
+
 .lista-autocomplete::-webkit-scrollbar-thumb:hover {
     background-color: #8da9c2;
 }
