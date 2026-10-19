@@ -1,17 +1,30 @@
 
 /* ===== AUTOCOMPLETE - ESTADO E CIDADE ===== */
 
-.lista-autocomplete {
+/* Permite posicionar a lista em relação a cada campo */
+.profile-grid > div:has(> #estado),
+.profile-grid > div:has(> #cidade) {
     position: relative;
+    min-width: 0;
+}
+
+/* Lista de sugestões */
+.lista-autocomplete {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
     width: 100%;
     max-height: 220px;
     overflow-y: auto;
-    margin-top: 6px;
+    margin-top: 0;
+    box-sizing: border-box;
+
     background-color: #ffffff;
     border: 1px solid #dce5ee;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(35, 65, 95, 0.12);
     z-index: 1000;
+
     scrollbar-width: thin;
     scrollbar-color: #b8c9d9 #f4f7fa;
 }
@@ -35,14 +48,14 @@
     background-color: #8da9c2;
 }
 
-/* Opções sugeridas
-   Compatível com elementos comuns usados no JavaScript */
+/* Opções sugeridas */
 .lista-autocomplete > div,
 .lista-autocomplete > li,
 .lista-autocomplete > button {
     display: block;
     width: 100%;
     padding: 12px 16px;
+    box-sizing: border-box;
     border: none;
     border-bottom: 1px solid #edf1f5;
     background-color: #ffffff;
@@ -87,7 +100,7 @@
     background-color: #edf7ff;
 }
 
-/* Estado vazio, caso o JavaScript exiba uma mensagem */
+/* Oculta a lista quando estiver vazia */
 .lista-autocomplete:empty {
     display: none;
 }
@@ -95,7 +108,15 @@
 /* Campos relacionados ao autocomplete */
 #estado,
 #cidade {
+    display: block;
     width: 100%;
+    box-sizing: border-box;
+    padding: 12px 13px;
+    border: 1px solid #d4e2df;
+    border-radius: 9px;
+    background: white;
+    color: #354d51;
+    font: 600 15px / 1.4 "Nunito", sans-serif;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -110,6 +131,12 @@
     background-color: #f1f4f7;
     color: #8b98a5;
     cursor: not-allowed;
+}
+
+label {
+    color: #3e5356;
+    font-size: 14px;
+    font-weight: 800;
 }
 
 /* Ajuste para telas menores */
