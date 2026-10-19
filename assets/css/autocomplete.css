@@ -44,7 +44,7 @@
     border-radius: 10px;
 }
 
-.full-width {
+.profile-grid .full-width {
     grid-column: 1 / -1;
 }
 
