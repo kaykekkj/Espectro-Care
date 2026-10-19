@@ -50,13 +50,15 @@
                     <label for="telefone">Telefone</label>
                     <input type="tel" id="telefone" inputmode="numeric" maxlength="15" placeholder="(11) 99999-9999">
                 </div>
-                <div class="form-group">
+                <div class="campo autocomplete">
                     <label for="estado">Estado</label>
-                    <input type="text" id="estado" maxlength="80">
+                    <input type="text" id="estado" name="estado" placeholder="Digite e selecione o estado" autocomplete="off" required>
+                    <div id="sugestoesEstado" class="lista-autocomplete"></div>
                 </div>
-                <div class="form-group full-width">
+                <div class="campo autocomplete">
                     <label for="cidade">Cidade</label>
-                    <input type="text" id="cidade" maxlength="120">
+                    <input type="text" id="cidade" name="cidade" placeholder="Selecione primeiro o estado" autocomplete="off" disabled required>
+                    <div id="sugestoesCidade" class="lista-autocomplete"></div>
                 </div>
             </div>
             <button type="submit" class="profile-save-button">Salvar alterações</button>
@@ -72,5 +74,6 @@
 <script>
     document.getElementById('logoutProfile').addEventListener('click', () => EspectroCareAuth.logout());
 </script>
+<script src="../assets/js/autocomplete.js"></script>
 </body>
 </html>
