@@ -1,0 +1,13 @@
+.password-page { margin: 0; min-height: 100vh; padding: 32px 16px; box-sizing: border-box; background: #edf7f4; color: #164652; font-family: sans-serif; }
+.password-card { max-width: 520px; margin: auto; padding: clamp(20px, 5vw, 40px); background: white; border-radius: 24px; box-shadow: 0 10px 35px #14465315; }
+.password-card h1 { font-size: 2rem; margin: 24px 0 12px; }
+.password-card p { line-height: 1.6; }
+.password-card form { display: grid; gap: 18px; margin-top: 24px; }
+.password-card .campo { display: grid; gap: 8px; }
+.password-card input { box-sizing: border-box; width: 100%; min-width: 0; min-height: 48px; padding: 10px 12px; border: 1px solid #b6cfcd; border-radius: 10px; font: inherit; }
+.password-card button { padding: 14px; border: 0; border-radius: 10px; background: #147b7e; color: white; font: inherit; cursor: pointer; }
+.password-card button:disabled { opacity: .6; cursor: wait; }
+.password-card small { color: #46646b; line-height: 1.5; }
+.password-card a { color: #09676d; }
+.password-card :focus-visible { outline: 3px solid #149da5; outline-offset: 3px; }
+.password-card [hidden] { display: none !important; }

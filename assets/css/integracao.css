@@ -251,3 +251,7 @@
 @media (max-width: 520px) {
     .profile-photo-settings { flex-wrap: wrap; gap: 10px; }
 }
+
+.login-account-links { display: flex; align-items: baseline; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; margin-bottom: 24px; }
+.login-account-links p { margin: 0; }
+.password-change-link { color: #087d83; font-weight: 600; }

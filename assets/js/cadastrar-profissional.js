@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     EspectroCareForms.bindMaskedInput(fields.telefone, EspectroCareForms.formatPhone, 11);
     EspectroCareForms.bindMaskedInput(fields.cpf, EspectroCareForms.formatCpf, 11);
+    EspectroCareForms.bindCpfValidation(fields.cpf);
     EspectroCareForms.setupPasswordUI(fields.senha, fields.confirmarSenha, passwordHelp);
     EspectroCareForms.bindPasswordToggle(
         document.getElementById("togglePasswordProf"),
@@ -34,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const phone = EspectroCareForms.digits(fields.telefone.value, 11);
         const cpf = EspectroCareForms.digits(fields.cpf.value, 11);
         fields.telefone.setCustomValidity(phone.length === 10 || phone.length === 11 ? "" : "Informe um telefone com 10 ou 11 dígitos.");
-        fields.cpf.setCustomValidity(cpf.length === 11 ? "" : "Informe um CPF com exatamente 11 dígitos.");
+        fields.cpf.setCustomValidity(EspectroCareForms.isValidCpf(cpf) ? "" : "CPF inválido. Confira os números informados.");
 
         if (!fields.estado.dataset.estadoId) fields.estado.setCustomValidity("Selecione um estado válido da lista.");
         if (!fields.cidade.dataset.cidadeId) fields.cidade.setCustomValidity("Selecione uma cidade válida da lista.");
