@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Alterar senha | EspectroCare</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/forms.css">
+    <link rel="stylesheet" href="../assets/css/integracao.css">
+    <link rel="stylesheet" href="../assets/css/recuperar-senha.css">
+</head>
+<body class="password-page">
+<main class="password-card">
+    <a href="login.html" id="passwordBack">Voltar ao login</a>
+    <h1>Alterar senha</h1>
+    <p>Receba um código no e-mail cadastrado e escolha uma nova senha. O código vale por 15 minutos.</p>
+    <form id="requestReset">
+        <div class="campo"><label for="resetEmail">E-mail cadastrado</label>
+            <input id="resetEmail" type="email" maxlength="254" autocomplete="email" required></div>
+        <button type="submit">Enviar código</button>
+    </form>
+    <form id="confirmReset">
+        <div class="campo"><label for="resetCode">Código recebido por e-mail</label>
+            <input id="resetCode" inputmode="numeric" pattern="[0-9]{8}" maxlength="8" autocomplete="one-time-code" required></div>
+        <div class="campo"><label for="newPassword">Nova senha</label>
+            <input id="newPassword" type="password" minlength="8" maxlength="72" autocomplete="new-password" required>
+            <small>Use ao menos 8 caracteres: maiúscula, minúscula, número e símbolo.</small></div>
+        <div class="campo"><label for="confirmPassword">Confirmar nova senha</label>
+            <input id="confirmPassword" type="password" maxlength="72" autocomplete="new-password" required></div>
+        <button type="submit">Salvar nova senha</button>
+    </form>
+    <p id="resetFeedback" class="form-feedback" role="status" aria-live="polite" hidden></p>
+    <a id="resetLogin" href="login.html" hidden>Entrar com a nova senha</a>
+</main>
+<script src="../assets/js/api-config.js"></script>
+<script src="../assets/js/auth.js"></script>
+<script src="../assets/js/form-utils.js"></script>
+<script src="../assets/js/recuperar-senha.js"></script>
+</body>
+</html>

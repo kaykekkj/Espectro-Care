@@ -26,6 +26,28 @@
             .replace(/\.(\d{3})(\d)/, ".$1-$2");
     }
 
+    // Mesma regra da API; não afirma existência ou titularidade do documento.
+    function isValidCpf(value) {
+        if (!/^[0-9.\-\s]+$/.test(value || "")) return false;
+        const cpf = digits(value);
+        if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+        for (let length = 9; length <= 10; length++) {
+            let sum = 0;
+            for (let i = 0; i < length; i++) sum += Number(cpf[i]) * (length + 1 - i);
+            const digit = (sum * 10) % 11 % 10;
+            if (digit !== Number(cpf[length])) return false;
+        }
+        return true;
+    }
+
+    function bindCpfValidation(input) {
+        if (!input) return;
+        input.addEventListener("input", () => input.setCustomValidity(""));
+        input.addEventListener("blur", () => input.setCustomValidity(
+            input.value && !isValidCpf(input.value) ? "CPF inválido. Confira os números informados." : ""
+        ));
+    }
+
     function isStrongPassword(value) {
         return STRONG_PASSWORD.test(value || "");
     }
@@ -127,6 +149,8 @@
         digits,
         formatPhone,
         formatCpf,
+        isValidCpf,
+        bindCpfValidation,
         isStrongPassword,
         bindMaskedInput,
         setFeedback,
