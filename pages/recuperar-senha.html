@@ -18,6 +18,7 @@
     <form id="requestReset">
         <div class="campo"><label for="resetEmail">E-mail cadastrado</label>
             <input id="resetEmail" type="email" maxlength="254" autocomplete="email" required></div>
+        <p id="resetFeedback" class="form-feedback" role="status" aria-live="polite" hidden></p>
         <button type="submit">Enviar código</button>
     </form>
     <form id="confirmReset">
@@ -30,7 +31,6 @@
             <input id="confirmPassword" type="password" maxlength="72" autocomplete="new-password" required></div>
         <button type="submit">Salvar nova senha</button>
     </form>
-    <p id="resetFeedback" class="form-feedback" role="status" aria-live="polite" hidden></p>
     <a id="resetLogin" href="login.html" hidden>Entrar com a nova senha</a>
 </main>
 <script src="../assets/js/api-config.js"></script>
