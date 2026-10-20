@@ -58,26 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         submitButton.disabled = true;
-        submitButton.textContent = "Cadastrando...";
+        submitButton.textContent = "Confirmando e-mail...";
 
         try {
-            const response = await fetch(`${EspectroCareConfig.API_BASE_URL}/cadastro/profissional`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(payload)
-            });
-
-            const message = await response.text();
-            if (!response.ok) {
-                EspectroCareForms.setFeedback(
-                    feedback,
-                    response.status === 409
-                        ? "Não foi possível concluir o cadastro com os dados informados."
-                        : message || "Revise os dados e tente novamente.",
-                    "error"
-                );
-                return;
-            }
+            const concluido = await EspectroCareConfirmacaoEmail.cadastrar(payload, "/cadastro/profissional");
+            if (!concluido) { fields.email.focus(); return; }
 
             EspectroCareForms.setFeedback(feedback, "Cadastro realizado com sucesso. Você já pode entrar.", "success");
             form.reset();

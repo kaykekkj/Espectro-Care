@@ -1,0 +1,29 @@
+.confirmacao-email {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    box-sizing: border-box;
+    width: min(92vw, 480px);
+    max-height: 90dvh;
+    overflow-y: auto;
+    padding: clamp(20px, 5vw, 32px);
+    border: 0;
+    border-radius: 16px;
+    color: #24364b;
+    background: #fff;
+    box-shadow: 0 12px 50px #10203933;
+    font-family: inherit;
+}
+.confirmacao-email::backdrop { background: #14233799; }
+.confirmacao-email form { display: grid; gap: 12px; margin: 0; }
+.confirmacao-email h2 { margin: 0 0 4px; font-size: 1.4rem; }
+.confirmacao-email p { margin: 0; line-height: 1.5; overflow-wrap: anywhere; }
+.confirmacao-email__ajuda { font-size: .9rem; }
+.confirmacao-email a { color: #174e83; text-decoration: underline; }
+.confirmacao-email label { font-weight: 600; }
+.confirmacao-email input { box-sizing: border-box; width: 100%; padding: 12px; border: 1px solid #7c8796; border-radius: 8px; font-size: 1.15rem; letter-spacing: .15em; }
+.confirmacao-email button { min-height: 44px; padding: 10px 14px; border: 1px solid #265d8a; border-radius: 8px; font: inherit; cursor: pointer; color: #174e83; background: #fff; }
+.confirmacao-email button[type="submit"] { background: #265d8a; color: #fff; }
+.confirmacao-email button:disabled { opacity: .6; cursor: wait; }
+.confirmacao-email__erro { color: #a51f27; }
+.confirmacao-email :focus-visible { outline: 3px solid #d88b00; outline-offset: 3px; }

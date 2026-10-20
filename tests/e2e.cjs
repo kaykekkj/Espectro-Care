@@ -107,10 +107,11 @@ async function responsive(page, route, name) {
         await edited.waitFor({ state: 'detached' }); check('Criação, edição, confirmação cancelada e exclusão de postagem');
 
         for (const role of ['responsavel', 'profissional']) {
-            const email = `${role}-${suffix}@teste.invalid`;
-            assert.equal((await request('/cadastro/' + role, 'POST', { nome: `Teste ${role}`, email, senha: password,
-                ...(role === 'profissional' ? { cpf: suffix.slice(-11), telefone: '11987654321', numRegistro: 'REG-E2E', formacao: 'Psicologia' } : {}) })).status, 200);
-            const user = (await request('/auth/login', 'POST', { email, senha: password })).data;
+            const email = process.env[role === 'profissional' ? 'TEST_PROF_EMAIL' : 'TEST_RESP_EMAIL'];
+            assert(email && email.endsWith('@teste.invalid'), 'Prepare contas locais de teste e defina TEST_PROF_EMAIL/TEST_RESP_EMAIL.');
+            const loginPerfil = await request('/auth/login', 'POST', { email, senha: password });
+            assert.equal(loginPerfil.status, 200, 'A conta de teste deve existir previamente na base local.');
+            const user = loginPerfil.data;
             const { page } = await session(browser, user);
             await page.goto(site + '/pages/area-usuario.html'); await page.locator('#areaUsuarioConteudo').waitFor({ state: 'visible' });
             await page.locator('input[type=file]').setInputFiles(path.join(__dirname, 'foto-teste.png'));
