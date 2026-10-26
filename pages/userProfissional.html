@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../assets/css/ajustes-responsivos.css">
     <link rel="stylesheet" href="../assets/css/autocomplete.css">
     <link rel="stylesheet" href="../assets/css/registro-profissional.css">
+    <link rel="stylesheet" href="../assets/css/crm-verificacao.css">
 </head>
 <body class="profile-settings-page">
 <main class="profile-settings-container">
@@ -71,7 +72,7 @@
                 </div>
                 <div class="form-group full-width">
                     <label for="numRegistro">Número de registro profissional</label>
-                    <input type="text" id="numRegistro" maxlength="80">
+                    <input type="text" id="numRegistro" maxlength="80"><div id="perfilCrmBadge" class="api-profile-crm"></div><div id="perfilCrmControls" class="crm-controls"></div>
                 </div>
             </div>
             <button type="submit" class="profile-save-button">Salvar alterações</button>
@@ -84,7 +85,7 @@
 <script src="../assets/js/form-utils.js"></script>
 <script src="../assets/js/foto-perfil.js"></script>
 <script src="../assets/js/registro-profissional.js"></script>
-<script src="../assets/js/carregarPerfil.js"></script>
+<script src="../assets/js/crm-verificacao.js"></script><script src="../assets/js/carregarPerfil.js"></script>
 <script>
     document.getElementById('logoutProfile').addEventListener('click', () => EspectroCareAuth.logout());
 </script>

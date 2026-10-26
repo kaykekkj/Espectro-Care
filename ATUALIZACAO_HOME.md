@@ -1,5 +1,7 @@
 # Home, navegação e CRM — 26/10/2026
 
+> CRM atualizado: a conferência agora é manual e gratuita. Veja `ATUALIZACAO_CRM_GRATUITO.md`.
+
 ## Resultado
 
 - Home, artigo e Sobre nós reaproveitam o footer completo já usado nas duas listagens. Profissionais e Aprendizagem não precisaram de alteração no footer. O CSS original `footer.css` foi preservado; todos os links levam a páginas existentes.
@@ -7,17 +9,15 @@
 - Os seis cards profissionais são links semânticos com `?especialidade=...`. O filtro visível combina a área e a pesquisa existente; Limpar filtros restaura a listagem.
 - O backend atual tem somente `formacao`, sem especialidade estruturada. `especialidades.js` mapeia denominações completas conhecidas, com normalização de acentos, espaços e caixa. Não usa bio, CRM, fragmentos ou Medicina para inferir especialidade. Textos livres como “Graduação em Psicologia pela instituição X” continuam disponíveis na busca, mas não são classificados automaticamente. O filtro não comprova título de especialista.
 - A seção do aplicativo usa medidas flexíveis, cards que mudam de colunas, textos menores e a imagem original com overlay. Foram retiradas as regras antigas conflitantes de `ajustes-responsivos.css`. Não foi acrescentado `overflow-x: hidden`.
-- Cadastro e perfil oferecem seleção de CRM ou outro conselho. CRM tem número de 1 a 7 dígitos, UF própria e opção provisória. Outros conselhos mantêm o limite anterior. A consulta diferencia regular, não encontrado, situação irregular, nome divergente e indisponibilidade. Removida da Home a promessa de que todos os profissionais já passaram por verificação documental.
+- Cadastro e perfil oferecem seleção de CRM ou outro conselho. CRM tem número de 1 a 7 dígitos, UF própria e opção provisória. Outros conselhos mantêm o limite anterior. A confirmação ocorre depois do cadastro por conferência manual da equipe no portal público do CFM. Removida da Home a promessa de que todos os profissionais já passaram por verificação documental.
 
 ## Autenticação e API
 
 As listagens existentes são públicas; detalhes continuam protegidos. Cards de artigos usam o mesmo ActionGate das listagens. Visitante e token expirado vão para o login preservando o ID. A correção do caminho de login também funciona na Home e em subpastas. Respostas 401/403 não são exibidas como artigos públicos.
 
-Nenhum contrato de artigo ou profissional foi alterado. A integração nova é `POST /validacoes/crm` do backend correspondente. O formulário mantém `numRegistro` como string: `CRM-SP 1234567` ou `CRM-SP 1234567-P`. Isso permite preservar DTOs, banco e clientes Android existentes, sem migração.
+Os campos existentes de artigos e profissionais são preservados. O objeto adicional `crmVerificacao` apresenta o estado e a data de conferência. O formulário mantém `numRegistro` como string `CRM-SP 1234567` ou `CRM-SP 1234567-P`.
 
-**Pré-requisito do CRM:** aplicar o PR do backend e configurar nele `CFM_CHAVE`, obtida no serviço oficial. O limite de sete dígitos vem da seção 4.1 do [manual atual do CFM](https://sis.cfm.org.br/listamedicos/arquivos/manualwebservices.pdf). Consulta real depende de [credenciamento no CFM](https://sis.cfm.org.br/listamedicos/informacoes). A interface nunca declara um registro verdadeiro só pelo formato nem classifica falha de serviço como falsidade.
-
-Sem chave, cadastro ou alteração de um registro explicitamente identificado como CRM retorna 503 no backend. Configure antes de disponibilizar esse fluxo. O link público do CFM permite conferência manual, mas não libera um cadastro recusado pelo servidor. O seletor não transforma registros numéricos legados de conselho desconhecido em CRM.
+Não é necessário contratar serviço ou configurar chave. Cadastro/edição conferem somente o formato e seguem liberados. O botão Validar CRM na área do usuário solicita revisão administrativa gratuita; apenas a equipe pode confirmar o registro. O backend exige a migração incremental descrita em `ATUALIZACAO_CRM_GRATUITO.md` antes do deploy, quando configurado com ddl-auto=validate. Números legados e outros conselhos não são convertidos em CRM.
 
 ## Validação realizada
 
@@ -31,7 +31,7 @@ Sem chave, cadastro ou alteração de um registro explicitamente identificado co
 - Cinco testes existentes de CPF/recuperação de senha: passaram. Verificação de sintaxe JavaScript e `git diff --check`: passaram.
 - Consultas GET somente leitura em produção: 200 nas duas listagens, com 4 artigos e 6 profissionais no momento da análise. Campos conferidos com os DTOs atuais; nenhum dado foi modificado.
 
-Não foi executada a suíte completa que exige API local com banco e contas. O teste end-to-end do CFM real depende da chave credenciada; as respostas de CRM no navegador foram simuladas. Não foi feito deploy nem merge.
+Não foi executada a suíte completa que exige API local com banco e contas. Os resultados desta seção correspondem à entrega anterior da Home. Para a nova conferência manual, os testes Node passaram, mas Playwright, Java e validação visual ficaram pendentes; consulte o relatório específico. Não foi feito deploy nem merge.
 
 ## Executar e aplicar
 
@@ -51,4 +51,4 @@ Não foi executada a suíte completa que exige API local com banco e contas. O t
 
 ## Evolução recomendada
 
-Adicionar especialidade estruturada e conselho/UF em campos próprios, com migração compatível com o aplicativo. Isso permite classificar formações livres sem adivinhação e exigir CRM de médicos com base no tipo profissional confirmado. A consulta por nome e CRM não comprova identidade de quem preenche o formulário e não cria selo público de verificação.
+Adicionar especialidade estruturada e conselho/UF em campos próprios, com migração compatível com o aplicativo. Isso permite classificar formações livres sem adivinhação e exigir CRM de médicos com base no tipo profissional confirmado. A conferência manual de nome/CRM/UF/situação não comprova identidade ou especialidade; o selo informa apenas o resultado e a data da revisão pela equipe.

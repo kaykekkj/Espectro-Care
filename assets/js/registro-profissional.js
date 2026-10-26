@@ -26,28 +26,24 @@
         status.className = "registro-status";
         status.setAttribute("role", "status");
         status.setAttribute("aria-live", "polite");
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "registro-consultar";
-        button.textContent = "Consultar CRM no CFM";
         const official = document.createElement("a");
         official.href = "https://portal.cfm.org.br/busca-medicos/";
         official.target = "_blank";
         official.rel = "noopener noreferrer";
         official.textContent = "Abrir consulta oficial do CFM (nova aba)";
         official.className = "registro-fonte";
-        input.after(help, button, status, official);
+        input.after(help, status, official);
 
         function update() {
             const crm = council.value === "crm";
-            crmControls.hidden = button.hidden = official.hidden = !crm;
+            crmControls.hidden = official.hidden = !crm;
             uf.required = crm;
             uf.disabled = provisional.disabled = !crm;
             input.maxLength = crm ? 7 : 80;
             input.inputMode = crm ? "numeric" : "text";
             input.placeholder = crm ? "Número do CRM, sem prefixo ou sufixo" : "Ex.: CRP 06/123456";
             help.textContent = crm
-                ? "CRM: de 1 a 7 dígitos, diferente de zero. Informe a UF do registro, que pode ser diferente do seu endereço. A confirmação depende da consulta ao CFM. Para inscrições com prefixo de apresentação (52, EME/EMFE), informe só o número de consulta indicado pelo CFM."
+                ? "CRM: de 1 a 7 dígitos, diferente de zero. Informe a UF do registro, que pode ser diferente do seu endereço. O cadastro não exige consulta prévia. Depois, solicite a conferência gratuita na sua área. Para inscrições com prefixo de apresentação (52, EME/EMFE), informe só o número de consulta indicado pelo CFM."
                 : "Informe a sigla e o número do seu conselho. As regras de CRM se aplicam somente a médicos.";
             status.textContent = "";
             validate();
@@ -81,32 +77,6 @@
             validate();
         }));
         input.form.addEventListener("reset", () => setTimeout(() => setValue(""), 0));
-        button.addEventListener("click", async () => {
-            if (!validate()) { input.reportValidity(); uf.reportValidity(); return; }
-            if (!nameInput.value.trim()) { nameInput.reportValidity(); nameInput.focus(); return; }
-            const snapshot = value() + nameInput.value;
-            button.disabled = true;
-            status.textContent = "Consultando o CFM...";
-            try {
-                const response = await fetch(`${EspectroCareConfig.API_BASE_URL}/validacoes/crm`, {
-                    method: "POST", headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ numero: input.value, uf: uf.value, nome: nameInput.value.trim() }),
-                    signal: AbortSignal.timeout(20000)
-                });
-                let data;
-                try { data = await response.json(); } catch { /* Backend anterior ou resposta sem JSON. */ }
-                if (snapshot !== value() + nameInput.value) return;
-                if (!response.ok) {
-                    status.textContent = data?.mensagem || "Consulta indisponível. O CRM não foi confirmado; isso não significa que seja falso. Use a consulta oficial ou tente novamente.";
-                    return;
-                }
-                status.textContent = data?.cadastroConsultado === true && typeof data.valido === "boolean"
-                    ? data.mensagem
-                    : "A consulta não confirmou este CRM. Tente novamente mais tarde.";
-            } catch {
-                if (snapshot === value() + nameInput.value) status.textContent = "Não foi possível consultar o CFM. O CRM não foi confirmado. Tente novamente mais tarde.";
-            } finally { button.disabled = false; }
-        });
         update();
         return Object.freeze({ value, setValue, validate });
     }
