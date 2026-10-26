@@ -36,6 +36,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             professionalInfo.hidden = false;
             setText("areaUsuarioFormacao", profile.formacao);
             setText("areaUsuarioRegistro", profile.numRegistro);
+            if (EspectroCareCrm.status(profile) !== 'NAO_APLICAVEL') EspectroCareCrm.bindOwner(profile,
+                document.getElementById('areaUsuarioCrmBadge'), document.getElementById('areaUsuarioCrm'));
         } else {
             professionalInfo.hidden = true;
         }

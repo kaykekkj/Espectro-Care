@@ -2,7 +2,9 @@
   "private": true,
   "scripts": {
     "test": "node e2e.cjs",
-    "test:home": "node home-integracao.cjs"
+    "test:home": "node home-integracao.cjs",
+    "test:crm": "node --test crm-verificacao.test.cjs",
+    "test:crm:e2e": "node crm-verificacao.e2e.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"

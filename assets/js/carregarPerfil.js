@@ -15,6 +15,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     };
 
     const registro = EspectroCareRegistro.bind(fields.numRegistro, fields.nome);
+    let verification;
+    function showVerification(data) {
+        verification = EspectroCareCrm.bindOwner(data, document.getElementById('perfilCrmBadge'), document.getElementById('perfilCrmControls'));
+    }
+    form.addEventListener('input', () => verification?.setDirty());
+    form.addEventListener('change', () => verification?.setDirty());
 
     EspectroCareForms.bindMaskedInput(fields.telefone, EspectroCareForms.formatPhone, 11);
 
@@ -58,6 +64,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         fields.cidade.value = data.cidade || "";
         fields.formacao.value = data.formacao || "";
         registro.setValue(data.numRegistro);
+        showVerification(data);
     } catch (error) {
         show("Não foi possível carregar seu perfil. Tente novamente.", "error");
     }
@@ -106,6 +113,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
             const updated = await response.json();
             fields.telefone.value = EspectroCareForms.formatPhone(updated.telefone || "");
+            showVerification(updated);
             show("Perfil atualizado com sucesso.", "success");
         } catch (error) {
             show("Não foi possível atualizar seu perfil.", "error");

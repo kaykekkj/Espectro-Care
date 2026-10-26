@@ -1,0 +1,16 @@
+.crm-badge { display: inline-flex; align-items: center; width: fit-content; max-width: 100%; box-sizing: border-box; padding: 5px 10px; border: 1px solid #9e671c; border-radius: 18px; background: #fff4dd; color: #704709; font: 700 13px/1.4 'Nunito', sans-serif; overflow-wrap: anywhere; }
+.crm-verificado { color: #17613e; background: #e8f7ed; border-color: #41855c; }
+.crm-nao_confirmado { color: #873c36; background: #fff0ed; border-color: #ac6c64; }
+.crm-nao_aplicavel { color: #435f64; background: #edf4f4; border-color: #8aabab; }
+.crm-identity { display: flex; gap: 8px 14px; align-items: center; flex-wrap: wrap; }
+.crm-controls { display: grid; gap: 10px; min-width: 0; margin-top: 10px; font: 14px/1.5 'Nunito', sans-serif; }
+.crm-controls:empty { display: none; }
+.crm-controls p { margin: 0; }
+.crm-controls a { color: #176c61; overflow-wrap: anywhere; }
+.crm-validate { width: fit-content; max-width: 100%; padding: 10px 16px; border: 1px solid #188ca2; background: #edf8f3; color: #174f58; border-radius: 10px; font: inherit; font-weight: 800; cursor: pointer; }
+.crm-validate:disabled { opacity: .75; cursor: default; }
+.crm-validate:focus-visible, .crm-controls a:focus-visible { outline: 3px solid #188ca2; outline-offset: 3px; }
+.api-professional-meta .crm-meta { padding: 0; background: transparent; }
+.api-profile-crm { margin: 8px 0; }
+.crm-confirm-check { width: auto !important; margin-right: 8px; }
+.area-usuario-identity > div, .crm-identity > * { min-width: 0; }

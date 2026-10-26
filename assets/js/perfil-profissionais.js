@@ -61,6 +61,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <a class="api-back-link" href="profissionais.html">Voltar para profissionais</a>
             </div>
         `;
+        const crmStatus = document.createElement('div'); crmStatus.className = 'api-profile-crm'; crmStatus.append(EspectroCareCrm.badge(profissional));
+        const register = profileCard.querySelector('.api-profile-register');
+        if (register) register.before(crmStatus); else profileCard.querySelector('.header-info').append(crmStatus);
         EspectroCarePhoto.render(profileCard.querySelector(".api-professional-avatar"), profissional.fotoPerfilUrl, profissional.nome);
         status.hidden = true;
     } catch (error) {

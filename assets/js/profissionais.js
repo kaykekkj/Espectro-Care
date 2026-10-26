@@ -68,6 +68,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <a class="btn-ver-perfil" data-auth-action href="perfil-profissional.html?id=${encodeURIComponent(profissional.id)}">Ver perfil <span aria-hidden="true">→</span></a>
                 </div>
             `;
+            let metadata = article.querySelector('.api-professional-meta');
+            if (!metadata) { metadata = document.createElement('ul'); metadata.className = 'api-professional-meta'; article.querySelector('.api-professional-body').prepend(metadata); }
+            const crmMeta = document.createElement('li'); crmMeta.className = 'crm-meta'; crmMeta.append(EspectroCareCrm.badge(profissional));
+            if (profissional.formacao) metadata.children[0].after(crmMeta); else metadata.prepend(crmMeta);
             EspectroCarePhoto.render(article.querySelector(".api-professional-avatar"), profissional.fotoPerfilUrl, profissional.nome);
             article.addEventListener("click", event => {
                 if (!event.target.closest("a, button, input")) {

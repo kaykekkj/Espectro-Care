@@ -141,15 +141,12 @@ const user = {id:1,tipoPerfil:'PROFISSIONAL',nome:'Profissional Exemplo',email:'
   await page.locator('#registro').fill('0000000');assert.equal(await page.locator('#registro').evaluate(el=>el.checkValidity()),false);
   await page.locator('#registro').fill('123A');assert.equal(await page.locator('#registro').evaluate(el=>el.checkValidity()),false);
   await page.locator('#registro').fill('1234567');
-  for(const mode of ['regular','notfound','unavailable']) {
-   crmMode=mode;await page.locator('.registro-consultar').click();await page.waitForFunction(()=>!document.querySelector('.registro-consultar').disabled);
-   assert.match(await page.locator('.registro-status').textContent(),mode==='regular'?/regular/:mode==='notfound'?/não encontrado/:/não configurada/);
-  }
+  assert.equal(await page.locator('.registro-consultar').count(),0);
   await page.locator('#registroConselho').selectOption('outro');await page.locator('#registro').fill('CRP 06/123456');
-  assert.equal(await page.locator('#registro').getAttribute('maxlength'),'80');assert.equal(await page.locator('#registro').evaluate(el=>el.checkValidity()),true);assert(!(await page.locator('.registro-consultar').isVisible()));
+  assert.equal(await page.locator('#registro').getAttribute('maxlength'),'80');assert.equal(await page.locator('#registro').evaluate(el=>el.checkValidity()),true);assert.equal(await page.locator('.registro-consultar').count(),0);
   await page.goto(site+'/pages/userProfissional.html');await page.waitForFunction(()=>document.querySelector('#numRegistro').value==='1234567');
   assert.equal(await page.locator('#numRegistroConselho').inputValue(),'crm');assert.equal(await page.locator('#numRegistroUf').inputValue(),'SP');assert(await page.locator('#numRegistroProvisorio').isChecked());
-  check('CRM limitado a sete dígitos, zero/letras rejeitados, consulta regular/não encontrado/indisponível, outro conselho preservado, perfil carrega CRM provisório');
+  check('CRM limitado a sete dígitos, zero/letras rejeitados, cadastro sem consulta prévia, outro conselho preservado, perfil carrega CRM provisório');
   assert.equal(report.errors.length,0,JSON.stringify(report.errors));
   check('Sem novas exceções JavaScript nas páginas e fluxos testados');
  } finally {fs.writeFileSync(path.join(output,'relatorio.json'),JSON.stringify(report,null,2));await browser.close();}

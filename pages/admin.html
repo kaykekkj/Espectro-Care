@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer"><title>Administração | EspectroCare</title><link rel="stylesheet" href="../assets/css/base.css"><link rel="stylesheet" href="../assets/css/admin.css">    <link rel="stylesheet" href="../assets/css/ajustes-responsivos.css">
-</head>
+<link rel="stylesheet" href="../assets/css/crm-verificacao.css"></head>
 <body><main class="admin-shell"><div class="admin-top"><a href="aprendizagem.html">← Aprendizagem</a><button id="sairAdmin" type="button">Sair</button></div>
 <h1>Convites administrativos</h1><p id="adminStatus" role="status" aria-live="polite">Validando sua sessão...</p>
 <section id="adminConteudo" class="admin-panel" hidden><h2>Novo convite</h2><p>O convite só poderá ser usado pelo e-mail informado. Compartilhe o link manualmente por um canal seguro.</p>
 <form id="gerarConvite"><label for="email">E-mail autorizado</label><input type="email" id="email" required maxlength="254" autocomplete="off"><button type="submit">Gerar convite</button></form>
 <div id="novoConvite" hidden><label for="linkConvite">Link gerado (exibido somente agora)</label><input id="linkConvite" readonly><button type="button" id="copiarConvite">Copiar link</button></div>
-<h2>Convites emitidos</h2><div id="listaConvites" class="admin-list"></div></section></main>
-<script src="../assets/js/api-config.js"></script><script src="../assets/js/auth.js"></script><script src="../assets/js/admin-api.js"></script><script src="../assets/js/admin.js"></script></body></html>
+<h2>Convites emitidos</h2><div id="listaConvites" class="admin-list"></div></section>
+<section id="adminCrm" class="admin-panel" hidden aria-labelledby="tituloCrm"><h2 id="tituloCrm">Conferência gratuita de CRM</h2>
+<p>Pesquise no portal público do CFM e compare nome completo, número, UF e situação ativa. Não aprove pela aparência do número. Se a consulta estiver indisponível, mantenha o pedido em análise.</p>
+<p id="crmAdminStatus" role="status" aria-live="polite"></p><button id="crmAtualizar" type="button">Atualizar pedidos</button>
+<div id="listaCrm"></div><div class="admin-actions"><button id="crmAnterior" type="button" disabled>Anterior</button><button id="crmProxima" type="button" disabled>Próxima</button></div></section></main>
+<script src="../assets/js/api-config.js"></script><script src="../assets/js/auth.js"></script><script src="../assets/js/admin-api.js"></script><script src="../assets/js/admin.js"></script><script src="../assets/js/admin-crm.js"></script></body></html>

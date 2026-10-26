@@ -49,4 +49,11 @@ A suíte `home-integracao.cjs` usa dados sintéticos e intercepta a API, sem gra
 O relatório e capturas ficam em `tests/resultados-home/` (ignorados pelo Git).
 São verificados os cinco footers, seis filtros, pesquisa combinada, login,
 estados da listagem de artigos, formatos de CRM e seis larguras de tela.
-As respostas simuladas de CRM não substituem os testes do backend ou uma consulta real credenciada.
+Os testes simulados não substituem os testes do backend nem a conferência manual no portal público do CFM. A consulta paga anterior foi removida.
+
+## Conferência manual de CRM
+
+`npm run test:crm` executa os sete testes sem dependências de navegador.
+`npm run test:crm:e2e` usa Playwright e API simulada em `http://127.0.0.1:5517`; inicie o site com `python -m http.server 5517` na raiz do frontend. Execute `npm ci` em `tests` e `npx playwright install chromium` antes, em um ambiente com rede.
+
+O cenário verifica pedido, status nos três locais, confirmação administrativa e seis larguras. Não marca ninguém como validado em produção e não acessa o CFM. Nesta entrega, 12 testes Node passaram; Playwright e revisão visual ficaram pendentes por indisponibilidade de navegador/acesso ao servidor local.
