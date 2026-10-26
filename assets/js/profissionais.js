@@ -5,6 +5,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!container) return;
 
     let profissionais = [];
+    const areaFilter = document.getElementById("especialidadeFiltro");
+    const info = document.getElementById("especialidadeInfo");
+    const requestedArea = new URLSearchParams(location.search).get("especialidade");
+    const requestedKey = EspectroCareEspecialidades.key(requestedArea);
+    areaFilter.value = requestedKey;
+    let loaded = false;
 
     const normalize = value => String(value || "")
         .toLowerCase()
@@ -29,7 +35,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     function render(list) {
         container.innerHTML = "";
         if (!list.length) {
-            status.textContent = profissionais.length
+            status.textContent = areaFilter.value
+                ? `Nenhum profissional de ${areaFilter.selectedOptions[0].textContent} corresponde aos filtros selecionados.`
+                : profissionais.length
                 ? "Nenhum profissional corresponde à sua busca."
                 : "Nenhum profissional cadastrado está disponível no momento.";
             status.hidden = false;
@@ -77,25 +85,61 @@ document.addEventListener("DOMContentLoaded", async () => {
         return div.innerHTML;
     }
 
+    function applyFilters() {
+        const term = normalize(searchInput?.value).trim();
+        const area = areaFilter.value;
+        info.textContent = area
+            ? `Área: ${areaFilter.selectedOptions[0].textContent}. Filtro pela formação informada no perfil; não comprova título de especialista.`
+            : new URLSearchParams(location.search).has("especialidade") && !requestedKey
+                ? "Área da URL não reconhecida. Exibindo todas as áreas."
+                : "Todas as áreas profissionais.";
+        if (!loaded) return;
+        render(profissionais.filter(profissional =>
+            (!area || EspectroCareEspecialidades.key(profissional.formacao) === area) &&
+            (!term || [profissional.nome, profissional.formacao, profissional.cidade, profissional.estado, profissional.bio, profissional.numRegistro]
+                .some(value => normalize(value).includes(term)))
+        ));
+    }
+
+    function updateUrl() {
+        const url = new URL(location.href);
+        if (areaFilter.value) url.searchParams.set("especialidade", areaFilter.value);
+        else url.searchParams.delete("especialidade");
+        history.replaceState(null, "", url);
+    }
+    areaFilter.addEventListener("change", () => { updateUrl(); applyFilters(); });
+    document.getElementById("limparFiltros").addEventListener("click", () => {
+        areaFilter.value = "";
+        if (searchInput) searchInput.value = "";
+        updateUrl();
+        applyFilters();
+        searchInput?.focus();
+    });
+    searchInput?.addEventListener("input", applyFilters);
+    applyFilters();
+
     try {
         status.textContent = "Carregando profissionais...";
         status.hidden = false;
-        const response = await fetch(`${EspectroCareConfig.API_BASE_URL}/api/profissionais`, { cache: "no-store" });
+        const response = await EspectroCareAuth.authorizedFetch("/api/profissionais", { cache: "no-store" });
+        if (response.status === 401) {
+            EspectroCareAuth.clearSession();
+            window.location.href = `login.html?redirect=${encodeURIComponent(location.pathname + location.search)}`;
+            return;
+        }
+        if (response.status === 403) {
+            status.textContent = "Sua conta não tem permissão para acessar os profissionais.";
+            return;
+        }
         if (!response.ok) throw new Error();
 
         profissionais = await response.json();
-        render(profissionais);
+        if (!Array.isArray(profissionais)) throw new Error();
+        loaded = true;
+        applyFilters();
     } catch (error) {
         status.textContent = "Não foi possível carregar os profissionais. Verifique sua conexão e tente novamente.";
         status.hidden = false;
     }
 
-    searchInput?.addEventListener("input", () => {
-        const term = normalize(searchInput.value);
-        if (!term) return render(profissionais);
-        render(profissionais.filter(profissional =>
-            [profissional.nome, profissional.formacao, profissional.cidade, profissional.estado, profissional.bio, profissional.numRegistro]
-                .some(value => normalize(value).includes(term))
-        ));
-    });
 });

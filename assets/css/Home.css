@@ -53,7 +53,7 @@ url('../img/home/Img_hero.png');
     flex-direction: column;
     align-items: center;
 }
-.profissionais-home a{
+.profissionais-home > a{
     display: inline-flex;
 
     align-items: center;
@@ -327,7 +327,7 @@ h2{
     width: 100%;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
 
     gap: 40px;
 
@@ -340,6 +340,8 @@ h2{
 /* ============================= */
 
 .card-artigo-home {
+    min-width: 0;
+    text-decoration: none;
     position: relative;
 
     overflow: hidden;
@@ -473,105 +475,70 @@ h2{
 
 
 /*========== APLICATIVO NA HOME =============*/
-.aplicativo-home{
-    background-image: url('../img/home/aplicativo-fundo (2).png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 80px;
+/* Uma única base de layout; sem altura vinculada à janela. */
+.aplicativo-home {
     width: 100%;
+    padding: clamp(28px, 5vw, 80px);
+    background-image: linear-gradient(90deg, #ffffffed 0%, #ffffffe0 48%, #ffffff00 75%), url('../img/home/aplicativo-fundo (2).png');
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-color: #f5fafb;
 }
-.texto-app-home{
-    width: 55%;
-    display: flex;
-    gap: 30px;
-    flex-direction: column;
-    padding: 40px;
-}
-.texto-app-home span{
-    color: #06476B;
-}
-.texto-app-home h1{
-    width: 500px;
-    font-size: 45px;
-}
-.texto-app-home p{
-    font-size: 18px;
-    width: 540px;
-}
-
-
-/*======== parte dos beneficios do aplicativo ======*/
-.beneficios-app{
+.texto-app-home {
+    width: 58%;
+    max-width: 46rem;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+    gap: 24px;
+    padding: clamp(0px, 1vw, 16px);
 }
-.beneficios-home{
+.texto-app-home span { color: #06476B; }
+.texto-app-home h1 {
+    max-width: 18ch;
+    font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+    line-height: 1.18;
+    color: #04344E;
+}
+.texto-app-home > p {
+    max-width: 48ch;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #415b67;
+}
+.beneficios-app { display: grid; gap: 18px; }
+.beneficios-app h2 { font-size: 1.25rem; }
+.beneficios-home {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+    align-items: stretch;
+    gap: 16px;
 }
-.card-beneficios-home{
+.card-beneficios-home {
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 200px;
-    gap: 10px;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 18px;
+    border: 1px solid #d9eae5;
+    border-radius: 18px;
+    background: #fffffff0;
 }
-.card-beneficios-home h2{
-    width: 0;
-}
-.card-beneficios-home h3{
-    margin: 0;
-    width: 150px;
-    font-size: 18px;
-}
-.card-beneficios-home p{
-    font-size: 14px;
-    width: 200px;
-}
-.icon-box-beneficios{
-    font-size: 30px;
+.card-beneficios-home h3 { font-size: 1rem; line-height: 1.35; color: #06476B; }
+.card-beneficios-home p { font-size: .95rem; line-height: 1.5; color: #415b67; }
+.icon-box-beneficios {
+    display: grid;
+    place-items: center;
+    font-size: 26px;
     background-color: #defae9;
-    color: #14AE5C;
-    width: 60px;
-    border-radius: 10px;
-    padding: 10px;
+    color: #138c4c;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
 }
 /*=======================================================*/
-
-
-.texto-app-home button{
-    width: 50%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, rgb(24, 140, 162), rgb(92, 186, 117));
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 1s;
-}
-.texto-app-home button:hover {
-    background: linear-gradient(130deg, rgb(92, 186, 117), rgb(24, 140, 162));
-    transform: scale(1.02);
-    box-shadow: 0px 5px 10px 0px #14ae5c4d;
-}
-
 
 /*========== CRIAR CONTA NO FINAL DA HOME =============*/
 
@@ -672,37 +639,7 @@ h2{
     }
 
     .conteiner-tea-home {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 22px;
-    }
-
-    .aplicativo-home {
-        height: auto;
-        min-height: 0;
-        padding: 60px 6%;
-    }
-
-    .texto-app-home {
-        width: 100%;
-        padding: 24px;
-    }
-
-    .texto-app-home h1,
-    .texto-app-home p {
-        width: 100%;
-    }
-
-    .beneficios-home {
-        width: 100%;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px;
-        padding: 12px 0;
-    }
-
-    .card-beneficios-home,
-    .card-beneficios-home h3,
-    .card-beneficios-home p {
-        width: 100%;
     }
 
     .criar-conta-home {
@@ -793,32 +730,6 @@ h2{
         height: 145px;
     }
 
-    .texto-app-home {
-        padding: 0;
-    }
-
-    .texto-app-home h1 {
-        font-size: 34px;
-    }
-
-    .beneficios-app {
-        align-items: stretch;
-    }
-
-    .beneficios-home {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .card-beneficios-home {
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    .card-beneficios-home h2 {
-        width: auto;
-    }
-
     .criar-conta-home button {
         width: min(300px, 100%);
     }
@@ -895,18 +806,6 @@ h2{
         height: 180px;
     }
 
-    .aplicativo-home {
-        padding: 45px 20px;
-    }
-
-    .texto-app-home h1 {
-        font-size: 29px;
-    }
-
-    .texto-app-home p {
-        font-size: 16px;
-    }
-
     .criar-conta-home {
         padding: 45px 20px;
     }
@@ -916,3 +815,27 @@ h2{
     }
 }
 
+
+/* Os links de especialidade mantêm o visual original dos cards. */
+.conteiner-prof-home > a { color: inherit; text-decoration: none; min-width: 0; }
+.conteiner-prof-home > a:focus-visible, .card-artigo-home:focus-visible,
+.home-artigos-retry:focus-visible { outline: 3px solid #188ca2; outline-offset: 5px; }
+.home-artigos-status { color: #415b67; text-align: center; }
+.home-artigos-retry { font: inherit; border: 1px solid #06476B; border-radius: 12px; padding: 10px 20px; color: #06476B; background: white; cursor: pointer; }
+.home-artigo-sem-capa { min-height: 170px; display: grid; place-items: center; padding: 20px; color: #06476B; background: linear-gradient(135deg, #e0f4ff, #e8fdf2); }
+@media (max-width: 1024px) {
+    .texto-app-home { width: 65%; }
+}
+@media (max-width: 768px) {
+    .aplicativo-home {
+        padding: 48px 24px;
+        background-image: linear-gradient(#fffffff0, #ffffffeb), url('../img/home/aplicativo-fundo (2).png');
+        background-size: auto 100%;
+        background-position: 75% center;
+    }
+    .texto-app-home { width: 100%; padding: 0; }
+}
+@media (max-width: 480px) {
+    .aplicativo-home { padding: 36px 20px; background-position: 70% center; }
+    .card-beneficios-home { padding: 18px; }
+}

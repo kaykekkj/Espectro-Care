@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         senha: document.getElementById("senhaProf"),
         confirmarSenha: document.getElementById("confirmarSenhaProf")
     };
+    const registro = EspectroCareRegistro.bind(fields.registro, fields.nome);
     const feedback = document.getElementById("formFeedback");
     const submitButton = document.getElementById("btnCadastrarProf");
     const passwordHelp = document.getElementById("passwordHelp");
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!fields.estado.dataset.estadoId) fields.estado.setCustomValidity("Selecione um estado válido da lista.");
         if (!fields.cidade.dataset.cidadeId) fields.cidade.setCustomValidity("Selecione uma cidade válida da lista.");
 
+        registro.validate();
         if (!form.checkValidity()) {
             form.reportValidity();
             return;
@@ -54,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             cidade: fields.cidade.value.trim(),
             cpf,
             formacao: fields.formacao.value.trim(),
-            numRegistro: fields.registro.value.trim()
+            numRegistro: registro.value()
         };
 
         submitButton.disabled = true;

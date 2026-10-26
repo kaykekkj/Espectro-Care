@@ -35,3 +35,18 @@ intervalo, correção de endereço, conclusão e ausência de overflow em 375/12
 Se necessário, `BROWSER_EXECUTABLE` aponta para um Chromium instalado.
 Os testes HTTP reais do backend cobrem consumo único, tentativas, expiração,
 concorrência e compatibilidade com contas anteriores.
+
+
+## Home, filtros e CRM
+
+A suíte `home-integracao.cjs` usa dados sintéticos e intercepta a API, sem gravar em produção.
+
+1. Na raiz do site: `python -m http.server 5517 --bind 127.0.0.1`.
+2. Em outro terminal: `cd tests`, `npm ci` e `npm run test:home`.
+3. Se necessário, instale o navegador: `npx playwright install chromium`.
+4. Use `TEST_SITE_URL` para outra porta local e `TEST_BROWSER_PATH` para um Chromium instalado.
+
+O relatório e capturas ficam em `tests/resultados-home/` (ignorados pelo Git).
+São verificados os cinco footers, seis filtros, pesquisa combinada, login,
+estados da listagem de artigos, formatos de CRM e seis larguras de tela.
+As respostas simuladas de CRM não substituem os testes do backend ou uma consulta real credenciada.

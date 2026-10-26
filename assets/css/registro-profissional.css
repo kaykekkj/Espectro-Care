@@ -1,0 +1,12 @@
+.registro-controles { display: grid; gap: 8px; min-width: 0; margin-bottom: 12px; }
+.registro-controles select { width: 100%; min-width: 0; padding: 12px; font: inherit; color: #174f58; background: white; border: 1px solid #cce4db; border-radius: 10px; box-sizing: border-box; }
+.registro-crm { display: grid; gap: 8px; min-width: 0; }
+.registro-crm[hidden], .registro-consultar[hidden], .registro-fonte[hidden] { display: none; }
+.registro-provisorio { display: flex; align-items: center; gap: 8px; }
+.registro-provisorio input { width: auto; }
+.registro-ajuda, .registro-status, .registro-fonte { font-size: .9rem; line-height: 1.5; margin-top: 10px; overflow-wrap: anywhere; }
+.registro-ajuda { color: #415b67; }
+.registro-status, .registro-fonte { color: #174f58; }
+.registro-consultar { width: fit-content; max-width: 100%; padding: 10px 14px; margin-top: 12px; font: inherit; border-radius: 10px; border: 1px solid #188ca2; background: #edf8f3; color: #174f58; cursor: pointer; }
+.registro-consultar:disabled { cursor: wait; opacity: .7; }
+.registro-fonte { display: block; }

@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         numRegistro: document.getElementById("numRegistro")
     };
 
+    const registro = EspectroCareRegistro.bind(fields.numRegistro, fields.nome);
+
     EspectroCareForms.bindMaskedInput(fields.telefone, EspectroCareForms.formatPhone, 11);
 
     function show(message, type) {
@@ -55,7 +57,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         fields.estado.value = data.estado || "";
         fields.cidade.value = data.cidade || "";
         fields.formacao.value = data.formacao || "";
-        fields.numRegistro.value = data.numRegistro || "";
+        registro.setValue(data.numRegistro);
     } catch (error) {
         show("Não foi possível carregar seu perfil. Tente novamente.", "error");
     }
@@ -71,6 +73,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             fields.telefone.setCustomValidity("");
         }
 
+        registro.validate();
         if (!form.checkValidity()) {
             form.reportValidity();
             return;
@@ -90,12 +93,17 @@ document.addEventListener("DOMContentLoaded", async () => {
                     estado: fields.estado.value.trim(),
                     cidade: fields.cidade.value.trim(),
                     formacao: fields.formacao.value.trim(),
-                    numRegistro: fields.numRegistro.value.trim()
+                    numRegistro: registro.value()
                 })
             });
 
             if (await handleAuthError(response)) return;
-            if (!response.ok) throw new Error();
+            if (!response.ok) {
+                let message = "Não foi possível atualizar seu perfil.";
+                try { message = (await response.json()).mensagem || message; } catch {}
+                show(message, "error");
+                return;
+            }
             const updated = await response.json();
             fields.telefone.value = EspectroCareForms.formatPhone(updated.telefone || "");
             show("Perfil atualizado com sucesso.", "success");
