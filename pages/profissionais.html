@@ -78,6 +78,18 @@
             <p>Consulte informações de apresentação disponibilizadas pelos profissionais da plataforma.</p>
         </div>
         <div class="profissionais-busca">
+            <label for="especialidadeFiltro">Área profissional</label>
+            <select id="especialidadeFiltro">
+                <option value="">Todas as áreas</option>
+                <option value="psicologo">Psicólogos</option>
+                <option value="fonoaudiologo">Fonoaudiólogos</option>
+                <option value="terapeuta-ocupacional">Terapeutas ocupacionais</option>
+                <option value="nutricionista">Nutricionistas</option>
+                <option value="neuropediatra">Neuropediatras</option>
+                <option value="psiquiatra">Psiquiatras</option>
+            </select>
+            <button id="limparFiltros" type="button">Limpar filtros</button>
+            <p id="especialidadeInfo" role="status" aria-live="polite"></p>
             <label class="sr-only" for="searchInput">Pesquisar profissionais</label>
             <input type="search" class="search-profissionais" placeholder="Buscar por nome, formação ou cidade..." id="searchInput">
         </div>
@@ -109,6 +121,7 @@
 <script src="../assets/js/form-utils.js"></script>
 <script src="../assets/js/mobilen-navbar.js"></script>
 <script src="../assets/js/selecionar-perfil.js"></script>
+<script src="../assets/js/especialidades.js"></script>
 <script src="../assets/js/profissionais.js"></script>
 <div class="overlay" id="overlay"></div>
 </body>

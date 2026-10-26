@@ -92,30 +92,30 @@
                 <p>Profissionais preparados para orientar sua família</p>
             </div>
                 <div class="conteiner-prof-home">
-                    <div class="cards-prof-home1">
+                    <a href="pages/profissionais.html?especialidade=psicologo" class="cards-prof-home1">
                         <i class="fa-solid fa-brain"></i>
                         <h2>Psicólogos</h2>
-                    </div>
-                     <div class="cards-prof-home2">
+                    </a>
+                     <a href="pages/profissionais.html?especialidade=fonoaudiologo" class="cards-prof-home2">
                         <i class="fa-regular fa-message"></i>
-                        <h2>Fonodiólogos</h2>
-                    </div>
-                    <div class="cards-prof-home1">
+                        <h2>Fonoaudiólogos</h2>
+                    </a>
+                    <a href="pages/profissionais.html?especialidade=terapeuta-ocupacional" class="cards-prof-home1">
                         <i class="fa-regular fa-hand"></i>
                         <h2>Terapeutas <br> Ocupacionais</h2>
-                    </div>
-                     <div class="cards-prof-home2">
+                    </a>
+                     <a href="pages/profissionais.html?especialidade=nutricionista" class="cards-prof-home2">
                         <i class="fa-solid fa-apple-whole"></i>
                         <h2>Nutricionistas</h2>
-                    </div>
-                     <div class="cards-prof-home1">
+                    </a>
+                     <a href="pages/profissionais.html?especialidade=neuropediatra" class="cards-prof-home1">
                         <i class="fa-solid fa-user-doctor"></i>
                         <h2>Neuropediatras</h2>
-                    </div>
-                     <div class="cards-prof-home2">
+                    </a>
+                     <a href="pages/profissionais.html?especialidade=psiquiatra" class="cards-prof-home2">
                         <i class="fa-solid fa-hand-holding-medical"></i>
                         <h2>Psiquiatras</h2>
-                    </div>
+                    </a>
                 </div>
                 <a href="pages/profissionais.html">Ver todos os profissionais <i class="fa-solid fa-chevron-right"></i></a>
             
@@ -160,8 +160,8 @@
                 </div>
                  <div class="card-escolhas">
                     <i class="fa-solid fa-circle-check"></i>
-                    <h1> Profissionais <br> Verificados </h1>
-                    <p> Todos os profissionais passam por validação de documentos e registro. </p>
+                    <h1> Profissionais <br> Cadastrados </h1>
+                    <p> Consulte perfis e conheça a formação dos profissionais. </p>
                 </div>
             </div>
         </section>
@@ -170,24 +170,9 @@
             <div class="conteiner-conheça-tea">
                 <h1> Conheça o TEA!</h1>
                 <p>Explore conteúdos sobre o TEA e sobre temas importantes para o dia a dia</p>
-                <div class="conteiner-tea-home">
-                    <div class="card-artigo-home">
-                        <img src="assets/img/home/IMG_iniciosite.png" alt="">
-                        <h2> O que é o TEA?</h2>
-                    </div>
-                    <div class="card-artigo-home">
-                        <img src="assets/img/home/IMG_iniciosite.png" alt="">
-                        <h2> Alimentação</h2>
-                    </div>
-                    <div class="card-artigo-home">
-                        <img src="assets/img/home/IMG_iniciosite.png" alt="">
-                        <h2> Comunicação</h2>
-                    </div>
-                    <div class="card-artigo-home">
-                        <img src="assets/img/home/IMG_iniciosite.png" alt="">
-                        <h2> Regulação emocional</h2>
-                    </div>
-                </div>
+                <p id="homeArtigosStatus" class="home-artigos-status" role="status" aria-live="polite">Carregando artigos...</p>
+                <button id="homeArtigosRetry" class="home-artigos-retry" type="button" hidden>Tentar novamente</button>
+                <div class="conteiner-tea-home" id="homeArtigos" aria-label="Artigos recentes" aria-busy="true"></div>
                 <a href="pages/aprendizagem.html">Ver todos os conteúdos <i class="fa-solid fa-chevron-right"></i></a>
             </div>
         </section>
@@ -195,24 +180,24 @@
         <section class="aplicativo-home">
             <div class="texto-app-home">
             <h1>Apoio e informação, <span>onde você estiver!</span></h1>
-            <p>Com o aplicativo EspectroCare, você encontra profissionais especializados, acompanha seus atendimentos e acessa conteúdos confiáveis de forma prática e segura.</p>
+            <p>Profissionais, atendimentos e informação para apoiar sua família no dia a dia.</p>
                 <div class="beneficios-app">
                     <h2><span>Benefícios</span></h2>
                     <div class="beneficios-home">
                         <div class="card-beneficios-home">
                             <div class="icon-box-beneficios"><i class="fa-regular fa-calendar-check"></i></div>
                             <h3>Organize seus atendimentos</h3>
-                            <p>Acompanhe suas consultas e compromissos em um só lugar</p>
+                            <p>Consultas e compromissos em um só lugar.</p>
                         </div>
                         <div class="card-beneficios-home">
                             <div class="icon-box-beneficios"><i class="fa-solid fa-user-check"></i></div>
                             <h3>Encontre profissionais</h3>
-                            <p>Conecte-se com profissionais verificados e especializados</p>
+                            <p>Encontre apoio especializado para sua família.</p>
                         </div>
                         <div class="card-beneficios-home">
                             <div class="icon-box-beneficios"><i class="fa-solid fa-book-open"></i></div>
                             <h3>Informação confiável</h3>
-                            <p>Conteúdos pensados para apoiar famílias e resposáveis</p>
+                            <p>Conteúdos para orientar famílias e responsáveis.</p>
                         </div>
                     </div>
                 </div>
@@ -240,75 +225,21 @@
     </main>
 
         <footer class="footer">
-
-            <div class="footer-content">
-
-                <div class="footer-brand">
-
-                    <img
-                        src="assets/img/logos/Logo.png"
-                        alt="Logo EspectroCare"
-                    >
-
-                    <p>
-                        Conectando pessoas,<br>
-                        profissionais e informação<br>
-                        em um só lugar.
-                    </p>
-
-                </div>
+    <div class="footer-content">
+        <div class="footer-brand"><img src="assets/img/logos/Logo.png" alt="Logo EspectroCare"><p>Conectando pessoas,<br>profissionais e informação<br>em um só lugar.</p></div>
+        <div class="footer-column"><h2>Plataforma</h2><a href="index.html">Início</a><a href="pages/sobre-nos.html">Sobre nós</a></div>
+        <div class="footer-column"><h2>Explore</h2><a href="pages/profissionais.html">Profissionais</a><a href="pages/aprendizagem.html">Aprendizagem</a></div>
+        <div class="footer-column"><h2>Sua conta</h2><a href="pages/area-usuario.html">Meu perfil</a><a href="pages/recuperar-senha.html">Recuperar senha</a></div>
+    </div>
+    <div class="footer-line"></div>
+    <div class="footer-bottom"><p>© 2026 EspectroCare</p><span>Todos os direitos reservados.</span></div>
+</footer>
 
 
-                <div class="footer-column">
-
-                    <h2>Plataforma</h2>
-
-                    <a href="pages/sobre-nos.html">Sobre nós</a>
-                    <a href="#">Objetivo do site</a>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h2>Suporte</h2>
-
-                    <a href="#">Ajuda</a>
-                    <a href="#">Contato</a>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h2>Legal</h2>
-
-                    <a href="#">Termos de uso</a>
-                    <a href="#">Política de privacidade</a>
-
-                </div>
-
-            </div>
-
-
-            <div class="footer-line"></div>
-
-
-            <div class="footer-bottom">
-
-                <p>
-                    © 2026 EspectroCare
-                </p>
-
-                <span>
-                    Todos os direitos reservados.
-                </span>
-
-            </div>
-
-        </footer>
-
-
+    <script src="assets/js/api-config.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/action-gate.js"></script>
+    <script src="assets/js/home-artigos.js"></script>
     <script src="assets/js/mobilen-navbar.js"></script>
     <script src="assets/js/selecionar-perfil.js"></script>
     <div class="overlay" id="overlay"></div>

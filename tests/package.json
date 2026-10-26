@@ -1,1 +1,10 @@
-{"private":true,"scripts":{"test":"node e2e.cjs"},"devDependencies":{"playwright":"1.62.1"}}
+{
+  "private": true,
+  "scripts": {
+    "test": "node e2e.cjs",
+    "test:home": "node home-integracao.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

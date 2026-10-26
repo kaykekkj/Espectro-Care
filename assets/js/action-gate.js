@@ -1,12 +1,14 @@
 (function () {
+    const loginPage = new URL("../../pages/login.html", document.currentScript.src);
+    const loginUrl = target => `${loginPage.pathname}?redirect=${encodeURIComponent(target)}`;
     function prepare(root) {
         root.querySelectorAll("a[data-auth-action]").forEach(link => {
-            const target = new URL(link.getAttribute("href"), location.href);
+            const target = new URL(link.dataset.authTarget || link.getAttribute("href"), location.href);
             if (target.origin !== location.origin) return;
             link.dataset.authTarget = `${target.pathname}${target.search}${target.hash}`;
             // Também protege abrir em nova aba quando o visitante ainda não tem token.
             if (!EspectroCareAuth.getToken()) {
-                link.href = `login.html?redirect=${encodeURIComponent(link.dataset.authTarget)}`;
+                link.href = loginUrl(link.dataset.authTarget);
             }
         });
     }
@@ -20,12 +22,13 @@
         link.dataset.busy = "true";
         const target = link.dataset.authTarget;
         const status = document.getElementById("profissionaisStatus") ||
-            document.getElementById("aprendizagemStatus");
+            document.getElementById("aprendizagemStatus") ||
+            document.getElementById("homeArtigosStatus");
         try {
             // Valida com a API: um token apenas salvo no navegador não basta.
             const user = await EspectroCareAuth.getCurrentUser();
             if (user) window.location.href = target;
-            else window.location.href = `login.html?redirect=${encodeURIComponent(target)}`;
+            else window.location.href = loginUrl(target);
         } catch {
             if (status) {
                 status.textContent = "Não foi possível validar sua sessão. Verifique sua conexão e tente novamente.";

@@ -6,9 +6,6 @@ main, section, article, .footer-column { min-width: 0; }
 h1, h2, h3, p, a, li { overflow-wrap: anywhere; }
 .hero { height: auto; min-height: 85svh; padding: clamp(40px, 6vw, 90px); }
 .hero h1, .hero p { width: min(52%, 620px); }
-.aplicativo-home { height: auto; min-height: 75svh; padding: clamp(24px, 5vw, 80px); }
-.texto-app-home { padding: clamp(8px, 2vw, 40px); }
-.texto-app-home h1, .texto-app-home p { width: 100%; }
 .carrossel-equipe { width: 100%; padding-inline: 12px; }
 .cards-equipe-container { min-width: 0; max-width: 100%; flex-shrink: 1; }
 .cards-equipe { will-change: transform; }
@@ -37,7 +34,6 @@ h1, h2, h3, p, a, li { overflow-wrap: anywhere; }
     .hero h1, .hero p { width: 70%; }
     .objetivo-sobre-nos { flex-wrap: wrap; }
     .container-chaves { min-width: min(100%, 340px); }
-    .texto-app-home { width: 65%; }
 }
 @media (max-width: 768px) {
     .hero { min-height: 70svh; padding: 110px 24px 50px; background-position: 65% center;
@@ -45,9 +41,6 @@ h1, h2, h3, p, a, li { overflow-wrap: anywhere; }
     .hero h1, .hero p { width: 100%; }
     .hero h1 { font-size: clamp(1.8rem, 7vw, 2.6rem); }
     .hero p { font-size: 1.05rem; }
-    .aplicativo-home { min-height: auto; background-position: center; background-image: linear-gradient(#fffffff0, #ffffffe8), url('../img/home/aplicativo-fundo (2).png'); }
-    .texto-app-home { width: 100%; }
-    .texto-app-home h1 { font-size: clamp(1.7rem, 7vw, 2.3rem); }
     .body-login { background-attachment: scroll; background-size: auto 100svh; background-color: #eef8f5; }
     .recomendacoes-lista { grid-template-columns: 1fr; }
     .postagem-resumo { padding: 18px; }
