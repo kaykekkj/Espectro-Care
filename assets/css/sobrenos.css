@@ -3,8 +3,7 @@
    ================================================================ */
 
 .pagina-sobre-nos {
-    /* Escala da Home, incluindo os ajustes responsivos compartilhados. */
-    --sobre-recuo: max(clamp(40px, 6vw, 90px), calc((100% - 1200px) / 2));
+    --sobre-recuo: 80px;
     --sobre-espaco-secao: 80px;
     --sobre-titulo-secao: 34px;
     --sobre-texto-destaque: 20px;
@@ -32,8 +31,8 @@
     position: relative;
 
     width: 100%;
-    min-height: 85svh;
-    padding: 126px var(--sobre-recuo) clamp(40px, 6vw, 90px);
+    min-height: 110vh;
+    padding: 80px var(--sobre-recuo);
 
     display: flex;
     flex-direction: column;
@@ -46,9 +45,9 @@
     background-image:
         linear-gradient(
             90deg,
-            #ffffffeb 0%,
-            rgba(255, 255, 255, 0.72) 45%,
-            rgba(255, 255, 255, 0.15) 100%
+            #ffffffa4 0%,
+            #ffffffa9 45%,
+            #ffffff26 100%
         ),
         url('../img/home/Img_hero.png');
 
@@ -58,11 +57,12 @@
 }
 
 .hero-sobre-nos .hero-conteudo {
-    width: min(52%, 620px);
+    width: 35%;
     min-width: 0;
 }
 
 .hero-sobre-nos h1 {
+    width: 100%;
     margin: 0 0 40px;
 
     color: #04344E;
@@ -72,12 +72,21 @@
 }
 
 .hero-sobre-nos p {
+    width: 100%;
     margin: 0 0 15px;
 
     color: #274653;
     font-size: 20px;
     font-weight: 400;
     line-height: 1.6;
+}
+
+.hero-linha {
+    width: 70px;
+    height: 4px;
+    margin: 0 0 24px;
+    border-radius: 10px;
+    background-color: #47C777;
 }
 
 .hero-sobre-nos p:last-child {
@@ -240,12 +249,14 @@
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
 
     gap: 25px;
 }
 
 .porque-cards .card {
     min-width: 0;
+    height: 100%;
     padding: 35px 30px;
 
     display: flex;
@@ -260,6 +271,22 @@
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
+}
+
+.card-icone {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background-color: #e4fcee;
+    color: #14AE5C;
+    font-size: 2rem;
+    flex-shrink: 0;
 }
 
 .porque-cards .card:hover {
@@ -356,7 +383,10 @@
 }
 
 .cards-equipe-container {
-    width: 989px;
+    width: min(989px, 100%);
+    max-width: 100%;
+    min-width: 0;
+    flex: 1 1 989px;
 
     overflow: hidden;
 }
@@ -463,10 +493,11 @@
 
 .seta-equipe span {
     color: #111111;
+}
 
-    font-size: 30px;
-    font-weight: 300;
-    line-height: 1;
+.seta-equipe i {
+    color: #111111;
+    font-size: 1.1rem;
 }
 
 .seta-equipe:hover {
@@ -708,7 +739,7 @@
     /* Nossa equipe */
 
     .cards-equipe-container {
-        width: 760px;
+        flex-basis: 760px;
     }
 
     .card-equipe {
@@ -743,16 +774,16 @@
 
     .hero-sobre-nos {
         min-height: 70svh;
-        padding: 110px var(--sobre-recuo) 50px;
+        padding: 110px 24px 50px;
 
         background-image:
             linear-gradient(
-                rgba(255, 255, 255, 0.9),
-                rgba(255, 255, 255, 0.9)
+                #ffffffe8,
+                #ffffffd9
             ),
             url('../img/home/Img_hero.png');
 
-        background-position: center;
+        background-position: 65% center;
     }
 
     .hero-sobre-nos .hero-conteudo {
@@ -828,11 +859,13 @@
     }
 
     .pagina-sobre-nos .carrossel-equipe {
+        position: relative;
         gap: 12px;
     }
 
     .cards-equipe-container {
-        width: calc(100vw - 100px);
+        width: 100%;
+        flex: 1 1 100%;
     }
 
     .cards-equipe {
@@ -849,12 +882,22 @@
     }
 
     .seta-equipe {
-        width: 42px;
-        height: 42px;
+        position: absolute;
+        z-index: 1;
+        width: 36px;
+        height: 36px;
     }
 
-    .seta-equipe span {
-        font-size: 22px;
+    .seta-esquerda {
+        left: 2px;
+    }
+
+    .seta-direita {
+        right: 2px;
+    }
+
+    .seta-equipe i {
+        font-size: 0.9rem;
     }
 
 
